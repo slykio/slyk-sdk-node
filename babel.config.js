@@ -5,6 +5,7 @@
 
 module.exports = {
   plugins: [
+    ['add-module-exports'],
     ['module-resolver', {
       alias: {
         test: './test'

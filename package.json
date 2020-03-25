@@ -46,6 +46,7 @@
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^5.15.1",
     "eslint-config-seegno": "15.0.0",
