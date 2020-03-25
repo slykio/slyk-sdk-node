@@ -1,18 +1,24 @@
-<div align="center">
+<div>
 	<br>
 	<br>
-	<img width="150" src="docs/media/slyk.png" alt="Slyk">
+	<p align="center"><a href="https://slyk.io/"><img width="150" src="docs/media/slyk.png" alt="Slyk"></a></p>
 	<br>
-	<br>
-	<p align="center"><img width="50" src="docs/media/logo.png" alt="Slyk"> - Node.js SDK </p>
+	<p align="center"><a href="https://slyk.io/"><img width="50" src="docs/media/logo.png" alt="Slyk"></a> - Node.js SDK </p>
 	<br>
 	<br>
 </div>
+
+![Travis (.org)](https://img.shields.io/travis/slykio/slyk-sdk-node)
+[![Coverage Status](https://coveralls.io/repos/github/slykio/slyk-sdk-node/badge.svg?branch=master)](https://coveralls.io/github/slykio/slyk-sdk-node?branch=master)
 
 ## Table of contents
 - [Install](#install)
 - [Usage](#usage)
 - [Available methods](docs/methods.md)
+
+This library allows you to quickly integrate **Slyk** with your Node.js application.
+
+For additional information and documentation please visit our [developers page](https://developers.slyk.io).
 
 ## Install
 
@@ -20,12 +26,12 @@
 $ yarn add @slyk/slyk-sdk-node
 ```
 
-> The `slyk-sdk-node` requires node **v8.6.0** or higher.
+The `slyk-sdk-node` requires node **v8.6.0** or higher.
 
 ## Usage
 
 ```js
-const slykSDK = require('slyk-sdk-node');
+const slykSDK = require('@slyk/slyk-sdk-node');
 
 (async () => {
   const slyk = slykSDK({ apikey: 'foobar' });
