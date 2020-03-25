@@ -1,0 +1,25 @@
+extends: seegno
+
+env:
+  jasmine: true
+  jest: true
+
+plugins:
+  - jest
+
+rules:
+  jest/no-disabled-tests: 2
+  jest/no-focused-tests: 2
+  jest/no-identical-title: 2
+  no-underscore-dangle: [
+    error,
+    {
+      allow: [
+        '_connection',
+        '_instantiate',
+        '_model',
+        '_resolver',
+        '_sdk'
+      ]
+    }
+  ]
