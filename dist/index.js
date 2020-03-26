@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9,8 +11,6 @@ var _easyHttpErrors = require("easy-http-errors");
 
 var _sdkFactory = _interopRequireDefault(require("./core/util/sdk-factory"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * Module dependencies.
  */
@@ -18,10 +18,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Export `slykSDK`.
  */
-var _default = ({
-  apikey,
-  host = 'api.slyk.io'
-} = {}) => {
+var _default = function _default() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      apikey = _ref.apikey,
+      _ref$host = _ref.host,
+      host = _ref$host === void 0 ? 'api.slyk.io' : _ref$host;
+
   if (!apikey) {
     throw new _easyHttpErrors.InternalServerError('Missing API key');
   }
@@ -33,3 +35,4 @@ var _default = ({
 };
 
 exports.default = _default;
+module.exports = exports.default;

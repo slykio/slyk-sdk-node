@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -13,8 +15,6 @@ var _normalizeUrl = _interopRequireDefault(require("normalize-url"));
 
 var _qs = _interopRequireDefault(require("qs"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * Module dependencies.
  */
@@ -22,25 +22,27 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Export `apiUrlResolver`.
  */
-var _default = ({
-  data,
-  endpoint,
-  host,
-  options
-}) => {
+var _default = function _default(_ref) {
+  var data = _ref.data,
+      endpoint = _ref.endpoint,
+      host = _ref.host,
+      options = _ref.options;
+
   if (!host) {
     throw new _easyHttpErrors.InternalServerError('API host is not defined');
   }
 
-  const path = (0, _lodash.reduce)(data, (result, value, key) => {
+  var path = (0, _lodash.reduce)(data, function (result, value, key) {
     if (!(0, _lodash.isString)(value)) {
       return result;
     }
 
-    const cleanValue = value.replace(/[&\\/?\\[\]=\\:]/g, '');
+    var cleanValue = value.replace(/[&\\/?\\[\]=\\:]/g, '');
     return (0, _lodash.replace)(result, `:${key}`, cleanValue);
   }, endpoint);
-  const missingParams = (0, _lodash.map)(path.match(/:[a-zA-Z0-9]+/g), value => value.replace(':', ''));
+  var missingParams = (0, _lodash.map)(path.match(/:[a-zA-Z0-9]+/g), function (value) {
+    return value.replace(':', '');
+  });
 
   if (!(0, _lodash.isEmpty)(missingParams)) {
     throw new _easyHttpErrors.InternalServerError('Missing parameters', {
@@ -48,11 +50,12 @@ var _default = ({
     });
   }
 
-  const params = _qs.default.stringify(options);
+  var params = _qs.default.stringify(options);
 
-  const baseUrl = host.replace(/^(?!(?:\w+:)?\/\/)/, 'https://');
-  const url = baseUrl.concat(`/${path}`).concat(`?${params}`);
+  var baseUrl = host.replace(/^(?!(?:\w+:)?\/\/)/, 'https://');
+  var url = baseUrl.concat(`/${path}`).concat(`?${params}`);
   return (0, _normalizeUrl.default)(url);
 };
 
 exports.default = _default;
+module.exports = exports.default;

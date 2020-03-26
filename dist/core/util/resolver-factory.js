@@ -1,9 +1,15 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
 var _lodash = require("lodash");
 
@@ -17,8 +23,6 @@ var _got = _interopRequireDefault(require("got"));
 
 var _sortMiddleware = _interopRequireDefault(require("../middlewares/sort-middleware"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * Module dependencies.
  */
@@ -26,45 +30,79 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Create task.
  */
-const createTask = (connection, task) => {
-  const apikey = (0, _lodash.get)(connection, 'apikey');
-  const host = (0, _lodash.get)(connection, 'host');
-  const {
-    endpoint,
-    method
-  } = task;
-  return async (data = {}, options = {}) => {
-    const cleanedRequestData = (0, _cleanRequestData.default)(data, endpoint);
-    const requestData = (0, _lodash.isEmpty)(cleanedRequestData) ? null : cleanedRequestData;
-    const url = (0, _apiUrlResolver.default)((0, _sortMiddleware.default)({
-      data,
-      endpoint,
-      host,
-      options
-    }));
+var createTask = function createTask(connection, task) {
+  var apikey = (0, _lodash.get)(connection, 'apikey');
+  var host = (0, _lodash.get)(connection, 'host');
+  var endpoint = task.endpoint,
+      method = task.method;
+  return (
+    /*#__PURE__*/
+    (0, _asyncToGenerator2.default)(
+    /*#__PURE__*/
+    _regenerator.default.mark(function _callee() {
+      var data,
+          options,
+          cleanedRequestData,
+          requestData,
+          url,
+          _ref2,
+          body,
+          _args = arguments;
 
-    try {
-      const {
-        body
-      } = await (0, _got.default)(url, {
-        body: requestData,
-        headers: {
-          apikey
-        },
-        json: true,
-        method
-      });
-      return body;
-    } catch (error) {
-      (0, _errorHandler.default)(error);
-    }
-  };
+      return _regenerator.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              data = _args.length > 0 && _args[0] !== undefined ? _args[0] : {};
+              options = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
+              cleanedRequestData = (0, _cleanRequestData.default)(data, endpoint);
+              requestData = (0, _lodash.isEmpty)(cleanedRequestData) ? null : cleanedRequestData;
+              url = (0, _apiUrlResolver.default)((0, _sortMiddleware.default)({
+                data,
+                endpoint,
+                host,
+                options
+              }));
+              _context.prev = 5;
+              _context.next = 8;
+              return (0, _got.default)(url, {
+                body: requestData,
+                headers: {
+                  apikey
+                },
+                json: true,
+                method
+              });
+
+            case 8:
+              _ref2 = _context.sent;
+              body = _ref2.body;
+              return _context.abrupt("return", body);
+
+            case 13:
+              _context.prev = 13;
+              _context.t0 = _context["catch"](5);
+              (0, _errorHandler.default)(_context.t0);
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[5, 13]]);
+    }))
+  );
 };
 /**
  * Export `resolverFactory`.
  */
 
 
-var _default = (connection, config) => (0, _lodash.mapValues)(config, task => createTask(connection, task));
+var _default = function _default(connection, config) {
+  return (0, _lodash.mapValues)(config, function (task) {
+    return createTask(connection, task);
+  });
+};
 
 exports.default = _default;
+module.exports = exports.default;

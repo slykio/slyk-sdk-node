@@ -14,22 +14,22 @@ var _lodash = require("lodash");
 /**
  * Export `sortMiddleware`.
  */
-var _default = data => {
-  const sort = (0, _lodash.get)(data, 'options.sort');
+var _default = function _default(data) {
+  var sort = (0, _lodash.get)(data, 'options.sort');
 
   if (!(0, _lodash.isArray)(sort) || !sort.length) {
     return (0, _lodash.omit)(data, 'options.sort');
   }
 
-  const reducedSortArray = (0, _lodash.reduce)(sort, (result, sortOption) => {
-    const direction = (0, _lodash.get)(sortOption, 'direction', 'ASC');
-    const name = (0, _lodash.get)(sortOption, 'name');
+  var reducedSortArray = (0, _lodash.reduce)(sort, function (result, sortOption) {
+    var direction = (0, _lodash.get)(sortOption, 'direction', 'ASC');
+    var name = (0, _lodash.get)(sortOption, 'name');
 
     if (!(0, _lodash.isString)(direction) || !(0, _lodash.isString)(name)) {
       return result;
     }
 
-    const sortString = direction.toUpperCase() === 'DESC' ? `-${name}` : name;
+    var sortString = direction.toUpperCase() === 'DESC' ? `-${name}` : name;
     result.push(sortString);
     return result;
   }, []);
@@ -38,8 +38,9 @@ var _default = data => {
     return (0, _lodash.omit)(data, 'options.sort');
   }
 
-  const reducedSortString = reducedSortArray.toString();
+  var reducedSortString = reducedSortArray.toString();
   return (0, _lodash.set)(data, 'options.sort', reducedSortString);
 };
 
 exports.default = _default;
+module.exports = exports.default;

@@ -14,8 +14,8 @@ var _lodash = require("lodash");
 /**
  * Export `cleanRequestData`.
  */
-var _default = (data, endpoint) => {
-  return (0, _lodash.reduce)(data, (result, value, key) => {
+var _default = function _default(data, endpoint) {
+  return (0, _lodash.reduce)(data, function (result, value, key) {
     if (endpoint.includes(`:${key}`)) {
       return result;
     }
@@ -25,3 +25,4 @@ var _default = (data, endpoint) => {
 };
 
 exports.default = _default;
+module.exports = exports.default;

@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9,8 +11,6 @@ var _lodash = require("lodash");
 
 var _httpErrorResolver = _interopRequireDefault(require("../resolvers/http-error-resolver"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * Module dependencies.
  */
@@ -18,15 +18,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Export `errorHandler`.
  */
-var _default = error => {
-  const {
-    statusCode
-  } = error;
-  const {
-    code: message,
-    errors
-  } = (0, _lodash.get)(error, 'body', {});
-  const HTTPError = (0, _httpErrorResolver.default)(statusCode);
+var _default = function _default(error) {
+  var statusCode = error.statusCode;
+
+  var _get = (0, _lodash.get)(error, 'response.body', {}),
+      message = _get.code,
+      errors = _get.errors;
+
+  var HTTPError = (0, _httpErrorResolver.default)(statusCode);
   throw new HTTPError({
     errors,
     message
@@ -34,3 +33,4 @@ var _default = error => {
 };
 
 exports.default = _default;
+module.exports = exports.default;

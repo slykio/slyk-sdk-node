@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10,8 +12,6 @@ var _movementManager = _interopRequireDefault(require("./managers/movement-manag
 var _movementModel = _interopRequireDefault(require("./models/movement-model"));
 
 var _movementResolver = _interopRequireDefault(require("./resolvers/movement-resolver"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* istanbul ignore file */
 
@@ -28,3 +28,4 @@ var _default = {
   resolver: _movementResolver.default
 };
 exports.default = _default;
+module.exports = exports.default;

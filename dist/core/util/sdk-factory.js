@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -9,8 +11,6 @@ var _lodash = require("lodash");
 
 var _library = _interopRequireDefault(require("../library"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /**
  * Module dependencies.
  */
@@ -18,12 +18,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Export `sdkFactory`.
  */
-var _default = connection => {
-  return (0, _lodash.mapValues)(_library.default, ({
-    manager: Manager,
-    model,
-    resolver
-  }) => {
+var _default = function _default(connection) {
+  return (0, _lodash.mapValues)(_library.default, function (_ref) {
+    var Manager = _ref.manager,
+        model = _ref.model,
+        resolver = _ref.resolver;
     return new Manager({
       connection,
       model,
@@ -33,3 +32,4 @@ var _default = connection => {
 };
 
 exports.default = _default;
+module.exports = exports.default;

@@ -1,13 +1,13 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
 
 var _resolverFactory = _interopRequireDefault(require("../../core/util/resolver-factory"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Module dependencies.
@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 /**
  * Configuration.
  */
-const config = {
+var config = {
   cancel: {
     endpoint: 'invites/:code/cancel',
     method: 'post'
@@ -46,6 +46,9 @@ const config = {
  * Export `InviteResolver`.
  */
 
-var _default = connection => (0, _resolverFactory.default)(connection, config);
+var _default = function _default(connection) {
+  return (0, _resolverFactory.default)(connection, config);
+};
 
 exports.default = _default;
+module.exports = exports.default;

@@ -1,5 +1,16 @@
 # Changelog
 
+## [v0.2.0](https://github.com/slykio/slyk-sdk-node/tree/v0.2.0) (2020-03-26)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.1.0...v0.2.0)
+
+**Merged pull requests:**
+
+- Improve changelog script [\#12](https://github.com/slykio/slyk-sdk-node/pull/12) ([joaonice](https://github.com/joaonice))
+- Add support to Node 4 [\#11](https://github.com/slykio/slyk-sdk-node/pull/11) ([johnmaia](https://github.com/johnmaia))
+- Update package license to MIT [\#10](https://github.com/slykio/slyk-sdk-node/pull/10) ([johnmaia](https://github.com/johnmaia))
+- Add coveralls [\#9](https://github.com/slykio/slyk-sdk-node/pull/9) ([johnmaia](https://github.com/johnmaia))
+- Add module exports [\#8](https://github.com/slykio/slyk-sdk-node/pull/8) ([johnmaia](https://github.com/johnmaia))
+
 ## [v0.1.0](https://github.com/slykio/slyk-sdk-node/tree/v0.1.0) (2020-03-25)
 **Merged pull requests:**
 

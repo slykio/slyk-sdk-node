@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10,8 +12,6 @@ var _transactionManager = _interopRequireDefault(require("./managers/transaction
 var _transactionModel = _interopRequireDefault(require("./models/transaction-model"));
 
 var _transactionResolver = _interopRequireDefault(require("./resolvers/transaction-resolver"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* istanbul ignore file */
 
@@ -28,3 +28,4 @@ var _default = {
   resolver: _transactionResolver.default
 };
 exports.default = _default;
+module.exports = exports.default;

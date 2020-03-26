@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10,8 +12,6 @@ var _addressManager = _interopRequireDefault(require("./managers/address-manager
 var _addressModel = _interopRequireDefault(require("./models/address-model"));
 
 var _addressResolver = _interopRequireDefault(require("./resolvers/address-resolver"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* istanbul ignore file */
 
@@ -28,3 +28,4 @@ var _default = {
   resolver: _addressResolver.default
 };
 exports.default = _default;
+module.exports = exports.default;

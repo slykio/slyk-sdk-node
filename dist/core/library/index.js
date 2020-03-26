@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -25,8 +27,6 @@ var _user = _interopRequireDefault(require("../../user"));
 
 var _wallet = _interopRequireDefault(require("../../wallet"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 /* istanbul ignore file */
 
 /**
@@ -49,3 +49,4 @@ var _default = {
   wallet: _wallet.default
 };
 exports.default = _default;
+module.exports = exports.default;

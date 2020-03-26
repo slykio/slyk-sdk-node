@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10,8 +12,6 @@ var _paymentMethodManager = _interopRequireDefault(require("./managers/payment-m
 var _paymentMethodModel = _interopRequireDefault(require("./models/payment-method-model"));
 
 var _paymentMethodResolver = _interopRequireDefault(require("./resolvers/payment-method-resolver"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* istanbul ignore file */
 
@@ -28,3 +28,4 @@ var _default = {
   resolver: _paymentMethodResolver.default
 };
 exports.default = _default;
+module.exports = exports.default;

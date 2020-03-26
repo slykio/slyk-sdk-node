@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10,8 +12,6 @@ var _walletManager = _interopRequireDefault(require("./managers/wallet-manager")
 var _walletModel = _interopRequireDefault(require("./models/wallet-model"));
 
 var _walletResolver = _interopRequireDefault(require("./resolvers/wallet-resolver"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* istanbul ignore file */
 
@@ -28,3 +28,4 @@ var _default = {
   resolver: _walletResolver.default
 };
 exports.default = _default;
+module.exports = exports.default;
