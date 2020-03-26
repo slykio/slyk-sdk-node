@@ -25,7 +25,7 @@
   },
   "scripts": {
     "build": "rm -rf dist/* && babel src --out-dir dist",
-    "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release && sed -i '/github_changelog_generator/d' CHANGELOG.md",
+    "changelog": "github_changelog_generator --no-issues --header-label='# Changelog' --future-release=v$npm_config_future_release",
     "cover": "jest --runInBand --coverage --forceExit",
     "coveralls": "npm run cover && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src test",
