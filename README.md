@@ -5,13 +5,13 @@
 	<br>
 	<p align="center"><a href="https://slyk.io/"><img width="50" src="docs/media/logo.png" alt="Slyk"></a> - Node.js SDK </p>
 	<br>
-	<br>
+	<p align="center">
+		<img alt="node" src="https://img.shields.io/node/v/@slyk/slyk-sdk-node">
+		<img alt="NPM" src="https://img.shields.io/npm/l/@slyk/slyk-sdk-node">
+		<img alt="Travis (.org) branch" src="https://img.shields.io/travis/slykio/slyk-sdk-node/master">
+		<img alt="Coveralls github" src="https://img.shields.io/coveralls/github/slykio/slyk-sdk-node?branch=master">
+  </p>
 </div>
-
-![Travis (.org)](https://img.shields.io/travis/slykio/slyk-sdk-node)
-[![Coverage Status](https://coveralls.io/repos/github/slykio/slyk-sdk-node/badge.svg?branch=master)](https://coveralls.io/github/slykio/slyk-sdk-node?branch=master)
-![NPM](https://img.shields.io/npm/l/@slyk/slyk-sdk-node)
-![node](https://img.shields.io/node/v/@slyk/slyk-sdk-node)
 
 ## Table of contents
 - [Install](#install)
@@ -32,12 +32,32 @@ The `slyk-sdk-node` requires node **v8.6.0** or higher.
 
 ## Usage
 
+### Example
+
 ```js
 const slykSDK = require('@slyk/slyk-sdk-node');
 
+(function() {
+  const slyk = slykSDK({ apikey: 'api-key' });
+
+  slyk.wallet.get('8399340e-8c1f-4c4f-94e0-81a5ee0378e1')
+    .then(function(wallet) {
+      wallet.getBalance({ filter: { assetCode: 'in:btc,usd' } })
+        .then(function(balance) {
+          console.log(balance);
+        });
+    });
+})();
+```
+
+### ES8 Example
+
+```js
+import slykSDK from '@slyk/slyk-sdk-node';
+
 (async () => {
-  const slyk = slykSDK({ apikey: 'foobar' });
-  const wallet = await slyk.wallet.get('3778f28c-5a02-472f-b428-b7b40acf8055');
+  const slyk = slykSDK({ apikey: 'api-key' });
+  const wallet = await slyk.wallet.get('8399340e-8c1f-4c4f-94e0-81a5ee0378e1');
   const balance = await wallet.getBalance({ filter: { assetCode: 'in:btc,usd' } });
 
   console.log(balance);

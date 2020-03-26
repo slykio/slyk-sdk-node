@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "easy-http-errors": "^2.0.0",
-    "got": "^9.6.0",
+    "got": "8.3.2",
     "lodash": "4.17.11",
     "qs": "^6.6.0"
   },
@@ -45,6 +45,7 @@
     "@babel/core": "^7.3.4",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.3.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-add-module-exports": "^1.0.2",
@@ -59,7 +60,7 @@
     "supertest": "^4.0.2"
   },
   "engines": {
-    "node": ">=8.6"
+    "node": ">=4"
   },
   "jest": {
     "coveragePathIgnorePatterns": [
