@@ -12,7 +12,7 @@ import httpErrorResolver from 'core/resolvers/http-error-resolver';
 
 export default error => {
   const { statusCode } = error;
-  const { code: message, errors } = get(error, 'body', {});
+  const { code: message, errors } = get(error, 'response.body', {});
   const HTTPError = httpErrorResolver(statusCode);
 
   throw new HTTPError({ errors, message });

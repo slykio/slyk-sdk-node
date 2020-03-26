@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "easy-http-errors": "^2.0.0",
-    "got": "^9.6.0",
+    "got": "8.3.2",
     "lodash": "4.17.11",
     "qs": "^6.6.0"
   },
