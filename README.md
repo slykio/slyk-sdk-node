@@ -10,6 +10,8 @@
 
 ![Travis (.org)](https://img.shields.io/travis/slykio/slyk-sdk-node)
 [![Coverage Status](https://coveralls.io/repos/github/slykio/slyk-sdk-node/badge.svg?branch=master)](https://coveralls.io/github/slykio/slyk-sdk-node?branch=master)
+![NPM](https://img.shields.io/npm/l/@slyk/slyk-sdk-node)
+![node](https://img.shields.io/node/v/@slyk/slyk-sdk-node)
 
 ## Table of contents
 - [Install](#install)
