@@ -28,7 +28,7 @@ For additional information and documentation please visit our [developers page](
 $ yarn add @slyk/slyk-sdk-node
 ```
 
-The `slyk-sdk-node` requires node **v8.6.0** or higher.
+The `slyk-sdk-node` requires node **v4** or higher.
 
 ## Usage
 
@@ -68,7 +68,7 @@ import slykSDK from '@slyk/slyk-sdk-node';
 
 ```json
 [
-  { "amount": "0.50000000", "assetCode": "btc" }
-  { "amount": "25.50000000", "assetCode": "usd" },
+  { "amount": "0.50000000", "assetCode": "btc" },
+  { "amount": "25.50000000", "assetCode": "usd" }
 ]
 ```
