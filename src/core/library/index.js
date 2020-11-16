@@ -7,6 +7,7 @@
 
 import address from 'address';
 import asset from 'asset';
+import auth from 'auth';
 import connection from 'connection';
 import invite from 'invite';
 import movement from 'movement';
@@ -23,6 +24,7 @@ import wallet from 'wallet';
 export default {
   address,
   asset,
+  auth,
   connection,
   invite,
   movement,
