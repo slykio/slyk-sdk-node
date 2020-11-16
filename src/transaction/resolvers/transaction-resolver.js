@@ -42,6 +42,14 @@ const config = {
     endpoint: 'transactions/:id/reject',
     method: 'post'
   },
+  request: {
+    endpoint: 'transactions/request',
+    method: 'post'
+  },
+  send: {
+    endpoint: 'transactions/send',
+    method: 'post'
+  },
   transfer: {
     endpoint: 'transactions/transfer',
     method: 'post'

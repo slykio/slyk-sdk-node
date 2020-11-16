@@ -95,6 +95,26 @@ export default class TransactionManager extends AbstractManager {
   }
 
   /**
+   * Request.
+   */
+
+  async request(data) {
+    const { data: transaction } = await this._resolver.request(data);
+
+    return this._instantiate(transaction);
+  }
+
+  /**
+   * Send.
+   */
+
+  async send(data) {
+    const { data: transaction } = await this._resolver.send(data);
+
+    return this._instantiate(transaction);
+  }
+
+  /**
    * Transfer.
    */
 

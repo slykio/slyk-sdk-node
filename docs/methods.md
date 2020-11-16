@@ -49,6 +49,8 @@
   - [`transaction.list`](#transactionlist)
   - [`transaction.pay`](#transactionpay)
   - [`transaction.reject`](#transactionreject)
+  - [`transaction.request`](#transactionrequest)
+  - [`transaction.send`](#transactionsend)
   - [`transaction.transfer`](#transactiontransfer)
   - [`transaction.withdrawal`](#transactionwithdrawal)
 - [user](#user)
@@ -1404,6 +1406,92 @@ await slyk.transaction.reject('43563311-ab16-4499-95d2-30d9e06ba159', { reason: 
   "reference": null,
   "status": "rejected",
   "type": "deposit",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `transaction.request`
+
+Creates a new `request` `transaction` that accepts either an `originWalletId` an `originEmail` an `originPhone` or none.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.transaction.request({
+  amount: '1',
+  assetCode: 'garply',
+  destinationWalletId: 'rtr0452a-062c-45ce-aaf5-dd19e38c7999',
+  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "1.00000000",
+  "assetCode": "garply",
+  "code": "request",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "description": null,
+  "destinationAddress": null,
+  "destinationWalletId": "rtr0452a-062c-45ce-aaf5-dd19e38c7999",
+  "externalId": null,
+  "externalReference": null,
+  "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+  "metadata": {},
+  "originAddress": null,
+  "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+  "processedAt": null,
+  "reference": null,
+  "status": "pending",
+  "type": "transfer",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `transaction.send`
+
+Creates a new `send` `transaction` that accepts either a `destinationWalletId` a `destinationEmail` a `destinationPhone` or none.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.transaction.send({
+  amount: '1',
+  assetCode: 'garply',
+  destinationWalletId: 'rtr0452a-062c-45ce-aaf5-dd19e38c7999',
+  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "1.00000000",
+  "assetCode": "garply",
+  "code": "send",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "description": null,
+  "destinationAddress": null,
+  "destinationWalletId": "rtr0452a-062c-45ce-aaf5-dd19e38c7999",
+  "externalId": null,
+  "externalReference": null,
+  "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+  "metadata": {},
+  "originAddress": null,
+  "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+  "processedAt": null,
+  "reference": null,
+  "status": "confirmed",
+  "type": "transfer",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
 ```
