@@ -232,6 +232,88 @@ describe('TransactionManager', () => {
     });
   });
 
+  describe('request', () => {
+    it('should call api `/transactions/request` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/transactions/request', {
+          amount: '2',
+          assetCode: 'foo',
+          destinationWalletId: 'foobar',
+          originWalletId: 'foobiz'
+        })
+        .reply(200, {
+          data: {
+            amount: '2',
+            code: 'request',
+            destinationWalletId: 'foobar',
+            id: 'foo',
+            originWalletId: 'foobiz',
+            status: 'pending',
+            type: 'transfer'
+          }
+        });
+
+      const transaction = await slyk.transaction.request({
+        amount: '2',
+        assetCode: 'foo',
+        destinationWalletId: 'foobar',
+        originWalletId: 'foobiz'
+      });
+
+      expect(transaction).toEqual({
+        _sdk: expect.any(Object),
+        amount: '2',
+        code: 'request',
+        destinationWalletId: 'foobar',
+        id: 'foo',
+        originWalletId: 'foobiz',
+        status: 'pending',
+        type: 'transfer'
+      });
+    });
+  });
+
+  describe('send', () => {
+    it('should call api `/transactions/send` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/transactions/send', {
+          amount: '2',
+          assetCode: 'foo',
+          destinationWalletId: 'foobar',
+          originWalletId: 'foobiz'
+        })
+        .reply(200, {
+          data: {
+            amount: '2',
+            code: 'send',
+            destinationWalletId: 'foobar',
+            id: 'foo',
+            originWalletId: 'foobiz',
+            status: 'confirmed',
+            type: 'transfer'
+          }
+        });
+
+      const transaction = await slyk.transaction.send({
+        amount: '2',
+        assetCode: 'foo',
+        destinationWalletId: 'foobar',
+        originWalletId: 'foobiz'
+      });
+
+      expect(transaction).toEqual({
+        _sdk: expect.any(Object),
+        amount: '2',
+        code: 'send',
+        destinationWalletId: 'foobar',
+        id: 'foo',
+        originWalletId: 'foobiz',
+        status: 'confirmed',
+        type: 'transfer'
+      });
+    });
+  });
+
   describe('transfer', () => {
     it('should call api `/transactions/transfer` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
       nock(host, { reqheaders: { apikey } })
