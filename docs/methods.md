@@ -6,6 +6,11 @@
   - [`address.create`](#addresscreate)
   - [`address.get`](#addressget)
   - [`address.list`](#addresslist)
+- [auth](#auth)
+  - [`auth.login`](#authlogin)
+  - [`auth.logout`](#authlogout)
+  - [`auth.refresh`](#authrefresh)
+  - [`auth.validate`](#authvalidate)
 - [asset](#asset)
   - [`asset.create`](#assetcreate)
   - [`asset.get`](#assetget)
@@ -170,6 +175,93 @@ await slyk.address.list({
   }],
   "total": 32
 }
+```
+
+## auth
+
+### `auth.login`
+
+Issues `auth` tokens and returns one `Auth` object that include the following methods:
+- `getData`: Returns the `auth` details.
+- `refresh`: Refreshes the current `auth` token.
+- `logout`: Revokes the current `auth` `refreshToken`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.login({ email: 'foo@bar.com', password: 'Password123' });
+```
+
+#### Response
+
+```json
+{
+  "refreshToken": "123",
+  "roles": ["user"],
+  "token": "456",
+}
+```
+
+### `auth.logout`
+
+Revokes the `auth` `refreshToken`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.logout({ refreshToken: '123' });
+```
+
+#### Response
+
+```json
+true
+```
+
+### `auth.refresh`
+
+Refreshes the `auth` tokens and returns one `Auth` object that include the following methods:
+- `getData`: Returns the `auth` details.
+- `refresh`: Refreshes the current `auth` token.
+- `logout`: Revokes the current `auth` `refreshToken`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.refresh({ refreshToken: '123' });
+```
+
+#### Response
+
+```json
+{
+  "refreshToken": "789",
+  "token": "012"
+}
+```
+
+### `auth.validate`
+
+Validate the `auth` `token`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.validate({ token: '456' });
+```
+
+#### Response
+
+```json
+true
 ```
 
 ## asset
