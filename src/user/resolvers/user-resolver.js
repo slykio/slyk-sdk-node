@@ -18,8 +18,24 @@ const config = {
     endpoint: 'users/:id/block',
     method: 'post'
   },
+  changeEmail: {
+    endpoint: 'users/:id/change-email',
+    method: 'post'
+  },
   changePassword: {
     endpoint: 'users/:id/change-password',
+    method: 'post'
+  },
+  changePhone: {
+    endpoint: 'users/:id/change-phone',
+    method: 'post'
+  },
+  confirmEmail: {
+    endpoint: 'users/confirm-email',
+    method: 'post'
+  },
+  confirmPhone: {
+    endpoint: 'users/confirm-phone',
     method: 'post'
   },
   create: {
@@ -37,6 +53,10 @@ const config = {
   patch: {
     endpoint: 'users/:id',
     method: 'patch'
+  },
+  resendConfirmation: {
+    endpoint: 'users/resend-confirmation',
+    method: 'post'
   },
   unblock: {
     endpoint: 'users/:id/unblock',
