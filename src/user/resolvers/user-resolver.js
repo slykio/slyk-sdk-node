@@ -42,6 +42,10 @@ const config = {
     endpoint: 'users',
     method: 'post'
   },
+  forgotPassword: {
+    endpoint: 'users/forgot-password',
+    method: 'post'
+  },
   get: {
     endpoint: 'users/:id',
     method: 'get'
@@ -55,7 +59,10 @@ const config = {
     method: 'patch'
   },
   resendConfirmation: {
-    endpoint: 'users/resend-confirmation',
+    endpoint: 'users/resend-confirmation'
+  },
+  resetPassword: {
+    endpoint: 'users/reset-password',
     method: 'post'
   },
   unblock: {
