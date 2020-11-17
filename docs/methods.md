@@ -2,77 +2,214 @@
 
 ## Available methods
 
-- [address](#address)
-  - [`address.create`](#addresscreate)
-  - [`address.get`](#addressget)
-  - [`address.list`](#addresslist)
-- [auth](#auth)
-  - [`auth.login`](#authlogin)
-  - [`auth.logout`](#authlogout)
-  - [`auth.refresh`](#authrefresh)
-  - [`auth.validate`](#authvalidate)
-- [asset](#asset)
-  - [`asset.create`](#assetcreate)
-  - [`asset.get`](#assetget)
-  - [`asset.list`](#assetlist)
-  - [`asset.patch`](#assetpatch)
-- [connection](#connection)
-  - [`connection.create`](#connectioncreate)
-  - [`connection.get`](#connectionget)
-  - [`connection.list`](#connectionlist)
-  - [`connection.patch`](#connectionpatch)
-- [invite](#invite)
-  - [`invite.cancel`](#invitecancel)
-  - [`invite.create`](#invitecreate)
-  - [`invite.get`](#inviteget)
-  - [`invite.list`](#invitelist)
-  - [`invite.send`](#invitesend)
-  - [`invite.validate`](#invitevalidate)
-- [movement](#movement)
-  - [`movement.get`](#movementget)
-  - [`movement.list`](#movementlist)
-- [paymentMethod](#paymentmethod)
-  - [`paymentMethod.get`](#paymentmethodget)
-  - [`paymentMethod.list`](#paymentmethodlist)
-- [rate](#rate)
-  - [`rate.create`](#ratecreate)
-  - [`rate.delete`](#ratedelete)
-  - [`rate.get`](#rateget)
-  - [`rate.list`](#ratelist)
-  - [`rate.patch`](#ratepatch)
-- [transaction](#transaction)
-  - [`transaction.approve`](#transactionapprove)
-  - [`transaction.confirm`](#transactionconfirm)
-  - [`transaction.deposit`](#transactiondeposit)
-  - [`transaction.fail`](#transactionfail)
-  - [`transaction.get`](#transactionget)
-  - [`transaction.list`](#transactionlist)
-  - [`transaction.pay`](#transactionpay)
-  - [`transaction.reject`](#transactionreject)
-  - [`transaction.request`](#transactionrequest)
-  - [`transaction.send`](#transactionsend)
-  - [`transaction.transfer`](#transactiontransfer)
-  - [`transaction.withdrawal`](#transactionwithdrawal)
-- [user](#user)
-  - [`user.approve`](#userapprove)
-  - [`user.block`](#userblock)
-  - [`user.changePassword`](#userchangepassword)
-  - [`user.create`](#usercreate)
-  - [`user.get`](#userget)
-  - [`user.list`](#userlist)
-  - [`user.patch`](#userpatch)
-  - [`user.unblock`](#userunblock)
-- [wallet](#wallet)
-  - [`wallet.activity`](#walletactivity)
-  - [`wallet.balance`](#walletbalance)
-  - [`wallet.create`](#walletcreate)
-  - [`wallet.get`](#walletget)
-  - [`wallet.globalActivity`](#walletglobalactivity)
-  - [`wallet.globalBalance`](#walletglobalbalance)
-  - [`wallet.list`](#walletlist)
-  - [`wallet.movements`](#walletmovements)
-  - [`wallet.patch`](#walletpatch)
-  - [`wallet.transactions`](#wallettransactions)
+- [Slyk - Node.js SDK](#slyk---nodejs-sdk)
+  - [Available methods](#available-methods)
+  - [address](#address)
+    - [`address.create`](#addresscreate)
+      - [Request](#request)
+      - [Response](#response)
+    - [`address.get`](#addressget)
+      - [Request](#request-1)
+      - [Response](#response-1)
+    - [`address.list`](#addresslist)
+      - [Request](#request-2)
+      - [Response](#response-2)
+  - [auth](#auth)
+    - [`auth.login`](#authlogin)
+      - [Request](#request-3)
+      - [Response](#response-3)
+    - [`auth.logout`](#authlogout)
+      - [Request](#request-4)
+      - [Response](#response-4)
+    - [`auth.refresh`](#authrefresh)
+      - [Request](#request-5)
+      - [Response](#response-5)
+    - [`auth.validate`](#authvalidate)
+      - [Request](#request-6)
+      - [Response](#response-6)
+  - [asset](#asset)
+    - [`asset.create`](#assetcreate)
+      - [Request](#request-7)
+      - [Response](#response-7)
+    - [`asset.get`](#assetget)
+      - [Request](#request-8)
+      - [Response](#response-8)
+    - [`asset.list`](#assetlist)
+      - [Request](#request-9)
+      - [Response](#response-9)
+    - [`asset.patch`](#assetpatch)
+      - [Request](#request-10)
+      - [Response](#response-10)
+  - [connection](#connection)
+    - [`connection.create`](#connectioncreate)
+      - [Request](#request-11)
+      - [Response](#response-11)
+    - [`connection.get`](#connectionget)
+      - [Request](#request-12)
+      - [Response](#response-12)
+    - [`connection.list`](#connectionlist)
+      - [Request](#request-13)
+      - [Response](#response-13)
+    - [`connection.patch`](#connectionpatch)
+      - [Request](#request-14)
+      - [Response](#response-14)
+  - [invite](#invite)
+    - [`invite.cancel`](#invitecancel)
+      - [Request](#request-15)
+      - [Response](#response-15)
+    - [`invite.create`](#invitecreate)
+      - [Request](#request-16)
+      - [Response](#response-16)
+    - [`invite.get`](#inviteget)
+      - [Request](#request-17)
+      - [Response](#response-17)
+    - [`invite.list`](#invitelist)
+      - [Request](#request-18)
+      - [Response](#response-18)
+    - [`invite.send`](#invitesend)
+      - [Request](#request-19)
+      - [Response](#response-19)
+    - [`invite.validate`](#invitevalidate)
+      - [Request](#request-20)
+      - [Response](#response-20)
+  - [movement](#movement)
+    - [`movement.get`](#movementget)
+      - [Request](#request-21)
+      - [Response](#response-21)
+    - [`movement.list`](#movementlist)
+      - [Request](#request-22)
+      - [Response](#response-22)
+  - [paymentMethod](#paymentmethod)
+    - [`paymentMethod.get`](#paymentmethodget)
+      - [Request](#request-23)
+      - [Response](#response-23)
+    - [`paymentMethod.list`](#paymentmethodlist)
+      - [Request](#request-24)
+      - [Response](#response-24)
+  - [rate](#rate)
+    - [`rate.create`](#ratecreate)
+      - [Request](#request-25)
+      - [Response](#response-25)
+    - [`rate.delete`](#ratedelete)
+      - [Request](#request-26)
+      - [Response](#response-26)
+    - [`rate.get`](#rateget)
+      - [Request](#request-27)
+      - [Response](#response-27)
+    - [`rate.list`](#ratelist)
+      - [Request](#request-28)
+      - [Response](#response-28)
+    - [`rate.patch`](#ratepatch)
+      - [Request](#request-29)
+      - [Response](#response-29)
+  - [transaction](#transaction)
+    - [`transaction.approve`](#transactionapprove)
+      - [Request](#request-30)
+      - [Response](#response-30)
+    - [`transaction.confirm`](#transactionconfirm)
+      - [Request](#request-31)
+      - [Response](#response-31)
+    - [`transaction.deposit`](#transactiondeposit)
+      - [Request](#request-32)
+      - [Response](#response-32)
+    - [`transaction.fail`](#transactionfail)
+      - [Request](#request-33)
+      - [Response](#response-33)
+    - [`transaction.get`](#transactionget)
+      - [Request](#request-34)
+      - [Response](#response-34)
+    - [`transaction.list`](#transactionlist)
+      - [Request](#request-35)
+      - [Response](#response-35)
+    - [`transaction.pay`](#transactionpay)
+      - [Request](#request-36)
+      - [Response](#response-36)
+    - [`transaction.reject`](#transactionreject)
+      - [Request](#request-37)
+      - [Response](#response-37)
+    - [`transaction.request`](#transactionrequest)
+      - [Request](#request-38)
+      - [Response](#response-38)
+    - [`transaction.send`](#transactionsend)
+      - [Request](#request-39)
+      - [Response](#response-39)
+    - [`transaction.transfer`](#transactiontransfer)
+      - [Request](#request-40)
+      - [Response](#response-40)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
+      - [Request](#request-41)
+      - [Response](#response-41)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
+      - [Request](#request-42)
+      - [Response](#response-42)
+    - [`user.block`](#userblock)
+      - [Request](#request-43)
+      - [Response](#response-43)
+    - [`user.changeEmail`](#userchangeemail)
+      - [Request](#request-44)
+      - [Response](#response-44)
+    - [`user.changePassword`](#userchangepassword)
+      - [Request](#request-45)
+      - [Response](#response-45)
+    - [`user.changePhone`](#userchangephone)
+      - [Request](#request-46)
+      - [Response](#response-46)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-47)
+      - [Responses](#responses)
+    - [`user.confirmPhone`](#userconfirmphone)
+      - [Request](#request-48)
+      - [Responses](#responses-1)
+    - [`user.create`](#usercreate)
+      - [Request](#request-49)
+      - [Response](#response-47)
+    - [`user.get`](#userget)
+      - [Request](#request-50)
+      - [Response](#response-48)
+    - [`user.list`](#userlist)
+      - [Request](#request-51)
+      - [Response](#response-49)
+    - [`user.resendConfirmation`](#userresendconfirmation)
+      - [Request](#request-52)
+      - [Response](#response-50)
+    - [`user.patch`](#userpatch)
+      - [Request](#request-53)
+      - [Response](#response-51)
+    - [`user.unblock`](#userunblock)
+      - [Request](#request-54)
+      - [Response](#response-52)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
+      - [Request](#request-55)
+      - [Response](#response-53)
+    - [`wallet.balance`](#walletbalance)
+      - [Request](#request-56)
+      - [Response](#response-54)
+    - [`wallet.create`](#walletcreate)
+      - [Request](#request-57)
+      - [Response](#response-55)
+    - [`wallet.get`](#walletget)
+      - [Request](#request-58)
+      - [Response](#response-56)
+    - [`wallet.globalActivity`](#walletglobalactivity)
+      - [Request](#request-59)
+      - [Response](#response-57)
+    - [`wallet.globalBalance`](#walletglobalbalance)
+      - [Request](#request-60)
+      - [Response](#response-58)
+    - [`wallet.list`](#walletlist)
+      - [Request](#request-61)
+      - [Response](#response-59)
+    - [`wallet.movements`](#walletmovements)
+      - [Request](#request-62)
+      - [Response](#response-60)
+    - [`wallet.patch`](#walletpatch)
+      - [Request](#request-63)
+      - [Response](#response-61)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-64)
+      - [Response](#response-62)
 
 ## address
 
@@ -1592,7 +1729,9 @@ await slyk.transaction.withdrawal({
 The result of each one of the following `user` methods return one or an array of `User` objects that include the following methods:
 - `approve`: Approves the `user`.
 - `block`: Blocks the `user`.
+- `changeEmail`: Initializes a change email process of the `user`.
 - `changePassword`: Changes the `user` the password.
+- `changePhone`: Initializes a change phone process of the `user`.
 - `getData`: Returns the `user` details.
 - `getInvites`: Returns the `invites` of the `user`.
 - `getWallets`: Returns the `wallets` of the `user`.
@@ -1669,6 +1808,26 @@ await slyk.user.block('5e101529-fa30-4415-9945-6540e70c4483');
 }
 ```
 
+### `user.changeEmail`
+
+Initializes `user` change email process.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.changeEmail('5e101529-fa30-4415-9945-6540e70c4483', { email: 'foo@bar.com' });
+```
+
+#### Response
+
+```json
+{
+  "token": "foobar"
+}
+```
+
 ### `user.changePassword`
 
 Changes the `user` password.
@@ -1682,6 +1841,76 @@ await slyk.user.changePassword('5e101529-fa30-4415-9945-6540e70c4483', { passwor
 ```
 
 #### Response
+
+```json
+true
+```
+
+### `user.changePhone`
+
+Initializes `user` change phone process.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.changePhone('5e101529-fa30-4415-9945-6540e70c4483', { countryCode: 'PT', phone: '+123456789' });
+```
+
+#### Response
+
+```json
+{
+  "token": "123456"
+}
+```
+
+### `user.confirmEmail`
+
+Confirms the `user` email.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.confirmEmail({ token: 'foobar' });
+```
+
+#### Responses
+
+```json
+{
+  "refreshToken": "waldo",
+  "token": "fred"
+}
+```
+
+```json
+true
+```
+
+### `user.confirmPhone`
+
+Confirms the `user` phone.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.confirmPhone({ code: '123456', phone: '+123456789' });
+```
+
+#### Responses
+
+```json
+{
+  "refreshToken": "waldo",
+  "token": "fred"
+}
+```
 
 ```json
 true
@@ -1806,6 +2035,26 @@ await slyk.user.list({ filter: { name: 'foo' } });
     "verified": false
   }],
   "total": 2
+}
+```
+
+### `user.resendConfirmation`
+
+Returns a confirmation token for the provided `email` or `phone`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.resendConfirmation({ phone: '+123456789' });
+```
+
+#### Response
+
+```json
+{
+  "token": "123456"
 }
 ```
 
