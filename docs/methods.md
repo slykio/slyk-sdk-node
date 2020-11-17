@@ -164,52 +164,58 @@
     - [`user.create`](#usercreate)
       - [Request](#request-49)
       - [Response](#response-47)
-    - [`user.get`](#userget)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-50)
       - [Response](#response-48)
-    - [`user.list`](#userlist)
+    - [`user.get`](#userget)
       - [Request](#request-51)
       - [Response](#response-49)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.list`](#userlist)
       - [Request](#request-52)
       - [Response](#response-50)
     - [`user.patch`](#userpatch)
       - [Request](#request-53)
       - [Response](#response-51)
-    - [`user.unblock`](#userunblock)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-54)
       - [Response](#response-52)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-55)
       - [Response](#response-53)
-    - [`wallet.balance`](#walletbalance)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-56)
       - [Response](#response-54)
-    - [`wallet.create`](#walletcreate)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-57)
       - [Response](#response-55)
-    - [`wallet.get`](#walletget)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-58)
       - [Response](#response-56)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-59)
       - [Response](#response-57)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`wallet.get`](#walletget)
       - [Request](#request-60)
       - [Response](#response-58)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-61)
       - [Response](#response-59)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-62)
       - [Response](#response-60)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-63)
       - [Response](#response-61)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-64)
       - [Response](#response-62)
+    - [`wallet.patch`](#walletpatch)
+      - [Request](#request-65)
+      - [Response](#response-63)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-66)
+      - [Response](#response-64)
 
 ## address
 
@@ -1950,6 +1956,26 @@ await slyk.user.create({ email: 'foo@bar.com', password: 'waldo' });
 }
 ```
 
+### `user.forgotPassword`
+
+Sends a reset password token to the provided `email` or `phone`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.forgotPassword({ email: 'foo@bar.com' });
+```
+
+#### Response
+
+```json
+{
+  "token": "foobar"
+}
+```
+
 ### `user.get`
 
 Returns the `user` of the given `id`.
@@ -2038,26 +2064,6 @@ await slyk.user.list({ filter: { name: 'foo' } });
 }
 ```
 
-### `user.resendConfirmation`
-
-Returns a confirmation token for the provided `email` or `phone`.
-
-**Example:**
-
-#### Request
-
-```js
-await slyk.user.resendConfirmation({ phone: '+123456789' });
-```
-
-#### Response
-
-```json
-{
-  "token": "123456"
-}
-```
-
 ### `user.patch`
 
 Patches the details of the `user` of the given `id`.
@@ -2090,6 +2096,45 @@ await slyk.user.patch('5e101529-fa30-4415-9945-6540e70c4483', { name: 'corge' })
   "updatedAt": "2019-03-20T14:30:37.483Z",
   "verified": false
 }
+```
+
+### `user.resendConfirmation`
+
+Returns a confirmation token for the provided `email` or `phone`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.resendConfirmation({ phone: '+123456789' });
+```
+
+#### Response
+
+```json
+{
+  "token": "123456"
+}
+```
+
+
+### `user.resetPassword`
+
+Resets user password.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.resetPassword({ password: 'Foobar123', token: '123456' });
+```
+
+#### Response
+
+```json
+true
 ```
 
 ### `user.unblock`
