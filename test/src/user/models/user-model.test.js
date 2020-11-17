@@ -63,6 +63,30 @@ describe('UserModel', () => {
     });
   });
 
+  describe('changeEmail', () => {
+    it('should return the confirmation token after initializing a change email process of the `user` instance', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/users/bar')
+        .reply(200, {
+          data: {
+            email: 'foo@bar.com',
+            id: 'bar',
+            metadata: {}
+          }
+        });
+
+      const user = await slyk.user.get('bar');
+
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/bar/change-email', { email: 'foo@bar.com' })
+        .reply(200, { data: { token: '123456' } });
+
+      const result = await user.changeEmail({ email: 'foo@bar.com' });
+
+      expect(result).toEqual({ token: '123456' });
+    });
+  });
+
   describe('changePassword', () => {
     it('should return `true` after changing the password of the `user` instance', async () => {
       nock(host, { reqheaders: { apikey } })
@@ -79,11 +103,35 @@ describe('UserModel', () => {
 
       nock(host, { reqheaders: { apikey } })
         .post('/users/bar/change-password', { currentPassword: 'corge', password: 'garply' })
-        .reply(204);
+        .reply(200, { data: { token: '123456' } });
 
       const result = await user.changePassword({ currentPassword: 'corge', password: 'garply' });
 
-      expect(result).toEqual(true);
+      expect(result).toEqual({ token: '123456' });
+    });
+  });
+
+  describe('changePhone', () => {
+    it('should return the confirmation token after initializing a change phone process of the `user` instance', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/users/bar')
+        .reply(200, {
+          data: {
+            email: 'foo@bar.com',
+            id: 'bar',
+            metadata: {}
+          }
+        });
+
+      const user = await slyk.user.get('bar');
+
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/bar/change-phone', { countryCode: 'PT', phone: '+123456789' })
+        .reply(200, { data: { token: '123456' } });
+
+      const result = await user.changePhone({ countryCode: 'PT', phone: '+123456789' });
+
+      expect(result).toEqual({ token: '123456' });
     });
   });
 
