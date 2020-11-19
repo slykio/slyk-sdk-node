@@ -33,13 +33,61 @@ export default class UserManager extends AbstractManager {
   }
 
   /**
+   * Change email.
+   */
+
+  async changeEmail(id, data) {
+    const { data: token } = await this._resolver.changeEmail(merge({}, data, { id }));
+
+    return token;
+  }
+
+  /**
    * Change password.
    */
 
   async changePassword(id, data) {
-    await this._resolver.changePassword(merge({}, data, { id }));
+    const { data: token } = await this._resolver.changePassword(merge({}, data, { id }));
 
-    return true;
+    return token;
+  }
+
+  /**
+   * Change phone.
+   */
+
+  async changePhone(id, data) {
+    const { data: token } = await this._resolver.changePhone(merge({}, data, { id }));
+
+    return token;
+  }
+
+  /**
+   * Confirm email.
+   */
+
+  async confirmEmail(data) {
+    const { data: accessTokens } = await this._resolver.confirmEmail(data);
+
+    if (!accessTokens) {
+      return true;
+    }
+
+    return accessTokens;
+  }
+
+  /**
+   * Confirm phone.
+   */
+
+  async confirmPhone(data) {
+    const { data: accessTokens } = await this._resolver.confirmPhone(data);
+
+    if (!accessTokens) {
+      return true;
+    }
+
+    return accessTokens;
   }
 
   /**
@@ -82,6 +130,16 @@ export default class UserManager extends AbstractManager {
     const { data: user } = await this._resolver.patch(merge({}, data, { id }));
 
     return this._instantiate(user);
+  }
+
+  /**
+   * Resend confirmation.
+   */
+
+  async resendConfirmation(data) {
+    const { data: token } = await this._resolver.resendConfirmation(data);
+
+    return token;
   }
 
   /**

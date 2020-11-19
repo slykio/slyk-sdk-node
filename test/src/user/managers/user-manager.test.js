@@ -39,15 +39,83 @@ describe('UserManager', () => {
     });
   });
 
+  describe('changeEmail', () => {
+    it('should call api `/users/bar/change-email` endpoint with method `post` and return the confirmation `token`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/bar/change-email', { email: 'foo@bar.com' })
+        .reply(200, { data: { token: '123456' } });
+
+      const result = await slyk.user.changeEmail('bar', { email: 'foo@bar.com' });
+
+      expect(result).toEqual({ token: '123456' });
+    });
+  });
+
   describe('changePassword', () => {
     it('should call api `/users/bar/change-password` endpoint with method `post` and return `true`', async () => {
       nock(host, { reqheaders: { apikey } })
         .post('/users/bar/change-password', { password: 'corge' })
-        .reply(204);
+        .reply(200, { data: { token: '123456' } });
 
       const result = await slyk.user.changePassword('bar', { password: 'corge' });
 
+      expect(result).toEqual({ token: '123456' });
+    });
+  });
+
+  describe('changePhone', () => {
+    it('should call api `/users/bar/change-phone` endpoint with method `post` and return the confirmation `token`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/bar/change-phone', { countryCode: 'PT', phone: '+123456789' })
+        .reply(200, { data: { token: '123456' } });
+
+      const result = await slyk.user.changePhone('bar', { countryCode: 'PT', phone: '+123456789' });
+
+      expect(result).toEqual({ token: '123456' });
+    });
+  });
+
+  describe('confirmEmail', () => {
+    it('should call api `/users/confirm-email` endpoint with method `post` and return `true` if no data is returned', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/confirm-email', { token: '123456' })
+        .reply(204);
+
+      const result = await slyk.user.confirmEmail({ token: '123456' });
+
       expect(result).toEqual(true);
+    });
+
+    it('should call api `/users/confirm-email` endpoint with method `post` and return access tokens', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/confirm-email', { token: '123456' })
+        .reply(200, { data: { refreshToken: 'foobar', token: 'foobiz' } });
+
+      const result = await slyk.user.confirmEmail({ token: '123456' });
+
+      expect(result).toEqual({ refreshToken: 'foobar', token: 'foobiz' });
+    });
+  });
+
+  describe('confirmPhone', () => {
+    it('should call api `/users/confirm-phone` endpoint with method `post` and return `true` if no data is returned', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/confirm-phone', { code: '123456', phone: '+123456789' })
+        .reply(204);
+
+      const result = await slyk.user.confirmPhone({ code: '123456', phone: '+123456789' });
+
+      expect(result).toEqual(true);
+    });
+
+    it('should call api `/users/confirm-phone` endpoint with method `post` and return access tokens', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/confirm-phone', { code: '123456', phone: '+123456789' })
+        .reply(200, { data: { refreshToken: 'foobar', token: 'foobiz' } });
+
+      const result = await slyk.user.confirmPhone({ code: '123456', phone: '+123456789' });
+
+      expect(result).toEqual({ refreshToken: 'foobar', token: 'foobiz' });
     });
   });
 
@@ -165,6 +233,18 @@ describe('UserManager', () => {
         metadata: {},
         name: 'foobar'
       });
+    });
+  });
+
+  describe('resendConfirmation', () => {
+    it('should call api `/users/resend-confirmation` endpoint with method `post` and return confirmation token', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/resend-confirmation', { phone: '+123456789' })
+        .reply(200, { data: { token: '123456' } });
+
+      const result = await slyk.user.resendConfirmation({ phone: '+123456789' });
+
+      expect(result).toEqual({ token: '123456' });
     });
   });
 

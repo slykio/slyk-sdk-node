@@ -29,11 +29,27 @@ export default class UserModel extends AbstractModel {
   }
 
   /**
+   * Change email.
+   */
+
+  changeEmail(data) {
+    return this._sdk.user.changeEmail(this.id, data);
+  }
+
+  /**
    * Change password.
    */
 
   changePassword(data) {
     return this._sdk.user.changePassword(this.id, data);
+  }
+
+  /**
+   * Change phone.
+   */
+
+  changePhone(data) {
+    return this._sdk.user.changePhone(this.id, data);
   }
 
   /**
