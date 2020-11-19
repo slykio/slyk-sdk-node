@@ -101,6 +101,16 @@ export default class UserManager extends AbstractManager {
   }
 
   /**
+   * Forgot password.
+   */
+
+  async forgotPassword(data) {
+    const { data: token } = await this._resolver.forgotPassword(data);
+
+    return token;
+  }
+
+  /**
    * Get.
    */
 
@@ -140,6 +150,16 @@ export default class UserManager extends AbstractManager {
     const { data: token } = await this._resolver.resendConfirmation(data);
 
     return token;
+  }
+
+  /**
+   * Reset password.
+   */
+
+  async resetPassword(data) {
+    await this._resolver.resetPassword(data);
+
+    return true;
   }
 
   /**

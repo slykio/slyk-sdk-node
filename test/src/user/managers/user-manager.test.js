@@ -142,6 +142,18 @@ describe('UserManager', () => {
     });
   });
 
+  describe('forgotPassword', () => {
+    it('should call api `/users/forgot-password` endpoint with method `post` and return the created reset password token', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/forgot-password', { email: 'foo@bar.com' })
+        .reply(200, { data: { token: 'foobar' } });
+
+      const result = await slyk.user.forgotPassword({ email: 'foo@bar.com' });
+
+      expect(result).toEqual({ token: 'foobar' });
+    });
+  });
+
   describe('get', () => {
     it('should call api `/users/bar` endpoint with method `get` and return an instance of `User` model with the given `data`', async () => {
       nock(host, { reqheaders: { apikey } })
@@ -245,6 +257,18 @@ describe('UserManager', () => {
       const result = await slyk.user.resendConfirmation({ phone: '+123456789' });
 
       expect(result).toEqual({ token: '123456' });
+    });
+  });
+
+  describe('resetPassword', () => {
+    it('should call api `/users/reset-password` endpoint with method `post` and return `true`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/reset-password', { password: 'Foobar123', token: '123456' })
+        .reply(204);
+
+      const result = await slyk.user.resetPassword({ password: 'Foobar123', token: '123456' });
+
+      expect(result).toEqual(true);
     });
   });
 
