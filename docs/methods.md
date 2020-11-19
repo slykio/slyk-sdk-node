@@ -79,6 +79,21 @@
     - [`movement.list`](#movementlist)
       - [Request](#request-22)
       - [Response](#response-22)
+  - [order](#order)
+    - [`order.cancel`](#ordercancel)
+    - [`order.create`](#ordercreate)
+    - [`order.fulfill`](#orderfulfill)
+    - [`order.get`](#orderget)
+    - [`order.list`](#orderlist)
+    - [`order.patch`](#orderpatch)
+    - [`order.pay`](#orderpay)
+    - [`order.refund`](#orderrefund)
+    - [`order.unfulfill`](#orderunfulfill)
+  - [orderLine](#orderline)
+    - [fulfill](#fulfill)
+    - [get](#get)
+    - [list](#list)
+    - [unfulfill](#unfulfill)
   - [paymentMethod](#paymentmethod)
     - [`paymentMethod.get`](#paymentmethodget)
       - [Request](#request-23)
@@ -86,6 +101,37 @@
     - [`paymentMethod.list`](#paymentmethodlist)
       - [Request](#request-24)
       - [Response](#response-24)
+  - [product](#product)
+    - [`product.create`](#productcreate)
+    - [`product.createQuestion`](#productcreatequestion)
+    - [`product.delete`](#productdelete)
+    - [`product.deleteQuestion`](#productdeletequestion)
+    - [`product.get`](#productget)
+    - [`product.list`](#productlist)
+    - [`product.patch`](#productpatch)
+    - [`product.reorder`](#productreorder)
+    - [`product.reorderQuestion`](#productreorderquestion)
+  - [productCategory](#productcategory)
+    - [`productCategory.create`](#productcategorycreate)
+    - [`productCategory.delete`](#productcategorydelete)
+    - [`productCategory.get`](#productcategoryget)
+    - [`productCategory.list`](#productcategorylist)
+    - [`productCategory.patch`](#productcategorypatch)
+    - [`productCategory.reorder`](#productcategoryreorder)
+  - [productImage](#productimage)
+    - [`productImage.create`](#productimagecreate)
+    - [`productImage.delete`](#productimagedelete)
+    - [`productImage.get`](#productimageget)
+    - [`productImage.list`](#productimagelist)
+    - [`productImage.reorder`](#productimagereorder)
+  - [question](#question)
+    - [`question.create`](#questioncreate)
+    - [`question.delete`](#questiondelete)
+    - [`question.get`](#questionget)
+    - [`question.list`](#questionlist)
+    - [`question.patch`](#questionpatch)
+  - [questionType](#questiontype)
+    - [`question.list`](#questionlist-1)
   - [rate](#rate)
     - [`rate.create`](#ratecreate)
       - [Request](#request-25)
@@ -102,6 +148,19 @@
     - [`rate.patch`](#ratepatch)
       - [Request](#request-29)
       - [Response](#response-29)
+  - [task](#task)
+    - [`task.complete`](#taskcomplete)
+    - [`task.create`](#taskcreate)
+    - [`task.get`](#taskget)
+    - [`task.list`](#tasklist)
+    - [`task.patch`](#taskpatch)
+    - [`task.reorder`](#taskreorder)
+  - [taxRate](#taxrate)
+    - [`taxRate.create`](#taxratecreate)
+    - [`taxRate.delete`](#taxratedelete)
+    - [`taxRate.get`](#taxrateget)
+    - [`taxRate.list`](#taxratelist)
+    - [`taxRate.patch`](#taxratepatch)
   - [transaction](#transaction)
     - [`transaction.approve`](#transactionapprove)
       - [Request](#request-30)
@@ -975,6 +1034,611 @@ await slyk.movement.list({
 }
 ```
 
+## order
+
+The result of each one of the following `order` methods return one or an array of `Order` objects that include the following methods:
+- `cancel`: Cancels the `order`.
+- `fulfill`: Fulfills the `order`.
+- `fulfillOrderLine`: Fulfills the associated `orderLine` by providing an `id`.
+- `getData`: Returns the `order` details.
+- `getOrderLine`: Returns the associated `orderLine` by providing an `id`.
+- `getOrderLines`: Returns the associated `orderLines`.
+- `patch`: Patches the `order`.
+- `pay`: Pays the `order`.
+- `refund`: Refunds the `order`.
+- `unfulfill`: Unfulfills the `order`.
+- `unfulfillOrderLine`: Unfulfills the associated `orderLine` by providing an `id`.
+
+### `order.cancel`
+
+Cancels the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.cancel('43563311-ab16-4499-95d2-30d9e06ba159', { reason: 'foobar', refundAmount: '2.00000000' });
+```
+
+#### Response
+
+```json
+true
+```
+
+### `order.create`
+
+Creates an `order`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.create({
+  chosenPaymentMethod: 'wallet',
+  customData: { qux: 'quux' },
+  deliveryMethod: 'pickup',
+  lines: [{ productId: '8c507367-10e9-4b50-8912-d1b8d37d13d8' }],
+  walletId: '5cabbc16-d845-418f-9ecc-7a9fcab99b49'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "chosenPaymentMethod": "wallet",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "deliveryMethod": "pickup",
+  "fulfilledAt": null,
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "unfulfilled",
+  "paidAmount": "0.00000000",
+  "paidAt": null,
+  "paymentDetails": {
+    "remaining": {
+      "amount": "0.00000007",
+      "assetCode": "qux"
+    },
+    "wallet": {
+      "amount": "0.00000000",
+      "assetCode": "qux"
+    }
+  },
+  "paymentStatus": "unpaid",
+  "reference": "ATE672BH",
+  "taxesAmount": "0.00000000",
+  "trackingId": null,
+  "unpaidAmount": "0.00000007",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "userNotes": "waldo",
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+### `order.fulfill`
+
+Fulfills the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.fulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57');
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "fulfilled",
+  "paidAmount": "0.00000000",
+  "paidAt": null,
+  "paymentStatus": "unpaid",
+  "reference": "ATE672BH",
+  "trackingId": null,
+  "unpaidAmount": "0.00000007",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+### `order.get`
+
+Retrieves the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.get('22419f26-6311-4f2e-89e5-05cf96e9bc57');
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "fulfilled",
+  "paidAmount": "0.00000000",
+  "paidAt": null,
+  "paymentStatus": "unpaid",
+  "reference": "ATE672BH",
+  "trackingId": null,
+  "unpaidAmount": "0.00000007",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+### `order.list`
+
+Retrieves a list `order`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.list({
+  filter: { paymentStatus: 'in:unpaid' },
+  sort: [{ name: 'fulfilledAt' }]
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "amount": "0.00000007",
+      "assetCode": "qux",
+      "bonus": "0.00000000",
+      "bonusAssetCode": null,
+      "canceledAt": null,
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": { "qux": "quux" },
+      "fulfilledAt": "2019-03-20T14:35:37.483Z",
+      "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+      "netAmount": "0.00000007",
+      "orderStatus": "fulfilled",
+      "paidAmount": "0.00000000",
+      "paidAt": null,
+      "paymentStatus": "unpaid",
+      "reference": "ATE672BH",
+      "trackingId": null,
+      "unpaidAmount": "0.00000007",
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "userId": null,
+      "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+    },
+    {
+      "amount": "2.00000000",
+      "assetCode": "qux",
+      "bonus": "0.00000000",
+      "bonusAssetCode": null,
+      "canceledAt": null,
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "fulfilledAt": "2019-03-20T15:40:37.483Z",
+      "id": "33319f26-6311-4f2e-89e5-05cf96e9bddd",
+      "netAmount": "2.0000000",
+      "orderStatus": "fulfilled",
+      "paidAmount": "0.00000000",
+      "paidAt": null,
+      "paymentStatus": "unpaid",
+      "reference": "ATE672BH",
+      "trackingId": null,
+      "unpaidAmount": "2.00000000",
+      "updatedAt": "2019-03-20T14:35:37.483Z",
+      "userId": null,
+      "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+    }
+  ],
+  "total": 2
+}
+```
+
+### `order.patch`
+
+Modifies the details of the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.patch('22419f26-6311-4f2e-89e5-05cf96e9bc57', {
+  shippingAddress: {
+    city: 'foo',
+    country: 'bar'
+  }
+})
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "fulfilled",
+  "paidAmount": "0.00000000",
+  "paidAt": null,
+  "paymentStatus": "unpaid",
+  "reference": "ATE672BH",
+  "shippingAddress": {
+    "city": "foo",
+    "company": "corge",
+    "country": "bar",
+    "name": "plugh",
+    "phoneNumber": "garply"
+  },
+  "trackingId": null,
+  "unpaidAmount": "0.00000007",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+### `order.pay`
+
+Pays the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.pay('22419f26-6311-4f2e-89e5-05cf96e9bc57', {
+  amount: '0.00000007',
+  walletId: '5cabbc16-d845-418f-9ecc-7a9fcab99b49'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "fulfilled",
+  "paidAmount": "0.00000007",
+  "paidAt": "2019-04-20T11:30:37.483Z",
+  "paymentStatus": "fully_paid",
+  "reference": "ATE672BH",
+  "trackingId": null,
+  "unpaidAmount": "0.00000000",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+### `order.refund`
+
+Pays the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.refund('22419f26-6311-4f2e-89e5-05cf96e9bc57', {
+  amount: '0.00000007',
+  reason: 'foobar'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "fulfilled",
+  "paidAmount": "0.00000000",
+  "paidAt": "2019-04-20T11:30:37.483Z",
+  "paymentStatus": "fully_refunded",
+  "reference": "ATE672BH",
+  "refundAmount": "0.00000007",
+  "trackingId": null,
+  "unpaidAmount": "0.00000007",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+### `order.unfulfill`
+
+Pays the `order` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.order.unfulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57');
+```
+
+#### Response
+
+```json
+{
+  "amount": "0.00000007",
+  "assetCode": "qux",
+  "bonus": "0.00000000",
+  "bonusAssetCode": null,
+  "canceledAt": null,
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "netAmount": "0.00000007",
+  "orderStatus": "unfulfilled",
+  "paidAmount": "0.00000000",
+  "paidAt": null,
+  "paymentStatus": "unpaid",
+  "reference": "ATE672BH",
+  "trackingId": null,
+  "unpaidAmount": "0.00000000",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "userId": null,
+  "walletId": "5cabbc16-d845-418f-9ecc-7a9fcab99b49"
+}
+```
+
+## orderLine
+
+The result of each one of the following `orderLine` methods return one or an array of `OrderLine` objects that include the following methods:
+- `fulfill`: Fulfills the `orderLine`.
+- `unfulfill`: Unfulfills the `orderLine`.
+
+
+### `orderLine.fulfill`
+
+Fulfills the `orderLine` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.orderLine.fulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57', { quantity: 3 });
+```
+
+#### Response
+
+```json
+{
+  "assetCode": "quux",
+  "bonusAssetCode": "quux",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "fulfilledQuantity": 3,
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "orderId": "776e099e-e7c5-4fe9-8509-79c4a74f43f1",
+  "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "quantity": 3,
+  "status": "fulfilled",
+  "unitBonus": "5.00000000",
+  "unitNetPrice": "21.00000000",
+  "unitPrice": "7.00000000",
+  "unitTax": "0.00000000",
+  "updatedAt": "2019-03-20T14:35:37.483Z"
+}
+```
+
+### `orderLine.get`
+
+Retrieves the `orderLine` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.orderLine.get('22419f26-6311-4f2e-89e5-05cf96e9bc57', { include: { product: true } });
+```
+
+#### Response
+
+```json
+{
+  "assetCode": "quux",
+  "bonusAssetCode": "quux",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "fulfilledQuantity": 3,
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "orderId": "776e099e-e7c5-4fe9-8509-79c4a74f43f1",
+  "product": {
+    "allowChoosingQuantity": false,
+    "assetCode": "quux",
+    "available": true,
+    "bonus": "0.00000000",
+    "buttonLabel": "qux",
+    "categoryId": "fead8fe9-334e-476a-be17-9c2aa472933e",
+    "createdAt": "2019-03-20T14:30:37.483Z",
+    "customData": { "plugh": "thud" },
+    "description": "xyzzy",
+    "featured": true,
+    "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+    "imageUrl": "http://foobar.com/foobar",
+    "listLabel": "quux",
+    "name": "foobiz",
+    "price": "7.00000000",
+    "requiresIdentity": true,
+    "taxRateId": null,
+    "thumbnailUrl": "http://foobar.com/grault",
+    "typeCode": "digital",
+    "updatedAt": "2019-03-20T14:30:37.483Z"
+  },
+  "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "quantity": 3,
+  "status": "fulfilled",
+  "unitBonus": "5.00000000",
+  "unitNetPrice": "21.00000000",
+  "unitPrice": "7.00000000",
+  "unitTax": "0.00000000",
+  "updatedAt": "2019-03-20T14:35:37.483Z"
+}
+```
+
+### `orderLine.list`
+
+Retrieves a list of `orderLine`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.orderLine.list({
+  page: { number: 2, size: 2 },
+  filter: { quantity: 3 },
+  sort: [{ name: 'createdAt' }]
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "assetCode": "quux",
+      "bonusAssetCode": "quux",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "fulfilledAt": "2019-03-20T14:35:37.483Z",
+      "fulfilledQuantity": 3,
+      "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+      "orderId": "776e099e-e7c5-4fe9-8509-79c4a74f43f1",
+      "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+      "quantity": 3,
+      "status": "fulfilled",
+      "unitBonus": "5.00000000",
+      "unitNetPrice": "21.00000000",
+      "unitPrice": "7.00000000",
+      "unitTax": "0.00000000",
+      "updatedAt": "2019-03-20T14:35:37.483Z"
+    },
+    {
+      "assetCode": "quux",
+      "bonusAssetCode": "quux",
+      "createdAt": "2019-04-20T14:30:37.483Z",
+      "fulfilledAt": "2019-04-20T14:35:37.483Z",
+      "fulfilledQuantity": 3,
+      "id": "33319f26-6311-4f2e-89e5-05cf96e9bddd",
+      "orderId": "123e099e-e7c5-4fe9-8509-79c4a74f4abc",
+      "productId": "345c43c2-99ab-4f35-9f76-38f482e6bpoi",
+      "quantity": 3,
+      "status": "partially_fulfilled",
+      "unitBonus": "1.00000000",
+      "unitNetPrice": "3.00000000",
+      "unitPrice": "1.00000000",
+      "unitTax": "0.00000000",
+      "updatedAt": "2019-04-20T14:35:37.483Z"
+    }
+  ],
+  "total": 6
+}
+```
+
+### `orderLine.unfulfill`
+
+Unfulfills the `orderLine` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.orderLine.unfulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57', { quantity: 2 });
+```
+
+#### Response
+
+```json
+{
+  "assetCode": "quux",
+  "bonusAssetCode": "quux",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "fulfilledAt": "2019-03-20T14:35:37.483Z",
+  "fulfilledQuantity": 1,
+  "id": "22419f26-6311-4f2e-89e5-05cf96e9bc57",
+  "orderId": "776e099e-e7c5-4fe9-8509-79c4a74f43f1",
+  "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "quantity": 3,
+  "status": "partially_fulfilled",
+  "unitBonus": "5.00000000",
+  "unitNetPrice": "21.00000000",
+  "unitPrice": "7.00000000",
+  "unitTax": "0.00000000",
+  "updatedAt": "2019-03-20T14:35:37.483Z"
+}
+```
+
 ## paymentMethod
 
 ### `paymentMethod.get`
@@ -1051,6 +1715,894 @@ await slyk.movement.list({ filter: { enabled: true } });
     "slug": "stripe"
   }],
   "total": 4
+}
+```
+
+## product
+
+The result of each one of the following `product` methods return one or an array of `Product` objects that include the following methods:
+- `createQuestion`: Links a question to the `product`.
+- `delete`: Deletes the `product`.
+- `deleteQuestion`: Unlinks a question from the `product`.
+- `getData`: Returns the `product` details.
+- `patch`: Patches the `product`.
+- `reorder`: Reorders the `product`.
+- `reorderQuestion`: Reorders a `product` question.
+
+### `product.create`
+
+Creates a `product`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.product.create({
+  allowChoosingQuantity: true,
+  available: true,
+  categoryId: '794b19cd-e24e-4ae0-abf9-6bc29b36e351',
+  customData: { qux: 'quux' },
+  description: 'waldo fred',
+  image: 'grault',
+  name: 'corge',
+  price: '10',
+  thumbnail: 'garply',
+  visible: true
+});
+```
+
+#### Response
+
+```json
+{
+  "allowChoosingQuantity": true,
+  "assetCode": "quux",
+  "available": true,
+  "bonus": "0.00000000",
+  "categoryId": "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "description": "waldo fred",
+  "featured": true,
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "imageUrl": "http://foobar.com/grault",
+  "metadata": { "allowChoosingQuantity": true },
+  "name": "corge",
+  "price": "10.00000000",
+  "requiresIdentity": true,
+  "taxRateId": null,
+  "thumbnailUrl": "http://foobar.com/garply",
+  "typeCode": "digital",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "visible": true
+}
+```
+
+### `product.createQuestion`
+
+Links a question to the `product` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.product.createQuestion('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { questionId: '666b19cd-e24e-4ae0-abf9-6bc29b36ebbb' });
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "questionId": "333c43c2-99ab-4f35-9f76-38f482e6babc",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+}
+```
+
+### `product.delete`
+
+Deletes the `product` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.product.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `product.deleteQuestion`
+
+Unlinks the `question` of the given `questionId` from the `product` of the given `productId`.
+
+**Example:**
+
+#### Request
+
+```js
+const productId = 'eb9c43c2-99ab-4f35-9f76-38f482e6b724';
+const questionId = '333c43c2-99ab-4f35-9f76-38f482e6babc';
+await slyk.product.deleteQuestion(productId, questionId);
+```
+
+#### Response
+
+```json
+true
+```
+
+### `product.get`
+
+Retrieves the `product` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.product.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+{
+  "allowChoosingQuantity": true,
+  "assetCode": "quux",
+  "available": true,
+  "bonus": "0.00000000",
+  "categoryId": "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "description": "waldo fred",
+  "featured": true,
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "imageUrl": "http://foobar.com/grault",
+  "metadata": { "allowChoosingQuantity": true },
+  "name": "corge",
+  "price": "10.00000000",
+  "requiresIdentity": true,
+  "taxRateId": null,
+  "thumbnailUrl": "http://foobar.com/garply",
+  "typeCode": "digital",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "visible": true
+}
+```
+
+### `product.list`
+
+Retrieves a list of `product`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.product.list({
+  filter: { available: 'true' },
+  page: { number: 3, size: 2 },
+  sort: [{ name: 'createdAt' }]
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "allowChoosingQuantity": true,
+      "assetCode": "quux",
+      "available": true,
+      "bonus": "0.00000000",
+      "categoryId": "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": { "qux": "quux" },
+      "description": "waldo fred",
+      "featured": true,
+      "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+      "imageUrl": "http://foobar.com/grault",
+      "metadata": { "allowChoosingQuantity": true },
+      "name": "corge",
+      "price": "10.00000000",
+      "requiresIdentity": true,
+      "taxRateId": null,
+      "thumbnailUrl": "http://foobar.com/garply",
+      "typeCode": "digital",
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "visible": true
+    }
+    {
+      "allowChoosingQuantity": true,
+      "assetCode": "bar",
+      "available": true,
+      "bonus": "0.00000000",
+      "categoryId": "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+      "createdAt": "2019-03-22T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "featured": true,
+      "id": "123443c2-99ab-4f35-9f76-38f482e6trgc",
+      "imageUrl": "http://foobar.com/grault",
+      "metadata": { "allowChoosingQuantity": true },
+      "name": "garply",
+      "price": "10.00000000",
+      "requiresIdentity": true,
+      "taxRateId": null,
+      "thumbnailUrl": "http://foobar.com/corge",
+      "typeCode": "digital",
+      "updatedAt": "2019-03-22T14:30:37.483Z",
+      "visible": true
+    }
+  ]
+```
+### `product.patch`
+Patches the `product` of the given `id`.
+**Example:**
+#### Request
+```js
+await slyk.product.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
+  allowChoosingQuantity: false,
+  available: true,
+  customData: { plugh: 'thud' },
+  description: 'xyzzy'
+});
+```
+
+#### Response
+
+```json
+{
+  "allowChoosingQuantity": false,
+  "assetCode": "quux",
+  "available": true,
+  "bonus": "0.00000000",
+  "categoryId": "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "plugh": "thud" },
+  "description": "xyzzy",
+  "featured": true,
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "imageUrl": "http://foobar.com/grault",
+  "metadata": { "allowChoosingQuantity": true },
+  "name": "corge",
+  "price": "10.00000000",
+  "requiresIdentity": true,
+  "taxRateId": null,
+  "thumbnailUrl": "http://foobar.com/garply",
+  "typeCode": "digital",
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "visible": true
+}
+```
+
+### `product.reorder`
+
+Reorders the `product` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.product.reorder('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { subsequentId: '111b19cd-e24e-4ae0-abf9-6bc29b36epoi' });
+```
+
+#### Response
+
+```json
+true
+```
+
+### `product.reorderQuestion`
+
+Reorders the `question` of the given `questionId` linked to the `product` of the given `productId`.
+
+**Example:**
+
+#### Request
+
+```js
+const productId = 'eb9c43c2-99ab-4f35-9f76-38f482e6b724';
+const questionId = '111b19cd-e24e-4ae0-abf9-6bc29b36epoi';
+await slyk.product.reorderQuestion(productId, questionId, { subsequentId: '794b19cd-e24e-4ae0-abf9-6bc29b36e351' });
+```
+
+#### Response
+
+```json
+true
+```
+
+## productCategory
+
+The result of each one of the following `productCategory` methods return one or an array of `ProductCategory` objects that include the following methods:
+- `delete`: Deletes the `productCategory`.
+- `getData`: Returns the `productCategory` details.
+- `patch`: Patches the `productCategory`.
+- `reorder`: Reorders the `productCategory`.
+
+### `productCategory.create`
+
+Creates a `productCategory`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productCategory.create({
+  customData: { qux: 'quux' },
+  description: 'waldo',
+  image: 'fred',
+  title: 'garply'
+});
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "description": "waldo",
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "imageUrl": "http://foobar.com/fred",
+  "metadata": {},
+  "title": "garply",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `productCategory.delete`
+
+Deletes the `productCategory` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productCategory.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `productCategory.get`
+
+Retrieves the `productCategory` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productCategory.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "description": "waldo",
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "imageUrl": "http://foobar.com/fred",
+  "metadata": {},
+  "title": "garply",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `productCategory.list`
+
+Retrieves a list of `productCategory`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productCategory.list({ filter: { title: 'foo' } });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": { "qux": "quux" },
+      "description": "waldo",
+      "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+      "imageUrl": "http://foobar.com/fred",
+      "metadata": {},
+      "title": "foobar",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "createdAt": "2019-03-21T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "id": "123c43c2-99ab-4f35-9f76-38f482e6bqwe",
+      "imageUrl": null,
+      "metadata": {},
+      "title": "foobiz",
+      "updatedAt": "2019-03-21T14:30:37.483Z"
+    }
+  ],
+  "total": 6
+}
+```
+
+### `productCategory.patch`
+
+Patches the `productCategory` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productCategory.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
+  customData: { foo: 'bar' },
+  description: 'foobar',
+  image: 'quux',
+  title: 'foobiz'
+});
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "foo": "bar" },
+  "description": "foobar",
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "imageUrl": "http://foobar.com/quux",
+  "metadata": {},
+  "title": "foobiz",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `productCategory.reorder`
+
+Reorders the `productCategory` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productCategory.reorder('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { subsequentId: '44v543c2-99ab-4f35-9f76-38f482e6babc' });
+```
+
+#### Response
+
+```json
+true
+```
+
+## productImage
+
+The result of each one of the following `productImage` methods return one or an array of `ProductImage` objects that include the following methods:
+- `delete`: Deletes the `productImage`.
+- `getData`: Returns the `productImage` details..
+- `reorder`: Reorders the `productImage`.
+
+### `productImage.create`
+
+Creates a `productImage` for the given `id` product.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productImage.create('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
+  customData: {},
+  image: 'fred'
+});
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
+  "imageUrl": "http://foobar.com/fred",
+  "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `productImage.delete`
+
+Deletes the `productImage` with the given `id` that belongs to the given `productId`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productImage.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `productImage.get`
+
+Retrieves the `productImage` with the given `id` that belongs to the given `productId`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productImage.get('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "qux": "quux" },
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
+  "imageUrl": "http://foobar.com/fred",
+  "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `productImage.list`
+
+Retrieves a list of `productImage` of the given `productId`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productImage.list('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { include: { product: true } });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": { "qux": "quux" },
+      "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
+      "imageUrl": "http://foobar.com/fred",
+      "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "product": { ... }
+    },
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": { "qux": "quux" },
+      "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b726",
+      "imageUrl": "http://foobar.com/foo",
+      "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "product": { ... }
+    }
+  ],
+  "total": 2
+}
+```
+
+### `productImage.reorder`
+
+Reorders the `productImage` with the given `id` that belongs to the given `productId`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.productImage.reorder('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99ab-4f35-9f76-38f482e6b724', { subsequentId: 'eb9c43c2-99ab-4f35-9f76-38f482e6b726' });
+```
+
+#### Response
+
+```json
+true
+```
+
+## question
+
+The result of each one of the following `question` methods return one or an array of `Question` objects that include the following methods:
+- `delete`: Deletes the `question`.
+- `getData`: Returns the `question` details.
+- `patch`: Patches the `question`.
+
+### `question.create`
+
+Creates a `question`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.question.create({
+  configurations: { values: ['bar'] },
+  customData: {},
+  description: '',
+  productTypeCode: 'digital',
+  title: 'foo',
+  typeCode: 'multiple'
+})
+```
+
+#### Response
+
+```json
+{
+  "configurations": { "values": ["bar"] },
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "description": "",
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "jsonSchema": {
+    "items": {
+      "enum": ["bar"],
+      "type": "string"
+    },
+    "minItems": 1,
+    "type": "array"
+  },
+  "metadata": {},
+  "productTypeCode": "digital",
+  "required": false,
+  "title": "foo",
+  "typeCode": "multiple",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `question.delete`
+
+Deletes the `question` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.question.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `question.get`
+
+Retrieves the `question` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.question.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+```
+
+#### Response
+
+```json
+{
+  "configurations": { "values": ["bar"] },
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "description": "",
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "jsonSchema": {
+    "items": {
+      "enum": ["bar"],
+      "type": "string"
+    },
+    "minItems": 1,
+    "type": "array"
+  },
+  "metadata": {},
+  "productTypeCode": "digital",
+  "required": false,
+  "title": "foo",
+  "typeCode": "multiple",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `question.list`
+
+Retrieves a list of `question`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.question.list({
+  filter: { typeCode: 'single' },
+  include: { questionType: true }
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "configurations": { "values": ["bar"] },
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": "",
+      "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+      "jsonSchema": {
+        "items": {
+          "enum": ["bar"],
+          "type": "string"
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "metadata": {},
+      "productTypeCode": "digital",
+      "questionType": {
+        "createdAt": "2019-02-20T14:30:37.483Z",
+        "code": "single",
+        "updatedAt": "2019-02-20T14:30:37.483Z"
+      },
+      "required": false,
+      "title": "foo",
+      "typeCode": "single",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "configurations": { "values": ["foo"] },
+      "createdAt": "2019-04-20T14:30:37.483Z",
+      "customData": {},
+      "description": "",
+      "id": "123443c2-99ab-4f35-9f76-38f482e6bdvd",
+      "jsonSchema": {
+        "items": {
+          "enum": ["foo"],
+          "type": "string"
+        },
+        "minItems": 1,
+        "type": "array"
+      },
+      "metadata": {},
+      "productTypeCode": "digital",
+      "questionType": {
+        "createdAt": "2019-02-20T14:30:37.483Z",
+        "code": "single",
+        "updatedAt": "2019-02-20T14:30:37.483Z"
+      },
+      "required": false,
+      "title": "bar",
+      "typeCode": "single",
+      "updatedAt": "2019-04-20T14:30:37.483Z"
+    }
+  ],
+  "total": 2
+}
+```
+
+### `question.patch`
+
+Patches the `question` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.question.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
+  productTypeCode: 'digital',
+  title: 'foo',
+  typeCode: 'multiple'
+})
+```
+
+#### Response
+
+```json
+{
+  "configurations": { "values": ["bar"] },
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "description": "",
+  "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  "jsonSchema": {
+    "items": {
+      "enum": ["bar"],
+      "type": "string"
+    },
+    "minItems": 1,
+    "type": "array"
+  },
+  "metadata": {},
+  "productTypeCode": "digital",
+  "required": false,
+  "title": "foo",
+  "typeCode": "multiple",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+## questionType
+
+The result of each one of the following `questionType` methods return one or an array of `QuestionType` objects that include the following methods:
+- `getData`: Returns the `questionType` details.
+
+### `question.list`
+
+Retrieves a list of `questionType`.
+
+**Example:**
+
+#### Request
+
+
+```js
+await slyk.questionType.list({
+  filter: { code: 'in:quux,waldo' },
+  sort: [{ direction: 'desc', name: 'code' }]
+});
+```
+
+#### Response
+
+
+```json
+{
+  "results": [
+    {
+      "code": "waldo",
+      "dashboardJsonSchema": { "foo": "waldo" },
+      "jsonSchemaTemplate": {}
+    },
+    {
+      "code": "quux",
+      "dashboardJsonSchema": { "foo": "quux" },
+      "jsonSchemaTemplate": {}
+    }
+  ],
+  "total": 2
 }
 ```
 
@@ -1200,6 +2752,353 @@ await slyk.rate.patch('garply', 'corge', { rate: '0.6' });
 }
 ```
 
+## task
+
+The result of each one of the following `task` methods return one or an array of `Task` objects that include the following methods:
+- `complete`: Completes the `task`.
+- `delete`: Deletes the `task`.
+- `getData`: Returns the `task` details.
+- `patch`: Patches the `task`.
+- `reorder`: Reorders the `task`.
+
+### `task.complete`
+
+Completes the `task` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.complete('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { userId: 'f02a1bf2-bcc6-49e5-ab8b-895319423aee' });
+```
+
+#### Response
+
+```json
+true
+```
+
+### `task.create`
+
+Creates a `task`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.create({
+  amount: '2.00000000',
+  buttonLabel: 'waldo',
+  description: 'biz',
+  enabled: true,
+  featured: true,
+  image: 'qux',
+  name: 'foobar',
+  surveyUrl: 'http://qux.com',
+  thumbnail: 'quux',
+  type: 'manual'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "2.00000000",
+  "buttonLabel": "waldo",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "deletedAt": null,
+  "description": "biz",
+  "enabled": true,
+  "featured": true,
+  "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  "imageUrl": "http://foobar.com/qux",
+  "name": "foo",
+  "surveyUrl": "http://qux.com",
+  "thumbnailUrl": "http://foobar.com/quux",
+  "type": "manual",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `task.get`
+
+Retrieves the `task` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.get('deaaee6f-e329-42e0-b85c-e07cd20c0ec5');
+```
+
+#### Response
+
+```json
+{
+  "amount": "2.00000000",
+  "buttonLabel": "waldo",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "deletedAt": null,
+  "description": "biz",
+  "enabled": true,
+  "featured": true,
+  "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  "imageUrl": "http://foobar.com/qux",
+  "name": "foo",
+  "surveyUrl": "http://qux.com",
+  "thumbnailUrl": "http://foobar.com/quux",
+  "type": "manual",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `task.list`
+
+Retrieves a list of `task`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.list({
+  filter: { enabled: true },
+  sort: [{ direction: 'desc', name: 'amount' }],
+  page: { number: 3, size: 2 }
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "amount": "5.50000000",
+      "buttonLabel": "quux",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "deletedAt": null,
+      "description": "bar",
+      "enabled": true,
+      "featured": true,
+      "id": "123aee6f-e329-42e0-b85c-e07cd20c0bbb",
+      "imageUrl": null,
+      "name": "qux",
+      "surveyUrl": "http://qux.com",
+      "thumbnailUrl": "http://foobar.com/quux",
+      "type": "manual",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "amount": "2.00000000",
+      "buttonLabel": "waldo",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "deletedAt": null,
+      "description": "biz",
+      "enabled": true,
+      "featured": true,
+      "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+      "imageUrl": "http://foobar.com/biz",
+      "name": "foo",
+      "surveyUrl": "http://biz.com",
+      "thumbnailUrl": "http://foobar.com/biz",
+      "type": "manual",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
+  "total": 6
+}
+```
+
+### `task.patch`
+
+Patches the `task` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.patch('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
+  amount: '2.00000000',
+  enabled: true,
+  name: 'foo'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "2.00000000",
+  "buttonLabel": "waldo",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": {},
+  "deletedAt": null,
+  "description": "biz",
+  "enabled": true,
+  "featured": true,
+  "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  "imageUrl": "http://foobar.com/qux",
+  "name": "foo",
+  "surveyUrl": "http://qux.com",
+  "thumbnailUrl": "http://foobar.com/quux",
+  "type": "manual",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `task.reorder`
+
+Reorders the `task` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.reorder('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { subsequentId: '123aee6f-e329-42e0-b85c-e07cd20c0bbb' });
+```
+
+#### Response
+
+```json
+true
+```
+
+## taxRate
+
+The result of each one of the following `taxRate` methods return one or an array of `TaxRate` objects that include the following methods:
+- `delete`: Deletes the `taxRate`.
+- `getData`: Returns the `taxRate` details.
+- `patch`: Patches the `taxRate`.
+
+### `taxRate.create`
+
+Creates a `taxRate`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taxRate.create({ name: 'bar', rate: '5.00000000' });
+```
+
+#### Response
+
+```json
+{
+  "id": "foo",
+  "name": "bar",
+  "rate": "5.00000000"
+}
+```
+
+### `taxRate.delete`
+
+Deletes the `taxRate` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taxRate.delete('d30eacc4-8896-4376-b171-c374cbdb7681');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `taxRate.get`
+
+Retrieves the `taxRate` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taxRate.get('d30eacc4-8896-4376-b171-c374cbdb7681');
+```
+
+#### Response
+
+```json
+{
+  "id": "d30eacc4-8896-4376-b171-c374cbdb7681",
+  "name": "bar",
+  "rate": "5.00000000"
+}
+```
+
+### `taxRate.list`
+
+Retrieves a list of `taxRate`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taxRate.list({
+  page: { number: 2, size: 2 },
+  sort: [{ name: 'name' }]
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "id": "d30eacc4-8896-4376-b171-c374cbdb7681",
+      "name": "bar",
+      "rate": "5.00000000"
+    },
+    {
+      "id": "fffeacc4-8896-4376-b171-c374cbdb7333",
+      "name": "foo",
+      "rate": "1.50000000"
+    }
+  ],
+  "total": 4
+}
+```
+
+### `taxRate.patch`
+
+Patches the `taxRate` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taxRate.patch('d30eacc4-8896-4376-b171-c374cbdb7681', { name: 'foo', rate: '5.00000000' });
+```
+
+#### Response
+
+```json
+{
+  "id": "d30eacc4-8896-4376-b171-c374cbdb7681",
+  "name": "foo",
+  "rate": "5.00000000"
+}
+```
 ## transaction
 
 The result of each one of the following `transaction` methods return one or an array of `Transaction` objects that include the following methods:

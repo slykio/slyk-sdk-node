@@ -5,6 +5,17 @@
  * Module dependencies.
  */
 
+import {
+  order,
+  orderLine,
+  product,
+  productCategory,
+  productImage,
+  question,
+  questionType,
+  task,
+  taxRate
+} from 'store';
 import address from 'address';
 import asset from 'asset';
 import auth from 'auth';
@@ -28,8 +39,17 @@ export default {
   connection,
   invite,
   movement,
+  order,
+  orderLine,
   paymentMethod,
+  product,
+  productCategory,
+  productImage,
+  question,
+  questionType,
   rate,
+  task,
+  taxRate,
   transaction,
   user,
   wallet
