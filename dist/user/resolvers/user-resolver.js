@@ -25,12 +25,32 @@ var config = {
     endpoint: 'users/:id/block',
     method: 'post'
   },
+  changeEmail: {
+    endpoint: 'users/:id/change-email',
+    method: 'post'
+  },
   changePassword: {
     endpoint: 'users/:id/change-password',
     method: 'post'
   },
+  changePhone: {
+    endpoint: 'users/:id/change-phone',
+    method: 'post'
+  },
+  confirmEmail: {
+    endpoint: 'users/confirm-email',
+    method: 'post'
+  },
+  confirmPhone: {
+    endpoint: 'users/confirm-phone',
+    method: 'post'
+  },
   create: {
     endpoint: 'users',
+    method: 'post'
+  },
+  forgotPassword: {
+    endpoint: 'users/forgot-password',
     method: 'post'
   },
   get: {
@@ -44,6 +64,13 @@ var config = {
   patch: {
     endpoint: 'users/:id',
     method: 'patch'
+  },
+  resendConfirmation: {
+    endpoint: 'users/resend-confirmation'
+  },
+  resetPassword: {
+    endpoint: 'users/reset-password',
+    method: 'post'
   },
   unblock: {
     endpoint: 'users/:id/unblock',

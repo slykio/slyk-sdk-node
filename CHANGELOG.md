@@ -1,5 +1,18 @@
 # Changelog
 
+## [v0.3.0](https://github.com/slykio/slyk-sdk-node/tree/v0.3.0) (2020-11-19)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.2.0...v0.3.0)
+
+**Merged pull requests:**
+
+- Add user forgot and reset password methods [\#19](https://github.com/slykio/slyk-sdk-node/pull/19) ([kratos-42](https://github.com/kratos-42))
+- Add store module [\#18](https://github.com/slykio/slyk-sdk-node/pull/18) ([JEduardogmr](https://github.com/JEduardogmr))
+- Add change user identifier methods [\#17](https://github.com/slykio/slyk-sdk-node/pull/17) ([kratos-42](https://github.com/kratos-42))
+- Add transfer request and send methods [\#16](https://github.com/slykio/slyk-sdk-node/pull/16) ([JEduardogmr](https://github.com/JEduardogmr))
+- Add auth module [\#15](https://github.com/slykio/slyk-sdk-node/pull/15) ([JEduardogmr](https://github.com/JEduardogmr))
+- Bump yargs-parser from 13.1.1 to 13.1.2 [\#14](https://github.com/slykio/slyk-sdk-node/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump lodash from 4.17.11 to 4.17.19 [\#13](https://github.com/slykio/slyk-sdk-node/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.2.0](https://github.com/slykio/slyk-sdk-node/tree/v0.2.0) (2020-03-26)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.1.0...v0.2.0)
 

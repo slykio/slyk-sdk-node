@@ -364,13 +364,13 @@ function (_AbstractManager) {
       return reject;
     }()
     /**
-     * Transfer.
+     * Request.
      */
 
   }, {
-    key: "transfer",
+    key: "request",
     value: function () {
-      var _transfer = (0, _asyncToGenerator2.default)(
+      var _request = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
       _regenerator.default.mark(function _callee9(data) {
         var _ref8, transaction;
@@ -380,7 +380,7 @@ function (_AbstractManager) {
             switch (_context9.prev = _context9.next) {
               case 0:
                 _context9.next = 2;
-                return this._resolver.transfer(data);
+                return this._resolver.request(data);
 
               case 2:
                 _ref8 = _context9.sent;
@@ -395,20 +395,20 @@ function (_AbstractManager) {
         }, _callee9, this);
       }));
 
-      function transfer(_x14) {
-        return _transfer.apply(this, arguments);
+      function request(_x14) {
+        return _request.apply(this, arguments);
       }
 
-      return transfer;
+      return request;
     }()
     /**
-     * Withdrawal.
+     * Send.
      */
 
   }, {
-    key: "withdrawal",
+    key: "send",
     value: function () {
-      var _withdrawal = (0, _asyncToGenerator2.default)(
+      var _send = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
       _regenerator.default.mark(function _callee10(data) {
         var _ref9, transaction;
@@ -418,7 +418,7 @@ function (_AbstractManager) {
             switch (_context10.prev = _context10.next) {
               case 0:
                 _context10.next = 2;
-                return this._resolver.withdrawal(data);
+                return this._resolver.send(data);
 
               case 2:
                 _ref9 = _context10.sent;
@@ -433,7 +433,83 @@ function (_AbstractManager) {
         }, _callee10, this);
       }));
 
-      function withdrawal(_x15) {
+      function send(_x15) {
+        return _send.apply(this, arguments);
+      }
+
+      return send;
+    }()
+    /**
+     * Transfer.
+     */
+
+  }, {
+    key: "transfer",
+    value: function () {
+      var _transfer = (0, _asyncToGenerator2.default)(
+      /*#__PURE__*/
+      _regenerator.default.mark(function _callee11(data) {
+        var _ref10, transaction;
+
+        return _regenerator.default.wrap(function _callee11$(_context11) {
+          while (1) {
+            switch (_context11.prev = _context11.next) {
+              case 0:
+                _context11.next = 2;
+                return this._resolver.transfer(data);
+
+              case 2:
+                _ref10 = _context11.sent;
+                transaction = _ref10.data;
+                return _context11.abrupt("return", this._instantiate(transaction));
+
+              case 5:
+              case "end":
+                return _context11.stop();
+            }
+          }
+        }, _callee11, this);
+      }));
+
+      function transfer(_x16) {
+        return _transfer.apply(this, arguments);
+      }
+
+      return transfer;
+    }()
+    /**
+     * Withdrawal.
+     */
+
+  }, {
+    key: "withdrawal",
+    value: function () {
+      var _withdrawal = (0, _asyncToGenerator2.default)(
+      /*#__PURE__*/
+      _regenerator.default.mark(function _callee12(data) {
+        var _ref11, transaction;
+
+        return _regenerator.default.wrap(function _callee12$(_context12) {
+          while (1) {
+            switch (_context12.prev = _context12.next) {
+              case 0:
+                _context12.next = 2;
+                return this._resolver.withdrawal(data);
+
+              case 2:
+                _ref11 = _context12.sent;
+                transaction = _ref11.data;
+                return _context12.abrupt("return", this._instantiate(transaction));
+
+              case 5:
+              case "end":
+                return _context12.stop();
+            }
+          }
+        }, _callee12, this);
+      }));
+
+      function withdrawal(_x17) {
         return _withdrawal.apply(this, arguments);
       }
 

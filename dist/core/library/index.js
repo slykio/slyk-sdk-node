@@ -7,9 +7,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _store = require("../../store");
+
 var _address = _interopRequireDefault(require("../../address"));
 
 var _asset = _interopRequireDefault(require("../../asset"));
+
+var _auth = _interopRequireDefault(require("../../auth"));
 
 var _connection = _interopRequireDefault(require("../../connection"));
 
@@ -39,11 +43,21 @@ var _wallet = _interopRequireDefault(require("../../wallet"));
 var _default = {
   address: _address.default,
   asset: _asset.default,
+  auth: _auth.default,
   connection: _connection.default,
   invite: _invite.default,
   movement: _movement.default,
+  order: _store.order,
+  orderLine: _store.orderLine,
   paymentMethod: _paymentMethod.default,
+  product: _store.product,
+  productCategory: _store.productCategory,
+  productImage: _store.productImage,
+  question: _store.question,
+  questionType: _store.questionType,
   rate: _rate.default,
+  task: _store.task,
+  taxRate: _store.taxRate,
   transaction: _transaction.default,
   user: _user.default,
   wallet: _wallet.default

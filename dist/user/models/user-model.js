@@ -57,6 +57,15 @@ function (_AbstractModel) {
       return this._sdk.user.block(this.id);
     }
     /**
+     * Change email.
+     */
+
+  }, {
+    key: "changeEmail",
+    value: function changeEmail(data) {
+      return this._sdk.user.changeEmail(this.id, data);
+    }
+    /**
      * Change password.
      */
 
@@ -64,6 +73,15 @@ function (_AbstractModel) {
     key: "changePassword",
     value: function changePassword(data) {
       return this._sdk.user.changePassword(this.id, data);
+    }
+    /**
+     * Change phone.
+     */
+
+  }, {
+    key: "changePhone",
+    value: function changePhone(data) {
+      return this._sdk.user.changePhone(this.id, data);
     }
     /**
      * Get invites.

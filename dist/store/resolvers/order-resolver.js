@@ -17,57 +17,45 @@ var _resolverFactory = _interopRequireDefault(require("../../core/util/resolver-
  * Configuration.
  */
 var config = {
-  approve: {
-    endpoint: 'transactions/:id/approve',
+  cancel: {
+    endpoint: 'orders/:id',
     method: 'post'
   },
-  confirm: {
-    endpoint: 'transactions/:id/confirm',
+  create: {
+    endpoint: 'orders',
     method: 'post'
   },
-  deposit: {
-    endpoint: 'transactions/deposit',
-    method: 'post'
-  },
-  fail: {
-    endpoint: 'transactions/:id/fail',
+  fulfill: {
+    endpoint: 'orders/:id/fulfill',
     method: 'post'
   },
   get: {
-    endpoint: 'transactions/:id',
+    endpoint: 'orders/:id',
     method: 'get'
   },
   list: {
-    endpoint: 'transactions',
+    endpoint: 'orders',
     method: 'get'
   },
+  patch: {
+    endpoint: 'orders/:id',
+    method: 'patch'
+  },
   pay: {
-    endpoint: 'transactions/pay',
+    endpoint: 'orders/:id/pay',
     method: 'post'
   },
-  reject: {
-    endpoint: 'transactions/:id/reject',
+  refund: {
+    endpoint: 'orders/:id/refund',
     method: 'post'
   },
-  request: {
-    endpoint: 'transactions/request',
-    method: 'post'
-  },
-  send: {
-    endpoint: 'transactions/send',
-    method: 'post'
-  },
-  transfer: {
-    endpoint: 'transactions/transfer',
-    method: 'post'
-  },
-  withdrawal: {
-    endpoint: 'transactions/withdrawal',
+  unfulfill: {
+    endpoint: 'orders/:id/unfulfill',
     method: 'post'
   }
 };
 /**
- * Export `TransactionResolver`.
+ * Export `OrderResolver`.
  */
 
 var _default = function _default(connection) {
