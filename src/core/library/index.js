@@ -24,6 +24,7 @@ import invite from 'invite';
 import movement from 'movement';
 import paymentMethod from 'payment-method';
 import rate from 'rate';
+import setting from 'setting';
 import transaction from 'transaction';
 import user from 'user';
 import wallet from 'wallet';
@@ -48,6 +49,7 @@ export default {
   question,
   questionType,
   rate,
+  setting,
   task,
   taxRate,
   transaction,
