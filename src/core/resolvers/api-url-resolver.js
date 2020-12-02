@@ -6,7 +6,6 @@
 import { InternalServerError } from 'easy-http-errors';
 import { isEmpty, isString, map, reduce, replace } from 'lodash';
 import normalize from 'normalize-url';
-import qs from 'qs';
 
 /**
  * Export `apiUrlResolver`.
@@ -15,8 +14,7 @@ import qs from 'qs';
 export default ({
   data,
   endpoint,
-  host,
-  options
+  host
 }) => {
   if (!host) {
     throw new InternalServerError('API host is not defined');
@@ -38,9 +36,8 @@ export default ({
     throw new InternalServerError('Missing parameters', { missingParams });
   }
 
-  const params = qs.stringify(options);
   const baseUrl = host.replace(/^(?!(?:\w+:)?\/\/)/, 'https://');
-  const url = baseUrl.concat(`/${path}`).concat(`?${params}`);
+  const url = baseUrl.concat(`/${path}`);
 
   return normalize(url);
 };
