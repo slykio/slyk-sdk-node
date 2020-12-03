@@ -8,6 +8,7 @@ import apiUrlResolver from 'core/resolvers/api-url-resolver';
 import cleanRequestData from 'core/util/clean-request-data';
 import errorHandler from 'core/util/error-handler';
 import got from 'got';
+import qs from 'qs';
 import sortMiddleware from 'core/middlewares/sort-middleware';
 
 /**
@@ -34,7 +35,8 @@ const createTask = (connection, task) => {
         body: requestData,
         headers: { apikey },
         json: true,
-        method
+        method,
+        query: qs.stringify(options)
       });
 
       return body;
