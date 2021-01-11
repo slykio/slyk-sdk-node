@@ -21,6 +21,8 @@ var _errorHandler = _interopRequireDefault(require("./error-handler"));
 
 var _got = _interopRequireDefault(require("got"));
 
+var _qs = _interopRequireDefault(require("qs"));
+
 var _sortMiddleware = _interopRequireDefault(require("../middlewares/sort-middleware"));
 
 /**
@@ -71,7 +73,8 @@ var createTask = function createTask(connection, task) {
                   apikey
                 },
                 json: true,
-                method
+                method,
+                query: _qs.default.stringify(options)
               });
 
             case 8:

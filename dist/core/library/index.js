@@ -25,6 +25,8 @@ var _paymentMethod = _interopRequireDefault(require("../../payment-method"));
 
 var _rate = _interopRequireDefault(require("../../rate"));
 
+var _setting = _interopRequireDefault(require("../../setting"));
+
 var _transaction = _interopRequireDefault(require("../../transaction"));
 
 var _user = _interopRequireDefault(require("../../user"));
@@ -56,6 +58,7 @@ var _default = {
   question: _store.question,
   questionType: _store.questionType,
   rate: _rate.default,
+  setting: _setting.default,
   task: _store.task,
   taxRate: _store.taxRate,
   transaction: _transaction.default,

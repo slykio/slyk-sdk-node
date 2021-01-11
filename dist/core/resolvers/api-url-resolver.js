@@ -13,8 +13,6 @@ var _lodash = require("lodash");
 
 var _normalizeUrl = _interopRequireDefault(require("normalize-url"));
 
-var _qs = _interopRequireDefault(require("qs"));
-
 /**
  * Module dependencies.
  */
@@ -25,8 +23,7 @@ var _qs = _interopRequireDefault(require("qs"));
 var _default = function _default(_ref) {
   var data = _ref.data,
       endpoint = _ref.endpoint,
-      host = _ref.host,
-      options = _ref.options;
+      host = _ref.host;
 
   if (!host) {
     throw new _easyHttpErrors.InternalServerError('API host is not defined');
@@ -50,10 +47,8 @@ var _default = function _default(_ref) {
     });
   }
 
-  var params = _qs.default.stringify(options);
-
   var baseUrl = host.replace(/^(?!(?:\w+:)?\/\/)/, 'https://');
-  var url = baseUrl.concat(`/${path}`).concat(`?${params}`);
+  var url = baseUrl.concat(`/${path}`);
   return (0, _normalizeUrl.default)(url);
 };
 

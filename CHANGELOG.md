@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.4.0](https://github.com/slykio/slyk-sdk-node/tree/v0.4.0) (2021-01-11)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.3.0...v0.4.0)
+
+**Merged pull requests:**
+
+- Add normalize-url package to module dependencies [\#23](https://github.com/slykio/slyk-sdk-node/pull/23) ([kratos-42](https://github.com/kratos-42))
+- Fix ResolverFactory URL query string encoding [\#21](https://github.com/slykio/slyk-sdk-node/pull/21) ([kratos-42](https://github.com/kratos-42))
+- Add setting methods [\#20](https://github.com/slykio/slyk-sdk-node/pull/20) ([JEduardogmr](https://github.com/JEduardogmr))
+
 ## [v0.3.0](https://github.com/slykio/slyk-sdk-node/tree/v0.3.0) (2020-11-19)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.2.0...v0.3.0)
 
