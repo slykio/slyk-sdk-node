@@ -43,7 +43,11 @@ describe('AddressManager', () => {
     it('should throw `NotFoundError` if the given `address` does not exist', async () => {
       nock(host, { reqheaders: { apikey } })
         .get('/addresses/foobar')
-        .reply(404, { code: 'address_not_found' });
+        .reply(404, {
+          code: 'address_not_found',
+          data: { foo: 'bar' },
+          errors: [{ waldo: 'fred' }]
+        });
 
       try {
         await slyk.address.get('foobar');
@@ -51,6 +55,8 @@ describe('AddressManager', () => {
         fail();
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundError);
+        expect(error.data).toEqual({ foo: 'bar' });
+        expect(error.errors).toEqual([{ waldo: 'fred' }]);
         expect(error.message).toEqual('address_not_found');
       }
     });
