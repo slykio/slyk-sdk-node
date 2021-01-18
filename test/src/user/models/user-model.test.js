@@ -135,6 +135,26 @@ describe('UserModel', () => {
     });
   });
 
+  describe('delete', () => {
+    it('should return `true` after deleting the `user` instance', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/users/bar')
+        .reply(200, {
+          data: { email: 'foo@bar.com', id: 'bar' }
+        });
+
+      const user = await slyk.user.get('bar');
+
+      nock(host, { reqheaders: { apikey } })
+        .delete('/users/bar')
+        .reply(204);
+
+      const result = await user.delete();
+
+      expect(result).toEqual(true);
+    });
+  });
+
   describe('getInvites', () => {
     it('should return a list of `invites` that belong to `user` instance', async () => {
       nock(host, { reqheaders: { apikey } })

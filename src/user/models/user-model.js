@@ -53,6 +53,14 @@ export default class UserModel extends AbstractModel {
   }
 
   /**
+   * Delete.
+   */
+
+  delete() {
+    return this._sdk.user.delete(this.id);
+  }
+
+  /**
    * Get invites.
    */
 
