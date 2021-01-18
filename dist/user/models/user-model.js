@@ -84,6 +84,15 @@ function (_AbstractModel) {
       return this._sdk.user.changePhone(this.id, data);
     }
     /**
+     * Delete.
+     */
+
+  }, {
+    key: "delete",
+    value: function _delete() {
+      return this._sdk.user.delete(this.id);
+    }
+    /**
      * Get invites.
      */
 

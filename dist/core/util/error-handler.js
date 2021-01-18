@@ -23,12 +23,13 @@ var _default = function _default(error) {
 
   var _get = (0, _lodash.get)(error, 'response.body', {}),
       message = _get.code,
+      data = _get.data,
       errors = _get.errors;
 
   var HTTPError = (0, _httpErrorResolver.default)(statusCode);
-  throw new HTTPError({
-    errors,
-    message
+  throw new HTTPError(message, {
+    data,
+    errors
   });
 };
 

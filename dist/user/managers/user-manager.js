@@ -445,6 +445,42 @@ function (_AbstractManager) {
       return get;
     }()
     /**
+     * Delete.
+     */
+
+  }, {
+    key: "delete",
+    value: function () {
+      var _delete2 = (0, _asyncToGenerator2.default)(
+      /*#__PURE__*/
+      _regenerator.default.mark(function _callee11(id) {
+        return _regenerator.default.wrap(function _callee11$(_context11) {
+          while (1) {
+            switch (_context11.prev = _context11.next) {
+              case 0:
+                _context11.next = 2;
+                return this._resolver.delete({
+                  id
+                });
+
+              case 2:
+                return _context11.abrupt("return", true);
+
+              case 3:
+              case "end":
+                return _context11.stop();
+            }
+          }
+        }, _callee11, this);
+      }));
+
+      function _delete(_x15) {
+        return _delete2.apply(this, arguments);
+      }
+
+      return _delete;
+    }()
+    /**
      * List.
      */
 
@@ -453,37 +489,37 @@ function (_AbstractManager) {
     value: function () {
       var _list = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee11(options) {
+      _regenerator.default.mark(function _callee12(options) {
         var _this = this;
 
         var result, results, total;
-        return _regenerator.default.wrap(function _callee11$(_context11) {
+        return _regenerator.default.wrap(function _callee12$(_context12) {
           while (1) {
-            switch (_context11.prev = _context11.next) {
+            switch (_context12.prev = _context12.next) {
               case 0:
-                _context11.next = 2;
+                _context12.next = 2;
                 return this._resolver.list({}, options);
 
               case 2:
-                result = _context11.sent;
+                result = _context12.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (user) {
                   return _this._instantiate(user);
                 });
                 total = (0, _lodash.get)(result, 'total');
-                return _context11.abrupt("return", {
+                return _context12.abrupt("return", {
                   results,
                   total
                 });
 
               case 6:
               case "end":
-                return _context11.stop();
+                return _context12.stop();
             }
           }
-        }, _callee11, this);
+        }, _callee12, this);
       }));
 
-      function list(_x15) {
+      function list(_x16) {
         return _list.apply(this, arguments);
       }
 
@@ -498,32 +534,32 @@ function (_AbstractManager) {
     value: function () {
       var _patch = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee12(id, data) {
+      _regenerator.default.mark(function _callee13(id, data) {
         var _ref9, user;
 
-        return _regenerator.default.wrap(function _callee12$(_context12) {
+        return _regenerator.default.wrap(function _callee13$(_context13) {
           while (1) {
-            switch (_context12.prev = _context12.next) {
+            switch (_context13.prev = _context13.next) {
               case 0:
-                _context12.next = 2;
+                _context13.next = 2;
                 return this._resolver.patch((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref9 = _context12.sent;
+                _ref9 = _context13.sent;
                 user = _ref9.data;
-                return _context12.abrupt("return", this._instantiate(user));
+                return _context13.abrupt("return", this._instantiate(user));
 
               case 5:
               case "end":
-                return _context12.stop();
+                return _context13.stop();
             }
           }
-        }, _callee12, this);
+        }, _callee13, this);
       }));
 
-      function patch(_x16, _x17) {
+      function patch(_x17, _x18) {
         return _patch.apply(this, arguments);
       }
 
@@ -538,30 +574,30 @@ function (_AbstractManager) {
     value: function () {
       var _resendConfirmation = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee13(data) {
+      _regenerator.default.mark(function _callee14(data) {
         var _ref10, token;
 
-        return _regenerator.default.wrap(function _callee13$(_context13) {
+        return _regenerator.default.wrap(function _callee14$(_context14) {
           while (1) {
-            switch (_context13.prev = _context13.next) {
+            switch (_context14.prev = _context14.next) {
               case 0:
-                _context13.next = 2;
+                _context14.next = 2;
                 return this._resolver.resendConfirmation(data);
 
               case 2:
-                _ref10 = _context13.sent;
+                _ref10 = _context14.sent;
                 token = _ref10.data;
-                return _context13.abrupt("return", token);
+                return _context14.abrupt("return", token);
 
               case 5:
               case "end":
-                return _context13.stop();
+                return _context14.stop();
             }
           }
-        }, _callee13, this);
+        }, _callee14, this);
       }));
 
-      function resendConfirmation(_x18) {
+      function resendConfirmation(_x19) {
         return _resendConfirmation.apply(this, arguments);
       }
 
@@ -576,26 +612,26 @@ function (_AbstractManager) {
     value: function () {
       var _resetPassword = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee14(data) {
-        return _regenerator.default.wrap(function _callee14$(_context14) {
+      _regenerator.default.mark(function _callee15(data) {
+        return _regenerator.default.wrap(function _callee15$(_context15) {
           while (1) {
-            switch (_context14.prev = _context14.next) {
+            switch (_context15.prev = _context15.next) {
               case 0:
-                _context14.next = 2;
+                _context15.next = 2;
                 return this._resolver.resetPassword(data);
 
               case 2:
-                return _context14.abrupt("return", true);
+                return _context15.abrupt("return", true);
 
               case 3:
               case "end":
-                return _context14.stop();
+                return _context15.stop();
             }
           }
-        }, _callee14, this);
+        }, _callee15, this);
       }));
 
-      function resetPassword(_x19) {
+      function resetPassword(_x20) {
         return _resetPassword.apply(this, arguments);
       }
 
@@ -610,28 +646,28 @@ function (_AbstractManager) {
     value: function () {
       var _unblock = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee15(id) {
-        return _regenerator.default.wrap(function _callee15$(_context15) {
+      _regenerator.default.mark(function _callee16(id) {
+        return _regenerator.default.wrap(function _callee16$(_context16) {
           while (1) {
-            switch (_context15.prev = _context15.next) {
+            switch (_context16.prev = _context16.next) {
               case 0:
-                _context15.next = 2;
+                _context16.next = 2;
                 return this._resolver.unblock({
                   id
                 });
 
               case 2:
-                return _context15.abrupt("return", true);
+                return _context16.abrupt("return", true);
 
               case 3:
               case "end":
-                return _context15.stop();
+                return _context16.stop();
             }
           }
-        }, _callee15, this);
+        }, _callee16, this);
       }));
 
-      function unblock(_x20) {
+      function unblock(_x21) {
         return _unblock.apply(this, arguments);
       }
 

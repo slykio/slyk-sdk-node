@@ -49,6 +49,10 @@ var config = {
     endpoint: 'users',
     method: 'post'
   },
+  delete: {
+    endpoint: 'users/:id',
+    method: 'delete'
+  },
   forgotPassword: {
     endpoint: 'users/forgot-password',
     method: 'post'

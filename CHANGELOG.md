@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.5.0](https://github.com/slykio/slyk-sdk-node/tree/v0.5.0) (2021-01-18)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.4.0...v0.5.0)
+
+**Merged pull requests:**
+
+- Add delete to user module [\#25](https://github.com/slykio/slyk-sdk-node/pull/25) ([kratos-42](https://github.com/kratos-42))
+- Fix errorHandler by handling incoming data object [\#24](https://github.com/slykio/slyk-sdk-node/pull/24) ([kratos-42](https://github.com/kratos-42))
+
 ## [v0.4.0](https://github.com/slykio/slyk-sdk-node/tree/v0.4.0) (2021-01-11)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.3.0...v0.4.0)
 
