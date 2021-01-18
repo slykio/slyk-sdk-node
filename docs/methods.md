@@ -4086,6 +4086,24 @@ await slyk.user.get('5e101529-fa30-4415-9945-6540e70c4483');
 }
 ```
 
+### `user.delete`
+
+Deletes the `user` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.delete('5e101529-fa30-4415-9945-6540e70c4483');
+```
+
+#### Response
+
+```json
+true
+```
+
 ### `user.list`
 
 Retrieves a list of `user`.
