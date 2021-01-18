@@ -121,6 +121,16 @@ export default class UserManager extends AbstractManager {
   }
 
   /**
+   * Delete.
+   */
+
+  async delete(id) {
+    await this._resolver.delete({ id });
+
+    return true;
+  }
+
+  /**
    * List.
    */
 

@@ -142,6 +142,18 @@ describe('UserManager', () => {
     });
   });
 
+  describe('delete', () => {
+    it('should call api `/users/bar` endpoint with method `delete` and return `true`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .delete('/users/bar')
+        .reply(204);
+
+      const result = await slyk.user.delete('bar');
+
+      expect(result).toEqual(true);
+    });
+  });
+
   describe('forgotPassword', () => {
     it('should call api `/users/forgot-password` endpoint with method `post` and return the created reset password token', async () => {
       nock(host, { reqheaders: { apikey } })
