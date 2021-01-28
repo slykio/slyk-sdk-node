@@ -5,6 +5,7 @@
  * Module dependencies.
  */
 
+import { bankAccount, bankAccountRegion } from 'bank-account';
 import {
   order,
   orderLine,
@@ -37,6 +38,8 @@ export default {
   address,
   asset,
   auth,
+  bankAccount,
+  bankAccountRegion,
   connection,
   invite,
   movement,
