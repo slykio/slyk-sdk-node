@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.6.0](https://github.com/slykio/slyk-sdk-node/tree/v0.6.0) (2021-02-01)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.5.0...v0.6.0)
+
+**Merged pull requests:**
+
+- Add getReferralProgram method to user module [\#27](https://github.com/slykio/slyk-sdk-node/pull/27) ([kratos-42](https://github.com/kratos-42))
+- Add bankAccount and bankAccountRegion methods [\#26](https://github.com/slykio/slyk-sdk-node/pull/26) ([kratos-42](https://github.com/kratos-42))
+- Bump ini from 1.3.5 to 1.3.8 [\#22](https://github.com/slykio/slyk-sdk-node/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.5.0](https://github.com/slykio/slyk-sdk-node/tree/v0.5.0) (2021-01-18)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.4.0...v0.5.0)
 
@@ -40,12 +49,12 @@
 - Update package license to MIT [\#10](https://github.com/slykio/slyk-sdk-node/pull/10) ([johnmaia](https://github.com/johnmaia))
 - Add coveralls [\#9](https://github.com/slykio/slyk-sdk-node/pull/9) ([johnmaia](https://github.com/johnmaia))
 - Add module exports [\#8](https://github.com/slykio/slyk-sdk-node/pull/8) ([johnmaia](https://github.com/johnmaia))
+- Update eslint-config-seegno@15.0.0 dependency [\#6](https://github.com/slykio/slyk-sdk-node/pull/6) ([johnmaia](https://github.com/johnmaia))
 
 ## [v0.1.0](https://github.com/slykio/slyk-sdk-node/tree/v0.1.0) (2020-03-25)
 **Merged pull requests:**
 
 - Add travis configuration file [\#7](https://github.com/slykio/slyk-sdk-node/pull/7) ([joaonice](https://github.com/joaonice))
-- Update eslint-config-seegno@15.0.0 dependency [\#6](https://github.com/slykio/slyk-sdk-node/pull/6) ([johnmaia](https://github.com/johnmaia))
 - Bump mixin-deep from 1.3.1 to 1.3.2 [\#5](https://github.com/slykio/slyk-sdk-node/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump acorn from 5.7.3 to 5.7.4 [\#4](https://github.com/slykio/slyk-sdk-node/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump js-yaml from 3.13.0 to 3.13.1 [\#3](https://github.com/slykio/slyk-sdk-node/pull/3) ([dependabot[bot]](https://github.com/apps/dependabot))

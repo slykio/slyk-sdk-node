@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _bankAccount = require("../../bank-account");
+
 var _store = require("../../store");
 
 var _address = _interopRequireDefault(require("../../address"));
@@ -46,6 +48,8 @@ var _default = {
   address: _address.default,
   asset: _asset.default,
   auth: _auth.default,
+  bankAccount: _bankAccount.bankAccount,
+  bankAccountRegion: _bankAccount.bankAccountRegion,
   connection: _connection.default,
   invite: _invite.default,
   movement: _movement.default,

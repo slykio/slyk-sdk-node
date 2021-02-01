@@ -128,6 +128,15 @@ function (_AbstractModel) {
       return this._sdk.wallet.get(this.primaryWalletId, options);
     }
     /**
+     * Get referral program.
+     */
+
+  }, {
+    key: "getReferralProgram",
+    value: function getReferralProgram(program, options) {
+      return this._sdk.user.getReferralProgram(this.id, program, options);
+    }
+    /**
      * Get referral user.
      */
 

@@ -445,6 +445,18 @@ function (_AbstractManager) {
       return get;
     }()
     /**
+     * Get referral program.
+     */
+
+  }, {
+    key: "getReferralProgram",
+    value: function getReferralProgram(id, program, options) {
+      return this._resolver.getReferralProgram({
+        id,
+        program
+      }, options);
+    }
+    /**
      * Delete.
      */
 
