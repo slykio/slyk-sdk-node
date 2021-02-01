@@ -121,6 +121,14 @@ export default class UserManager extends AbstractManager {
   }
 
   /**
+   * Get referral program.
+   */
+
+  getReferralProgram(id, program, options) {
+    return this._resolver.getReferralProgram({ id, program }, options);
+  }
+
+  /**
    * Delete.
    */
 

@@ -85,6 +85,14 @@ export default class UserModel extends AbstractModel {
   }
 
   /**
+   * Get referral program.
+   */
+
+  getReferralProgram(program, options) {
+    return this._sdk.user.getReferralProgram(this.id, program, options);
+  }
+
+  /**
    * Get referral user.
    */
 

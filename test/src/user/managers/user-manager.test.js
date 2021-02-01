@@ -189,6 +189,47 @@ describe('UserManager', () => {
     });
   });
 
+  describe('getReferralProgram', () => {
+    it('should call api `/users/foo/referral-programs/bar` endpoint with method `get` and return the referral program with given `program` name for the given user `id`', async () => {
+      const id = 'foo';
+      const program = 'bar';
+      const referralProgram = {
+        data: [
+          {
+            id: 'qux',
+            name: 'quux',
+            participated: true,
+            referralEarn: [
+              { amount: '2.00000000', assetCode: 'btc' },
+              { amount: '1.50000000', assetCode: 'eth' }
+            ]
+          },
+          {
+            id: 'thud',
+            name: 'garply',
+            participated: false,
+            referralEarn: []
+          },
+          {
+            id: 'waldo',
+            name: 'fred',
+            participated: true,
+            referralEarn: [{ amount: '1.00000000', assetCode: 'eth' }]
+          }
+        ]
+      };
+
+      nock(host, { reqheaders: { apikey } })
+        .get(`/users/${id}/referral-programs/${program}`)
+        .query({ page: { number: 1, size: 3 } })
+        .reply(200, referralProgram);
+
+      const result = await slyk.user.getReferralProgram(id, program, { page: { number: 1, size: 3 } });
+
+      expect(result).toEqual(referralProgram);
+    });
+  });
+
   describe('list', () => {
     it('should call api `/users` endpoint with method `get` and return an array of instances of `User` model in the `results` attribute and the `total`', async () => {
       nock(host, { reqheaders: { apikey } })

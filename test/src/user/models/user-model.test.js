@@ -271,6 +271,53 @@ describe('UserModel', () => {
     });
   });
 
+  describe('getReferralProgram', () => {
+    it('should return the `user` instance referral program', async () => {
+      const id = 'foo';
+
+      nock(host, { reqheaders: { apikey } })
+        .get(`/users/${id}`)
+        .reply(200, { data: { id, name: 'foobiz' } });
+
+      const user = await slyk.user.get(id);
+      const program = 'bar';
+      const referralProgram = {
+        data: [
+          {
+            id: 'qux',
+            name: 'quux',
+            participated: true,
+            referralEarn: [
+              { amount: '2.00000000', assetCode: 'btc' },
+              { amount: '1.50000000', assetCode: 'eth' }
+            ]
+          },
+          {
+            id: 'thud',
+            name: 'garply',
+            participated: false,
+            referralEarn: []
+          },
+          {
+            id: 'waldo',
+            name: 'fred',
+            participated: true,
+            referralEarn: [{ amount: '1.00000000', assetCode: 'eth' }]
+          }
+        ]
+      };
+
+      nock(host, { reqheaders: { apikey } })
+        .get(`/users/${id}/referral-programs/${program}`)
+        .query({ page: { number: 1, size: 3 } })
+        .reply(200, referralProgram);
+
+      const result = await user.getReferralProgram('bar', { page: { number: 1, size: 3 } });
+
+      expect(result).toEqual(referralProgram);
+    });
+  });
+
   describe('getReferralUser', () => {
     it('should return `undefined` if the `user` has no related `referralUserId`', async () => {
       nock(host, { reqheaders: { apikey } })
