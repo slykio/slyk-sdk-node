@@ -54,6 +54,10 @@ const config = {
     endpoint: 'users/:id',
     method: 'get'
   },
+  getReferralProgram: {
+    endpoint: 'users/:id/referral-programs/:program',
+    method: 'get'
+  },
   list: {
     endpoint: 'users',
     method: 'get'
