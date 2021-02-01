@@ -347,55 +347,58 @@
     - [`user.get`](#userget)
       - [Request](#request-106)
       - [Response](#response-104)
-    - [`user.delete`](#userdelete)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-107)
       - [Response](#response-105)
-    - [`user.list`](#userlist)
+    - [`user.delete`](#userdelete)
       - [Request](#request-108)
       - [Response](#response-106)
-    - [`user.patch`](#userpatch)
+    - [`user.list`](#userlist)
       - [Request](#request-109)
       - [Response](#response-107)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.patch`](#userpatch)
       - [Request](#request-110)
       - [Response](#response-108)
-    - [`user.resetPassword`](#userresetpassword)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-111)
       - [Response](#response-109)
-    - [`user.unblock`](#userunblock)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-112)
       - [Response](#response-110)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-113)
       - [Response](#response-111)
-    - [`wallet.balance`](#walletbalance)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-114)
       - [Response](#response-112)
-    - [`wallet.create`](#walletcreate)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-115)
       - [Response](#response-113)
-    - [`wallet.get`](#walletget)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-116)
       - [Response](#response-114)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`wallet.get`](#walletget)
       - [Request](#request-117)
       - [Response](#response-115)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-118)
       - [Response](#response-116)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-119)
       - [Response](#response-117)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-120)
       - [Response](#response-118)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-121)
       - [Response](#response-119)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-122)
       - [Response](#response-120)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-123)
+      - [Response](#response-121)
 
 ## address
 
@@ -3953,6 +3956,7 @@ The result of each one of the following `user` methods return one or an array of
 - `getInvites`: Returns the `invites` of the `user`.
 - `getWallets`: Returns the `wallets` of the `user`.
 - `getPrimaryWallet`: Returns the `wallet` of the `user` `primaryWalletId`.
+- `getReferralProgram`: Returns the provided referral program from the `user` of the given `id`.
 - `getReferralUser`: Returns the `user` of the `user` `referralUserId` if set.
 - `patch`: Patches the `user`.
 - `unblock`: Unblocks the `user`.
@@ -4218,6 +4222,101 @@ await slyk.user.get('5e101529-fa30-4415-9945-6540e70c4483');
   "roles": ["user"],
   "updatedAt": "2019-03-20T14:30:37.483Z",
   "verified": false
+}
+```
+
+### `user.getReferralProgram`
+
+Returns the referral program of the given `program` from the `user` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+const id = '5e101529-fa30-4415-9945-6540e70c4483';
+const program = 'foobar';
+
+await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
+```
+
+#### Response
+
+```json
+{
+  "data": [
+    {
+      "approved": true,
+      "blocked": false,
+      "createdAt": "2019-07-17T11:39:26.732Z",
+      "customData": {},
+      "email": "qux@quux.com",
+      "id": "8d31a884-7fa3-469a-a7cb-12f95895c487",
+      "image": null,
+      "imageUrl": null,
+      "locale": "pt",
+      "name": "qux",
+      "participated": true,
+      "phone": "+35191333333333",
+      "primaryWalletId": "f90b0f21-e0a8-43ff-81c2-da42a5a6ca6e",
+      "referralCode": "R87654321",
+      "referralEarn": [{ "amount": "1.00000000", "assetCode": "eth" }],
+      "referralUserId": "fbae3912-eb42-4359-b100-e64fa9ad4f16",
+      "roles": ["user"],
+      "updatedAt": "2019-07-17T11:39:26.732Z",
+      "verified": true
+    },
+    {
+      "approved": true,
+      "blocked": false,
+      "createdAt": "2019-07-17T11:39:26.732Z",
+      "customData": {},
+      "email": "waldo@fred.com",
+      "id": "6a033189-7228-4ce9-b507-598e140de131",
+      "image": null,
+      "imageUrl": null,
+      "locale": "pt",
+      "name": "waldo",
+      "participated": false,
+      "phone": "+351911111111",
+      "primaryWalletId": "32daa33f-1ee3-464b-be9e-10c2ab85e4bd",
+      "referralCode": "R18273645",
+      "referralEarn": [],
+      "referralUserId": "fbae3912-eb42-4359-b100-e64fa9ad4f16",
+      "roles": ["user"],
+      "updatedAt": "2019-07-17T11:39:26.732Z",
+      "verified": true,
+    },
+    {
+      "approved": true,
+      "blocked": false,
+      "createdAt": "2019-07-17T11:39:26.732Z",
+      "customData": {},
+      "email": "quux@qux.com",
+      "id": "12333189-7228-4ce9-b507-598e140deddd",
+      "image": null,
+      "imageUrl": null,
+      "locale": "pt",
+      "name": "qux",
+      "participated": false,
+      "phone": "+35192222222",
+      "primaryWalletId": "987aa33f-1ee3-464b-be9e-10c2ab85ezxc",
+      "referralCode": "R555443322",
+      "referralEarn": [
+        { "amount": "3.00000000", "assetCode": "btc" },
+        { "amount": "1.50000000", "assetCode": "eth" }
+      ],
+      "referralUserId": "fbae3912-eb42-4359-b100-e64fa9ad4f16",
+      "roles": ["user"],
+      "updatedAt": "2019-07-17T11:39:26.732Z",
+      "verified": true,
+    },
+  ],
+  "total": 3,
+  "totalEarned": [
+    { "amount": "3.00000000", "assetCode": "btc" },
+    { "amount": "2.50000000", "assetCode": "eth" },
+  ]
 }
 ```
 
