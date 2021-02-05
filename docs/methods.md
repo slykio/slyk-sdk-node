@@ -254,151 +254,154 @@
     - [`task.get`](#taskget)
       - [Request](#request-76)
       - [Response](#response-76)
-    - [`task.list`](#tasklist)
+    - [`task.getStatistics`](#taskgetstatistics)
       - [Request](#request-77)
       - [Response](#response-77)
-    - [`task.patch`](#taskpatch)
+    - [`task.list`](#tasklist)
       - [Request](#request-78)
       - [Response](#response-78)
-    - [`task.reorder`](#taskreorder)
+    - [`task.patch`](#taskpatch)
       - [Request](#request-79)
       - [Response](#response-79)
-  - [taxRate](#taxrate)
-    - [`taxRate.create`](#taxratecreate)
+    - [`task.reorder`](#taskreorder)
       - [Request](#request-80)
       - [Response](#response-80)
-    - [`taxRate.delete`](#taxratedelete)
+  - [taxRate](#taxrate)
+    - [`taxRate.create`](#taxratecreate)
       - [Request](#request-81)
       - [Response](#response-81)
-    - [`taxRate.get`](#taxrateget)
+    - [`taxRate.delete`](#taxratedelete)
       - [Request](#request-82)
       - [Response](#response-82)
-    - [`taxRate.list`](#taxratelist)
+    - [`taxRate.get`](#taxrateget)
       - [Request](#request-83)
       - [Response](#response-83)
-    - [`taxRate.patch`](#taxratepatch)
+    - [`taxRate.list`](#taxratelist)
       - [Request](#request-84)
       - [Response](#response-84)
-  - [transaction](#transaction)
-    - [`transaction.approve`](#transactionapprove)
+    - [`taxRate.patch`](#taxratepatch)
       - [Request](#request-85)
       - [Response](#response-85)
-    - [`transaction.confirm`](#transactionconfirm)
+  - [transaction](#transaction)
+    - [`transaction.approve`](#transactionapprove)
       - [Request](#request-86)
       - [Response](#response-86)
-    - [`transaction.deposit`](#transactiondeposit)
+    - [`transaction.confirm`](#transactionconfirm)
       - [Request](#request-87)
       - [Response](#response-87)
-    - [`transaction.fail`](#transactionfail)
+    - [`transaction.deposit`](#transactiondeposit)
       - [Request](#request-88)
       - [Response](#response-88)
-    - [`transaction.get`](#transactionget)
+    - [`transaction.fail`](#transactionfail)
       - [Request](#request-89)
       - [Response](#response-89)
-    - [`transaction.list`](#transactionlist)
+    - [`transaction.get`](#transactionget)
       - [Request](#request-90)
       - [Response](#response-90)
-    - [`transaction.pay`](#transactionpay)
+    - [`transaction.list`](#transactionlist)
       - [Request](#request-91)
       - [Response](#response-91)
-    - [`transaction.reject`](#transactionreject)
+    - [`transaction.pay`](#transactionpay)
       - [Request](#request-92)
       - [Response](#response-92)
-    - [`transaction.request`](#transactionrequest)
+    - [`transaction.reject`](#transactionreject)
       - [Request](#request-93)
       - [Response](#response-93)
-    - [`transaction.send`](#transactionsend)
+    - [`transaction.request`](#transactionrequest)
       - [Request](#request-94)
       - [Response](#response-94)
-    - [`transaction.transfer`](#transactiontransfer)
+    - [`transaction.send`](#transactionsend)
       - [Request](#request-95)
       - [Response](#response-95)
-    - [`transaction.withdrawal`](#transactionwithdrawal)
+    - [`transaction.transfer`](#transactiontransfer)
       - [Request](#request-96)
       - [Response](#response-96)
-  - [user](#user)
-    - [`user.approve`](#userapprove)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
       - [Request](#request-97)
       - [Response](#response-97)
-    - [`user.block`](#userblock)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
       - [Request](#request-98)
       - [Response](#response-98)
-    - [`user.changeEmail`](#userchangeemail)
+    - [`user.block`](#userblock)
       - [Request](#request-99)
       - [Response](#response-99)
-    - [`user.changePassword`](#userchangepassword)
+    - [`user.changeEmail`](#userchangeemail)
       - [Request](#request-100)
       - [Response](#response-100)
-    - [`user.changePhone`](#userchangephone)
+    - [`user.changePassword`](#userchangepassword)
       - [Request](#request-101)
       - [Response](#response-101)
-    - [`user.confirmEmail`](#userconfirmemail)
+    - [`user.changePhone`](#userchangephone)
       - [Request](#request-102)
+      - [Response](#response-102)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-103)
       - [Responses](#responses)
     - [`user.confirmPhone`](#userconfirmphone)
-      - [Request](#request-103)
+      - [Request](#request-104)
       - [Responses](#responses-1)
     - [`user.create`](#usercreate)
-      - [Request](#request-104)
-      - [Response](#response-102)
-    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-105)
       - [Response](#response-103)
-    - [`user.get`](#userget)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-106)
       - [Response](#response-104)
-    - [`user.getReferralProgram`](#usergetreferralprogram)
+    - [`user.get`](#userget)
       - [Request](#request-107)
       - [Response](#response-105)
-    - [`user.delete`](#userdelete)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-108)
       - [Response](#response-106)
-    - [`user.list`](#userlist)
+    - [`user.delete`](#userdelete)
       - [Request](#request-109)
       - [Response](#response-107)
-    - [`user.patch`](#userpatch)
+    - [`user.list`](#userlist)
       - [Request](#request-110)
       - [Response](#response-108)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.patch`](#userpatch)
       - [Request](#request-111)
       - [Response](#response-109)
-    - [`user.resetPassword`](#userresetpassword)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-112)
       - [Response](#response-110)
-    - [`user.unblock`](#userunblock)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-113)
       - [Response](#response-111)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-114)
       - [Response](#response-112)
-    - [`wallet.balance`](#walletbalance)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-115)
       - [Response](#response-113)
-    - [`wallet.create`](#walletcreate)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-116)
       - [Response](#response-114)
-    - [`wallet.get`](#walletget)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-117)
       - [Response](#response-115)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`wallet.get`](#walletget)
       - [Request](#request-118)
       - [Response](#response-116)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-119)
       - [Response](#response-117)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-120)
       - [Response](#response-118)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-121)
       - [Response](#response-119)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-122)
       - [Response](#response-120)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-123)
       - [Response](#response-121)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-124)
+      - [Response](#response-122)
 
 ## address
 
@@ -3170,6 +3173,90 @@ await slyk.task.get('deaaee6f-e329-42e0-b85c-e07cd20c0ec5');
   "thumbnailUrl": "http://foobar.com/quux",
   "type": "manual",
   "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `task.getStatistics`
+
+Retrieves the `tasks` statistics for the `user` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+const userId = '97404926-0068-4cd2-b27f-c95a442d0328';
+
+await slyk.task.getStatistics(userId, { sort: [{ direction: 'asc', name: 'name' }] });
+```
+
+#### Response
+
+```json
+{
+  "available": {
+    "data": [
+      {
+        "amount": "5.50000000",
+        "buttonLabel": "quux",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "customData": {},
+        "deletedAt": null,
+        "description": "bar",
+        "enabled": true,
+        "featured": true,
+        "id": "123aee6f-e329-42e0-b85c-e07cd20c0bbb",
+        "imageUrl": null,
+        "name": "foobar",
+        "surveyUrl": null,
+        "thumbnailUrl": null,
+        "type": "manual",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      }
+    ],
+    "gauge": "5.50000000",
+    "total": 1
+  },
+  "completed": {
+    "data": [
+      {
+        "amount": "2.50000000",
+        "buttonLabel": "fred",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "customData": {},
+        "deletedAt": null,
+        "description": null,
+        "enabled": true,
+        "featured": true,
+        "id": "fffaee6f-e329-42e0-b85c-e07cd20c0456",
+        "imageUrl": null,
+        "name": "fred",
+        "surveyUrl": "http://qux.com",
+        "thumbnailUrl": "http://foobar.com/quux",
+        "type": "manual",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      },
+      {
+        "amount": "2.00000000",
+        "buttonLabel": "waldo",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "customData": {},
+        "deletedAt": null,
+        "description": "biz",
+        "enabled": true,
+        "featured": true,
+        "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+        "imageUrl": "http://foobar.com/biz",
+        "name": "waldo",
+        "surveyUrl": null,
+        "thumbnailUrl": null,
+        "type": "manual",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      }
+    ],
+    "gauge": "4.50000000",
+    "total": 2
+  }
 }
 ```
 

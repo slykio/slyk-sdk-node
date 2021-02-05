@@ -26,6 +26,10 @@ const config = {
     endpoint: 'tasks/:id',
     method: 'get'
   },
+  getStatistics: {
+    endpoint: 'users/:id/tasks/statistics',
+    method: 'get'
+  },
   list: {
     endpoint: 'tasks',
     method: 'get'
