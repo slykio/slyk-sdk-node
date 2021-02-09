@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.7.0](https://github.com/slykio/slyk-sdk-node/tree/v0.7.0) (2021-02-09)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.6.0...v0.7.0)
+
+**Merged pull requests:**
+
+- Add getStatistics method to task module [\#28](https://github.com/slykio/slyk-sdk-node/pull/28) ([kratos-42](https://github.com/kratos-42))
+
 ## [v0.6.0](https://github.com/slykio/slyk-sdk-node/tree/v0.6.0) (2021-02-01)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.5.0...v0.6.0)
 
@@ -38,6 +45,7 @@
 - Add auth module [\#15](https://github.com/slykio/slyk-sdk-node/pull/15) ([JEduardogmr](https://github.com/JEduardogmr))
 - Bump yargs-parser from 13.1.1 to 13.1.2 [\#14](https://github.com/slykio/slyk-sdk-node/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump lodash from 4.17.11 to 4.17.19 [\#13](https://github.com/slykio/slyk-sdk-node/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Add support to Node 4 [\#11](https://github.com/slykio/slyk-sdk-node/pull/11) ([johnmaia](https://github.com/johnmaia))
 
 ## [v0.2.0](https://github.com/slykio/slyk-sdk-node/tree/v0.2.0) (2020-03-26)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.1.0...v0.2.0)
@@ -45,16 +53,15 @@
 **Merged pull requests:**
 
 - Improve changelog script [\#12](https://github.com/slykio/slyk-sdk-node/pull/12) ([joaonice](https://github.com/joaonice))
-- Add support to Node 4 [\#11](https://github.com/slykio/slyk-sdk-node/pull/11) ([johnmaia](https://github.com/johnmaia))
 - Update package license to MIT [\#10](https://github.com/slykio/slyk-sdk-node/pull/10) ([johnmaia](https://github.com/johnmaia))
 - Add coveralls [\#9](https://github.com/slykio/slyk-sdk-node/pull/9) ([johnmaia](https://github.com/johnmaia))
 - Add module exports [\#8](https://github.com/slykio/slyk-sdk-node/pull/8) ([johnmaia](https://github.com/johnmaia))
-- Update eslint-config-seegno@15.0.0 dependency [\#6](https://github.com/slykio/slyk-sdk-node/pull/6) ([johnmaia](https://github.com/johnmaia))
 
 ## [v0.1.0](https://github.com/slykio/slyk-sdk-node/tree/v0.1.0) (2020-03-25)
 **Merged pull requests:**
 
 - Add travis configuration file [\#7](https://github.com/slykio/slyk-sdk-node/pull/7) ([joaonice](https://github.com/joaonice))
+- Update eslint-config-seegno@15.0.0 dependency [\#6](https://github.com/slykio/slyk-sdk-node/pull/6) ([johnmaia](https://github.com/johnmaia))
 - Bump mixin-deep from 1.3.1 to 1.3.2 [\#5](https://github.com/slykio/slyk-sdk-node/pull/5) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump acorn from 5.7.3 to 5.7.4 [\#4](https://github.com/slykio/slyk-sdk-node/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump js-yaml from 3.13.0 to 3.13.1 [\#3](https://github.com/slykio/slyk-sdk-node/pull/3) ([dependabot[bot]](https://github.com/apps/dependabot))

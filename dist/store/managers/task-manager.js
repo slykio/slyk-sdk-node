@@ -7,6 +7,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/objectSpread"));
+
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
@@ -193,6 +195,63 @@ function (_AbstractManager) {
       return get;
     }()
     /**
+     * Get statistics.
+     */
+
+  }, {
+    key: "getStatistics",
+    value: function () {
+      var _getStatistics = (0, _asyncToGenerator2.default)(
+      /*#__PURE__*/
+      _regenerator.default.mark(function _callee5(userId, options) {
+        var _this = this;
+
+        var _ref3, _ref3$data, available, completed, availableTasksData, completedTasksData;
+
+        return _regenerator.default.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.next = 2;
+                return this._resolver.getStatistics({
+                  id: userId
+                }, options);
+
+              case 2:
+                _ref3 = _context5.sent;
+                _ref3$data = _ref3.data;
+                available = _ref3$data.available;
+                completed = _ref3$data.completed;
+                availableTasksData = (0, _lodash.map)((0, _lodash.get)(available, 'data', []), function (task) {
+                  return _this._instantiate(task);
+                });
+                completedTasksData = (0, _lodash.map)((0, _lodash.get)(completed, 'data', []), function (task) {
+                  return _this._instantiate(task);
+                });
+                return _context5.abrupt("return", {
+                  available: (0, _objectSpread2.default)({}, available, {
+                    data: availableTasksData
+                  }),
+                  completed: (0, _objectSpread2.default)({}, completed, {
+                    data: completedTasksData
+                  })
+                });
+
+              case 9:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, this);
+      }));
+
+      function getStatistics(_x7, _x8) {
+        return _getStatistics.apply(this, arguments);
+      }
+
+      return getStatistics;
+    }()
+    /**
      * List.
      */
 
@@ -201,37 +260,37 @@ function (_AbstractManager) {
     value: function () {
       var _list = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee5(options) {
-        var _this = this;
+      _regenerator.default.mark(function _callee6(options) {
+        var _this2 = this;
 
         var result, results, total;
-        return _regenerator.default.wrap(function _callee5$(_context5) {
+        return _regenerator.default.wrap(function _callee6$(_context6) {
           while (1) {
-            switch (_context5.prev = _context5.next) {
+            switch (_context6.prev = _context6.next) {
               case 0:
-                _context5.next = 2;
+                _context6.next = 2;
                 return this._resolver.list({}, options);
 
               case 2:
-                result = _context5.sent;
+                result = _context6.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (task) {
-                  return _this._instantiate(task);
+                  return _this2._instantiate(task);
                 });
                 total = (0, _lodash.get)(result, 'total');
-                return _context5.abrupt("return", {
+                return _context6.abrupt("return", {
                   results,
                   total
                 });
 
               case 6:
               case "end":
-                return _context5.stop();
+                return _context6.stop();
             }
           }
-        }, _callee5, this);
+        }, _callee6, this);
       }));
 
-      function list(_x7) {
+      function list(_x9) {
         return _list.apply(this, arguments);
       }
 
@@ -246,32 +305,32 @@ function (_AbstractManager) {
     value: function () {
       var _patch = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee6(id, data) {
-        var _ref3, task;
+      _regenerator.default.mark(function _callee7(id, data) {
+        var _ref4, task;
 
-        return _regenerator.default.wrap(function _callee6$(_context6) {
+        return _regenerator.default.wrap(function _callee7$(_context7) {
           while (1) {
-            switch (_context6.prev = _context6.next) {
+            switch (_context7.prev = _context7.next) {
               case 0:
-                _context6.next = 2;
+                _context7.next = 2;
                 return this._resolver.patch((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref3 = _context6.sent;
-                task = _ref3.data;
-                return _context6.abrupt("return", this._instantiate(task));
+                _ref4 = _context7.sent;
+                task = _ref4.data;
+                return _context7.abrupt("return", this._instantiate(task));
 
               case 5:
               case "end":
-                return _context6.stop();
+                return _context7.stop();
             }
           }
-        }, _callee6, this);
+        }, _callee7, this);
       }));
 
-      function patch(_x8, _x9) {
+      function patch(_x10, _x11) {
         return _patch.apply(this, arguments);
       }
 
@@ -286,28 +345,28 @@ function (_AbstractManager) {
     value: function () {
       var _reorder = (0, _asyncToGenerator2.default)(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee7(id, data) {
-        return _regenerator.default.wrap(function _callee7$(_context7) {
+      _regenerator.default.mark(function _callee8(id, data) {
+        return _regenerator.default.wrap(function _callee8$(_context8) {
           while (1) {
-            switch (_context7.prev = _context7.next) {
+            switch (_context8.prev = _context8.next) {
               case 0:
-                _context7.next = 2;
+                _context8.next = 2;
                 return this._resolver.reorder((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                return _context7.abrupt("return", true);
+                return _context8.abrupt("return", true);
 
               case 3:
               case "end":
-                return _context7.stop();
+                return _context8.stop();
             }
           }
-        }, _callee7, this);
+        }, _callee8, this);
       }));
 
-      function reorder(_x10, _x11) {
+      function reorder(_x12, _x13) {
         return _reorder.apply(this, arguments);
       }
 
