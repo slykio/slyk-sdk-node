@@ -124,6 +124,90 @@ describe('TaskManager', () => {
     });
   });
 
+  describe('getStatistics', () => {
+    it('should call api `/users/foo/tasks/statistics` endpoint with method `get` and return the `tasks` statistics for the `user` of the given `id`', async () => {
+      const availableTasks = {
+        data: [
+          {
+            amount: '2.00000000',
+            deletedAt: null,
+            description: 'biz',
+            enabled: true,
+            featured: true,
+            id: 'foo',
+            name: 'foobar',
+            surveyUrl: 'http://qux.com',
+            type: 'manual'
+          }
+        ],
+        gauge: '2.00000000',
+        total: 1
+      };
+
+      const completedTasks = {
+        data: [
+          {
+            amount: '1.00000000',
+            deletedAt: null,
+            description: 'biz',
+            enabled: true,
+            featured: true,
+            id: 'bar',
+            name: 'quux',
+            surveyUrl: 'http://qux.com',
+            type: 'manual'
+          },
+          {
+            amount: '3.00000000',
+            deletedAt: null,
+            description: null,
+            enabled: true,
+            featured: true,
+            id: 'biz',
+            name: 'waldo',
+            surveyUrl: null,
+            type: 'manual'
+          }
+        ],
+        gauge: '4.00000000',
+        total: 2
+      };
+
+      nock(host, { reqheaders: { apikey } })
+        .get('/users/foo/tasks/statistics')
+        .query({ sort: 'name' })
+        .reply(200, {
+          data: {
+            available: availableTasks,
+            completed: completedTasks
+          }
+        });
+
+      const task = await slyk.task.getStatistics('foo', { sort: 'name' });
+
+      expect(task.available).toEqual({
+        data: [{ ...availableTasks.data[0], _sdk: expect.any(Object) }],
+        gauge: availableTasks.gauge,
+        total: availableTasks.total
+      });
+
+      expect(task.completed).toEqual({
+        data: [
+          {
+            ...completedTasks.data[0],
+            _sdk: expect.any(Object)
+          },
+          {
+            ...completedTasks.data[1],
+            _sdk: expect.any(Object)
+          }
+        ],
+        gauge: completedTasks.gauge,
+        total: completedTasks.total
+      });
+    });
+  });
+
   describe('list', () => {
     it('should call api `/tasks` endpoint with method `get` and return an array of instances of `Task` model in the `results` attribute and the `total`', async () => {
       const data = [

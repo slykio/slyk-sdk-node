@@ -53,6 +53,27 @@ export default class TaskManager extends AbstractManager {
   }
 
   /**
+   * Get statistics.
+   */
+
+  async getStatistics(userId, options) {
+    const { data: { available, completed } } = await this._resolver.getStatistics({ id: userId }, options);
+    const availableTasksData = map(get(available, 'data', []), task => this._instantiate(task));
+    const completedTasksData = map(get(completed, 'data', []), task => this._instantiate(task));
+
+    return {
+      available: {
+        ...available,
+        data: availableTasksData
+      },
+      completed: {
+        ...completed,
+        data: completedTasksData
+      }
+    };
+  }
+
+  /**
    * List.
    */
 
