@@ -629,7 +629,13 @@ await slyk.asset.create({
   "customData": {},
   "decimalPlaces": 8,
   "enabled": false,
-  "logoUrl": null,
+  "logo": {
+    "external": false,
+    "path": "/foo/bar",
+    "type": "image",
+    "uploadId": "86365b03-48f8-4bfc-8ed7-f873cc75fb64",
+    "url": "http://86365b03-48f8-4bfc-8ed7-f873cc75fb64.url"
+  },
   "metadata": {},
   "name": "foobar",
   "symbol": "ƒ",
@@ -1772,13 +1778,25 @@ await slyk.orderLine.get('22419f26-6311-4f2e-89e5-05cf96e9bc57', { include: { pr
     "description": "xyzzy",
     "featured": true,
     "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-    "imageUrl": "http://foobar.com/foobar",
+    "image": {
+      "external": false,
+      "path": "/waldo/fred.png",
+      "type": "image",
+      "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+      "url": "http://foobar.com/waldo/fred.png"
+    },
     "listLabel": "quux",
     "name": "foobiz",
     "price": "7.00000000",
     "requiresIdentity": true,
     "taxRateId": null,
-    "thumbnailUrl": "http://foobar.com/grault",
+    "thumbnail": {
+      "external": false,
+      "path": "/quux/qux.png",
+      "type": "image",
+      "uploadId": "12380c1d-1845-4534-af04-f5a208147ddd",
+      "url": "http://foobar.com/quux/qux.png"
+    },
     "typeCode": "digital",
     "updatedAt": "2019-03-20T14:30:37.483Z"
   },
@@ -1992,11 +2010,12 @@ await slyk.product.create({
   categoryId: '794b19cd-e24e-4ae0-abf9-6bc29b36e351',
   customData: { qux: 'quux' },
   description: 'waldo fred',
-  image: 'grault',
+  image: "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
   name: 'corge',
   price: '10',
   thumbnail: 'garply',
-  visible: true
+  visible: true,
+  video: "fbd474c9-9d52-4efd-bf87-95983f874665"
 });
 ```
 
@@ -2013,16 +2032,49 @@ await slyk.product.create({
   "customData": { "qux": "quux" },
   "description": "waldo fred",
   "featured": true,
+  "gallery": [
+    {
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+        "url": "http://foobar.com/waldo/fred.png"
+      }
+    }
+  ],
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-  "imageUrl": "http://foobar.com/grault",
   "metadata": { "allowChoosingQuantity": true },
   "name": "corge",
   "price": "10.00000000",
   "requiresIdentity": true,
   "taxRateId": null,
-  "thumbnailUrl": "http://foobar.com/garply",
+  "thumbnail": {
+    "duration": "123",
+    "external": false,
+    "fileFormat": "video/mp4",
+    "path": "foo/qux.mp4",
+    "playbackId": "quux",
+    "previewUrl": "http://stream/foo",
+    "thumbnailUrl": "http://image/foo",
+    "type": "video",
+    "uploadId": "9f5cf87c-d026-4d9b-9e89-693b6babd954",
+    "url": "http://stream/quux"
+  },
   "typeCode": "digital",
   "updatedAt": "2019-03-20T14:30:37.483Z",
+  "video": {
+    "duration": "123",
+    "external": false,
+    "fileFormat": "video/mp4",
+    "path": "foo/qux.mp4",
+    "playbackId": "quux",
+    "previewUrl": "http://stream/foo",
+    "thumbnailUrl": "http://image/foo",
+    "type": "video",
+    "uploadId": "9f5cf87c-d026-4d9b-9e89-693b6babd954",
+    "url": "http://stream/quux"
+  },
   "visible": true
 }
 ```
@@ -2113,16 +2165,44 @@ await slyk.product.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
   "customData": { "qux": "quux" },
   "description": "waldo fred",
   "featured": true,
+  "gallery": [
+    {
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+        "url": "http://foobar.com/waldo/fred.png"
+      }
+    }
+  ],
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-  "imageUrl": "http://foobar.com/grault",
   "metadata": { "allowChoosingQuantity": true },
   "name": "corge",
   "price": "10.00000000",
   "requiresIdentity": true,
   "taxRateId": null,
-  "thumbnailUrl": "http://foobar.com/garply",
+  "thumbnail": {
+    "external": false,
+    "path": "/quux/qux.png",
+    "type": "image",
+    "uploadId": "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+    "url": "http://foobar.com/quux/qux.png"
+  },
   "typeCode": "digital",
   "updatedAt": "2019-03-20T14:30:37.483Z",
+  "video": {
+    "duration": "123",
+    "external": false,
+    "fileFormat": "video/mp4",
+    "path": "foo/qux.mp4",
+    "playbackId": "quux",
+    "previewUrl": "http://stream/foo",
+    "thumbnailUrl": "http://image/foo",
+    "type": "video",
+    "uploadId": "9f5cf87c-d026-4d9b-9e89-693b6babd954",
+    "url": "http://stream/quux"
+  },
   "visible": true
 }
 ```
@@ -2158,14 +2238,30 @@ await slyk.product.list({
       "customData": { "qux": "quux" },
       "description": "waldo fred",
       "featured": true,
+      "gallery": [
+        {
+          "image": {
+            "external": false,
+            "path": "/waldo/fred.png",
+            "type": "image",
+            "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+            "url": "http://foobar.com/waldo/fred.png"
+          }
+        }
+      ],
       "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-      "imageUrl": "http://foobar.com/grault",
       "metadata": { "allowChoosingQuantity": true },
       "name": "corge",
       "price": "10.00000000",
       "requiresIdentity": true,
       "taxRateId": null,
-      "thumbnailUrl": "http://foobar.com/garply",
+      "thumbnail": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
       "typeCode": "digital",
       "updatedAt": "2019-03-20T14:30:37.483Z",
       "visible": true
@@ -2181,23 +2277,49 @@ await slyk.product.list({
       "description": null,
       "featured": true,
       "id": "123443c2-99ab-4f35-9f76-38f482e6trgc",
-      "imageUrl": "http://foobar.com/grault",
       "metadata": { "allowChoosingQuantity": true },
       "name": "garply",
       "price": "10.00000000",
       "requiresIdentity": true,
       "taxRateId": null,
-      "thumbnailUrl": "http://foobar.com/corge",
+      "thumbnail": {
+        "duration": "123",
+        "external": false,
+        "fileFormat": "video/mp4",
+        "path": "foo/qux.mp4",
+        "playbackId": "quux",
+        "previewUrl": "http://stream/foo",
+        "thumbnailUrl": "http://image/foo",
+        "type": "video",
+        "uploadId": "9f5cf87c-d026-4d9b-9e89-693b6babd954",
+        "url": "http://stream/quux"
+      },
       "typeCode": "digital",
       "updatedAt": "2019-03-22T14:30:37.483Z",
+      "video": {
+        "duration": "123",
+        "external": false,
+        "fileFormat": "video/mp4",
+        "path": "foo/qux.mp4",
+        "playbackId": "quux",
+        "previewUrl": "http://stream/foo",
+        "thumbnailUrl": "http://image/foo",
+        "type": "video",
+        "uploadId": "9f5cf87c-d026-4d9b-9e89-693b6babd954",
+        "url": "http://stream/quux"
+      },
       "visible": true
     }
   ]
 ```
 ### `product.patch`
+
 Patches the `product` of the given `id`.
+
 **Example:**
+
 #### Request
+
 ```js
 await slyk.product.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
   allowChoosingQuantity: false,
@@ -2221,13 +2343,11 @@ await slyk.product.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
   "description": "xyzzy",
   "featured": true,
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-  "imageUrl": "http://foobar.com/grault",
   "metadata": { "allowChoosingQuantity": true },
   "name": "corge",
   "price": "10.00000000",
   "requiresIdentity": true,
   "taxRateId": null,
-  "thumbnailUrl": "http://foobar.com/garply",
   "typeCode": "digital",
   "updatedAt": "2019-03-20T14:30:37.483Z",
   "visible": true
@@ -2292,7 +2412,7 @@ Creates a `productCategory`.
 await slyk.productCategory.create({
   customData: { qux: 'quux' },
   description: 'waldo',
-  image: 'fred',
+  image: "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
   title: 'garply'
 });
 ```
@@ -2305,7 +2425,13 @@ await slyk.productCategory.create({
   "customData": { "qux": "quux" },
   "description": "waldo",
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-  "imageUrl": "http://foobar.com/fred",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "metadata": {},
   "title": "garply",
   "updatedAt": "2019-03-20T14:30:37.483Z"
@@ -2350,7 +2476,13 @@ await slyk.productCategory.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
   "customData": { "qux": "quux" },
   "description": "waldo",
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-  "imageUrl": "http://foobar.com/fred",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "metadata": {},
   "title": "garply",
   "updatedAt": "2019-03-20T14:30:37.483Z"
@@ -2379,7 +2511,13 @@ await slyk.productCategory.list({ filter: { title: 'foo' } });
       "customData": { "qux": "quux" },
       "description": "waldo",
       "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-      "imageUrl": "http://foobar.com/fred",
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
       "metadata": {},
       "title": "foobar",
       "updatedAt": "2019-03-20T14:30:37.483Z"
@@ -2389,7 +2527,13 @@ await slyk.productCategory.list({ filter: { title: 'foo' } });
       "customData": {},
       "description": null,
       "id": "123c43c2-99ab-4f35-9f76-38f482e6bqwe",
-      "imageUrl": null,
+      "image": {
+        "external": false,
+        "path": "/quux/qux.png",
+        "type": "image",
+        "uploadId": "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+        "url": "http://foobar.com/quux/qux.png"
+      },
       "metadata": {},
       "title": "foobiz",
       "updatedAt": "2019-03-21T14:30:37.483Z"
@@ -2411,7 +2555,7 @@ Patches the `productCategory` of the given `id`.
 await slyk.productCategory.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
   customData: { foo: 'bar' },
   description: 'foobar',
-  image: 'quux',
+  image: 'a8dbf8d0-c070-492d-92d1-be1dbfcb859d',
   title: 'foobiz'
 });
 ```
@@ -2424,7 +2568,13 @@ await slyk.productCategory.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
   "customData": { "foo": "bar" },
   "description": "foobar",
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
-  "imageUrl": "http://foobar.com/quux",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "metadata": {},
   "title": "foobiz",
   "updatedAt": "2019-03-20T14:30:37.483Z"
@@ -2467,7 +2617,7 @@ Creates a `productImage` for the given `id` product.
 ```js
 await slyk.productImage.create('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
   customData: {},
-  image: 'fred'
+  image: 'a8dbf8d0-c070-492d-92d1-be1dbfcb859d'
 });
 ```
 
@@ -2478,7 +2628,13 @@ await slyk.productImage.create('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
   "createdAt": "2019-03-20T14:30:37.483Z",
   "customData": { "qux": "quux" },
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
-  "imageUrl": "http://foobar.com/fred",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
@@ -2521,7 +2677,13 @@ await slyk.productImage.get('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99
   "createdAt": "2019-03-20T14:30:37.483Z",
   "customData": { "qux": "quux" },
   "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
-  "imageUrl": "http://foobar.com/fred",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
@@ -2548,7 +2710,13 @@ await slyk.productImage.list('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { include: 
       "createdAt": "2019-03-20T14:30:37.483Z",
       "customData": { "qux": "quux" },
       "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
-      "imageUrl": "http://foobar.com/fred",
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
       "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
       "updatedAt": "2019-03-20T14:30:37.483Z",
       "product": { ... }
@@ -2557,7 +2725,13 @@ await slyk.productImage.list('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { include: 
       "createdAt": "2019-03-20T14:30:37.483Z",
       "customData": { "qux": "quux" },
       "id": "eb9c43c2-99ab-4f35-9f76-38f482e6b726",
-      "imageUrl": "http://foobar.com/foo",
+      "image": {
+        "external": false,
+        "path": "/quux/qux.png",
+        "type": "image",
+        "uploadId": "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+        "url": "http://foobar.com/quux/qux.png"
+      },
       "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
       "updatedAt": "2019-03-20T14:30:37.483Z",
       "product": { ... }
@@ -3112,10 +3286,10 @@ await slyk.task.create({
   description: 'biz',
   enabled: true,
   featured: true,
-  image: 'qux',
+  image: '123bf8d0-c070-492d-92d1-be1dbfcb8ddd',
   name: 'foobar',
   surveyUrl: 'http://qux.com',
-  thumbnail: 'quux',
+  thumbnail: '75e80c1d-1845-4534-af04-f5a2081476b9',
   type: 'manual'
 });
 ```
@@ -3133,10 +3307,22 @@ await slyk.task.create({
   "enabled": true,
   "featured": true,
   "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-  "imageUrl": "http://foobar.com/qux",
+  "image": {
+    "external": false,
+    "path": "/quux/qux.png",
+    "type": "image",
+    "uploadId": "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+    "url": "http://foobar.com/quux/qux.png"
+  },
   "name": "foo",
   "surveyUrl": "http://qux.com",
-  "thumbnailUrl": "http://foobar.com/quux",
+  "thumbnail": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "type": "manual",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
@@ -3167,10 +3353,22 @@ await slyk.task.get('deaaee6f-e329-42e0-b85c-e07cd20c0ec5');
   "enabled": true,
   "featured": true,
   "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-  "imageUrl": "http://foobar.com/qux",
+  "image": {
+    "external": false,
+    "path": "/quux/qux.png",
+    "type": "image",
+    "uploadId": "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+    "url": "http://foobar.com/quux/qux.png"
+  },
   "name": "foo",
   "surveyUrl": "http://qux.com",
-  "thumbnailUrl": "http://foobar.com/quux",
+  "thumbnail": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "type": "manual",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
@@ -3206,10 +3404,8 @@ await slyk.task.getStatistics(userId, { sort: [{ direction: 'asc', name: 'name' 
         "enabled": true,
         "featured": true,
         "id": "123aee6f-e329-42e0-b85c-e07cd20c0bbb",
-        "imageUrl": null,
         "name": "foobar",
         "surveyUrl": null,
-        "thumbnailUrl": null,
         "type": "manual",
         "updatedAt": "2019-03-20T14:30:37.483Z"
       }
@@ -3229,10 +3425,8 @@ await slyk.task.getStatistics(userId, { sort: [{ direction: 'asc', name: 'name' 
         "enabled": true,
         "featured": true,
         "id": "fffaee6f-e329-42e0-b85c-e07cd20c0456",
-        "imageUrl": null,
         "name": "fred",
         "surveyUrl": "http://qux.com",
-        "thumbnailUrl": "http://foobar.com/quux",
         "type": "manual",
         "updatedAt": "2019-03-20T14:30:37.483Z"
       },
@@ -3246,10 +3440,8 @@ await slyk.task.getStatistics(userId, { sort: [{ direction: 'asc', name: 'name' 
         "enabled": true,
         "featured": true,
         "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-        "imageUrl": "http://foobar.com/biz",
         "name": "waldo",
         "surveyUrl": null,
-        "thumbnailUrl": null,
         "type": "manual",
         "updatedAt": "2019-03-20T14:30:37.483Z"
       }
@@ -3291,10 +3483,22 @@ await slyk.task.list({
       "enabled": true,
       "featured": true,
       "id": "123aee6f-e329-42e0-b85c-e07cd20c0bbb",
-      "imageUrl": null,
+      "image": {
+        "external": false,
+        "path": "/quux/qux.png",
+        "type": "image",
+        "uploadId": "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+        "url": "http://foobar.com/quux/qux.png"
+      },
       "name": "qux",
       "surveyUrl": "http://qux.com",
-      "thumbnailUrl": "http://foobar.com/quux",
+      "thumbnail": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
       "type": "manual",
       "updatedAt": "2019-03-20T14:30:37.483Z"
     },
@@ -3308,10 +3512,8 @@ await slyk.task.list({
       "enabled": true,
       "featured": true,
       "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-      "imageUrl": "http://foobar.com/biz",
       "name": "foo",
       "surveyUrl": "http://biz.com",
-      "thumbnailUrl": "http://foobar.com/biz",
       "type": "manual",
       "updatedAt": "2019-03-20T14:30:37.483Z"
     }
@@ -3349,10 +3551,8 @@ await slyk.task.patch('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
   "enabled": true,
   "featured": true,
   "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-  "imageUrl": "http://foobar.com/qux",
   "name": "foo",
   "surveyUrl": "http://qux.com",
-  "thumbnailUrl": "http://foobar.com/quux",
   "type": "manual",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
@@ -4233,7 +4433,11 @@ Creates a new `user`.
 #### Request
 
 ```js
-await slyk.user.create({ email: 'foo@bar.com', password: 'waldo' });
+await slyk.user.create({
+  email: 'foo@bar.com',
+  image: '75e80c1d-1845-4534-af04-f5a2081476b9',
+  password: 'waldo'
+});
 ```
 
 #### Response
@@ -4246,6 +4450,13 @@ await slyk.user.create({ email: 'foo@bar.com', password: 'waldo' });
   "customData": {},
   "email": "foo@bar.com",
   "id": "5e101529-fa30-4415-9945-6540e70c4483",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "locale": "en-us",
   "name": "foobar",
   "phone": null,
@@ -4300,6 +4511,13 @@ await slyk.user.get('5e101529-fa30-4415-9945-6540e70c4483');
   "customData": {},
   "email": "foo@bar.com",
   "id": "5e101529-fa30-4415-9945-6540e70c4483",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "locale": "en-us",
   "name": "foobar",
   "phone": null,
@@ -4339,8 +4557,13 @@ await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
       "customData": {},
       "email": "qux@quux.com",
       "id": "8d31a884-7fa3-469a-a7cb-12f95895c487",
-      "image": null,
-      "imageUrl": null,
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
       "locale": "pt",
       "name": "qux",
       "participated": true,
@@ -4360,8 +4583,13 @@ await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
       "customData": {},
       "email": "waldo@fred.com",
       "id": "6a033189-7228-4ce9-b507-598e140de131",
-      "image": null,
-      "imageUrl": null,
+      "image": {
+        "external": false,
+        "path": "/quux/qux.png",
+        "type": "image",
+        "uploadId": "12380c1d-1845-4534-af04-f5a208147ddd",
+        "url": "http://foobar.com/quux/qux.png"
+      },
       "locale": "pt",
       "name": "waldo",
       "participated": false,
@@ -4381,8 +4609,6 @@ await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
       "customData": {},
       "email": "quux@qux.com",
       "id": "12333189-7228-4ce9-b507-598e140deddd",
-      "image": null,
-      "imageUrl": null,
       "locale": "pt",
       "name": "qux",
       "participated": false,
@@ -4448,6 +4674,13 @@ await slyk.user.list({ filter: { name: 'foo' } });
     "customData": {},
     "email": "foo@bar.com",
     "id": "5e101529-fa30-4415-9945-6540e70c4483",
+    "image": {
+      "external": false,
+      "path": "/waldo/fred.png",
+      "type": "image",
+      "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+      "url": "http://foobar.com/waldo/fred.png"
+    },
     "locale": "en-us",
     "name": "foobar",
     "phone": null,
@@ -4465,6 +4698,13 @@ await slyk.user.list({ filter: { name: 'foo' } });
     "customData": {},
     "email": "foo@biz.com",
     "id": "6173fe23-1442-4003-bc4d-d18f5f42c024",
+    "image": {
+      "external": false,
+      "path": "/quux/qux.png",
+      "type": "image",
+      "uploadId": "12380c1d-1845-4534-af04-f5a208147ddd",
+      "url": "http://foobar.com/quux/qux.png"
+    },
     "locale": "en-us",
     "name": "foobiz",
     "phone": null,
@@ -4501,6 +4741,13 @@ await slyk.user.patch('5e101529-fa30-4415-9945-6540e70c4483', { name: 'corge' })
   "customData": {},
   "email": "foo@bar.com",
   "id": "5e101529-fa30-4415-9945-6540e70c4483",
+  "image": {
+    "external": false,
+    "path": "/waldo/fred.png",
+    "type": "image",
+    "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+    "url": "http://foobar.com/waldo/fred.png"
+  },
   "locale": "en-us",
   "name": "corge",
   "phone": null,
