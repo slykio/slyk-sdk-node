@@ -37,7 +37,7 @@
   "dependencies": {
     "easy-http-errors": "^2.0.0",
     "got": "9.6.0",
-    "lodash": "4.17.19",
+    "lodash": "4.17.21",
     "normalize-url": "4.5.0",
     "qs": "^6.6.0"
   },
