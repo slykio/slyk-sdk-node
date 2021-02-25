@@ -52,7 +52,7 @@
     "babel-plugin-add-module-exports": "1.0.4",
     "babel-plugin-module-resolver": "4.1.0",
     "coveralls": "3.1.0",
-    "eslint": "^5.15.1",
+    "eslint": "6.5.1",
     "eslint-config-seegno": "16.0.0",
     "jest": "^24.4.0",
     "lint-staged": "^8.1.5",
