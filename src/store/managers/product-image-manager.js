@@ -17,9 +17,9 @@ export default class ProductImageManager extends AbstractManager {
    */
 
   async create(productId, data) {
-    const { data: productImage } = await this._resolver.create(merge({}, data, { productId }));
+    const { data: productImage } = await this.resolver.create(merge({}, data, { productId }));
 
-    return this._instantiate(productImage);
+    return this.instantiate(productImage);
   }
 
   /**
@@ -27,7 +27,7 @@ export default class ProductImageManager extends AbstractManager {
    */
 
   async delete(id, productId) {
-    await this._resolver.delete({ id, productId });
+    await this.resolver.delete({ id, productId });
 
     return true;
   }
@@ -37,9 +37,9 @@ export default class ProductImageManager extends AbstractManager {
    */
 
   async get(id, productId, options) {
-    const { data: productImage } = await this._resolver.get({ id, productId }, options);
+    const { data: productImage } = await this.resolver.get({ id, productId }, options);
 
-    return this._instantiate(productImage);
+    return this.instantiate(productImage);
   }
 
   /**
@@ -47,8 +47,8 @@ export default class ProductImageManager extends AbstractManager {
    */
 
   async list(productId, options) {
-    const result = await this._resolver.list({ productId }, options);
-    const results = map(get(result, 'data', []), productImage => this._instantiate(productImage));
+    const result = await this.resolver.list({ productId }, options);
+    const results = map(get(result, 'data', []), productImage => this.instantiate(productImage));
     const total = get(result, 'total');
 
     return { results, total };
@@ -59,7 +59,7 @@ export default class ProductImageManager extends AbstractManager {
    */
 
   async reorder(id, productId, data) {
-    await this._resolver.reorder(merge({}, data, { id, productId }));
+    await this.resolver.reorder(merge({}, data, { id, productId }));
 
     return true;
   }

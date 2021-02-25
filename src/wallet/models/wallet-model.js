@@ -16,7 +16,7 @@ export default class WalletModel extends AbstractModel {
    */
 
   getActivity(options) {
-    return this._sdk.wallet.activity(this.id, options);
+    return WalletModel.sdk.wallet.activity(this.id, options);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class WalletModel extends AbstractModel {
    */
 
   getBalance(options) {
-    return this._sdk.wallet.balance(this.id, options);
+    return WalletModel.sdk.wallet.balance(this.id, options);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class WalletModel extends AbstractModel {
    */
 
   getMovements(options) {
-    return this._sdk.wallet.movements(this.id, options);
+    return WalletModel.sdk.wallet.movements(this.id, options);
   }
 
   /**
@@ -40,7 +40,7 @@ export default class WalletModel extends AbstractModel {
    */
 
   getTransactions(options) {
-    return this._sdk.wallet.transactions(this.id, options);
+    return WalletModel.sdk.wallet.transactions(this.id, options);
   }
 
   /**
@@ -48,7 +48,7 @@ export default class WalletModel extends AbstractModel {
    */
 
   getOwner(options) {
-    return this.ownerId ? this._sdk.user.get(this.ownerId, options) : undefined;
+    return this.ownerId ? WalletModel.sdk.user.get(this.ownerId, options) : undefined;
   }
 
   /**
@@ -56,7 +56,7 @@ export default class WalletModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.wallet.patch(this.id, data);
+    return WalletModel.sdk.wallet.patch(this.id, data);
   }
 
 }

@@ -182,18 +182,14 @@ describe('UserModel', () => {
 
       const { results, total } = await user.getInvites();
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          code: 'qux',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          code: 'quux',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        code: 'qux',
+        metadata: {}
+      },
+      {
+        code: 'quux',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -226,18 +222,14 @@ describe('UserModel', () => {
 
       const { results, total } = await user.getWallets();
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          id: 'qux',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          id: 'quux',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        id: 'qux',
+        metadata: {}
+      },
+      {
+        id: 'quux',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -263,11 +255,7 @@ describe('UserModel', () => {
 
       const wallet = await user.getPrimaryWallet();
 
-      expect(wallet).toEqual({
-        _sdk: expect.any(Object),
-        id: 'foo',
-        metadata: {}
-      });
+      expect(wallet).toEqual({ id: 'foo', metadata: {} });
     });
   });
 
@@ -355,11 +343,7 @@ describe('UserModel', () => {
 
       const referralUser = await user.getReferralUser();
 
-      expect(referralUser).toEqual({
-        _sdk: expect.any(Object),
-        id: 'foo',
-        metadata: {}
-      });
+      expect(referralUser).toEqual({ id: 'foo', metadata: {} });
     });
   });
 
@@ -384,7 +368,6 @@ describe('UserModel', () => {
       const patchedUser = await user.patch({ name: 'foobar' });
 
       expect(patchedUser).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: {},
         name: 'foobar'

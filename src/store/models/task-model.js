@@ -16,7 +16,7 @@ export default class TaskModel extends AbstractModel {
    */
 
   complete(data) {
-    return this._sdk.task.complete(this.id, data);
+    return TaskModel.sdk.task.complete(this.id, data);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class TaskModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.task.delete(this.id);
+    return TaskModel.sdk.task.delete(this.id);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class TaskModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.task.patch(this.id, data);
+    return TaskModel.sdk.task.patch(this.id, data);
   }
 
   /**
@@ -40,7 +40,7 @@ export default class TaskModel extends AbstractModel {
    */
 
   reorder(data) {
-    return this._sdk.task.reorder(this.id, data);
+    return TaskModel.sdk.task.reorder(this.id, data);
   }
 
 }

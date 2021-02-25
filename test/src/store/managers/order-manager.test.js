@@ -61,10 +61,7 @@ describe('OrderManager', () => {
         walletId: 'foobar'
       });
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 
@@ -88,10 +85,7 @@ describe('OrderManager', () => {
 
       const order = await slyk.order.fulfill('bar', { trackingId: '123' });
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 
@@ -115,10 +109,7 @@ describe('OrderManager', () => {
 
       const order = await slyk.order.get('bar');
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 
@@ -163,10 +154,7 @@ describe('OrderManager', () => {
       });
 
       expect(order.total).toEqual(5);
-      expect(order.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(order.results).toEqual(data);
     });
   });
 
@@ -190,10 +178,7 @@ describe('OrderManager', () => {
 
       const order = await slyk.order.patch('bar', { trackingId: 'xyzzy' });
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 
@@ -218,10 +203,7 @@ describe('OrderManager', () => {
 
       const order = await slyk.order.pay('bar', { amount: '2.00000000', walletId: 'foobar' });
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 
@@ -248,10 +230,7 @@ describe('OrderManager', () => {
 
       const order = await slyk.order.refund('bar', { amount: '5.00000000', reason: 'fred' });
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 
@@ -276,10 +255,7 @@ describe('OrderManager', () => {
 
       const order = await slyk.order.unfulfill('bar');
 
-      expect(order).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(order).toEqual(data);
     });
   });
 });

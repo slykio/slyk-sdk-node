@@ -14,17 +14,17 @@ export default class AbstractManager {
     model,
     resolver
   }) {
-    this._connection = connection; // eslint-disable-line id-match
-    this._model = model; // eslint-disable-line id-match
-    this._resolver = resolver(this._connection); // eslint-disable-line id-match
+    this.connection = connection;
+    this.model = model;
+    this.resolver = resolver(this.connection);
   }
 
   /**
    * Instantiate.
    */
 
-  _instantiate(data) {
-    return new this._model(data, { connection: this._connection });
+  instantiate(data) {
+    return new this.model(data, { connection: this.connection }); // eslint-disable-line new-cap
   }
 
 }

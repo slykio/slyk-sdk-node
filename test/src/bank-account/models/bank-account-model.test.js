@@ -15,30 +15,6 @@ describe('BankAccountModel', () => {
   const host = 'http://foobar:3000';
   const slyk = sdk({ apikey, host });
 
-  describe('getData', () => {
-    it('should return the `bank account` related properties', async () => {
-      nock(host, { reqheaders: { apikey } })
-        .get('/bank-accounts/foobar')
-        .reply(200, {
-          data: {
-            asset: 'qux',
-            details: {},
-            id: 'foobar',
-            name: 'fred'
-          }
-        });
-
-      const bankAccount = await slyk.bankAccount.get('foobar');
-
-      expect(bankAccount.getData()).toEqual({
-        asset: 'qux',
-        details: {},
-        id: 'foobar',
-        name: 'fred'
-      });
-    });
-  });
-
   describe('getAsset', () => {
     it('should return the `bankAccount` related `asset`', async () => {
       nock(host, { reqheaders: { apikey } })
@@ -60,11 +36,7 @@ describe('BankAccountModel', () => {
 
       const asset = await bankAccount.getAsset();
 
-      expect(asset).toEqual({
-        _sdk: expect.any(Object),
-        code: 'qux',
-        metadata: {}
-      });
+      expect(asset).toEqual({ code: 'qux', metadata: {} });
     });
   });
 });

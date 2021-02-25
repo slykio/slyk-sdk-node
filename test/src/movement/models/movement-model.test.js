@@ -35,11 +35,7 @@ describe('MovementModel', () => {
 
       const asset = await movement.getAsset();
 
-      expect(asset).toEqual({
-        _sdk: expect.any(Object),
-        code: 'qux',
-        metadata: {}
-      });
+      expect(asset).toEqual({ code: 'qux', metadata: {} });
     });
   });
 
@@ -63,11 +59,7 @@ describe('MovementModel', () => {
 
       const wallet = await movement.getWallet();
 
-      expect(wallet).toEqual({
-        _sdk: expect.any(Object),
-        id: 'qux',
-        metadata: {}
-      });
+      expect(wallet).toEqual({ id: 'qux', metadata: {} });
     });
   });
 
@@ -91,11 +83,7 @@ describe('MovementModel', () => {
 
       const transaction = await movement.getTransaction();
 
-      expect(transaction).toEqual({
-        _sdk: expect.any(Object),
-        id: 'qux',
-        metadata: {}
-      });
+      expect(transaction).toEqual({ id: 'qux', metadata: {} });
     });
   });
 });

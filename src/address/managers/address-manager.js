@@ -17,9 +17,9 @@ export default class AddressManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: address } = await this._resolver.create(data);
+    const { data: address } = await this.resolver.create(data);
 
-    return this._instantiate(address);
+    return this.instantiate(address);
   }
 
   /**
@@ -27,9 +27,9 @@ export default class AddressManager extends AbstractManager {
    */
 
   async get(address, options) {
-    const { data } = await this._resolver.get({ address }, options);
+    const { data } = await this.resolver.get({ address }, options);
 
-    return this._instantiate(data);
+    return this.instantiate(data);
   }
 
   /**
@@ -37,8 +37,8 @@ export default class AddressManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), address => this._instantiate(address));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), address => this.instantiate(address));
     const total = get(result, 'total');
 
     return { results, total };

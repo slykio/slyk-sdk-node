@@ -16,7 +16,7 @@ export default class AuthModel extends AbstractModel {
    */
 
   logout() {
-    return this._sdk.auth.logout({ refreshToken: this.refreshToken });
+    return AuthModel.sdk.auth.logout({ refreshToken: this.refreshToken });
   }
 
   /**
@@ -24,7 +24,7 @@ export default class AuthModel extends AbstractModel {
    */
 
   refresh() {
-    return this._sdk.auth.refresh({ refreshToken: this.refreshToken });
+    return AuthModel.sdk.auth.refresh({ refreshToken: this.refreshToken });
   }
 
 }

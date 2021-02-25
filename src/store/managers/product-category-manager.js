@@ -17,9 +17,9 @@ export default class ProductCategoryManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: productCategory } = await this._resolver.create(data);
+    const { data: productCategory } = await this.resolver.create(data);
 
-    return this._instantiate(productCategory);
+    return this.instantiate(productCategory);
   }
 
   /**
@@ -27,7 +27,7 @@ export default class ProductCategoryManager extends AbstractManager {
    */
 
   async delete(id) {
-    await this._resolver.delete({ id });
+    await this.resolver.delete({ id });
 
     return true;
   }
@@ -37,9 +37,9 @@ export default class ProductCategoryManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: productCategory } = await this._resolver.get({ id }, options);
+    const { data: productCategory } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(productCategory);
+    return this.instantiate(productCategory);
   }
 
   /**
@@ -47,8 +47,8 @@ export default class ProductCategoryManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), productCategory => this._instantiate(productCategory));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), productCategory => this.instantiate(productCategory));
     const total = get(result, 'total');
 
     return { results, total };
@@ -59,9 +59,9 @@ export default class ProductCategoryManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: productCategory } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: productCategory } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(productCategory);
+    return this.instantiate(productCategory);
   }
 
   /**
@@ -69,7 +69,7 @@ export default class ProductCategoryManager extends AbstractManager {
    */
 
   async reorder(id, data) {
-    await this._resolver.reorder(merge({}, data, { id }));
+    await this.resolver.reorder(merge({}, data, { id }));
 
     return true;
   }

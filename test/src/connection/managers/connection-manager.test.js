@@ -39,7 +39,6 @@ describe('ConnectionManager', () => {
       });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         driver: 'bar',
         id: 'qux',
         name: 'foo',
@@ -56,11 +55,7 @@ describe('ConnectionManager', () => {
 
       const result = await slyk.connection.get('fred');
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        id: 'fred',
-        name: 'waldo'
-      });
+      expect(result).toEqual({ id: 'fred', name: 'waldo' });
     });
   });
 
@@ -81,12 +76,10 @@ describe('ConnectionManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           id: 'qux',
           name: 'foobar'
         },
         {
-          _sdk: expect.any(Object),
           id: 'quux',
           name: 'foobiz'
         }
@@ -104,11 +97,7 @@ describe('ConnectionManager', () => {
 
       const result = await slyk.connection.patch('waldo', { uri: 'fred' });
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        id: 'waldo',
-        uri: 'fred'
-      });
+      expect(result).toEqual({ id: 'waldo', uri: 'fred' });
     });
   });
 });

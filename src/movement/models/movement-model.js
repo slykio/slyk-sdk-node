@@ -16,7 +16,7 @@ export default class MovementModel extends AbstractModel {
    */
 
   getAsset(options) {
-    return this._sdk.asset.get(this.assetCode, options);
+    return MovementModel.sdk.asset.get(this.assetCode, options);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class MovementModel extends AbstractModel {
    */
 
   getWallet(options) {
-    return this._sdk.wallet.get(this.walletId, options);
+    return MovementModel.sdk.wallet.get(this.walletId, options);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class MovementModel extends AbstractModel {
    */
 
   getTransaction(options) {
-    return this._sdk.transaction.get(this.transactionId, options);
+    return MovementModel.sdk.transaction.get(this.transactionId, options);
   }
 
 }

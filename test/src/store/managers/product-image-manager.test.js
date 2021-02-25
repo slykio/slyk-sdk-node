@@ -36,10 +36,7 @@ describe('ProductImageManager', () => {
         image: 'corge'
       });
 
-      expect(productImage).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(productImage).toEqual(data);
     });
   });
 
@@ -73,10 +70,7 @@ describe('ProductImageManager', () => {
         include: { product: true }
       });
 
-      expect(productImage).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(productImage).toEqual(data);
     });
   });
 
@@ -108,10 +102,7 @@ describe('ProductImageManager', () => {
       });
 
       expect(productImage.total).toEqual(5);
-      expect(productImage.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(productImage.results).toEqual(data);
     });
   });
 

@@ -17,8 +17,8 @@ export default class QuestionTypeManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), questionType => this._instantiate(questionType));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), questionType => this.instantiate(questionType));
     const total = get(result, 'total');
 
     return { results, total };

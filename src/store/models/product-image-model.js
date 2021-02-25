@@ -16,7 +16,7 @@ export default class ProductImageModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.productImage.delete(this.id, this.productId);
+    return ProductImageModel.sdk.productImage.delete(this.id, this.productId);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class ProductImageModel extends AbstractModel {
    */
 
   reorder(data) {
-    return this._sdk.productImage.reorder(this.id, this.productId, data);
+    return ProductImageModel.sdk.productImage.reorder(this.id, this.productId, data);
   }
 
 }

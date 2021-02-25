@@ -17,9 +17,9 @@ export default class BankAccountManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data } = await this._resolver.get({ id }, options);
+    const { data } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(data);
+    return this.instantiate(data);
   }
 
   /**
@@ -27,8 +27,8 @@ export default class BankAccountManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), bankAccount => this._instantiate(bankAccount));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), bankAccount => this.instantiate(bankAccount));
     const total = get(result, 'total');
 
     return { results, total };

@@ -17,9 +17,9 @@ export default class SettingManager extends AbstractManager {
    */
 
   async get(code, options) {
-    const { data: setting } = await this._resolver.get({ code }, options);
+    const { data: setting } = await this.resolver.get({ code }, options);
 
-    return this._instantiate(setting);
+    return this.instantiate(setting);
   }
 
   /**
@@ -27,8 +27,8 @@ export default class SettingManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), setting => this._instantiate(setting));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), setting => this.instantiate(setting));
 
     return { results };
   }

@@ -28,11 +28,7 @@ describe('PaymentMethodManager', () => {
 
       const result = await slyk.paymentMethod.get('waldo');
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        metadata: { qux: 'quux' },
-        slug: 'waldo'
-      });
+      expect(result).toEqual({ metadata: { qux: 'quux' }, slug: 'waldo' });
     });
   });
 
@@ -61,13 +57,11 @@ describe('PaymentMethodManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           enabled: true,
           metadata: { qux: 'quux' },
           slug: 'waldo'
         },
         {
-          _sdk: expect.any(Object),
           enabled: true,
           metadata: { bar: 'biz' },
           slug: 'fred'

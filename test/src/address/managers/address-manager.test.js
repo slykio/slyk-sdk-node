@@ -31,7 +31,6 @@ describe('AddressManager', () => {
       const result = await slyk.address.create({ address: 'foobar', assetCode: 'fred' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         address: 'foobar',
         assetCode: 'fred',
         metadata: {}
@@ -75,7 +74,6 @@ describe('AddressManager', () => {
       const result = await slyk.address.get('foobar');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         address: 'foobar',
         assetCode: 'fred',
         metadata: {}
@@ -110,14 +108,12 @@ describe('AddressManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           address: 'foobar',
           assetCode: 'fred',
           metadata: {},
           walletId: 'waldo'
         },
         {
-          _sdk: expect.any(Object),
           address: 'foobiz',
           assetCode: 'quux',
           metadata: {},

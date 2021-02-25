@@ -16,7 +16,7 @@ export default class ProductCategoryModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.productCategory.delete(this.id);
+    return ProductCategoryModel.sdk.productCategory.delete(this.id);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class ProductCategoryModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.productCategory.patch(this.id, data);
+    return ProductCategoryModel.sdk.productCategory.patch(this.id, data);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class ProductCategoryModel extends AbstractModel {
    */
 
   reorder(data) {
-    return this._sdk.productCategory.reorder(this.id, data);
+    return ProductCategoryModel.sdk.productCategory.reorder(this.id, data);
   }
 
 }

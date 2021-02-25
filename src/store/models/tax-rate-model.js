@@ -16,7 +16,7 @@ export default class TaxRateModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.taxRate.delete(this.id);
+    return TaxRateModel.sdk.taxRate.delete(this.id);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class TaxRateModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.taxRate.patch(this.id, data);
+    return TaxRateModel.sdk.taxRate.patch(this.id, data);
   }
 
 }

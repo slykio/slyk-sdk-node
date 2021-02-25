@@ -35,11 +35,7 @@ describe('InviteManager', () => {
 
       const result = await slyk.invite.create({ email: 'foo@bar.com' });
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        code: 'bar',
-        invitedEmail: 'foo@bar.com'
-      });
+      expect(result).toEqual({ code: 'bar', invitedEmail: 'foo@bar.com' });
     });
   });
 
@@ -51,11 +47,7 @@ describe('InviteManager', () => {
 
       const result = await slyk.invite.get('waldo');
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        code: 'waldo',
-        invitedEmail: 'foo@bar.com'
-      });
+      expect(result).toEqual({ code: 'waldo', invitedEmail: 'foo@bar.com' });
     });
   });
 
@@ -76,12 +68,10 @@ describe('InviteManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           code: 'waldo',
           invitedEmail: 'foo@bar.com'
         },
         {
-          _sdk: expect.any(Object),
           code: 'fred',
           invitedEmail: 'foo@bar.com'
         }

@@ -19,8 +19,8 @@ export default class WalletManager extends AbstractManager {
    */
 
   async activity(id, options) {
-    const result = await this._resolver.activity({ id }, options);
-    const results = map(get(result, 'data', []), transaction => new Transaction(transaction, { connection: this._connection }));
+    const result = await this.resolver.activity({ id }, options);
+    const results = map(get(result, 'data', []), transaction => new Transaction(transaction, { connection: this.connection }));
     const total = get(result, 'total');
 
     return { results, total };
@@ -31,7 +31,7 @@ export default class WalletManager extends AbstractManager {
    */
 
   async balance(id, options) {
-    const { data: balance } = await this._resolver.balance({ id }, options);
+    const { data: balance } = await this.resolver.balance({ id }, options);
 
     return balance;
   }
@@ -41,9 +41,9 @@ export default class WalletManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: wallet } = await this._resolver.create(data);
+    const { data: wallet } = await this.resolver.create(data);
 
-    return this._instantiate(wallet);
+    return this.instantiate(wallet);
   }
 
   /**
@@ -51,9 +51,9 @@ export default class WalletManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: wallet } = await this._resolver.get({ id }, options);
+    const { data: wallet } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(wallet);
+    return this.instantiate(wallet);
   }
 
   /**
@@ -61,8 +61,8 @@ export default class WalletManager extends AbstractManager {
    */
 
   async globalActivity(options) {
-    const result = await this._resolver.globalActivity({}, options);
-    const results = map(get(result, 'data', []), transaction => new Transaction(transaction, { connection: this._connection }));
+    const result = await this.resolver.globalActivity({}, options);
+    const results = map(get(result, 'data', []), transaction => new Transaction(transaction, { connection: this.connection }));
     const total = get(result, 'total');
 
     return { results, total };
@@ -73,7 +73,7 @@ export default class WalletManager extends AbstractManager {
    */
 
   async globalBalance(options) {
-    const { data: balance } = await this._resolver.globalBalance({}, options);
+    const { data: balance } = await this.resolver.globalBalance({}, options);
 
     return balance;
   }
@@ -83,8 +83,8 @@ export default class WalletManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), wallet => this._instantiate(wallet));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), wallet => this.instantiate(wallet));
     const total = get(result, 'total');
 
     return { results, total };
@@ -95,8 +95,8 @@ export default class WalletManager extends AbstractManager {
    */
 
   async movements(id, options) {
-    const result = await this._resolver.movements({ id }, options);
-    const results = map(get(result, 'data', []), movement => new Movement(movement, { connection: this._connection }));
+    const result = await this.resolver.movements({ id }, options);
+    const results = map(get(result, 'data', []), movement => new Movement(movement, { connection: this.connection }));
     const total = get(result, 'total');
 
     return { results, total };
@@ -107,9 +107,9 @@ export default class WalletManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: wallet } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: wallet } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(wallet);
+    return this.instantiate(wallet);
   }
 
   /**
@@ -117,8 +117,8 @@ export default class WalletManager extends AbstractManager {
    */
 
   async transactions(id, options) {
-    const result = await this._resolver.transactions({ id }, options);
-    const results = map(get(result, 'data', []), transaction => new Transaction(transaction, { connection: this._connection }));
+    const result = await this.resolver.transactions({ id }, options);
+    const results = map(get(result, 'data', []), transaction => new Transaction(transaction, { connection: this.connection }));
     const total = get(result, 'total');
 
     return { results, total };

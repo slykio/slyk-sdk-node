@@ -40,13 +40,11 @@ describe('WalletManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           amount: '5',
           id: 'bar',
           metadata: {}
         },
         {
-          _sdk: expect.any(Object),
           amount: '4',
           id: 'biz',
           metadata: {}
@@ -85,11 +83,7 @@ describe('WalletManager', () => {
 
       const result = await slyk.wallet.create();
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        id: 'bar',
-        metadata: {}
-      });
+      expect(result).toEqual({ id: 'bar', metadata: {} });
     });
   });
 
@@ -101,11 +95,7 @@ describe('WalletManager', () => {
 
       const result = await slyk.wallet.get('bar');
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        id: 'bar',
-        metadata: {}
-      });
+      expect(result).toEqual({ id: 'bar', metadata: {} });
     });
   });
 
@@ -134,22 +124,18 @@ describe('WalletManager', () => {
 
       const { results, total } = await slyk.wallet.globalActivity({ filter: { assetCode: 'qux' } });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          amount: '5',
-          assetCode: 'qux',
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          amount: '4',
-          assetCode: 'qux',
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        amount: '5',
+        assetCode: 'qux',
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        amount: '4',
+        assetCode: 'qux',
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -190,18 +176,14 @@ describe('WalletManager', () => {
 
       const { results, total } = await slyk.wallet.list({ page: { number: 3, size: 2 } });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(6);
     });
@@ -236,20 +218,16 @@ describe('WalletManager', () => {
         sort: [{ name: 'amount' }]
       });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          amount: '1',
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          amount: '2',
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        amount: '1',
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        amount: '2',
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -270,7 +248,6 @@ describe('WalletManager', () => {
       const result = await slyk.wallet.patch('bar', { name: 'foobar' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: {},
         name: 'foobar'
@@ -309,20 +286,16 @@ describe('WalletManager', () => {
         sort: [{ direction: 'desc', name: 'amount' }]
       });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          amount: '3.5',
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          amount: '3',
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        amount: '3.5',
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        amount: '3',
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(6);
     });

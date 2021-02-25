@@ -16,9 +16,9 @@ export default class AuthManager extends AbstractManager {
    */
 
   async login(data) {
-    const { data: auth } = await this._resolver.login(data);
+    const { data: auth } = await this.resolver.login(data);
 
-    return this._instantiate(auth);
+    return this.instantiate(auth);
   }
 
   /**
@@ -26,7 +26,7 @@ export default class AuthManager extends AbstractManager {
    */
 
   async logout(data) {
-    await this._resolver.logout(data);
+    await this.resolver.logout(data);
 
     return true;
   }
@@ -36,9 +36,9 @@ export default class AuthManager extends AbstractManager {
    */
 
   async refresh(data) {
-    const { data: auth } = await this._resolver.refresh(data);
+    const { data: auth } = await this.resolver.refresh(data);
 
-    return this._instantiate(auth);
+    return this.instantiate(auth);
   }
 
   /**
@@ -46,7 +46,7 @@ export default class AuthManager extends AbstractManager {
    */
 
   async validate(data) {
-    await this._resolver.validate(data);
+    await this.resolver.validate(data);
 
     return true;
   }

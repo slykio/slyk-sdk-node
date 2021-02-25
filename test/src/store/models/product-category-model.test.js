@@ -77,7 +77,6 @@ describe('ProductCategoryModel', () => {
       });
 
       expect(response).toEqual({
-        _sdk: expect.any(Object),
         ...data,
         customData: { foo: 'bar' },
         description: 'quux',

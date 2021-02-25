@@ -120,7 +120,6 @@ describe('TaskModel', () => {
       });
 
       expect(response).toEqual({
-        _sdk: expect.any(Object),
         ...data,
         amount: '3.00000000',
         enabled: false,

@@ -16,7 +16,7 @@ export default class InviteModel extends AbstractModel {
    */
 
   cancel(data) {
-    return this._sdk.invite.cancel(this.code, data);
+    return InviteModel.sdk.invite.cancel(this.code, data);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class InviteModel extends AbstractModel {
    */
 
   getInvitedUser(options) {
-    return this.invitedUserId ? this._sdk.user.get(this.invitedUserId, options) : undefined;
+    return this.invitedUserId ? InviteModel.sdk.user.get(this.invitedUserId, options) : undefined;
   }
 
   /**
@@ -32,7 +32,7 @@ export default class InviteModel extends AbstractModel {
    */
 
   getInviterUser(options) {
-    return this.inviterUserId ? this._sdk.user.get(this.inviterUserId, options) : undefined;
+    return this.inviterUserId ? InviteModel.sdk.user.get(this.inviterUserId, options) : undefined;
   }
 
   /**
@@ -40,7 +40,7 @@ export default class InviteModel extends AbstractModel {
    */
 
   validate() {
-    return this._sdk.invite.validate(this.code);
+    return InviteModel.sdk.invite.validate(this.code);
   }
 
 }

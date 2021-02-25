@@ -65,10 +65,7 @@ describe('OrderModel', () => {
 
       const response = await order.fulfill({ trackingId: '123' });
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(response).toEqual(data);
     });
   });
 
@@ -107,7 +104,6 @@ describe('OrderModel', () => {
       const orderLine = await order.fulfillOrderLine('bar', { quantity: 2 });
 
       expect(orderLine).toEqual({
-        _sdk: expect.any(Object),
         assetCode: 'quux',
         fulfilledQuantity: 2,
         id: 'bar',
@@ -152,7 +148,6 @@ describe('OrderModel', () => {
       const orderLine = await order.getOrderLine('bar');
 
       expect(orderLine).toEqual({
-        _sdk: expect.any(Object),
         assetCode: 'quux',
         fulfilledQuantity: 2,
         id: 'bar',
@@ -189,22 +184,20 @@ describe('OrderModel', () => {
           sort: 'assetCode'
         })
         .reply(200, {
-          data: [
-            {
-              assetCode: 'quux',
-              fulfilledQuantity: 2,
-              id: 'bar',
-              orderId: 'foo',
-              status: 'fulfilled'
-            },
-            {
-              assetCode: 'waldo',
-              fulfilledQuantity: 1,
-              id: 'qux',
-              orderId: 'foo',
-              status: 'unfulfilled'
-            }
-          ],
+          data: [{
+            assetCode: 'quux',
+            fulfilledQuantity: 2,
+            id: 'bar',
+            orderId: 'foo',
+            status: 'fulfilled'
+          },
+          {
+            assetCode: 'waldo',
+            fulfilledQuantity: 1,
+            id: 'qux',
+            orderId: 'foo',
+            status: 'unfulfilled'
+          }],
           total: 5
         });
 
@@ -214,24 +207,20 @@ describe('OrderModel', () => {
       });
 
       expect(orderLine.total).toEqual(5);
-      expect(orderLine.results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          assetCode: 'quux',
-          fulfilledQuantity: 2,
-          id: 'bar',
-          orderId: 'foo',
-          status: 'fulfilled'
-        },
-        {
-          _sdk: expect.any(Object),
-          assetCode: 'waldo',
-          fulfilledQuantity: 1,
-          id: 'qux',
-          orderId: 'foo',
-          status: 'unfulfilled'
-        }
-      ]);
+      expect(orderLine.results).toEqual([{
+        assetCode: 'quux',
+        fulfilledQuantity: 2,
+        id: 'bar',
+        orderId: 'foo',
+        status: 'fulfilled'
+      },
+      {
+        assetCode: 'waldo',
+        fulfilledQuantity: 1,
+        id: 'qux',
+        orderId: 'foo',
+        status: 'unfulfilled'
+      }]);
     });
   });
 
@@ -258,10 +247,7 @@ describe('OrderModel', () => {
 
       const response = await order.patch({ trackingId: '123' });
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(response).toEqual(data);
     });
   });
 
@@ -288,10 +274,7 @@ describe('OrderModel', () => {
 
       const response = await order.pay({ amount: '2.00000000', walletId: 'foobar' });
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(response).toEqual(data);
     });
   });
 
@@ -320,10 +303,7 @@ describe('OrderModel', () => {
 
       const response = await order.refund({ amount: '2.00000000', reason: 'fred' });
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(response).toEqual(data);
     });
   });
 
@@ -350,10 +330,7 @@ describe('OrderModel', () => {
 
       const response = await order.unfulfill();
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(response).toEqual(data);
     });
   });
 
@@ -392,7 +369,6 @@ describe('OrderModel', () => {
       const orderLine = await order.unfulfillOrderLine('bar');
 
       expect(orderLine).toEqual({
-        _sdk: expect.any(Object),
         assetCode: 'quux',
         fulfilledQuantity: 2,
         id: 'bar',

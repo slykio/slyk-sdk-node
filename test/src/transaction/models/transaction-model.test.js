@@ -36,7 +36,6 @@ describe('TransactionModel', () => {
       const approvedTransaction = await transaction.approve();
 
       expect(approvedTransaction).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: {},
         status: 'processing'
@@ -65,7 +64,6 @@ describe('TransactionModel', () => {
       const confirmedTransaction = await transaction.confirm();
 
       expect(confirmedTransaction).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: {},
         status: 'completed'
@@ -94,7 +92,6 @@ describe('TransactionModel', () => {
       const failedTransaction = await transaction.fail({ reason: 'waldo' });
 
       expect(failedTransaction).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: { failReason: 'waldo' },
         status: 'failed'
@@ -122,11 +119,7 @@ describe('TransactionModel', () => {
 
       const wallet = await transaction.getAsset();
 
-      expect(wallet).toEqual({
-        _sdk: expect.any(Object),
-        code: 'foo',
-        name: 'foobar'
-      });
+      expect(wallet).toEqual({ code: 'foo', name: 'foobar' });
     });
   });
 
@@ -155,11 +148,7 @@ describe('TransactionModel', () => {
 
       const address = await transaction.getDestinationAddress();
 
-      expect(address).toEqual({
-        _sdk: expect.any(Object),
-        address: 'foo',
-        assetCode: 'corge'
-      });
+      expect(address).toEqual({ address: 'foo', assetCode: 'corge' });
     });
   });
 
@@ -188,11 +177,7 @@ describe('TransactionModel', () => {
 
       const wallet = await transaction.getDestinationWallet();
 
-      expect(wallet).toEqual({
-        _sdk: expect.any(Object),
-        id: 'foo',
-        metadata: {}
-      });
+      expect(wallet).toEqual({ id: 'foo', metadata: {} });
     });
   });
 
@@ -221,11 +206,7 @@ describe('TransactionModel', () => {
 
       const address = await transaction.getOriginAddress();
 
-      expect(address).toEqual({
-        _sdk: expect.any(Object),
-        address: 'foo',
-        assetCode: 'corge'
-      });
+      expect(address).toEqual({ address: 'foo', assetCode: 'corge' });
     });
   });
 
@@ -254,11 +235,7 @@ describe('TransactionModel', () => {
 
       const wallet = await transaction.getOriginWallet();
 
-      expect(wallet).toEqual({
-        _sdk: expect.any(Object),
-        id: 'foo',
-        metadata: {}
-      });
+      expect(wallet).toEqual({ id: 'foo', metadata: {} });
     });
   });
 
@@ -283,18 +260,14 @@ describe('TransactionModel', () => {
 
       const { results, total } = await transaction.getMovements();
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          id: 'qux',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          id: 'quux',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        id: 'qux',
+        metadata: {}
+      },
+      {
+        id: 'quux',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -321,7 +294,6 @@ describe('TransactionModel', () => {
       const rejectedTransaction = await transaction.reject({ reason: 'waldo' });
 
       expect(rejectedTransaction).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: { rejectReason: 'waldo' },
         status: 'rejected'

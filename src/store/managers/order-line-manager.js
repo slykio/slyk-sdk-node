@@ -17,9 +17,9 @@ export default class OrderLineManager extends AbstractManager {
    */
 
   async fulfill(id, orderId, data) {
-    const { data: orderLine } = await this._resolver.fulfill(merge({}, data, { id, orderId }));
+    const { data: orderLine } = await this.resolver.fulfill(merge({}, data, { id, orderId }));
 
-    return this._instantiate(orderLine);
+    return this.instantiate(orderLine);
   }
 
   /**
@@ -27,9 +27,9 @@ export default class OrderLineManager extends AbstractManager {
    */
 
   async get(id, orderId, options) {
-    const { data: orderLine } = await this._resolver.get({ id, orderId }, options);
+    const { data: orderLine } = await this.resolver.get({ id, orderId }, options);
 
-    return this._instantiate(orderLine);
+    return this.instantiate(orderLine);
   }
 
   /**
@@ -37,8 +37,8 @@ export default class OrderLineManager extends AbstractManager {
    */
 
   async list(orderId, options) {
-    const result = await this._resolver.list({ orderId }, options);
-    const results = map(get(result, 'data', []), orderLine => this._instantiate(orderLine));
+    const result = await this.resolver.list({ orderId }, options);
+    const results = map(get(result, 'data', []), orderLine => this.instantiate(orderLine));
     const total = get(result, 'total');
 
     return { results, total };
@@ -49,9 +49,9 @@ export default class OrderLineManager extends AbstractManager {
    */
 
   async unfulfill(id, orderId) {
-    const { data: orderLine } = await this._resolver.unfulfill({ id, orderId });
+    const { data: orderLine } = await this.resolver.unfulfill({ id, orderId });
 
-    return this._instantiate(orderLine);
+    return this.instantiate(orderLine);
   }
 
 }

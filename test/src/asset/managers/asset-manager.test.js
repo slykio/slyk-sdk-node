@@ -30,7 +30,6 @@ describe('AssetManager', () => {
       const result = await slyk.asset.create({ code: 'bar', name: 'foo' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         code: 'bar',
         metadata: {},
         name: 'foo'
@@ -53,7 +52,6 @@ describe('AssetManager', () => {
       const result = await slyk.asset.get('waldo');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         code: 'waldo',
         metadata: {},
         name: 'foobar'
@@ -86,13 +84,11 @@ describe('AssetManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           code: 'waldo',
           metadata: {},
           name: 'foobar'
         },
         {
-          _sdk: expect.any(Object),
           code: 'fred',
           metadata: {},
           name: 'foobiz'
@@ -118,7 +114,6 @@ describe('AssetManager', () => {
       const result = await slyk.asset.patch('waldo', { name: 'foobar' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         code: 'waldo',
         metadata: {},
         name: 'foobar'

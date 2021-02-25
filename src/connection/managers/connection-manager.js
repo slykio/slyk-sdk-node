@@ -17,9 +17,9 @@ export default class ConnectionManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: connection } = await this._resolver.create(data);
+    const { data: connection } = await this.resolver.create(data);
 
-    return this._instantiate(connection);
+    return this.instantiate(connection);
   }
 
   /**
@@ -27,9 +27,9 @@ export default class ConnectionManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data } = await this._resolver.get({ id }, options);
+    const { data } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(data);
+    return this.instantiate(data);
   }
 
   /**
@@ -37,8 +37,8 @@ export default class ConnectionManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), connection => this._instantiate(connection));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), connection => this.instantiate(connection));
     const total = get(result, 'total');
 
     return { results, total };
@@ -49,9 +49,9 @@ export default class ConnectionManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: connection } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: connection } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(connection);
+    return this.instantiate(connection);
   }
 
 }

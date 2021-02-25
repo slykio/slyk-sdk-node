@@ -17,9 +17,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async approve(id, data) {
-    const { data: transaction } = await this._resolver.approve(merge({}, data, { id }));
+    const { data: transaction } = await this.resolver.approve(merge({}, data, { id }));
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -27,9 +27,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async confirm(id, data) {
-    const { data: transaction } = await this._resolver.confirm(merge({}, data, { id }));
+    const { data: transaction } = await this.resolver.confirm(merge({}, data, { id }));
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -37,9 +37,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async deposit(data) {
-    const { data: transaction } = await this._resolver.deposit(data);
+    const { data: transaction } = await this.resolver.deposit(data);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -47,9 +47,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async fail(id, data) {
-    const { data: transaction } = await this._resolver.fail(merge({}, data, { id }));
+    const { data: transaction } = await this.resolver.fail(merge({}, data, { id }));
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -57,9 +57,9 @@ export default class TransactionManager extends AbstractManager {
   */
 
   async get(id, options) {
-    const { data: transaction } = await this._resolver.get({ id }, options);
+    const { data: transaction } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -67,8 +67,8 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), transaction => this._instantiate(transaction));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), transaction => this.instantiate(transaction));
     const total = get(result, 'total');
 
     return { results, total };
@@ -79,9 +79,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async pay(data) {
-    const { data: transaction } = await this._resolver.pay(data);
+    const { data: transaction } = await this.resolver.pay(data);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -89,9 +89,9 @@ export default class TransactionManager extends AbstractManager {
   */
 
   async reject(id, data) {
-    const { data: transaction } = await this._resolver.reject(merge({}, data, { id }));
+    const { data: transaction } = await this.resolver.reject(merge({}, data, { id }));
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -99,9 +99,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async request(data) {
-    const { data: transaction } = await this._resolver.request(data);
+    const { data: transaction } = await this.resolver.request(data);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -109,9 +109,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async send(data) {
-    const { data: transaction } = await this._resolver.send(data);
+    const { data: transaction } = await this.resolver.send(data);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -119,9 +119,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async transfer(data) {
-    const { data: transaction } = await this._resolver.transfer(data);
+    const { data: transaction } = await this.resolver.transfer(data);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
   /**
@@ -129,9 +129,9 @@ export default class TransactionManager extends AbstractManager {
    */
 
   async withdrawal(data) {
-    const { data: transaction } = await this._resolver.withdrawal(data);
+    const { data: transaction } = await this.resolver.withdrawal(data);
 
-    return this._instantiate(transaction);
+    return this.instantiate(transaction);
   }
 
 }

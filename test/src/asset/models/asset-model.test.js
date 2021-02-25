@@ -40,7 +40,7 @@ describe('AssetModel', () => {
 
       const connection = await asset.getConnection();
 
-      expect(connection).toEqual({ _sdk: expect.any(Object), id: 'foobiz' });
+      expect(connection).toEqual({ id: 'foobiz' });
     });
   });
 
@@ -58,11 +58,7 @@ describe('AssetModel', () => {
 
       const patchedAsset = await asset.patch({ name: 'foobiz' });
 
-      expect(patchedAsset).toEqual({
-        _sdk: expect.any(Object),
-        code: 'foobar',
-        name: 'foobiz'
-      });
+      expect(patchedAsset).toEqual({ code: 'foobar', name: 'foobiz' });
     });
   });
 });

@@ -39,7 +39,6 @@ describe('RateManager', () => {
       });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         baseAssetCode: 'bar',
         metadata: {},
         quoteAssetCode: 'biz',
@@ -76,7 +75,6 @@ describe('RateManager', () => {
       const result = await slyk.rate.get('bar', 'biz');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         baseAssetCode: 'bar',
         metadata: {},
         quoteAssetCode: 'biz',
@@ -112,14 +110,12 @@ describe('RateManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           baseAssetCode: 'bar',
           metadata: {},
           quoteAssetCode: 'biz',
           rate: '0.5'
         },
         {
-          _sdk: expect.any(Object),
           baseAssetCode: 'biz',
           metadata: {},
           quoteAssetCode: 'bar',
@@ -147,7 +143,6 @@ describe('RateManager', () => {
       const result = await slyk.rate.patch('bar', 'biz', { rate: '0.4' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         baseAssetCode: 'bar',
         metadata: {},
         quoteAssetCode: 'biz',
