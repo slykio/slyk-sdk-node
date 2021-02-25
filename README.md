@@ -28,7 +28,7 @@ For additional information and documentation please visit our [developers page](
 $ yarn add @slyk/slyk-sdk-node
 ```
 
-The `slyk-sdk-node` requires node **v4** or higher.
+The `slyk-sdk-node` requires node **v8.12** or higher.
 
 ## Usage
 
