@@ -407,7 +407,6 @@
 
 The result of each one of the following `address` methods return one or an array of `Address` objects that include the following methods:
 - `getAsset`: Returns the `asset` of the `address` `assetCode`.
-- `getData`: Returns the `address` details.
 - `getWallet`: Returns the `wallet` of the `address` `walletId` if set.
 
 ### `address.create`
@@ -513,7 +512,6 @@ await slyk.address.list({
 ### `auth.login`
 
 Issues `auth` tokens and returns one `Auth` object that include the following methods:
-- `getData`: Returns the `auth` details.
 - `refresh`: Refreshes the current `auth` token.
 - `logout`: Revokes the current `auth` `refreshToken`.
 
@@ -556,7 +554,6 @@ true
 ### `auth.refresh`
 
 Refreshes the `auth` tokens and returns one `Auth` object that include the following methods:
-- `getData`: Returns the `auth` details.
 - `refresh`: Refreshes the current `auth` token.
 - `logout`: Revokes the current `auth` `refreshToken`.
 
@@ -599,7 +596,6 @@ true
 
 The result of each one of the following `asset` methods return one or an array of `Asset` objects that include the following methods:
 - `getConnection`: Returns the `connection` of the `asset` `connectionId` if set.
-- `getData`: Returns the `asset` details.
 - `patch`: Patches the `asset`.
 
 ### `asset.create`
@@ -770,7 +766,6 @@ await slyk.asset.patch('bar' { customData: { qux: 'quux' } });
 ## bankAccount
 
 The result of each one of the following `bankAccount` methods return one or an array of `BankAccount` objects that include the following methods:
-- `getData`: Returns the `bankAccount` details.
 - `getAsset`: Returns the `bankAccount` `asset` details.
 
 ### `bankAccount.get`
@@ -844,7 +839,6 @@ await slyk.bankAccount.list({
 ## bankAccountRegion
 
 The result of each one of the following `bankAccountRegion` methods return one or an array of `BankAccountRegion` objects that include the following methods:
-- `getData`: Returns the `bankAccountRegion` details.
 - `getAssets`: Returns the list of `bankAccountRegion` `assets` details.
 
 ### `bankAccountRegion.list`
@@ -891,7 +885,6 @@ await slyk.bankAccountRegion.list({
 ## connection
 
 The result of each one of the following `connection` methods return one or an array of `Connection` objects that include the following methods:
-- `getData`: Returns the `connection` details.
 - `patch`: Patches the `connection`.
 
 ### `connection.create`
@@ -1015,7 +1008,6 @@ await slyk.connection.patch('f1ee08ee-265b-472c-88cf-4bae10d0ff9b', { uri: 'wald
 
 The result of each one of the following `invite` methods return one or an array of `Invite` objects that include the following methods:
 - `cancel`: Cancels the `invite`.
-- `getData`: Returns the `invite` details.
 - `getInvitedUser`: Returns the `user` of the `invite` `invitedUserId` if set.
 - `getInviterUser`: Returns the `user` of the `invite` `inviterUserId` if set.
 - `validate`: Validates the `invite`.
@@ -1179,7 +1171,6 @@ await slyk.invite.validate('bar');
 
 The result of each one of the following `movement` methods return one or an array of `Movement` objects that include the following methods:
 - `getAsset`: Returns the `asset` of the `movement` `assetCode`.
-- `getData`: Returns the `movement` details.
 - `getWallet`: Returns the `wallet` of the `movement` `walletId`.
 - `getTransaction`: Returns the `transaction` of the `movement` `transactionId`.
 
@@ -1294,7 +1285,6 @@ The result of each one of the following `order` methods return one or an array o
 - `cancel`: Cancels the `order`.
 - `fulfill`: Fulfills the `order`.
 - `fulfillOrderLine`: Fulfills the associated `orderLine` by providing an `id`.
-- `getData`: Returns the `order` details.
 - `getOrderLine`: Returns the associated `orderLine` by providing an `id`.
 - `getOrderLines`: Returns the associated `orderLines`.
 - `patch`: Patches the `order`.
@@ -1910,7 +1900,6 @@ await slyk.orderLine.unfulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57', { quantit
 ### `paymentMethod.get`
 
 Returns the `paymentMethod` of the given `slug`.
-- `getData`: Returns the `paymentMethod` details.
 
 **Example:**
 
@@ -1990,7 +1979,6 @@ The result of each one of the following `product` methods return one or an array
 - `createQuestion`: Links a question to the `product`.
 - `delete`: Deletes the `product`.
 - `deleteQuestion`: Unlinks a question from the `product`.
-- `getData`: Returns the `product` details.
 - `patch`: Patches the `product`.
 - `reorder`: Reorders the `product`.
 - `reorderQuestion`: Reorders a `product` question.
@@ -2396,7 +2384,6 @@ true
 
 The result of each one of the following `productCategory` methods return one or an array of `ProductCategory` objects that include the following methods:
 - `delete`: Deletes the `productCategory`.
-- `getData`: Returns the `productCategory` details.
 - `patch`: Patches the `productCategory`.
 - `reorder`: Reorders the `productCategory`.
 
@@ -2603,7 +2590,6 @@ true
 
 The result of each one of the following `productImage` methods return one or an array of `ProductImage` objects that include the following methods:
 - `delete`: Deletes the `productImage`.
-- `getData`: Returns the `productImage` details..
 - `reorder`: Reorders the `productImage`.
 
 ### `productImage.create`
@@ -2763,7 +2749,6 @@ true
 
 The result of each one of the following `question` methods return one or an array of `Question` objects that include the following methods:
 - `delete`: Deletes the `question`.
-- `getData`: Returns the `question` details.
 - `patch`: Patches the `question`.
 
 ### `question.create`
@@ -2988,8 +2973,7 @@ await slyk.question.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
 
 ## questionType
 
-The result of each one of the following `questionType` methods return one or an array of `QuestionType` objects that include the following methods:
-- `getData`: Returns the `questionType` details.
+The result of each one of the following `questionType` methods return one or an array of `QuestionType` objects.
 
 ### `question.list`
 
@@ -3032,7 +3016,6 @@ await slyk.questionType.list({
 
 The result of each one of the following `rate` methods return one or an array of `Rate` objects that include the following methods:
 - `getBaseAsset`: Returns the `asset` of the `rate` `baseAssetCode`.
-- `getData`: Returns the `rate` details.
 - `getQuoteAsset`: Returns the `asset` of the `rate` `quoteAssetCode`.
 - `patch`: Patches the `rate`.
 
@@ -3249,7 +3232,6 @@ await slyk.setting.list({
 The result of each one of the following `task` methods return one or an array of `Task` objects that include the following methods:
 - `complete`: Completes the `task`.
 - `delete`: Deletes the `task`.
-- `getData`: Returns the `task` details.
 - `patch`: Patches the `task`.
 - `reorder`: Reorders the `task`.
 
@@ -3580,7 +3562,6 @@ true
 
 The result of each one of the following `taxRate` methods return one or an array of `TaxRate` objects that include the following methods:
 - `delete`: Deletes the `taxRate`.
-- `getData`: Returns the `taxRate` details.
 - `patch`: Patches the `taxRate`.
 
 ### `taxRate.create`
@@ -3708,7 +3689,6 @@ The result of each one of the following `transaction` methods return one or an a
 - `confirm`: Confirms the `transaction`.
 - `fail`: Fails the `transaction`.
 - `getAsset`: Returns the `asset` of the `transaction` `assetCode`.
-- `getData`: Returns the `transaction` details.
 - `getDestinationAddress`: Returns the `address` of the `transaction` `destinationAddress` if set.
 - `getDestinationWallet`: Returns the `wallet` of the `transaction` `destinationWalletId` if set.
 - `getOriginAddress`: Returns the `address` of the `transaction` `originAddress` if set.
@@ -4239,7 +4219,6 @@ The result of each one of the following `user` methods return one or an array of
 - `changeEmail`: Initializes a change email process of the `user`.
 - `changePassword`: Changes the `user` the password.
 - `changePhone`: Initializes a change phone process of the `user`.
-- `getData`: Returns the `user` details.
 - `getInvites`: Returns the `invites` of the `user`.
 - `getWallets`: Returns the `wallets` of the `user`.
 - `getPrimaryWallet`: Returns the `wallet` of the `user` `primaryWalletId`.
@@ -4838,7 +4817,6 @@ await slyk.user.unblock('5e101529-fa30-4415-9945-6540e70c4483');
 The result of each one of the following `wallet` methods return one or an array of `Wallet` objects that include the following methods:
 - `getActivity`: Returns the `activity`.
 - `getBalance`: Returns the `balance`.
-- `getData`: Returns the `wallet` details.
 - `getMovements`: Returns the `movements`.
 - `getTransactions`: Returns the `transactions`.
 - `getOwner`: Returns the `user` of the `wallet` `ownerId`.
