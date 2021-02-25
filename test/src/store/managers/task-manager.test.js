@@ -77,10 +77,7 @@ describe('TaskManager', () => {
         type: 'manual'
       });
 
-      expect(task).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(task).toEqual(data);
     });
   });
 
@@ -117,10 +114,7 @@ describe('TaskManager', () => {
 
       const task = await slyk.task.get('foo');
 
-      expect(task).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(task).toEqual(data);
     });
   });
 
@@ -185,26 +179,8 @@ describe('TaskManager', () => {
 
       const task = await slyk.task.getStatistics('foo', { sort: 'name' });
 
-      expect(task.available).toEqual({
-        data: [{ ...availableTasks.data[0], _sdk: expect.any(Object) }],
-        gauge: availableTasks.gauge,
-        total: availableTasks.total
-      });
-
-      expect(task.completed).toEqual({
-        data: [
-          {
-            ...completedTasks.data[0],
-            _sdk: expect.any(Object)
-          },
-          {
-            ...completedTasks.data[1],
-            _sdk: expect.any(Object)
-          }
-        ],
-        gauge: completedTasks.gauge,
-        total: completedTasks.total
-      });
+      expect(task.available).toEqual(availableTasks);
+      expect(task.completed).toEqual(completedTasks);
     });
   });
 
@@ -251,10 +227,7 @@ describe('TaskManager', () => {
       });
 
       expect(task.total).toEqual(5);
-      expect(task.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(task.results).toEqual(data);
     });
   });
 
@@ -287,10 +260,7 @@ describe('TaskManager', () => {
         name: 'foobiz'
       });
 
-      expect(task).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(task).toEqual(data);
     });
   });
 

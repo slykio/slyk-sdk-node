@@ -44,10 +44,7 @@ describe('QuestionTypeManager', () => {
       });
 
       expect(questionType.total).toEqual(5);
-      expect(questionType.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(questionType.results).toEqual(data);
     });
   });
 });

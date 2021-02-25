@@ -17,8 +17,8 @@ export default class BankAccountRegionManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), bankAccountRegion => this._instantiate(bankAccountRegion));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), bankAccountRegion => this.instantiate(bankAccountRegion));
     const total = get(result, 'total');
 
     return { results, total };

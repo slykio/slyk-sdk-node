@@ -17,7 +17,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async approve(id) {
-    await this._resolver.approve({ id });
+    await this.resolver.approve({ id });
 
     return true;
   }
@@ -27,7 +27,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async block(id) {
-    await this._resolver.block({ id });
+    await this.resolver.block({ id });
 
     return true;
   }
@@ -37,7 +37,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async changeEmail(id, data) {
-    const { data: token } = await this._resolver.changeEmail(merge({}, data, { id }));
+    const { data: token } = await this.resolver.changeEmail(merge({}, data, { id }));
 
     return token;
   }
@@ -47,7 +47,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async changePassword(id, data) {
-    const { data: token } = await this._resolver.changePassword(merge({}, data, { id }));
+    const { data: token } = await this.resolver.changePassword(merge({}, data, { id }));
 
     return token;
   }
@@ -57,7 +57,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async changePhone(id, data) {
-    const { data: token } = await this._resolver.changePhone(merge({}, data, { id }));
+    const { data: token } = await this.resolver.changePhone(merge({}, data, { id }));
 
     return token;
   }
@@ -67,7 +67,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async confirmEmail(data) {
-    const { data: accessTokens } = await this._resolver.confirmEmail(data);
+    const { data: accessTokens } = await this.resolver.confirmEmail(data);
 
     if (!accessTokens) {
       return true;
@@ -81,7 +81,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async confirmPhone(data) {
-    const { data: accessTokens } = await this._resolver.confirmPhone(data);
+    const { data: accessTokens } = await this.resolver.confirmPhone(data);
 
     if (!accessTokens) {
       return true;
@@ -95,9 +95,9 @@ export default class UserManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: user } = await this._resolver.create(data);
+    const { data: user } = await this.resolver.create(data);
 
-    return this._instantiate(user);
+    return this.instantiate(user);
   }
 
   /**
@@ -105,7 +105,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async forgotPassword(data) {
-    const { data: token } = await this._resolver.forgotPassword(data);
+    const { data: token } = await this.resolver.forgotPassword(data);
 
     return token;
   }
@@ -115,9 +115,9 @@ export default class UserManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: user } = await this._resolver.get({ id }, options);
+    const { data: user } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(user);
+    return this.instantiate(user);
   }
 
   /**
@@ -125,7 +125,7 @@ export default class UserManager extends AbstractManager {
    */
 
   getReferralProgram(id, program, options) {
-    return this._resolver.getReferralProgram({ id, program }, options);
+    return this.resolver.getReferralProgram({ id, program }, options);
   }
 
   /**
@@ -133,7 +133,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async delete(id) {
-    await this._resolver.delete({ id });
+    await this.resolver.delete({ id });
 
     return true;
   }
@@ -143,8 +143,8 @@ export default class UserManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), user => this._instantiate(user));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), user => this.instantiate(user));
     const total = get(result, 'total');
 
     return { results, total };
@@ -155,9 +155,9 @@ export default class UserManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: user } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: user } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(user);
+    return this.instantiate(user);
   }
 
   /**
@@ -165,7 +165,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async resendConfirmation(data) {
-    const { data: token } = await this._resolver.resendConfirmation(data);
+    const { data: token } = await this.resolver.resendConfirmation(data);
 
     return token;
   }
@@ -175,7 +175,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async resetPassword(data) {
-    await this._resolver.resetPassword(data);
+    await this.resolver.resetPassword(data);
 
     return true;
   }
@@ -185,7 +185,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async unblock(id) {
-    await this._resolver.unblock({ id });
+    await this.resolver.unblock({ id });
 
     return true;
   }

@@ -17,9 +17,9 @@ export default class TaxRateManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: taxRate } = await this._resolver.create(data);
+    const { data: taxRate } = await this.resolver.create(data);
 
-    return this._instantiate(taxRate);
+    return this.instantiate(taxRate);
   }
 
   /**
@@ -27,7 +27,7 @@ export default class TaxRateManager extends AbstractManager {
    */
 
   async delete(id) {
-    await this._resolver.delete({ id });
+    await this.resolver.delete({ id });
 
     return true;
   }
@@ -37,9 +37,9 @@ export default class TaxRateManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: taxRate } = await this._resolver.get({ id }, options);
+    const { data: taxRate } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(taxRate);
+    return this.instantiate(taxRate);
   }
 
   /**
@@ -47,8 +47,8 @@ export default class TaxRateManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), taxRate => this._instantiate(taxRate));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), taxRate => this.instantiate(taxRate));
     const total = get(result, 'total');
 
     return { results, total };
@@ -59,9 +59,9 @@ export default class TaxRateManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: taxRate } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: taxRate } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(taxRate);
+    return this.instantiate(taxRate);
   }
 
 }

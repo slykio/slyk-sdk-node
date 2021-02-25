@@ -31,10 +31,7 @@ describe('OrderLineManager', () => {
 
       const orderLine = await slyk.orderLine.fulfill('foo', 'bar', { quantity: 2 });
 
-      expect(orderLine).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(orderLine).toEqual(data);
     });
   });
 
@@ -54,10 +51,7 @@ describe('OrderLineManager', () => {
 
       const orderLine = await slyk.orderLine.get('bar', 'foo');
 
-      expect(orderLine).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(orderLine).toEqual(data);
     });
   });
 
@@ -94,10 +88,7 @@ describe('OrderLineManager', () => {
       });
 
       expect(orderLine.total).toEqual(5);
-      expect(orderLine.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(orderLine.results).toEqual(data);
     });
   });
 
@@ -117,10 +108,7 @@ describe('OrderLineManager', () => {
 
       const orderLine = await slyk.orderLine.unfulfill('bar', 'foo');
 
-      expect(orderLine).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(orderLine).toEqual(data);
     });
   });
 });

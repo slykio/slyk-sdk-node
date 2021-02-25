@@ -33,7 +33,6 @@ describe('SettingManager', () => {
       const result = await slyk.setting.get('bar');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         code: 'bar',
         description: 'corge',
         public: true,
@@ -60,7 +59,8 @@ describe('SettingManager', () => {
             scope: ['qux'],
             type: 'string',
             value: 'grault'
-          }, {
+          },
+          {
             code: 'foo',
             description: 'corge',
             public: true,
@@ -76,15 +76,14 @@ describe('SettingManager', () => {
       });
 
       expect(results).toEqual([{
-        _sdk: expect.any(Object),
         code: 'bar',
         description: 'corge',
         public: true,
         scope: ['qux'],
         type: 'string',
         value: 'grault'
-      }, {
-        _sdk: expect.any(Object),
+      },
+      {
         code: 'foo',
         description: 'corge',
         public: true,

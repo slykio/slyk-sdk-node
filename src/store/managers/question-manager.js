@@ -17,9 +17,9 @@ export default class QuestionManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: question } = await this._resolver.create(data);
+    const { data: question } = await this.resolver.create(data);
 
-    return this._instantiate(question);
+    return this.instantiate(question);
   }
 
   /**
@@ -27,7 +27,7 @@ export default class QuestionManager extends AbstractManager {
    */
 
   async delete(id) {
-    await this._resolver.delete({ id });
+    await this.resolver.delete({ id });
 
     return true;
   }
@@ -37,9 +37,9 @@ export default class QuestionManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: question } = await this._resolver.get({ id }, options);
+    const { data: question } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(question);
+    return this.instantiate(question);
   }
 
   /**
@@ -47,8 +47,8 @@ export default class QuestionManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), question => this._instantiate(question));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), question => this.instantiate(question));
     const total = get(result, 'total');
 
     return { results, total };
@@ -59,9 +59,9 @@ export default class QuestionManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: question } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: question } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(question);
+    return this.instantiate(question);
   }
 
 }

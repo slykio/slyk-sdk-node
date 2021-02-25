@@ -46,7 +46,6 @@ describe('BankAccountManager', () => {
       const result = await slyk.bankAccount.get('foobar');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         id: 'foobar',
         name: 'waldo',
         region: 'fred'
@@ -80,13 +79,11 @@ describe('BankAccountManager', () => {
       expect(total).toEqual(2);
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           id: 'foobar',
           name: 'waldo',
           region: 'fred'
         },
         {
-          _sdk: expect.any(Object),
           id: 'foobiz',
           name: 'qux',
           region: 'fred'

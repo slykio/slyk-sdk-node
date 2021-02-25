@@ -23,11 +23,7 @@ describe('MovementManager', () => {
 
       const result = await slyk.movement.get('bar');
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        amount: '1',
-        id: 'bar'
-      });
+      expect(result).toEqual({ amount: '1', id: 'bar' });
     });
   });
 
@@ -48,12 +44,10 @@ describe('MovementManager', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           amount: '5',
           id: 'bar'
         },
         {
-          _sdk: expect.any(Object),
           amount: '10',
           id: 'biz'
         }

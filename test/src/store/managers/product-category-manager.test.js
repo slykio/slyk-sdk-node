@@ -40,10 +40,7 @@ describe('ProductCategoryManager', () => {
         title: 'garply'
       });
 
-      expect(productCategory).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(productCategory).toEqual(data);
     });
   });
 
@@ -73,14 +70,9 @@ describe('ProductCategoryManager', () => {
         .query({ include: { products: true } })
         .reply(200, { data });
 
-      const productCategory = await slyk.productCategory.get('foo', {
-        include: { products: true }
-      });
+      const productCategory = await slyk.productCategory.get('foo', { include: { products: true } });
 
-      expect(productCategory).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(productCategory).toEqual(data);
     });
   });
 
@@ -115,10 +107,7 @@ describe('ProductCategoryManager', () => {
       });
 
       expect(productCategory.total).toEqual(5);
-      expect(productCategory.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(productCategory.results).toEqual(data);
     });
   });
 
@@ -145,10 +134,7 @@ describe('ProductCategoryManager', () => {
         title: 'foobiz'
       });
 
-      expect(productCategory).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(productCategory).toEqual(data);
     });
   });
 

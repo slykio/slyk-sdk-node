@@ -17,9 +17,9 @@ export default class ProductManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: product } = await this._resolver.create(data);
+    const { data: product } = await this.resolver.create(data);
 
-    return this._instantiate(product);
+    return this.instantiate(product);
   }
 
   /**
@@ -27,9 +27,9 @@ export default class ProductManager extends AbstractManager {
    */
 
   async createQuestion(id, data) {
-    const { data: product } = await this._resolver.createQuestion(merge({}, data, { id }));
+    const { data: product } = await this.resolver.createQuestion(merge({}, data, { id }));
 
-    return this._instantiate(product);
+    return this.instantiate(product);
   }
 
   /**
@@ -37,7 +37,7 @@ export default class ProductManager extends AbstractManager {
    */
 
   async delete(id) {
-    await this._resolver.delete({ id });
+    await this.resolver.delete({ id });
 
     return true;
   }
@@ -47,7 +47,7 @@ export default class ProductManager extends AbstractManager {
    */
 
   async deleteQuestion(productId, questionId) {
-    await this._resolver.deleteQuestion({ productId, questionId });
+    await this.resolver.deleteQuestion({ productId, questionId });
 
     return true;
   }
@@ -57,9 +57,9 @@ export default class ProductManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: product } = await this._resolver.get({ id }, options);
+    const { data: product } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(product);
+    return this.instantiate(product);
   }
 
   /**
@@ -67,8 +67,8 @@ export default class ProductManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), product => this._instantiate(product));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), product => this.instantiate(product));
     const total = get(result, 'total');
 
     return { results, total };
@@ -79,9 +79,9 @@ export default class ProductManager extends AbstractManager {
    */
 
   async patch(id, data) {
-    const { data: product } = await this._resolver.patch(merge({}, data, { id }));
+    const { data: product } = await this.resolver.patch(merge({}, data, { id }));
 
-    return this._instantiate(product);
+    return this.instantiate(product);
   }
 
   /**
@@ -89,7 +89,7 @@ export default class ProductManager extends AbstractManager {
    */
 
   async reorder(id, data) {
-    await this._resolver.reorder(merge({}, data, { id }));
+    await this.resolver.reorder(merge({}, data, { id }));
 
     return true;
   }
@@ -99,7 +99,7 @@ export default class ProductManager extends AbstractManager {
    */
 
   async reorderQuestion(productId, questionId, data) {
-    await this._resolver.reorderQuestion(merge({}, data, { productId, questionId }));
+    await this.resolver.reorderQuestion(merge({}, data, { productId, questionId }));
 
     return true;
   }

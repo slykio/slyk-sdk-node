@@ -134,7 +134,6 @@ describe('UserManager', () => {
       const result = await slyk.user.create({ email: 'foo@bar.com', password: 'corge' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         email: 'foo@bar.com',
         id: 'bar',
         metadata: {}
@@ -181,7 +180,6 @@ describe('UserManager', () => {
       const result = await slyk.user.get('bar');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         email: 'foo@bar.com',
         id: 'bar',
         metadata: {}
@@ -255,22 +253,18 @@ describe('UserManager', () => {
 
       const { results, total } = await slyk.user.list({ filter: { name: 'foo' } });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          email: 'foo@bar.com',
-          id: 'bar',
-          metadata: {},
-          name: 'foobar'
-        },
-        {
-          _sdk: expect.any(Object),
-          email: 'foo@biz.com',
-          id: 'biz',
-          metadata: {},
-          name: 'foobiz'
-        }
-      ]);
+      expect(results).toEqual([{
+        email: 'foo@bar.com',
+        id: 'bar',
+        metadata: {},
+        name: 'foobar'
+      },
+      {
+        email: 'foo@biz.com',
+        id: 'biz',
+        metadata: {},
+        name: 'foobiz'
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -292,7 +286,6 @@ describe('UserManager', () => {
       const result = await slyk.user.patch('bar', { name: 'foobar' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         email: 'foo@bar.com',
         id: 'bar',
         metadata: {},

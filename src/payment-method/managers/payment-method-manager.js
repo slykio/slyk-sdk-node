@@ -17,9 +17,9 @@ export default class PaymentMethodManager extends AbstractManager {
    */
 
   async get(slug, options) {
-    const { data: paymentMethod } = await this._resolver.get({ slug }, options);
+    const { data: paymentMethod } = await this.resolver.get({ slug }, options);
 
-    return this._instantiate(paymentMethod);
+    return this.instantiate(paymentMethod);
   }
 
   /**
@@ -27,8 +27,8 @@ export default class PaymentMethodManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), paymentMethod => this._instantiate(paymentMethod));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), paymentMethod => this.instantiate(paymentMethod));
     const total = get(result, 'total');
 
     return { results, total };

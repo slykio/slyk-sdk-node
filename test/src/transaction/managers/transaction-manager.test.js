@@ -23,11 +23,7 @@ describe('TransactionManager', () => {
 
       const transaction = await slyk.transaction.approve('bar');
 
-      expect(transaction).toEqual({
-        _sdk: expect.any(Object),
-        id: 'bar',
-        status: 'processing'
-      });
+      expect(transaction).toEqual({ id: 'bar', status: 'processing' });
     });
   });
 
@@ -39,11 +35,7 @@ describe('TransactionManager', () => {
 
       const transaction = await slyk.transaction.confirm('bar');
 
-      expect(transaction).toEqual({
-        _sdk: expect.any(Object),
-        id: 'bar',
-        status: 'completed'
-      });
+      expect(transaction).toEqual({ id: 'bar', status: 'completed' });
     });
   });
 
@@ -73,7 +65,6 @@ describe('TransactionManager', () => {
       });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         amount: '10',
         code: 'internal',
         destinationWalletId: 'quux',
@@ -99,7 +90,6 @@ describe('TransactionManager', () => {
       const transaction = await slyk.transaction.fail('bar', { reason: 'waldo' });
 
       expect(transaction).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: { failReason: 'waldo' },
         status: 'failed'
@@ -122,7 +112,6 @@ describe('TransactionManager', () => {
       const result = await slyk.transaction.get('bar');
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         amount: '5',
         id: 'bar',
         metadata: {}
@@ -159,20 +148,16 @@ describe('TransactionManager', () => {
         sort: [{ direction: 'desc', name: 'amount' }]
       });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          amount: '5',
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          amount: '4',
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        amount: '5',
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        amount: '4',
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(6);
     });
@@ -197,7 +182,6 @@ describe('TransactionManager', () => {
       const result = await slyk.transaction.pay({ amount: '10', originWalletId: 'qux' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         amount: '10',
         code: 'internal:pay',
         destinationWalletId: 'quux',
@@ -224,7 +208,6 @@ describe('TransactionManager', () => {
       const transaction = await slyk.transaction.reject('bar', { reason: 'waldo' });
 
       expect(transaction).toEqual({
-        _sdk: expect.any(Object),
         id: 'bar',
         metadata: { rejectReason: 'waldo' },
         status: 'failed'
@@ -261,7 +244,6 @@ describe('TransactionManager', () => {
       });
 
       expect(transaction).toEqual({
-        _sdk: expect.any(Object),
         amount: '2',
         code: 'request',
         destinationWalletId: 'foobar',
@@ -302,7 +284,6 @@ describe('TransactionManager', () => {
       });
 
       expect(transaction).toEqual({
-        _sdk: expect.any(Object),
         amount: '2',
         code: 'send',
         destinationWalletId: 'foobar',
@@ -343,7 +324,6 @@ describe('TransactionManager', () => {
       });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         amount: '10',
         code: 'internal',
         destinationWalletId: 'quux',
@@ -381,7 +361,6 @@ describe('TransactionManager', () => {
       });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         amount: '10',
         code: 'internal',
         id: 'bar',

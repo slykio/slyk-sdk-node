@@ -50,10 +50,7 @@ describe('ProductManager', () => {
         typeCode: 'digital'
       });
 
-      expect(product).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(product).toEqual(data);
     });
   });
 
@@ -72,10 +69,7 @@ describe('ProductManager', () => {
 
       const productQuestion = await slyk.product.createQuestion('foo', { questionId: 'bar' });
 
-      expect(productQuestion).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(productQuestion).toEqual(data);
     });
   });
 
@@ -122,10 +116,7 @@ describe('ProductManager', () => {
 
       const product = await slyk.product.get('foo');
 
-      expect(product).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(product).toEqual(data);
     });
   });
 
@@ -168,10 +159,7 @@ describe('ProductManager', () => {
       });
 
       expect(product.total).toEqual(5);
-      expect(product.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(product.results).toEqual(data);
     });
   });
 
@@ -202,10 +190,7 @@ describe('ProductManager', () => {
         name: 'foobiz'
       });
 
-      expect(product).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(product).toEqual(data);
     });
   });
 

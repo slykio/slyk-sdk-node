@@ -17,9 +17,9 @@ export default class AssetManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: asset } = await this._resolver.create(data);
+    const { data: asset } = await this.resolver.create(data);
 
-    return this._instantiate(asset);
+    return this.instantiate(asset);
   }
 
   /**
@@ -27,9 +27,9 @@ export default class AssetManager extends AbstractManager {
    */
 
   async get(code, options) {
-    const { data } = await this._resolver.get({ code }, options);
+    const { data } = await this.resolver.get({ code }, options);
 
-    return this._instantiate(data);
+    return this.instantiate(data);
   }
 
   /**
@@ -37,8 +37,8 @@ export default class AssetManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), asset => this._instantiate(asset));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), asset => this.instantiate(asset));
     const total = get(result, 'total');
 
     return { results, total };
@@ -49,9 +49,9 @@ export default class AssetManager extends AbstractManager {
    */
 
   async patch(code, data) {
-    const { data: asset } = await this._resolver.patch(merge({}, data, { code }));
+    const { data: asset } = await this.resolver.patch(merge({}, data, { code }));
 
-    return this._instantiate(asset);
+    return this.instantiate(asset);
   }
 
 }

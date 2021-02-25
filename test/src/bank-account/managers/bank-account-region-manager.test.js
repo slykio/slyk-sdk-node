@@ -42,14 +42,12 @@ describe('BankAccountRegionManager', () => {
       expect(total).toEqual(2);
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           assets: ['waldo', 'fred'],
           jsonSchema: {},
           name: 'waldo',
           region: 'fred'
         },
         {
-          _sdk: expect.any(Object),
           assets: ['qux'],
           jsonSchema: { foo: 'bar' },
           name: 'foo',

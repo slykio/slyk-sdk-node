@@ -17,9 +17,9 @@ export default class MovementManager extends AbstractManager {
    */
 
   async get(id, options) {
-    const { data: movement } = await this._resolver.get({ id }, options);
+    const { data: movement } = await this.resolver.get({ id }, options);
 
-    return this._instantiate(movement);
+    return this.instantiate(movement);
   }
 
   /**
@@ -27,8 +27,8 @@ export default class MovementManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), movement => this._instantiate(movement));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), movement => this.instantiate(movement));
     const total = get(result, 'total');
 
     return { results, total };

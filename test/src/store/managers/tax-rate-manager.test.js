@@ -29,10 +29,7 @@ describe('TaxRateManager', () => {
 
       const taxRate = await slyk.taxRate.create({ name: 'foo', rate: '5.00000000' });
 
-      expect(taxRate).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(taxRate).toEqual(data);
     });
   });
 
@@ -62,10 +59,7 @@ describe('TaxRateManager', () => {
 
       const taxRate = await slyk.taxRate.get('foo');
 
-      expect(taxRate).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(taxRate).toEqual(data);
     });
   });
 
@@ -96,10 +90,7 @@ describe('TaxRateManager', () => {
       });
 
       expect(taxRate.total).toEqual(5);
-      expect(taxRate.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(taxRate.results).toEqual(data);
     });
   });
 
@@ -117,10 +108,7 @@ describe('TaxRateManager', () => {
 
       const taxRate = await slyk.taxRate.patch('foo', { name: 'bar', rate: '5.00000000' });
 
-      expect(taxRate).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(taxRate).toEqual(data);
     });
   });
 });

@@ -48,10 +48,7 @@ describe('QuestionManager', () => {
         typeCode: 'multiple'
       });
 
-      expect(question).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(question).toEqual(data);
     });
   });
 
@@ -86,10 +83,7 @@ describe('QuestionManager', () => {
 
       const question = await slyk.question.get('foo');
 
-      expect(question).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(question).toEqual(data);
     });
   });
 
@@ -132,10 +126,7 @@ describe('QuestionManager', () => {
       });
 
       expect(question.total).toEqual(5);
-      expect(question.results).toEqual([
-        { ...data[0], _sdk: expect.any(Object) },
-        { ...data[1], _sdk: expect.any(Object) }
-      ]);
+      expect(question.results).toEqual(data);
     });
   });
 
@@ -158,10 +149,7 @@ describe('QuestionManager', () => {
 
       const question = await slyk.question.patch('foo', { title: 'quux' });
 
-      expect(question).toEqual({
-        _sdk: expect.any(Object),
-        ...data
-      });
+      expect(question).toEqual(data);
     });
   });
 });

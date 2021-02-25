@@ -17,7 +17,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async cancel(code, data) {
-    await this._resolver.cancel(merge({}, data, { code }));
+    await this.resolver.cancel(merge({}, data, { code }));
 
     return true;
   }
@@ -27,9 +27,9 @@ export default class UserManager extends AbstractManager {
    */
 
   async create(data) {
-    const { data: invite } = await this._resolver.create(data);
+    const { data: invite } = await this.resolver.create(data);
 
-    return this._instantiate(invite);
+    return this.instantiate(invite);
   }
 
   /**
@@ -37,9 +37,9 @@ export default class UserManager extends AbstractManager {
    */
 
   async get(code, options) {
-    const { data } = await this._resolver.get({ code }, options);
+    const { data } = await this.resolver.get({ code }, options);
 
-    return this._instantiate(data);
+    return this.instantiate(data);
   }
 
   /**
@@ -47,8 +47,8 @@ export default class UserManager extends AbstractManager {
    */
 
   async list(options) {
-    const result = await this._resolver.list({}, options);
-    const results = map(get(result, 'data', []), asset => this._instantiate(asset));
+    const result = await this.resolver.list({}, options);
+    const results = map(get(result, 'data', []), asset => this.instantiate(asset));
     const total = get(result, 'total');
 
     return { results, total };
@@ -59,7 +59,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async send(data) {
-    await this._resolver.send(data);
+    await this.resolver.send(data);
 
     return true;
   }
@@ -69,7 +69,7 @@ export default class UserManager extends AbstractManager {
    */
 
   async validate(code) {
-    const { data: result } = await this._resolver.validate({ code });
+    const { data: result } = await this.resolver.validate({ code });
 
     return result;
   }

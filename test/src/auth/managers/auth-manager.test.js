@@ -30,7 +30,6 @@ describe('AuthManager', () => {
       const result = await slyk.auth.login({ email: 'foo@bar.com', password: 'Foobar123' });
 
       expect(result).toEqual({
-        _sdk: expect.any(Object),
         refreshToken: '123',
         roles: ['user'],
         token: '456'
@@ -63,11 +62,7 @@ describe('AuthManager', () => {
 
       const result = await slyk.auth.refresh({ refreshToken: '123' });
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        refreshToken: '123',
-        token: '456'
-      });
+      expect(result).toEqual({ refreshToken: '123', token: '456' });
     });
   });
 
