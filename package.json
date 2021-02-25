@@ -57,8 +57,7 @@
     "jest": "25.5.4",
     "lint-staged": "9.5.0",
     "nock": "11.9.1",
-    "pre-commit": "^1.2.2",
-    "supertest": "^4.0.2"
+    "pre-commit": "^1.2.2"
   },
   "engines": {
     "node": ">=8"
