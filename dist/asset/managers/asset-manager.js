@@ -15,56 +15,54 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
 var _lodash = require("lodash");
 
 var _abstractManager = _interopRequireDefault(require("../../core/managers/abstract-manager"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `AssetManager`.
  */
-var AssetManager =
-/*#__PURE__*/
-function (_AbstractManager) {
+var AssetManager = /*#__PURE__*/function (_AbstractManager) {
   (0, _inherits2.default)(AssetManager, _AbstractManager);
+
+  var _super = _createSuper(AssetManager);
 
   function AssetManager() {
     (0, _classCallCheck2.default)(this, AssetManager);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(AssetManager).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(AssetManager, [{
     key: "create",
-
+    value:
     /**
      * Create.
      */
-    value: function () {
-      var _create = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee(data) {
-        var _ref, asset;
+    function () {
+      var _create = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(data) {
+        var _yield$this$resolver$, asset;
 
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return this._resolver.create(data);
+                return this.resolver.create(data);
 
               case 2:
-                _ref = _context.sent;
-                asset = _ref.data;
-                return _context.abrupt("return", this._instantiate(asset));
+                _yield$this$resolver$ = _context.sent;
+                asset = _yield$this$resolver$.data;
+                return _context.abrupt("return", this.instantiate(asset));
 
               case 5:
               case "end":
@@ -87,24 +85,22 @@ function (_AbstractManager) {
   }, {
     key: "get",
     value: function () {
-      var _get = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee2(code, options) {
-        var _ref2, data;
+      var _get = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(code, options) {
+        var _yield$this$resolver$2, data;
 
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return this._resolver.get({
+                return this.resolver.get({
                   code
                 }, options);
 
               case 2:
-                _ref2 = _context2.sent;
-                data = _ref2.data;
-                return _context2.abrupt("return", this._instantiate(data));
+                _yield$this$resolver$2 = _context2.sent;
+                data = _yield$this$resolver$2.data;
+                return _context2.abrupt("return", this.instantiate(data));
 
               case 5:
               case "end":
@@ -127,9 +123,7 @@ function (_AbstractManager) {
   }, {
     key: "list",
     value: function () {
-      var _list = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee3(options) {
+      var _list = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(options) {
         var _this = this;
 
         var result, results, total;
@@ -138,12 +132,12 @@ function (_AbstractManager) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return this._resolver.list({}, options);
+                return this.resolver.list({}, options);
 
               case 2:
                 result = _context3.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (asset) {
-                  return _this._instantiate(asset);
+                  return _this.instantiate(asset);
                 });
                 total = (0, _lodash.get)(result, 'total');
                 return _context3.abrupt("return", {
@@ -172,24 +166,22 @@ function (_AbstractManager) {
   }, {
     key: "patch",
     value: function () {
-      var _patch = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee4(code, data) {
-        var _ref3, asset;
+      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4(code, data) {
+        var _yield$this$resolver$3, asset;
 
         return _regenerator.default.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.next = 2;
-                return this._resolver.patch((0, _lodash.merge)({}, data, {
+                return this.resolver.patch((0, _lodash.merge)({}, data, {
                   code
                 }));
 
               case 2:
-                _ref3 = _context4.sent;
-                asset = _ref3.data;
-                return _context4.abrupt("return", this._instantiate(asset));
+                _yield$this$resolver$3 = _context4.sent;
+                asset = _yield$this$resolver$3.data;
+                return _context4.abrupt("return", this.instantiate(asset));
 
               case 5:
               case "end":

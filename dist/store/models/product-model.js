@@ -11,39 +11,39 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _abstractModel = _interopRequireDefault(require("../../core/models/abstract-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `ProductModel`.
  */
-var ProductModel =
-/*#__PURE__*/
-function (_AbstractModel) {
+var ProductModel = /*#__PURE__*/function (_AbstractModel) {
   (0, _inherits2.default)(ProductModel, _AbstractModel);
+
+  var _super = _createSuper(ProductModel);
 
   function ProductModel() {
     (0, _classCallCheck2.default)(this, ProductModel);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(ProductModel).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(ProductModel, [{
     key: "createQuestion",
-
+    value:
     /**
      * Create question.
      */
-    value: function createQuestion(data) {
-      return this._sdk.product.createQuestion(this.id, data);
+    function createQuestion(data) {
+      return ProductModel.sdk.product.createQuestion(this.id, data);
     }
     /**
      * Delete.
@@ -52,7 +52,7 @@ function (_AbstractModel) {
   }, {
     key: "delete",
     value: function _delete() {
-      return this._sdk.product.delete(this.id);
+      return ProductModel.sdk.product.delete(this.id);
     }
     /**
      * Delete question.
@@ -61,7 +61,7 @@ function (_AbstractModel) {
   }, {
     key: "deleteQuestion",
     value: function deleteQuestion(questionId) {
-      return this._sdk.product.deleteQuestion(this.id, questionId);
+      return ProductModel.sdk.product.deleteQuestion(this.id, questionId);
     }
     /**
      * Patch.
@@ -70,7 +70,7 @@ function (_AbstractModel) {
   }, {
     key: "patch",
     value: function patch(data) {
-      return this._sdk.product.patch(this.id, data);
+      return ProductModel.sdk.product.patch(this.id, data);
     }
     /**
      * Reorder.
@@ -79,7 +79,7 @@ function (_AbstractModel) {
   }, {
     key: "reorder",
     value: function reorder(data) {
-      return this._sdk.product.reorder(this.id, data);
+      return ProductModel.sdk.product.reorder(this.id, data);
     }
     /**
      * Reorder question.
@@ -88,7 +88,7 @@ function (_AbstractModel) {
   }, {
     key: "reorderQuestion",
     value: function reorderQuestion(questionId, data) {
-      return this._sdk.product.reorderQuestion(this.id, questionId, data);
+      return ProductModel.sdk.product.reorderQuestion(this.id, questionId, data);
     }
   }]);
   return ProductModel;

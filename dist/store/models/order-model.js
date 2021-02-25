@@ -11,39 +11,39 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _abstractModel = _interopRequireDefault(require("../../core/models/abstract-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `OrderModel`.
  */
-var OrderModel =
-/*#__PURE__*/
-function (_AbstractModel) {
+var OrderModel = /*#__PURE__*/function (_AbstractModel) {
   (0, _inherits2.default)(OrderModel, _AbstractModel);
+
+  var _super = _createSuper(OrderModel);
 
   function OrderModel() {
     (0, _classCallCheck2.default)(this, OrderModel);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(OrderModel).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(OrderModel, [{
     key: "cancel",
-
+    value:
     /**
      * Cancel.
      */
-    value: function cancel(data) {
-      return this._sdk.order.cancel(this.id, data);
+    function cancel(data) {
+      return OrderModel.sdk.order.cancel(this.id, data);
     }
     /**
      * Fulfill.
@@ -52,7 +52,7 @@ function (_AbstractModel) {
   }, {
     key: "fulfill",
     value: function fulfill(data) {
-      return this._sdk.order.fulfill(this.id, data);
+      return OrderModel.sdk.order.fulfill(this.id, data);
     }
     /**
      * Fulfill order line.
@@ -61,7 +61,7 @@ function (_AbstractModel) {
   }, {
     key: "fulfillOrderLine",
     value: function fulfillOrderLine(orderLineId, data) {
-      return this._sdk.orderLine.fulfill(orderLineId, this.id, data);
+      return OrderModel.sdk.orderLine.fulfill(orderLineId, this.id, data);
     }
     /**
      * Get order line.
@@ -70,7 +70,7 @@ function (_AbstractModel) {
   }, {
     key: "getOrderLine",
     value: function getOrderLine(orderLineId, options) {
-      return this._sdk.orderLine.get(orderLineId, this.id, options);
+      return OrderModel.sdk.orderLine.get(orderLineId, this.id, options);
     }
     /**
      * Get order lines.
@@ -79,7 +79,7 @@ function (_AbstractModel) {
   }, {
     key: "getOrderLines",
     value: function getOrderLines(options) {
-      return this._sdk.orderLine.list(this.id, options);
+      return OrderModel.sdk.orderLine.list(this.id, options);
     }
     /**
      * Patch.
@@ -88,7 +88,7 @@ function (_AbstractModel) {
   }, {
     key: "patch",
     value: function patch(data) {
-      return this._sdk.order.patch(this.id, data);
+      return OrderModel.sdk.order.patch(this.id, data);
     }
     /**
      * Pay.
@@ -97,7 +97,7 @@ function (_AbstractModel) {
   }, {
     key: "pay",
     value: function pay(data) {
-      return this._sdk.order.pay(this.id, data);
+      return OrderModel.sdk.order.pay(this.id, data);
     }
     /**
      * Refund.
@@ -106,7 +106,7 @@ function (_AbstractModel) {
   }, {
     key: "refund",
     value: function refund(data) {
-      return this._sdk.order.refund(this.id, data);
+      return OrderModel.sdk.order.refund(this.id, data);
     }
     /**
      * Unfulfill.
@@ -115,7 +115,7 @@ function (_AbstractModel) {
   }, {
     key: "unfulfill",
     value: function unfulfill() {
-      return this._sdk.order.unfulfill(this.id);
+      return OrderModel.sdk.order.unfulfill(this.id);
     }
     /**
      * Unfulfill order line.
@@ -124,7 +124,7 @@ function (_AbstractModel) {
   }, {
     key: "unfulfillOrderLine",
     value: function unfulfillOrderLine(orderLineId) {
-      return this._sdk.orderLine.unfulfill(orderLineId, this.id);
+      return OrderModel.sdk.orderLine.unfulfill(orderLineId, this.id);
     }
   }]);
   return OrderModel;

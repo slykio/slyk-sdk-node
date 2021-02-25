@@ -11,41 +11,41 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
 var _lodash = require("lodash");
 
 var _abstractModel = _interopRequireDefault(require("../../core/models/abstract-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `UserModel`.
  */
-var UserModel =
-/*#__PURE__*/
-function (_AbstractModel) {
+var UserModel = /*#__PURE__*/function (_AbstractModel) {
   (0, _inherits2.default)(UserModel, _AbstractModel);
+
+  var _super = _createSuper(UserModel);
 
   function UserModel() {
     (0, _classCallCheck2.default)(this, UserModel);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(UserModel).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(UserModel, [{
     key: "approve",
-
+    value:
     /**
      * Approve.
      */
-    value: function approve() {
-      return this._sdk.user.approve(this.id);
+    function approve() {
+      return UserModel.sdk.user.approve(this.id);
     }
     /**
      * Block.
@@ -54,7 +54,7 @@ function (_AbstractModel) {
   }, {
     key: "block",
     value: function block() {
-      return this._sdk.user.block(this.id);
+      return UserModel.sdk.user.block(this.id);
     }
     /**
      * Change email.
@@ -63,7 +63,7 @@ function (_AbstractModel) {
   }, {
     key: "changeEmail",
     value: function changeEmail(data) {
-      return this._sdk.user.changeEmail(this.id, data);
+      return UserModel.sdk.user.changeEmail(this.id, data);
     }
     /**
      * Change password.
@@ -72,7 +72,7 @@ function (_AbstractModel) {
   }, {
     key: "changePassword",
     value: function changePassword(data) {
-      return this._sdk.user.changePassword(this.id, data);
+      return UserModel.sdk.user.changePassword(this.id, data);
     }
     /**
      * Change phone.
@@ -81,7 +81,7 @@ function (_AbstractModel) {
   }, {
     key: "changePhone",
     value: function changePhone(data) {
-      return this._sdk.user.changePhone(this.id, data);
+      return UserModel.sdk.user.changePhone(this.id, data);
     }
     /**
      * Delete.
@@ -90,7 +90,7 @@ function (_AbstractModel) {
   }, {
     key: "delete",
     value: function _delete() {
-      return this._sdk.user.delete(this.id);
+      return UserModel.sdk.user.delete(this.id);
     }
     /**
      * Get invites.
@@ -99,7 +99,7 @@ function (_AbstractModel) {
   }, {
     key: "getInvites",
     value: function getInvites(options) {
-      return this._sdk.invite.list((0, _lodash.merge)({}, options, {
+      return UserModel.sdk.invite.list((0, _lodash.merge)({}, options, {
         filter: {
           inviterUserId: this.id
         }
@@ -112,7 +112,7 @@ function (_AbstractModel) {
   }, {
     key: "getWallets",
     value: function getWallets(options) {
-      return this._sdk.wallet.list((0, _lodash.merge)({}, options, {
+      return UserModel.sdk.wallet.list((0, _lodash.merge)({}, options, {
         filter: {
           ownerId: this.id
         }
@@ -125,7 +125,7 @@ function (_AbstractModel) {
   }, {
     key: "getPrimaryWallet",
     value: function getPrimaryWallet(options) {
-      return this._sdk.wallet.get(this.primaryWalletId, options);
+      return UserModel.sdk.wallet.get(this.primaryWalletId, options);
     }
     /**
      * Get referral program.
@@ -134,7 +134,7 @@ function (_AbstractModel) {
   }, {
     key: "getReferralProgram",
     value: function getReferralProgram(program, options) {
-      return this._sdk.user.getReferralProgram(this.id, program, options);
+      return UserModel.sdk.user.getReferralProgram(this.id, program, options);
     }
     /**
      * Get referral user.
@@ -143,7 +143,7 @@ function (_AbstractModel) {
   }, {
     key: "getReferralUser",
     value: function getReferralUser(options) {
-      return this.referralUserId ? this._sdk.user.get(this.referralUserId, options) : undefined;
+      return this.referralUserId ? UserModel.sdk.user.get(this.referralUserId, options) : undefined;
     }
     /**
      * Patch.
@@ -152,7 +152,7 @@ function (_AbstractModel) {
   }, {
     key: "patch",
     value: function patch(data) {
-      return this._sdk.user.patch(this.id, data);
+      return UserModel.sdk.user.patch(this.id, data);
     }
     /**
      * Unblock.
@@ -161,7 +161,7 @@ function (_AbstractModel) {
   }, {
     key: "unblock",
     value: function unblock() {
-      return this._sdk.user.unblock(this.id);
+      return UserModel.sdk.user.unblock(this.id);
     }
   }]);
   return UserModel;

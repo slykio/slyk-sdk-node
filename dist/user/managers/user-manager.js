@@ -15,49 +15,47 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
 var _lodash = require("lodash");
 
 var _abstractManager = _interopRequireDefault(require("../../core/managers/abstract-manager"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `UserManager`.
  */
-var UserManager =
-/*#__PURE__*/
-function (_AbstractManager) {
+var UserManager = /*#__PURE__*/function (_AbstractManager) {
   (0, _inherits2.default)(UserManager, _AbstractManager);
+
+  var _super = _createSuper(UserManager);
 
   function UserManager() {
     (0, _classCallCheck2.default)(this, UserManager);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(UserManager).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(UserManager, [{
     key: "approve",
-
+    value:
     /**
      * Approve.
      */
-    value: function () {
-      var _approve = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee(id) {
+    function () {
+      var _approve = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(id) {
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return this._resolver.approve({
+                return this.resolver.approve({
                   id
                 });
 
@@ -85,15 +83,13 @@ function (_AbstractManager) {
   }, {
     key: "block",
     value: function () {
-      var _block = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee2(id) {
+      var _block = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(id) {
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return this._resolver.block({
+                return this.resolver.block({
                   id
                 });
 
@@ -121,23 +117,21 @@ function (_AbstractManager) {
   }, {
     key: "changeEmail",
     value: function () {
-      var _changeEmail = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee3(id, data) {
-        var _ref, token;
+      var _changeEmail = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(id, data) {
+        var _yield$this$resolver$, token;
 
         return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return this._resolver.changeEmail((0, _lodash.merge)({}, data, {
+                return this.resolver.changeEmail((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref = _context3.sent;
-                token = _ref.data;
+                _yield$this$resolver$ = _context3.sent;
+                token = _yield$this$resolver$.data;
                 return _context3.abrupt("return", token);
 
               case 5:
@@ -161,23 +155,21 @@ function (_AbstractManager) {
   }, {
     key: "changePassword",
     value: function () {
-      var _changePassword = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee4(id, data) {
-        var _ref2, token;
+      var _changePassword = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4(id, data) {
+        var _yield$this$resolver$2, token;
 
         return _regenerator.default.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.next = 2;
-                return this._resolver.changePassword((0, _lodash.merge)({}, data, {
+                return this.resolver.changePassword((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref2 = _context4.sent;
-                token = _ref2.data;
+                _yield$this$resolver$2 = _context4.sent;
+                token = _yield$this$resolver$2.data;
                 return _context4.abrupt("return", token);
 
               case 5:
@@ -201,23 +193,21 @@ function (_AbstractManager) {
   }, {
     key: "changePhone",
     value: function () {
-      var _changePhone = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee5(id, data) {
-        var _ref3, token;
+      var _changePhone = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(id, data) {
+        var _yield$this$resolver$3, token;
 
         return _regenerator.default.wrap(function _callee5$(_context5) {
           while (1) {
             switch (_context5.prev = _context5.next) {
               case 0:
                 _context5.next = 2;
-                return this._resolver.changePhone((0, _lodash.merge)({}, data, {
+                return this.resolver.changePhone((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref3 = _context5.sent;
-                token = _ref3.data;
+                _yield$this$resolver$3 = _context5.sent;
+                token = _yield$this$resolver$3.data;
                 return _context5.abrupt("return", token);
 
               case 5:
@@ -241,21 +231,19 @@ function (_AbstractManager) {
   }, {
     key: "confirmEmail",
     value: function () {
-      var _confirmEmail = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee6(data) {
-        var _ref4, accessTokens;
+      var _confirmEmail = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee6(data) {
+        var _yield$this$resolver$4, accessTokens;
 
         return _regenerator.default.wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
                 _context6.next = 2;
-                return this._resolver.confirmEmail(data);
+                return this.resolver.confirmEmail(data);
 
               case 2:
-                _ref4 = _context6.sent;
-                accessTokens = _ref4.data;
+                _yield$this$resolver$4 = _context6.sent;
+                accessTokens = _yield$this$resolver$4.data;
 
                 if (accessTokens) {
                   _context6.next = 6;
@@ -288,21 +276,19 @@ function (_AbstractManager) {
   }, {
     key: "confirmPhone",
     value: function () {
-      var _confirmPhone = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee7(data) {
-        var _ref5, accessTokens;
+      var _confirmPhone = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee7(data) {
+        var _yield$this$resolver$5, accessTokens;
 
         return _regenerator.default.wrap(function _callee7$(_context7) {
           while (1) {
             switch (_context7.prev = _context7.next) {
               case 0:
                 _context7.next = 2;
-                return this._resolver.confirmPhone(data);
+                return this.resolver.confirmPhone(data);
 
               case 2:
-                _ref5 = _context7.sent;
-                accessTokens = _ref5.data;
+                _yield$this$resolver$5 = _context7.sent;
+                accessTokens = _yield$this$resolver$5.data;
 
                 if (accessTokens) {
                   _context7.next = 6;
@@ -335,22 +321,20 @@ function (_AbstractManager) {
   }, {
     key: "create",
     value: function () {
-      var _create = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee8(data) {
-        var _ref6, user;
+      var _create = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee8(data) {
+        var _yield$this$resolver$6, user;
 
         return _regenerator.default.wrap(function _callee8$(_context8) {
           while (1) {
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return this._resolver.create(data);
+                return this.resolver.create(data);
 
               case 2:
-                _ref6 = _context8.sent;
-                user = _ref6.data;
-                return _context8.abrupt("return", this._instantiate(user));
+                _yield$this$resolver$6 = _context8.sent;
+                user = _yield$this$resolver$6.data;
+                return _context8.abrupt("return", this.instantiate(user));
 
               case 5:
               case "end":
@@ -373,21 +357,19 @@ function (_AbstractManager) {
   }, {
     key: "forgotPassword",
     value: function () {
-      var _forgotPassword = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee9(data) {
-        var _ref7, token;
+      var _forgotPassword = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee9(data) {
+        var _yield$this$resolver$7, token;
 
         return _regenerator.default.wrap(function _callee9$(_context9) {
           while (1) {
             switch (_context9.prev = _context9.next) {
               case 0:
                 _context9.next = 2;
-                return this._resolver.forgotPassword(data);
+                return this.resolver.forgotPassword(data);
 
               case 2:
-                _ref7 = _context9.sent;
-                token = _ref7.data;
+                _yield$this$resolver$7 = _context9.sent;
+                token = _yield$this$resolver$7.data;
                 return _context9.abrupt("return", token);
 
               case 5:
@@ -411,24 +393,22 @@ function (_AbstractManager) {
   }, {
     key: "get",
     value: function () {
-      var _get = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee10(id, options) {
-        var _ref8, user;
+      var _get = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee10(id, options) {
+        var _yield$this$resolver$8, user;
 
         return _regenerator.default.wrap(function _callee10$(_context10) {
           while (1) {
             switch (_context10.prev = _context10.next) {
               case 0:
                 _context10.next = 2;
-                return this._resolver.get({
+                return this.resolver.get({
                   id
                 }, options);
 
               case 2:
-                _ref8 = _context10.sent;
-                user = _ref8.data;
-                return _context10.abrupt("return", this._instantiate(user));
+                _yield$this$resolver$8 = _context10.sent;
+                user = _yield$this$resolver$8.data;
+                return _context10.abrupt("return", this.instantiate(user));
 
               case 5:
               case "end":
@@ -451,7 +431,7 @@ function (_AbstractManager) {
   }, {
     key: "getReferralProgram",
     value: function getReferralProgram(id, program, options) {
-      return this._resolver.getReferralProgram({
+      return this.resolver.getReferralProgram({
         id,
         program
       }, options);
@@ -463,15 +443,13 @@ function (_AbstractManager) {
   }, {
     key: "delete",
     value: function () {
-      var _delete2 = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee11(id) {
+      var _delete2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee11(id) {
         return _regenerator.default.wrap(function _callee11$(_context11) {
           while (1) {
             switch (_context11.prev = _context11.next) {
               case 0:
                 _context11.next = 2;
-                return this._resolver.delete({
+                return this.resolver.delete({
                   id
                 });
 
@@ -499,9 +477,7 @@ function (_AbstractManager) {
   }, {
     key: "list",
     value: function () {
-      var _list = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee12(options) {
+      var _list = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee12(options) {
         var _this = this;
 
         var result, results, total;
@@ -510,12 +486,12 @@ function (_AbstractManager) {
             switch (_context12.prev = _context12.next) {
               case 0:
                 _context12.next = 2;
-                return this._resolver.list({}, options);
+                return this.resolver.list({}, options);
 
               case 2:
                 result = _context12.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (user) {
-                  return _this._instantiate(user);
+                  return _this.instantiate(user);
                 });
                 total = (0, _lodash.get)(result, 'total');
                 return _context12.abrupt("return", {
@@ -544,24 +520,22 @@ function (_AbstractManager) {
   }, {
     key: "patch",
     value: function () {
-      var _patch = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee13(id, data) {
-        var _ref9, user;
+      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee13(id, data) {
+        var _yield$this$resolver$9, user;
 
         return _regenerator.default.wrap(function _callee13$(_context13) {
           while (1) {
             switch (_context13.prev = _context13.next) {
               case 0:
                 _context13.next = 2;
-                return this._resolver.patch((0, _lodash.merge)({}, data, {
+                return this.resolver.patch((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref9 = _context13.sent;
-                user = _ref9.data;
-                return _context13.abrupt("return", this._instantiate(user));
+                _yield$this$resolver$9 = _context13.sent;
+                user = _yield$this$resolver$9.data;
+                return _context13.abrupt("return", this.instantiate(user));
 
               case 5:
               case "end":
@@ -584,21 +558,19 @@ function (_AbstractManager) {
   }, {
     key: "resendConfirmation",
     value: function () {
-      var _resendConfirmation = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee14(data) {
-        var _ref10, token;
+      var _resendConfirmation = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee14(data) {
+        var _yield$this$resolver$10, token;
 
         return _regenerator.default.wrap(function _callee14$(_context14) {
           while (1) {
             switch (_context14.prev = _context14.next) {
               case 0:
                 _context14.next = 2;
-                return this._resolver.resendConfirmation(data);
+                return this.resolver.resendConfirmation(data);
 
               case 2:
-                _ref10 = _context14.sent;
-                token = _ref10.data;
+                _yield$this$resolver$10 = _context14.sent;
+                token = _yield$this$resolver$10.data;
                 return _context14.abrupt("return", token);
 
               case 5:
@@ -622,15 +594,13 @@ function (_AbstractManager) {
   }, {
     key: "resetPassword",
     value: function () {
-      var _resetPassword = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee15(data) {
+      var _resetPassword = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee15(data) {
         return _regenerator.default.wrap(function _callee15$(_context15) {
           while (1) {
             switch (_context15.prev = _context15.next) {
               case 0:
                 _context15.next = 2;
-                return this._resolver.resetPassword(data);
+                return this.resolver.resetPassword(data);
 
               case 2:
                 return _context15.abrupt("return", true);
@@ -656,15 +626,13 @@ function (_AbstractManager) {
   }, {
     key: "unblock",
     value: function () {
-      var _unblock = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee16(id) {
+      var _unblock = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee16(id) {
         return _regenerator.default.wrap(function _callee16$(_context16) {
           while (1) {
             switch (_context16.prev = _context16.next) {
               case 0:
                 _context16.next = 2;
-                return this._resolver.unblock({
+                return this.resolver.unblock({
                   id
                 });
 

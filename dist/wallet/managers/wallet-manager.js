@@ -15,11 +15,11 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
-
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
 var _lodash = require("lodash");
 
@@ -29,33 +29,31 @@ var _movementModel = _interopRequireDefault(require("../../movement/models/movem
 
 var _transactionModel = _interopRequireDefault(require("../../transaction/models/transaction-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `WalletManager`.
  */
-var WalletManager =
-/*#__PURE__*/
-function (_AbstractManager) {
+var WalletManager = /*#__PURE__*/function (_AbstractManager) {
   (0, _inherits2.default)(WalletManager, _AbstractManager);
+
+  var _super = _createSuper(WalletManager);
 
   function WalletManager() {
     (0, _classCallCheck2.default)(this, WalletManager);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(WalletManager).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(WalletManager, [{
     key: "activity",
-
+    value:
     /**
      * Activity.
      */
-    value: function () {
-      var _activity = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee(id, options) {
+    function () {
+      var _activity = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(id, options) {
         var _this = this;
 
         var result, results, total;
@@ -64,7 +62,7 @@ function (_AbstractManager) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return this._resolver.activity({
+                return this.resolver.activity({
                   id
                 }, options);
 
@@ -72,7 +70,7 @@ function (_AbstractManager) {
                 result = _context.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (transaction) {
                   return new _transactionModel.default(transaction, {
-                    connection: _this._connection
+                    connection: _this.connection
                   });
                 });
                 total = (0, _lodash.get)(result, 'total');
@@ -102,23 +100,21 @@ function (_AbstractManager) {
   }, {
     key: "balance",
     value: function () {
-      var _balance = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee2(id, options) {
-        var _ref, balance;
+      var _balance = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(id, options) {
+        var _yield$this$resolver$, balance;
 
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return this._resolver.balance({
+                return this.resolver.balance({
                   id
                 }, options);
 
               case 2:
-                _ref = _context2.sent;
-                balance = _ref.data;
+                _yield$this$resolver$ = _context2.sent;
+                balance = _yield$this$resolver$.data;
                 return _context2.abrupt("return", balance);
 
               case 5:
@@ -142,22 +138,20 @@ function (_AbstractManager) {
   }, {
     key: "create",
     value: function () {
-      var _create = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee3(data) {
-        var _ref2, wallet;
+      var _create = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(data) {
+        var _yield$this$resolver$2, wallet;
 
         return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
                 _context3.next = 2;
-                return this._resolver.create(data);
+                return this.resolver.create(data);
 
               case 2:
-                _ref2 = _context3.sent;
-                wallet = _ref2.data;
-                return _context3.abrupt("return", this._instantiate(wallet));
+                _yield$this$resolver$2 = _context3.sent;
+                wallet = _yield$this$resolver$2.data;
+                return _context3.abrupt("return", this.instantiate(wallet));
 
               case 5:
               case "end":
@@ -180,24 +174,22 @@ function (_AbstractManager) {
   }, {
     key: "get",
     value: function () {
-      var _get = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee4(id, options) {
-        var _ref3, wallet;
+      var _get = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee4(id, options) {
+        var _yield$this$resolver$3, wallet;
 
         return _regenerator.default.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
                 _context4.next = 2;
-                return this._resolver.get({
+                return this.resolver.get({
                   id
                 }, options);
 
               case 2:
-                _ref3 = _context4.sent;
-                wallet = _ref3.data;
-                return _context4.abrupt("return", this._instantiate(wallet));
+                _yield$this$resolver$3 = _context4.sent;
+                wallet = _yield$this$resolver$3.data;
+                return _context4.abrupt("return", this.instantiate(wallet));
 
               case 5:
               case "end":
@@ -220,9 +212,7 @@ function (_AbstractManager) {
   }, {
     key: "globalActivity",
     value: function () {
-      var _globalActivity = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee5(options) {
+      var _globalActivity = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(options) {
         var _this2 = this;
 
         var result, results, total;
@@ -231,13 +221,13 @@ function (_AbstractManager) {
             switch (_context5.prev = _context5.next) {
               case 0:
                 _context5.next = 2;
-                return this._resolver.globalActivity({}, options);
+                return this.resolver.globalActivity({}, options);
 
               case 2:
                 result = _context5.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (transaction) {
                   return new _transactionModel.default(transaction, {
-                    connection: _this2._connection
+                    connection: _this2.connection
                   });
                 });
                 total = (0, _lodash.get)(result, 'total');
@@ -267,21 +257,19 @@ function (_AbstractManager) {
   }, {
     key: "globalBalance",
     value: function () {
-      var _globalBalance = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee6(options) {
-        var _ref4, balance;
+      var _globalBalance = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee6(options) {
+        var _yield$this$resolver$4, balance;
 
         return _regenerator.default.wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
               case 0:
                 _context6.next = 2;
-                return this._resolver.globalBalance({}, options);
+                return this.resolver.globalBalance({}, options);
 
               case 2:
-                _ref4 = _context6.sent;
-                balance = _ref4.data;
+                _yield$this$resolver$4 = _context6.sent;
+                balance = _yield$this$resolver$4.data;
                 return _context6.abrupt("return", balance);
 
               case 5:
@@ -305,9 +293,7 @@ function (_AbstractManager) {
   }, {
     key: "list",
     value: function () {
-      var _list = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee7(options) {
+      var _list = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee7(options) {
         var _this3 = this;
 
         var result, results, total;
@@ -316,12 +302,12 @@ function (_AbstractManager) {
             switch (_context7.prev = _context7.next) {
               case 0:
                 _context7.next = 2;
-                return this._resolver.list({}, options);
+                return this.resolver.list({}, options);
 
               case 2:
                 result = _context7.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (wallet) {
-                  return _this3._instantiate(wallet);
+                  return _this3.instantiate(wallet);
                 });
                 total = (0, _lodash.get)(result, 'total');
                 return _context7.abrupt("return", {
@@ -350,9 +336,7 @@ function (_AbstractManager) {
   }, {
     key: "movements",
     value: function () {
-      var _movements = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee8(id, options) {
+      var _movements = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee8(id, options) {
         var _this4 = this;
 
         var result, results, total;
@@ -361,7 +345,7 @@ function (_AbstractManager) {
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return this._resolver.movements({
+                return this.resolver.movements({
                   id
                 }, options);
 
@@ -369,7 +353,7 @@ function (_AbstractManager) {
                 result = _context8.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (movement) {
                   return new _movementModel.default(movement, {
-                    connection: _this4._connection
+                    connection: _this4.connection
                   });
                 });
                 total = (0, _lodash.get)(result, 'total');
@@ -399,24 +383,22 @@ function (_AbstractManager) {
   }, {
     key: "patch",
     value: function () {
-      var _patch = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee9(id, data) {
-        var _ref5, wallet;
+      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee9(id, data) {
+        var _yield$this$resolver$5, wallet;
 
         return _regenerator.default.wrap(function _callee9$(_context9) {
           while (1) {
             switch (_context9.prev = _context9.next) {
               case 0:
                 _context9.next = 2;
-                return this._resolver.patch((0, _lodash.merge)({}, data, {
+                return this.resolver.patch((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _ref5 = _context9.sent;
-                wallet = _ref5.data;
-                return _context9.abrupt("return", this._instantiate(wallet));
+                _yield$this$resolver$5 = _context9.sent;
+                wallet = _yield$this$resolver$5.data;
+                return _context9.abrupt("return", this.instantiate(wallet));
 
               case 5:
               case "end":
@@ -439,9 +421,7 @@ function (_AbstractManager) {
   }, {
     key: "transactions",
     value: function () {
-      var _transactions = (0, _asyncToGenerator2.default)(
-      /*#__PURE__*/
-      _regenerator.default.mark(function _callee10(id, options) {
+      var _transactions = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee10(id, options) {
         var _this5 = this;
 
         var result, results, total;
@@ -450,7 +430,7 @@ function (_AbstractManager) {
             switch (_context10.prev = _context10.next) {
               case 0:
                 _context10.next = 2;
-                return this._resolver.transactions({
+                return this.resolver.transactions({
                   id
                 }, options);
 
@@ -458,7 +438,7 @@ function (_AbstractManager) {
                 result = _context10.sent;
                 results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (transaction) {
                   return new _transactionModel.default(transaction, {
-                    connection: _this5._connection
+                    connection: _this5.connection
                   });
                 });
                 total = (0, _lodash.get)(result, 'total');

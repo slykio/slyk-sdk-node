@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.8.0](https://github.com/slykio/slyk-sdk-node/tree/v0.8.0) (2021-02-25)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.7.0...v0.8.0)
+
+**Merged pull requests:**
+
+- Improve core classes privacy [\#32](https://github.com/slykio/slyk-sdk-node/pull/32) ([johnmaia](https://github.com/johnmaia))
+- Update package dependencies [\#31](https://github.com/slykio/slyk-sdk-node/pull/31) ([johnmaia](https://github.com/johnmaia))
+- Update documentation with new media fields [\#30](https://github.com/slykio/slyk-sdk-node/pull/30) ([kratos-42](https://github.com/kratos-42))
+
 ## [v0.7.0](https://github.com/slykio/slyk-sdk-node/tree/v0.7.0) (2021-02-09)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.6.0...v0.7.0)
 
@@ -21,7 +30,6 @@
 
 **Merged pull requests:**
 
-- Add delete to user module [\#25](https://github.com/slykio/slyk-sdk-node/pull/25) ([kratos-42](https://github.com/kratos-42))
 - Fix errorHandler by handling incoming data object [\#24](https://github.com/slykio/slyk-sdk-node/pull/24) ([kratos-42](https://github.com/kratos-42))
 
 ## [v0.4.0](https://github.com/slykio/slyk-sdk-node/tree/v0.4.0) (2021-01-11)
@@ -38,6 +46,7 @@
 
 **Merged pull requests:**
 
+- Add delete to user module [\#25](https://github.com/slykio/slyk-sdk-node/pull/25) ([kratos-42](https://github.com/kratos-42))
 - Add user forgot and reset password methods [\#19](https://github.com/slykio/slyk-sdk-node/pull/19) ([kratos-42](https://github.com/kratos-42))
 - Add store module [\#18](https://github.com/slykio/slyk-sdk-node/pull/18) ([JEduardogmr](https://github.com/JEduardogmr))
 - Add change user identifier methods [\#17](https://github.com/slykio/slyk-sdk-node/pull/17) ([kratos-42](https://github.com/kratos-42))
@@ -45,7 +54,6 @@
 - Add auth module [\#15](https://github.com/slykio/slyk-sdk-node/pull/15) ([JEduardogmr](https://github.com/JEduardogmr))
 - Bump yargs-parser from 13.1.1 to 13.1.2 [\#14](https://github.com/slykio/slyk-sdk-node/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump lodash from 4.17.11 to 4.17.19 [\#13](https://github.com/slykio/slyk-sdk-node/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Add support to Node 4 [\#11](https://github.com/slykio/slyk-sdk-node/pull/11) ([johnmaia](https://github.com/johnmaia))
 
 ## [v0.2.0](https://github.com/slykio/slyk-sdk-node/tree/v0.2.0) (2020-03-26)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.1.0...v0.2.0)
@@ -53,6 +61,7 @@
 **Merged pull requests:**
 
 - Improve changelog script [\#12](https://github.com/slykio/slyk-sdk-node/pull/12) ([joaonice](https://github.com/joaonice))
+- Add support to Node 4 [\#11](https://github.com/slykio/slyk-sdk-node/pull/11) ([johnmaia](https://github.com/johnmaia))
 - Update package license to MIT [\#10](https://github.com/slykio/slyk-sdk-node/pull/10) ([johnmaia](https://github.com/johnmaia))
 - Add coveralls [\#9](https://github.com/slykio/slyk-sdk-node/pull/9) ([johnmaia](https://github.com/johnmaia))
 - Add module exports [\#8](https://github.com/slykio/slyk-sdk-node/pull/8) ([johnmaia](https://github.com/johnmaia))

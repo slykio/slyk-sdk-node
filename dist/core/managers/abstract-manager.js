@@ -14,9 +14,7 @@ var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/creat
 /**
  * Export `AbstractManager`.
  */
-var AbstractManager =
-/*#__PURE__*/
-function () {
+var AbstractManager = /*#__PURE__*/function () {
   /**
    * Constructor.
    */
@@ -25,11 +23,9 @@ function () {
         model = _ref.model,
         resolver = _ref.resolver;
     (0, _classCallCheck2.default)(this, AbstractManager);
-    this._connection = connection; // eslint-disable-line id-match
-
-    this._model = model; // eslint-disable-line id-match
-
-    this._resolver = resolver(this._connection); // eslint-disable-line id-match
+    this.connection = connection;
+    this.model = model;
+    this.resolver = resolver(this.connection);
   }
   /**
    * Instantiate.
@@ -37,11 +33,11 @@ function () {
 
 
   (0, _createClass2.default)(AbstractManager, [{
-    key: "_instantiate",
-    value: function _instantiate(data) {
-      return new this._model(data, {
-        connection: this._connection
-      });
+    key: "instantiate",
+    value: function instantiate(data) {
+      return new this.model(data, {
+        connection: this.connection
+      }); // eslint-disable-line new-cap
     }
   }]);
   return AbstractManager;

@@ -11,39 +11,39 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _abstractModel = _interopRequireDefault(require("../../core/models/abstract-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `WalletModel`.
  */
-var WalletModel =
-/*#__PURE__*/
-function (_AbstractModel) {
+var WalletModel = /*#__PURE__*/function (_AbstractModel) {
   (0, _inherits2.default)(WalletModel, _AbstractModel);
+
+  var _super = _createSuper(WalletModel);
 
   function WalletModel() {
     (0, _classCallCheck2.default)(this, WalletModel);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(WalletModel).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(WalletModel, [{
     key: "getActivity",
-
+    value:
     /**
      * Get activity.
      */
-    value: function getActivity(options) {
-      return this._sdk.wallet.activity(this.id, options);
+    function getActivity(options) {
+      return WalletModel.sdk.wallet.activity(this.id, options);
     }
     /**
      * Get balance.
@@ -52,7 +52,7 @@ function (_AbstractModel) {
   }, {
     key: "getBalance",
     value: function getBalance(options) {
-      return this._sdk.wallet.balance(this.id, options);
+      return WalletModel.sdk.wallet.balance(this.id, options);
     }
     /**
      * Get movements.
@@ -61,7 +61,7 @@ function (_AbstractModel) {
   }, {
     key: "getMovements",
     value: function getMovements(options) {
-      return this._sdk.wallet.movements(this.id, options);
+      return WalletModel.sdk.wallet.movements(this.id, options);
     }
     /**
      * Get transactions.
@@ -70,7 +70,7 @@ function (_AbstractModel) {
   }, {
     key: "getTransactions",
     value: function getTransactions(options) {
-      return this._sdk.wallet.transactions(this.id, options);
+      return WalletModel.sdk.wallet.transactions(this.id, options);
     }
     /**
      * Get Owner.
@@ -79,7 +79,7 @@ function (_AbstractModel) {
   }, {
     key: "getOwner",
     value: function getOwner(options) {
-      return this.ownerId ? this._sdk.user.get(this.ownerId, options) : undefined;
+      return this.ownerId ? WalletModel.sdk.user.get(this.ownerId, options) : undefined;
     }
     /**
      * Patch.
@@ -88,7 +88,7 @@ function (_AbstractModel) {
   }, {
     key: "patch",
     value: function patch(data) {
-      return this._sdk.wallet.patch(this.id, data);
+      return WalletModel.sdk.wallet.patch(this.id, data);
     }
   }]);
   return WalletModel;

@@ -11,39 +11,39 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _abstractModel = _interopRequireDefault(require("../../core/models/abstract-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `TaskModel`.
  */
-var TaskModel =
-/*#__PURE__*/
-function (_AbstractModel) {
+var TaskModel = /*#__PURE__*/function (_AbstractModel) {
   (0, _inherits2.default)(TaskModel, _AbstractModel);
+
+  var _super = _createSuper(TaskModel);
 
   function TaskModel() {
     (0, _classCallCheck2.default)(this, TaskModel);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(TaskModel).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(TaskModel, [{
     key: "complete",
-
+    value:
     /**
      * Complete.
      */
-    value: function complete(data) {
-      return this._sdk.task.complete(this.id, data);
+    function complete(data) {
+      return TaskModel.sdk.task.complete(this.id, data);
     }
     /**
      * Delete.
@@ -52,7 +52,7 @@ function (_AbstractModel) {
   }, {
     key: "delete",
     value: function _delete() {
-      return this._sdk.task.delete(this.id);
+      return TaskModel.sdk.task.delete(this.id);
     }
     /**
      * Patch.
@@ -61,7 +61,7 @@ function (_AbstractModel) {
   }, {
     key: "patch",
     value: function patch(data) {
-      return this._sdk.task.patch(this.id, data);
+      return TaskModel.sdk.task.patch(this.id, data);
     }
     /**
      * Reorder.
@@ -70,7 +70,7 @@ function (_AbstractModel) {
   }, {
     key: "reorder",
     value: function reorder(data) {
-      return this._sdk.task.reorder(this.id, data);
+      return TaskModel.sdk.task.reorder(this.id, data);
     }
   }]);
   return TaskModel;

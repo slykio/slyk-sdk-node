@@ -11,39 +11,39 @@ var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/cl
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
 
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
 
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
-var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
-
 var _abstractModel = _interopRequireDefault(require("../../core/models/abstract-model"));
 
-/**
- * Module dependencies.
- */
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
  * Export `InviteModel`.
  */
-var InviteModel =
-/*#__PURE__*/
-function (_AbstractModel) {
+var InviteModel = /*#__PURE__*/function (_AbstractModel) {
   (0, _inherits2.default)(InviteModel, _AbstractModel);
+
+  var _super = _createSuper(InviteModel);
 
   function InviteModel() {
     (0, _classCallCheck2.default)(this, InviteModel);
-    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(InviteModel).apply(this, arguments));
+    return _super.apply(this, arguments);
   }
 
   (0, _createClass2.default)(InviteModel, [{
     key: "cancel",
-
+    value:
     /**
      * Cancel.
      */
-    value: function cancel(data) {
-      return this._sdk.invite.cancel(this.code, data);
+    function cancel(data) {
+      return InviteModel.sdk.invite.cancel(this.code, data);
     }
     /**
      * Get invited user.
@@ -52,7 +52,7 @@ function (_AbstractModel) {
   }, {
     key: "getInvitedUser",
     value: function getInvitedUser(options) {
-      return this.invitedUserId ? this._sdk.user.get(this.invitedUserId, options) : undefined;
+      return this.invitedUserId ? InviteModel.sdk.user.get(this.invitedUserId, options) : undefined;
     }
     /**
      * Get inviter user.
@@ -61,7 +61,7 @@ function (_AbstractModel) {
   }, {
     key: "getInviterUser",
     value: function getInviterUser(options) {
-      return this.inviterUserId ? this._sdk.user.get(this.inviterUserId, options) : undefined;
+      return this.inviterUserId ? InviteModel.sdk.user.get(this.inviterUserId, options) : undefined;
     }
     /**
      * Validate.
@@ -70,7 +70,7 @@ function (_AbstractModel) {
   }, {
     key: "validate",
     value: function validate() {
-      return this._sdk.invite.validate(this.code);
+      return InviteModel.sdk.invite.validate(this.code);
     }
   }]);
   return InviteModel;
