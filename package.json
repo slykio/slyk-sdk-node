@@ -50,7 +50,7 @@
     "@babel/preset-env": "7.13.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-add-module-exports": "1.0.4",
-    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-module-resolver": "4.1.0",
     "coveralls": "^3.0.11",
     "eslint": "^5.15.1",
     "eslint-config-seegno": "15.0.0",
