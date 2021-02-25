@@ -16,7 +16,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   cancel(data) {
-    return this._sdk.order.cancel(this.id, data);
+    return OrderModel.sdk.order.cancel(this.id, data);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   fulfill(data) {
-    return this._sdk.order.fulfill(this.id, data);
+    return OrderModel.sdk.order.fulfill(this.id, data);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   fulfillOrderLine(orderLineId, data) {
-    return this._sdk.orderLine.fulfill(orderLineId, this.id, data);
+    return OrderModel.sdk.orderLine.fulfill(orderLineId, this.id, data);
   }
 
   /**
@@ -40,7 +40,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   getOrderLine(orderLineId, options) {
-    return this._sdk.orderLine.get(orderLineId, this.id, options);
+    return OrderModel.sdk.orderLine.get(orderLineId, this.id, options);
   }
 
   /**
@@ -48,7 +48,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   getOrderLines(options) {
-    return this._sdk.orderLine.list(this.id, options);
+    return OrderModel.sdk.orderLine.list(this.id, options);
   }
 
   /**
@@ -56,7 +56,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.order.patch(this.id, data);
+    return OrderModel.sdk.order.patch(this.id, data);
   }
 
   /**
@@ -64,7 +64,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   pay(data) {
-    return this._sdk.order.pay(this.id, data);
+    return OrderModel.sdk.order.pay(this.id, data);
   }
 
   /**
@@ -72,7 +72,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   refund(data) {
-    return this._sdk.order.refund(this.id, data);
+    return OrderModel.sdk.order.refund(this.id, data);
   }
 
   /**
@@ -80,7 +80,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   unfulfill() {
-    return this._sdk.order.unfulfill(this.id);
+    return OrderModel.sdk.order.unfulfill(this.id);
   }
 
   /**
@@ -88,7 +88,7 @@ export default class OrderModel extends AbstractModel {
    */
 
   unfulfillOrderLine(orderLineId) {
-    return this._sdk.orderLine.unfulfill(orderLineId, this.id);
+    return OrderModel.sdk.orderLine.unfulfill(orderLineId, this.id);
   }
 
 }

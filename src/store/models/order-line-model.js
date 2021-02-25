@@ -16,7 +16,7 @@ export default class OrderLineModel extends AbstractModel {
    */
 
   fulfill(data) {
-    return this._sdk.orderLine.fulfill(this.id, this.orderId, data);
+    return OrderLineModel.sdk.orderLine.fulfill(this.id, this.orderId, data);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class OrderLineModel extends AbstractModel {
    */
 
   unfulfill() {
-    return this._sdk.orderLine.unfulfill(this.id, this.orderId);
+    return OrderLineModel.sdk.orderLine.unfulfill(this.id, this.orderId);
   }
 
 }

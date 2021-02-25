@@ -29,11 +29,7 @@ describe('ConnectionModel', () => {
 
       const patchedConnection = await connection.patch({ uri: 'waldo' });
 
-      expect(patchedConnection).toEqual({
-        _sdk: expect.any(Object),
-        id: 'fred',
-        uri: 'waldo'
-      });
+      expect(patchedConnection).toEqual({ id: 'fred', uri: 'waldo' });
     });
   });
 });

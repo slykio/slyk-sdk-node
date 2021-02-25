@@ -16,7 +16,7 @@ export default class AddressModel extends AbstractModel {
    */
 
   getAsset(options) {
-    return this._sdk.asset.get(this.assetCode, options);
+    return AddressModel.sdk.asset.get(this.assetCode, options);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class AddressModel extends AbstractModel {
    */
 
   getWallet(options) {
-    return this.walletId ? this._sdk.wallet.get(this.walletId, options) : undefined;
+    return this.walletId ? AddressModel.sdk.wallet.get(this.walletId, options) : undefined;
   }
 
 }

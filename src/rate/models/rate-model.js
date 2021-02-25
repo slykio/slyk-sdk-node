@@ -16,7 +16,7 @@ export default class RateModel extends AbstractModel {
    */
 
   getBaseAsset(options) {
-    return this._sdk.asset.get(this.baseAssetCode, options);
+    return RateModel.sdk.asset.get(this.baseAssetCode, options);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class RateModel extends AbstractModel {
    */
 
   getQuoteAsset(options) {
-    return this._sdk.asset.get(this.quoteAssetCode, options);
+    return RateModel.sdk.asset.get(this.quoteAssetCode, options);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class RateModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.rate.patch(this.baseAssetCode, this.quoteAssetCode, data);
+    return RateModel.sdk.rate.patch(this.baseAssetCode, this.quoteAssetCode, data);
   }
 
 }

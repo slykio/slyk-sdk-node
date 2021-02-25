@@ -58,7 +58,7 @@ describe('InviteModel', () => {
 
       const user = await invite.getInvitedUser();
 
-      expect(user).toEqual({ _sdk: expect.any(Object), id: 'waldo' });
+      expect(user).toEqual({ id: 'waldo' });
     });
   });
 
@@ -87,7 +87,7 @@ describe('InviteModel', () => {
 
       const user = await invite.getInviterUser();
 
-      expect(user).toEqual({ _sdk: expect.any(Object), id: 'waldo' });
+      expect(user).toEqual({ id: 'waldo' });
     });
   });
 

@@ -16,7 +16,7 @@ export default class QuestionModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.question.delete(this.id);
+    return QuestionModel.sdk.question.delete(this.id);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class QuestionModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.question.patch(this.id, data);
+    return QuestionModel.sdk.question.patch(this.id, data);
   }
 
 }

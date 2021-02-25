@@ -46,13 +46,11 @@ describe('WalletModel', () => {
 
       expect(results).toEqual([
         {
-          _sdk: expect.any(Object),
           amount: '5',
           id: 'bar',
           metadata: {}
         },
         {
-          _sdk: expect.any(Object),
           amount: '4',
           id: 'biz',
           metadata: {}
@@ -119,20 +117,16 @@ describe('WalletModel', () => {
 
       const { results, total } = await wallet.getMovements({ sort: [{ name: 'amount' }] });
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          amount: '1',
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          amount: '2',
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        amount: '1',
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        amount: '2',
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -149,37 +143,31 @@ describe('WalletModel', () => {
       nock(host, { reqheaders: { apikey } })
         .get('/wallets/bar/transactions')
         .reply(200, {
-          data: [
-            {
-              amount: '3.5',
-              id: 'bar',
-              metadata: {}
-            },
-            {
-              amount: '3',
-              id: 'biz',
-              metadata: {}
-            }
-          ],
+          data: [{
+            amount: '3.5',
+            id: 'bar',
+            metadata: {}
+          },
+          {
+            amount: '3',
+            id: 'biz',
+            metadata: {}
+          }],
           total: 2
         });
 
       const { results, total } = await wallet.getTransactions();
 
-      expect(results).toEqual([
-        {
-          _sdk: expect.any(Object),
-          amount: '3.5',
-          id: 'bar',
-          metadata: {}
-        },
-        {
-          _sdk: expect.any(Object),
-          amount: '3',
-          id: 'biz',
-          metadata: {}
-        }
-      ]);
+      expect(results).toEqual([{
+        amount: '3.5',
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        amount: '3',
+        id: 'biz',
+        metadata: {}
+      }]);
 
       expect(total).toEqual(2);
     });
@@ -210,11 +198,7 @@ describe('WalletModel', () => {
 
       const owner = await wallet.getOwner();
 
-      expect(owner).toEqual({
-        _sdk: expect.any(Object),
-        email: 'foo@bar.com',
-        id: 'foo'
-      });
+      expect(owner).toEqual({ email: 'foo@bar.com', id: 'foo' });
     });
   });
 
@@ -232,11 +216,7 @@ describe('WalletModel', () => {
 
       const patchedUser = await wallet.patch({ ownerId: 'foo' });
 
-      expect(patchedUser).toEqual({
-        _sdk: expect.any(Object),
-        id: 'bar',
-        ownerId: 'foo'
-      });
+      expect(patchedUser).toEqual({ id: 'bar', ownerId: 'foo' });
     });
   });
 });

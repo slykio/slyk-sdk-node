@@ -16,7 +16,7 @@ export default class ConnectionModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.connection.patch(this.id, data);
+    return ConnectionModel.sdk.connection.patch(this.id, data);
   }
 
 }

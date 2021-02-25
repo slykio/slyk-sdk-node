@@ -64,11 +64,7 @@ describe('AuthModel', () => {
 
       const result = await auth.refresh();
 
-      expect(result).toEqual({
-        _sdk: expect.any(Object),
-        refreshToken: '789',
-        token: '012'
-      });
+      expect(result).toEqual({ refreshToken: '789', token: '012' });
     });
   });
 });

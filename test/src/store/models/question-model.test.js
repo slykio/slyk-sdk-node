@@ -65,20 +65,11 @@ describe('QuestionModel', () => {
 
       nock(host, { reqheaders: { apikey } })
         .patch('/questions/foo', { title: 'quux' })
-        .reply(200, {
-          data: {
-            ...data,
-            title: 'quux'
-          }
-        });
+        .reply(200, { data: { ...data, title: 'quux' } });
 
       const response = await question.patch({ title: 'quux' });
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data,
-        title: 'quux'
-      });
+      expect(response).toEqual({ ...data, title: 'quux' });
     });
   });
 });

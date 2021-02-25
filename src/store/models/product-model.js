@@ -16,7 +16,7 @@ export default class ProductModel extends AbstractModel {
    */
 
   createQuestion(data) {
-    return this._sdk.product.createQuestion(this.id, data);
+    return ProductModel.sdk.product.createQuestion(this.id, data);
   }
 
   /**
@@ -24,7 +24,7 @@ export default class ProductModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.product.delete(this.id);
+    return ProductModel.sdk.product.delete(this.id);
   }
 
   /**
@@ -32,7 +32,7 @@ export default class ProductModel extends AbstractModel {
    */
 
   deleteQuestion(questionId) {
-    return this._sdk.product.deleteQuestion(this.id, questionId);
+    return ProductModel.sdk.product.deleteQuestion(this.id, questionId);
   }
 
   /**
@@ -40,7 +40,7 @@ export default class ProductModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.product.patch(this.id, data);
+    return ProductModel.sdk.product.patch(this.id, data);
   }
 
   /**
@@ -48,7 +48,7 @@ export default class ProductModel extends AbstractModel {
    */
 
   reorder(data) {
-    return this._sdk.product.reorder(this.id, data);
+    return ProductModel.sdk.product.reorder(this.id, data);
   }
 
   /**
@@ -56,7 +56,7 @@ export default class ProductModel extends AbstractModel {
    */
 
   reorderQuestion(questionId, data) {
-    return this._sdk.product.reorderQuestion(this.id, questionId, data);
+    return ProductModel.sdk.product.reorderQuestion(this.id, questionId, data);
   }
 
 }

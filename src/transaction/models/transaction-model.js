@@ -17,7 +17,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   approve(data) {
-    return this._sdk.transaction.approve(this.id, data);
+    return TransactionModel.sdk.transaction.approve(this.id, data);
   }
 
   /**
@@ -25,7 +25,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   confirm(data) {
-    return this._sdk.transaction.confirm(this.id, data);
+    return TransactionModel.sdk.transaction.confirm(this.id, data);
   }
 
   /**
@@ -33,7 +33,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   fail(data) {
-    return this._sdk.transaction.fail(this.id, data);
+    return TransactionModel.sdk.transaction.fail(this.id, data);
   }
 
   /**
@@ -41,7 +41,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   getAsset(options) {
-    return this._sdk.asset.get(this.assetCode, options);
+    return TransactionModel.sdk.asset.get(this.assetCode, options);
   }
 
   /**
@@ -49,7 +49,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   getDestinationAddress(options) {
-    return this.destinationAddress ? this._sdk.address.get(this.destinationAddress, options) : undefined;
+    return this.destinationAddress ? TransactionModel.sdk.address.get(this.destinationAddress, options) : undefined;
   }
 
   /**
@@ -57,7 +57,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   getDestinationWallet(options) {
-    return this.destinationWalletId ? this._sdk.wallet.get(this.destinationWalletId, options) : undefined;
+    return this.destinationWalletId ? TransactionModel.sdk.wallet.get(this.destinationWalletId, options) : undefined;
   }
 
   /**
@@ -65,7 +65,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   getOriginAddress(options) {
-    return this.originAddress ? this._sdk.address.get(this.originAddress, options) : undefined;
+    return this.originAddress ? TransactionModel.sdk.address.get(this.originAddress, options) : undefined;
   }
 
   /**
@@ -73,7 +73,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   getOriginWallet(options) {
-    return this.originWalletId ? this._sdk.wallet.get(this.originWalletId, options) : undefined;
+    return this.originWalletId ? TransactionModel.sdk.wallet.get(this.originWalletId, options) : undefined;
   }
 
   /**
@@ -81,7 +81,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   getMovements(options) {
-    return this._sdk.movement.list(merge({}, options, { filter: { transactionId: this.id } }));
+    return TransactionModel.sdk.movement.list(merge({}, options, { filter: { transactionId: this.id } }));
   }
 
   /**
@@ -89,7 +89,7 @@ export default class TransactionModel extends AbstractModel {
    */
 
   reject(data) {
-    return this._sdk.transaction.reject(this.id, data);
+    return TransactionModel.sdk.transaction.reject(this.id, data);
   }
 
 }

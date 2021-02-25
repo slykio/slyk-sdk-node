@@ -3,7 +3,6 @@
  * Module dependencies.
  */
 
-import { omit } from 'lodash';
 import sdkFactory from 'core/util/sdk-factory';
 
 /**
@@ -19,15 +18,7 @@ export default class AbstractModel {
   constructor(data, { connection }) {
     Object.assign(this, data);
 
-    this._sdk = sdkFactory(connection); // eslint-disable-line
-  }
-
-  /**
-   * Get data.
-   */
-
-  getData() {
-    return omit(this, '_sdk');
+    AbstractModel.sdk = sdkFactory(connection); // eslint-disable-line
   }
 
 }

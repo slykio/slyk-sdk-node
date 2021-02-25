@@ -39,11 +39,7 @@ describe('OrderLineModel', () => {
 
       const response = await orderLine.fulfill({ quantity: 2 });
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data,
-        status: 'fulfilled'
-      });
+      expect(response).toEqual({ ...data, status: 'fulfilled' });
     });
   });
 
@@ -71,11 +67,7 @@ describe('OrderLineModel', () => {
 
       const response = await orderLine.unfulfill();
 
-      expect(response).toEqual({
-        _sdk: expect.any(Object),
-        ...data,
-        status: 'unfulfilled'
-      });
+      expect(response).toEqual({ ...data, status: 'unfulfilled' });
     });
   });
 });

@@ -17,7 +17,7 @@ export default class UserModel extends AbstractModel {
    */
 
   approve() {
-    return this._sdk.user.approve(this.id);
+    return UserModel.sdk.user.approve(this.id);
   }
 
   /**
@@ -25,7 +25,7 @@ export default class UserModel extends AbstractModel {
    */
 
   block() {
-    return this._sdk.user.block(this.id);
+    return UserModel.sdk.user.block(this.id);
   }
 
   /**
@@ -33,7 +33,7 @@ export default class UserModel extends AbstractModel {
    */
 
   changeEmail(data) {
-    return this._sdk.user.changeEmail(this.id, data);
+    return UserModel.sdk.user.changeEmail(this.id, data);
   }
 
   /**
@@ -41,7 +41,7 @@ export default class UserModel extends AbstractModel {
    */
 
   changePassword(data) {
-    return this._sdk.user.changePassword(this.id, data);
+    return UserModel.sdk.user.changePassword(this.id, data);
   }
 
   /**
@@ -49,7 +49,7 @@ export default class UserModel extends AbstractModel {
    */
 
   changePhone(data) {
-    return this._sdk.user.changePhone(this.id, data);
+    return UserModel.sdk.user.changePhone(this.id, data);
   }
 
   /**
@@ -57,7 +57,7 @@ export default class UserModel extends AbstractModel {
    */
 
   delete() {
-    return this._sdk.user.delete(this.id);
+    return UserModel.sdk.user.delete(this.id);
   }
 
   /**
@@ -65,7 +65,7 @@ export default class UserModel extends AbstractModel {
    */
 
   getInvites(options) {
-    return this._sdk.invite.list(merge({}, options, { filter: { inviterUserId: this.id } }));
+    return UserModel.sdk.invite.list(merge({}, options, { filter: { inviterUserId: this.id } }));
   }
 
   /**
@@ -73,7 +73,7 @@ export default class UserModel extends AbstractModel {
    */
 
   getWallets(options) {
-    return this._sdk.wallet.list(merge({}, options, { filter: { ownerId: this.id } }));
+    return UserModel.sdk.wallet.list(merge({}, options, { filter: { ownerId: this.id } }));
   }
 
   /**
@@ -81,7 +81,7 @@ export default class UserModel extends AbstractModel {
    */
 
   getPrimaryWallet(options) {
-    return this._sdk.wallet.get(this.primaryWalletId, options);
+    return UserModel.sdk.wallet.get(this.primaryWalletId, options);
   }
 
   /**
@@ -89,7 +89,7 @@ export default class UserModel extends AbstractModel {
    */
 
   getReferralProgram(program, options) {
-    return this._sdk.user.getReferralProgram(this.id, program, options);
+    return UserModel.sdk.user.getReferralProgram(this.id, program, options);
   }
 
   /**
@@ -97,7 +97,7 @@ export default class UserModel extends AbstractModel {
    */
 
   getReferralUser(options) {
-    return this.referralUserId ? this._sdk.user.get(this.referralUserId, options) : undefined;
+    return this.referralUserId ? UserModel.sdk.user.get(this.referralUserId, options) : undefined;
   }
 
   /**
@@ -105,7 +105,7 @@ export default class UserModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.user.patch(this.id, data);
+    return UserModel.sdk.user.patch(this.id, data);
   }
 
   /**
@@ -113,7 +113,7 @@ export default class UserModel extends AbstractModel {
    */
 
   unblock() {
-    return this._sdk.user.unblock(this.id);
+    return UserModel.sdk.user.unblock(this.id);
   }
 
 }

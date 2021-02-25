@@ -16,7 +16,7 @@ export default class BankAccountModel extends AbstractModel {
    */
 
   getAsset(options) {
-    return this._sdk.asset.get(this.asset, options);
+    return BankAccountModel.sdk.asset.get(this.asset, options);
   }
 
 }

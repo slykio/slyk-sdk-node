@@ -16,7 +16,7 @@ export default class BankAccountRegionModel extends AbstractModel {
    */
 
   getAssets(options) {
-    return this._sdk.asset.list({ ...options, filter: { code: `in:${this.assets.join(',')}` } });
+    return BankAccountRegionModel.sdk.asset.list({ ...options, filter: { code: `in:${this.assets.join(',')}` } });
   }
 
 }

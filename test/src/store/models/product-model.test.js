@@ -48,7 +48,6 @@ describe('ProductModel', () => {
       const response = await product.createQuestion({ questionId: 'bar' });
 
       expect(response).toEqual({
-        _sdk: expect.any(Object),
         createdAt: '2019-03-20T14:30:37.483Z',
         productId: 'foo',
         questionId: 'bar',
@@ -156,7 +155,6 @@ describe('ProductModel', () => {
       });
 
       expect(response).toEqual({
-        _sdk: expect.any(Object),
         ...data,
         assetCode: 'bar',
         available: true,

@@ -16,7 +16,7 @@ export default class AssetModel extends AbstractModel {
    */
 
   getConnection(options) {
-    return this.connectionId ? this._sdk.connection.get(this.connectionId, options) : undefined;
+    return this.connectionId ? AssetModel.sdk.connection.get(this.connectionId, options) : undefined;
   }
 
   /**
@@ -24,7 +24,7 @@ export default class AssetModel extends AbstractModel {
    */
 
   patch(data) {
-    return this._sdk.asset.patch(this.code, data);
+    return AssetModel.sdk.asset.patch(this.code, data);
   }
 
 }

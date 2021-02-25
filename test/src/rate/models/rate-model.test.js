@@ -35,11 +35,7 @@ describe('AssetModel', () => {
 
       const asset = await rate.getBaseAsset();
 
-      expect(asset).toEqual({
-        _sdk: expect.any(Object),
-        code: 'bar',
-        name: 'foobar'
-      });
+      expect(asset).toEqual({ code: 'bar', name: 'foobar' });
     });
   });
 
@@ -63,11 +59,7 @@ describe('AssetModel', () => {
 
       const asset = await rate.getQuoteAsset();
 
-      expect(asset).toEqual({
-        _sdk: expect.any(Object),
-        code: 'biz',
-        name: 'foobiz'
-      });
+      expect(asset).toEqual({ code: 'biz', name: 'foobiz' });
     });
   });
 
@@ -98,7 +90,6 @@ describe('AssetModel', () => {
       const patchedRate = await rate.patch({ rate: '0.4' });
 
       expect(patchedRate).toEqual({
-        _sdk: expect.any(Object),
         baseAssetCode: 'bar',
         quoteAssetCode: 'biz',
         rate: '0.4'

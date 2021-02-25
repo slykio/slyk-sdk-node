@@ -15,28 +15,6 @@ describe('AddressModel', () => {
   const host = 'http://foobar:3000';
   const slyk = sdk({ apikey, host });
 
-  describe('getData', () => {
-    it('should return the `address` related properties', async () => {
-      nock(host, { reqheaders: { apikey } })
-        .get('/addresses/foobar')
-        .reply(200, {
-          data: {
-            address: 'foobar',
-            assetCode: 'fred',
-            metada: {}
-          }
-        });
-
-      const address = await slyk.address.get('foobar');
-
-      expect(address.getData()).toEqual({
-        address: 'foobar',
-        assetCode: 'fred',
-        metada: {}
-      });
-    });
-  });
-
   describe('getAsset', () => {
     it('should return the `address` related `asset`', async () => {
       nock(host, { reqheaders: { apikey } })
@@ -51,7 +29,7 @@ describe('AddressModel', () => {
 
       const asset = await address.getAsset();
 
-      expect(asset).toEqual({ _sdk: expect.any(Object), code: 'fred' });
+      expect(asset).toEqual({ code: 'fred' });
     });
   });
 
@@ -80,7 +58,7 @@ describe('AddressModel', () => {
 
       const wallet = await address.getWallet();
 
-      expect(wallet).toEqual({ _sdk: expect.any(Object), id: 'waldo' });
+      expect(wallet).toEqual({ id: 'waldo' });
     });
   });
 });

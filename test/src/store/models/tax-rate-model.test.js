@@ -66,7 +66,6 @@ describe('TaxRateModel', () => {
       const response = await taxRate.patch({ name: 'biz', rate: '1.00000000' });
 
       expect(response).toEqual({
-        _sdk: expect.any(Object),
         id: 'foo',
         name: 'biz',
         rate: '1.00000000'
