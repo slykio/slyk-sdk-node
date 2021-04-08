@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.9.0](https://github.com/slykio/slyk-sdk-node/tree/v0.9.0) (2021-04-08)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.8.0...v0.9.0)
+
+**Merged pull requests:**
+
+- Add survey task related methods [\#34](https://github.com/slykio/slyk-sdk-node/pull/34) ([kratos-42](https://github.com/kratos-42))
+
 ## [v0.8.0](https://github.com/slykio/slyk-sdk-node/tree/v0.8.0) (2021-02-25)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.7.0...v0.8.0)
 
@@ -30,6 +37,7 @@
 
 **Merged pull requests:**
 
+- Add delete to user module [\#25](https://github.com/slykio/slyk-sdk-node/pull/25) ([kratos-42](https://github.com/kratos-42))
 - Fix errorHandler by handling incoming data object [\#24](https://github.com/slykio/slyk-sdk-node/pull/24) ([kratos-42](https://github.com/kratos-42))
 
 ## [v0.4.0](https://github.com/slykio/slyk-sdk-node/tree/v0.4.0) (2021-01-11)
@@ -46,7 +54,6 @@
 
 **Merged pull requests:**
 
-- Add delete to user module [\#25](https://github.com/slykio/slyk-sdk-node/pull/25) ([kratos-42](https://github.com/kratos-42))
 - Add user forgot and reset password methods [\#19](https://github.com/slykio/slyk-sdk-node/pull/19) ([kratos-42](https://github.com/kratos-42))
 - Add store module [\#18](https://github.com/slykio/slyk-sdk-node/pull/18) ([JEduardogmr](https://github.com/JEduardogmr))
 - Add change user identifier methods [\#17](https://github.com/slykio/slyk-sdk-node/pull/17) ([kratos-42](https://github.com/kratos-42))

@@ -50,6 +50,24 @@ var _taskModel = _interopRequireDefault(require("./models/task-model"));
 
 var _taskResolver = _interopRequireDefault(require("./resolvers/task-resolver"));
 
+var _taskStepManager = _interopRequireDefault(require("./managers/task-step-manager"));
+
+var _taskStepModel = _interopRequireDefault(require("./models/task-step-model"));
+
+var _taskStepQuestionAnswerManager = _interopRequireDefault(require("./managers/task-step-question-answer-manager"));
+
+var _taskStepQuestionAnswerModel = _interopRequireDefault(require("./models/task-step-question-answer-model"));
+
+var _taskStepQuestionAnswerResolver = _interopRequireDefault(require("./resolvers/task-step-question-answer-resolver"));
+
+var _taskStepQuestionManager = _interopRequireDefault(require("./managers/task-step-question-manager"));
+
+var _taskStepQuestionModel = _interopRequireDefault(require("./models/task-step-question-model"));
+
+var _taskStepQuestionResolver = _interopRequireDefault(require("./resolvers/task-step-question-resolver"));
+
+var _taskStepResolver = _interopRequireDefault(require("./resolvers/task-step-resolver"));
+
 var _taxRateManager = _interopRequireDefault(require("./managers/tax-rate-manager"));
 
 var _taxRateModel = _interopRequireDefault(require("./models/tax-rate-model"));
@@ -105,6 +123,21 @@ module.exports = {
     manager: _taskManager.default,
     model: _taskModel.default,
     resolver: _taskResolver.default
+  },
+  taskStep: {
+    manager: _taskStepManager.default,
+    model: _taskStepModel.default,
+    resolver: _taskStepResolver.default
+  },
+  taskStepQuestion: {
+    manager: _taskStepQuestionManager.default,
+    model: _taskStepQuestionModel.default,
+    resolver: _taskStepQuestionResolver.default
+  },
+  taskStepQuestionAnswer: {
+    manager: _taskStepQuestionAnswerManager.default,
+    model: _taskStepQuestionAnswerModel.default,
+    resolver: _taskStepQuestionAnswerResolver.default
   },
   taxRate: {
     manager: _taxRateManager.default,

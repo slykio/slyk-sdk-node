@@ -17,49 +17,21 @@ var _resolverFactory = _interopRequireDefault(require("../../core/util/resolver-
  * Configuration.
  */
 var config = {
-  complete: {
-    endpoint: 'tasks/:id/complete',
-    method: 'post'
-  },
-  completeSurvey: {
-    endpoint: 'tasks/:id/answers',
-    method: 'post'
-  },
-  create: {
-    endpoint: 'tasks',
-    method: 'post'
-  },
-  delete: {
-    endpoint: 'tasks/:id',
-    method: 'delete'
-  },
   get: {
-    endpoint: 'tasks/:id',
-    method: 'get'
-  },
-  getStatistics: {
-    endpoint: 'users/:id/tasks/statistics',
+    endpoint: 'tasks/:taskId/steps/:id',
     method: 'get'
   },
   list: {
-    endpoint: 'tasks',
-    method: 'get'
-  },
-  listAnswers: {
-    endpoint: 'tasks/:id/answers',
+    endpoint: 'tasks/:taskId/steps',
     method: 'get'
   },
   patch: {
-    endpoint: 'tasks/:id',
+    endpoint: 'tasks/:taskId/steps/:id',
     method: 'patch'
-  },
-  reorder: {
-    endpoint: 'tasks/:id/reorder',
-    method: 'post'
   }
 };
 /**
- * Export `TaskResolver`.
+ * Export `TaskStepResolver`.
  */
 
 var _default = function _default(connection) {

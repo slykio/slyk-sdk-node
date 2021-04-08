@@ -9,8 +9,6 @@ exports.default = void 0;
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
-
 var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
 var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
@@ -24,84 +22,20 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
- * Export `TaskModel`.
+ * Export `TaskStepQuestionAnswerModel`.
  */
-var TaskModel = /*#__PURE__*/function (_AbstractModel) {
-  (0, _inherits2.default)(TaskModel, _AbstractModel);
+var TaskStepQuestionAnswerModel = /*#__PURE__*/function (_AbstractModel) {
+  (0, _inherits2.default)(TaskStepQuestionAnswerModel, _AbstractModel);
 
-  var _super = _createSuper(TaskModel);
+  var _super = _createSuper(TaskStepQuestionAnswerModel);
 
-  function TaskModel() {
-    (0, _classCallCheck2.default)(this, TaskModel);
+  function TaskStepQuestionAnswerModel() {
+    (0, _classCallCheck2.default)(this, TaskStepQuestionAnswerModel);
     return _super.apply(this, arguments);
   }
 
-  (0, _createClass2.default)(TaskModel, [{
-    key: "complete",
-    value:
-    /**
-     * Complete.
-     */
-    function complete(data) {
-      return TaskModel.sdk.task.complete(this.id, data);
-    }
-    /**
-     * Complete survey.
-     */
-
-  }, {
-    key: "completeSurvey",
-    value: function completeSurvey(data) {
-      return TaskModel.sdk.task.completeSurvey(this.id, data);
-    }
-    /**
-     * Delete.
-     */
-
-  }, {
-    key: "delete",
-    value: function _delete() {
-      return TaskModel.sdk.task.delete(this.id);
-    }
-    /**
-     * List answers.
-     */
-
-  }, {
-    key: "listAnswers",
-    value: function listAnswers(options) {
-      return TaskModel.sdk.task.listAnswers(this.id, options);
-    }
-    /**
-     * List steps.
-     */
-
-  }, {
-    key: "listSteps",
-    value: function listSteps(options) {
-      return TaskModel.sdk.taskStep.list(this.id, options);
-    }
-    /**
-     * Patch.
-     */
-
-  }, {
-    key: "patch",
-    value: function patch(data) {
-      return TaskModel.sdk.task.patch(this.id, data);
-    }
-    /**
-     * Reorder.
-     */
-
-  }, {
-    key: "reorder",
-    value: function reorder(data) {
-      return TaskModel.sdk.task.reorder(this.id, data);
-    }
-  }]);
-  return TaskModel;
+  return TaskStepQuestionAnswerModel;
 }(_abstractModel.default);
 
-exports.default = TaskModel;
+exports.default = TaskStepQuestionAnswerModel;
 module.exports = exports.default;

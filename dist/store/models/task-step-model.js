@@ -24,62 +24,26 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
- * Export `TaskModel`.
+ * Export `TaskStepModel`.
  */
-var TaskModel = /*#__PURE__*/function (_AbstractModel) {
-  (0, _inherits2.default)(TaskModel, _AbstractModel);
+var TaskStepModel = /*#__PURE__*/function (_AbstractModel) {
+  (0, _inherits2.default)(TaskStepModel, _AbstractModel);
 
-  var _super = _createSuper(TaskModel);
+  var _super = _createSuper(TaskStepModel);
 
-  function TaskModel() {
-    (0, _classCallCheck2.default)(this, TaskModel);
+  function TaskStepModel() {
+    (0, _classCallCheck2.default)(this, TaskStepModel);
     return _super.apply(this, arguments);
   }
 
-  (0, _createClass2.default)(TaskModel, [{
-    key: "complete",
+  (0, _createClass2.default)(TaskStepModel, [{
+    key: "listQuestions",
     value:
     /**
-     * Complete.
+     * List questions.
      */
-    function complete(data) {
-      return TaskModel.sdk.task.complete(this.id, data);
-    }
-    /**
-     * Complete survey.
-     */
-
-  }, {
-    key: "completeSurvey",
-    value: function completeSurvey(data) {
-      return TaskModel.sdk.task.completeSurvey(this.id, data);
-    }
-    /**
-     * Delete.
-     */
-
-  }, {
-    key: "delete",
-    value: function _delete() {
-      return TaskModel.sdk.task.delete(this.id);
-    }
-    /**
-     * List answers.
-     */
-
-  }, {
-    key: "listAnswers",
-    value: function listAnswers(options) {
-      return TaskModel.sdk.task.listAnswers(this.id, options);
-    }
-    /**
-     * List steps.
-     */
-
-  }, {
-    key: "listSteps",
-    value: function listSteps(options) {
-      return TaskModel.sdk.taskStep.list(this.id, options);
+    function listQuestions(options) {
+      return TaskStepModel.sdk.taskStepQuestion.list(this.taskId, this.id, options);
     }
     /**
      * Patch.
@@ -88,20 +52,11 @@ var TaskModel = /*#__PURE__*/function (_AbstractModel) {
   }, {
     key: "patch",
     value: function patch(data) {
-      return TaskModel.sdk.task.patch(this.id, data);
-    }
-    /**
-     * Reorder.
-     */
-
-  }, {
-    key: "reorder",
-    value: function reorder(data) {
-      return TaskModel.sdk.task.reorder(this.id, data);
+      return TaskStepModel.sdk.taskStep.patch(this.taskId, this.id, data);
     }
   }]);
-  return TaskModel;
+  return TaskStepModel;
 }(_abstractModel.default);
 
-exports.default = TaskModel;
+exports.default = TaskStepModel;
 module.exports = exports.default;
