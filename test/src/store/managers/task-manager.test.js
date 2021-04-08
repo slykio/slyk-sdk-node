@@ -40,6 +40,46 @@ describe('TaskManager', () => {
     });
   });
 
+  describe('completeSurvey', () => {
+    it('should call api `/tasks/foo/answers` endpoint with method `post` and return `true`', async () => {
+      const data = {
+        answer: {
+          answerDescription: 'foobar',
+          questionDescription: 'foobar'
+        },
+        id: 'quux',
+        questionId: 'waldo',
+        userId: 'thud'
+      };
+
+      nock(host, { reqheaders: { apikey } })
+        .post('/tasks/foo/answers', {
+          answers: [
+            {
+              answer: { description: 'foobar' },
+              questionId: 'waldo',
+              stepId: 'fred'
+            }
+          ],
+          userId: 'thud'
+        })
+        .reply(200, { data });
+
+      const task = await slyk.task.completeSurvey('foo', {
+        answers: [
+          {
+            answer: { description: 'foobar' },
+            questionId: 'waldo',
+            stepId: 'fred'
+          }
+        ],
+        userId: 'thud'
+      });
+
+      expect(task).toEqual(true);
+    });
+  });
+
   describe('create', () => {
     it('should call api `/tasks` endpoint with method `post` and return an instance of `Task` model with the given `data`', async () => {
       const data = {
@@ -224,6 +264,49 @@ describe('TaskManager', () => {
       const task = await slyk.task.list({
         page: { number: 1, size: 2 },
         sort: [{ direction: 'asc', name: 'amount' }]
+      });
+
+      expect(task.total).toEqual(5);
+      expect(task.results).toEqual(data);
+    });
+  });
+
+  describe('listAnswers', () => {
+    it('should call api `/tasks/foo/answers` endpoint with method `get` and return an array of instances of `TaskStepQuestionAnswer` model in the `results` attribute and the `total`', async () => {
+      const data = [
+        {
+          answer: {
+            answerDescription: 'waldo',
+            questionDescription: 'waldo'
+          },
+          description: 'qux',
+          id: 'bar',
+          questionId: 'qux',
+          userId: 'garply'
+        },
+        {
+          answer: {
+            answerDescription: 'qux',
+            questionDescription: 'qux'
+          },
+          description: 'foo',
+          id: 'biz',
+          questionId: 'quux',
+          userId: 'garply'
+        }
+      ];
+
+      nock(host, { reqheaders: { apikey } })
+        .get('/tasks/foo/answers')
+        .query({
+          page: { number: 1, size: 2 },
+          sort: 'createdAt'
+        })
+        .reply(200, { data, total: 5 });
+
+      const task = await slyk.task.listAnswers('foo', {
+        page: { number: 1, size: 2 },
+        sort: [{ direction: 'asc', name: 'createdAt' }]
       });
 
       expect(task.total).toEqual(5);

@@ -5,6 +5,7 @@
 
 import { get, map, merge } from 'lodash';
 import AbstractManager from 'core/managers/abstract-manager';
+import TaskStepQuestionAnswerModel from 'store/models/task-step-question-answer-model';
 
 /**
  * Export `TaskManager`.
@@ -18,6 +19,16 @@ export default class TaskManager extends AbstractManager {
 
   async complete(id, data) {
     await this.resolver.complete(merge({}, data, { id }));
+
+    return true;
+  }
+
+  /**
+   * Complete survey.
+   */
+
+  async completeSurvey(id, data) {
+    await this.resolver.completeSurvey(merge({}, data, { id }));
 
     return true;
   }
@@ -80,6 +91,18 @@ export default class TaskManager extends AbstractManager {
   async list(options) {
     const result = await this.resolver.list({}, options);
     const results = map(get(result, 'data', []), task => this.instantiate(task));
+    const total = get(result, 'total');
+
+    return { results, total };
+  }
+
+  /**
+   * List answers.
+   */
+
+  async listAnswers(id, options) {
+    const result = await this.resolver.listAnswers({ id }, options);
+    const results = map(get(result, 'data', []), taskAnswer => new TaskStepQuestionAnswerModel(taskAnswer, { connection: this.connection }));
     const total = get(result, 'total');
 
     return { results, total };
