@@ -248,160 +248,180 @@
     - [`task.complete`](#taskcomplete)
       - [Request](#request-74)
       - [Response](#response-74)
-    - [`task.create`](#taskcreate)
+    - [`task.completeSurvey`](#taskcompletesurvey)
       - [Request](#request-75)
       - [Response](#response-75)
-    - [`task.get`](#taskget)
+    - [`task.create`](#taskcreate)
       - [Request](#request-76)
       - [Response](#response-76)
-    - [`task.getStatistics`](#taskgetstatistics)
+    - [`task.get`](#taskget)
       - [Request](#request-77)
       - [Response](#response-77)
-    - [`task.list`](#tasklist)
+    - [`task.getStatistics`](#taskgetstatistics)
       - [Request](#request-78)
       - [Response](#response-78)
-    - [`task.patch`](#taskpatch)
+    - [`task.list`](#tasklist)
       - [Request](#request-79)
       - [Response](#response-79)
-    - [`task.reorder`](#taskreorder)
+    - [`task.listAnswers`](#tasklistanswers)
       - [Request](#request-80)
       - [Response](#response-80)
-  - [taxRate](#taxrate)
-    - [`taxRate.create`](#taxratecreate)
+    - [`task.patch`](#taskpatch)
       - [Request](#request-81)
       - [Response](#response-81)
-    - [`taxRate.delete`](#taxratedelete)
+    - [`task.reorder`](#taskreorder)
       - [Request](#request-82)
       - [Response](#response-82)
-    - [`taxRate.get`](#taxrateget)
+  - [taskStep](#taskstep)
+    - [`taskStep.get`](#taskstepget)
       - [Request](#request-83)
       - [Response](#response-83)
-    - [`taxRate.list`](#taxratelist)
+    - [`taskStep.list`](#tasksteplist)
       - [Request](#request-84)
       - [Response](#response-84)
-    - [`taxRate.patch`](#taxratepatch)
+    - [`taskStep.patch`](#tasksteppatch)
       - [Request](#request-85)
       - [Response](#response-85)
-  - [transaction](#transaction)
-    - [`transaction.approve`](#transactionapprove)
+  - [taskStepQuestion](#taskstepquestion)
+    - [`taskStepQuestion.list`](#taskstepquestionlist)
       - [Request](#request-86)
       - [Response](#response-86)
-    - [`transaction.confirm`](#transactionconfirm)
+  - [taxRate](#taxrate)
+    - [`taxRate.create`](#taxratecreate)
       - [Request](#request-87)
       - [Response](#response-87)
-    - [`transaction.deposit`](#transactiondeposit)
+    - [`taxRate.delete`](#taxratedelete)
       - [Request](#request-88)
       - [Response](#response-88)
-    - [`transaction.fail`](#transactionfail)
+    - [`taxRate.get`](#taxrateget)
       - [Request](#request-89)
       - [Response](#response-89)
-    - [`transaction.get`](#transactionget)
+    - [`taxRate.list`](#taxratelist)
       - [Request](#request-90)
       - [Response](#response-90)
-    - [`transaction.list`](#transactionlist)
+    - [`taxRate.patch`](#taxratepatch)
       - [Request](#request-91)
       - [Response](#response-91)
-    - [`transaction.pay`](#transactionpay)
+  - [transaction](#transaction)
+    - [`transaction.approve`](#transactionapprove)
       - [Request](#request-92)
       - [Response](#response-92)
-    - [`transaction.reject`](#transactionreject)
+    - [`transaction.confirm`](#transactionconfirm)
       - [Request](#request-93)
       - [Response](#response-93)
-    - [`transaction.request`](#transactionrequest)
+    - [`transaction.deposit`](#transactiondeposit)
       - [Request](#request-94)
       - [Response](#response-94)
-    - [`transaction.send`](#transactionsend)
+    - [`transaction.fail`](#transactionfail)
       - [Request](#request-95)
       - [Response](#response-95)
-    - [`transaction.transfer`](#transactiontransfer)
+    - [`transaction.get`](#transactionget)
       - [Request](#request-96)
       - [Response](#response-96)
-    - [`transaction.withdrawal`](#transactionwithdrawal)
+    - [`transaction.list`](#transactionlist)
       - [Request](#request-97)
       - [Response](#response-97)
-  - [user](#user)
-    - [`user.approve`](#userapprove)
+    - [`transaction.pay`](#transactionpay)
       - [Request](#request-98)
       - [Response](#response-98)
-    - [`user.block`](#userblock)
+    - [`transaction.reject`](#transactionreject)
       - [Request](#request-99)
       - [Response](#response-99)
-    - [`user.changeEmail`](#userchangeemail)
+    - [`transaction.request`](#transactionrequest)
       - [Request](#request-100)
       - [Response](#response-100)
-    - [`user.changePassword`](#userchangepassword)
+    - [`transaction.send`](#transactionsend)
       - [Request](#request-101)
       - [Response](#response-101)
-    - [`user.changePhone`](#userchangephone)
+    - [`transaction.transfer`](#transactiontransfer)
       - [Request](#request-102)
       - [Response](#response-102)
-    - [`user.confirmEmail`](#userconfirmemail)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
       - [Request](#request-103)
+      - [Response](#response-103)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
+      - [Request](#request-104)
+      - [Response](#response-104)
+    - [`user.block`](#userblock)
+      - [Request](#request-105)
+      - [Response](#response-105)
+    - [`user.changeEmail`](#userchangeemail)
+      - [Request](#request-106)
+      - [Response](#response-106)
+    - [`user.changePassword`](#userchangepassword)
+      - [Request](#request-107)
+      - [Response](#response-107)
+    - [`user.changePhone`](#userchangephone)
+      - [Request](#request-108)
+      - [Response](#response-108)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-109)
       - [Responses](#responses)
     - [`user.confirmPhone`](#userconfirmphone)
-      - [Request](#request-104)
+      - [Request](#request-110)
       - [Responses](#responses-1)
     - [`user.create`](#usercreate)
-      - [Request](#request-105)
-      - [Response](#response-103)
-    - [`user.forgotPassword`](#userforgotpassword)
-      - [Request](#request-106)
-      - [Response](#response-104)
-    - [`user.get`](#userget)
-      - [Request](#request-107)
-      - [Response](#response-105)
-    - [`user.getReferralProgram`](#usergetreferralprogram)
-      - [Request](#request-108)
-      - [Response](#response-106)
-    - [`user.delete`](#userdelete)
-      - [Request](#request-109)
-      - [Response](#response-107)
-    - [`user.list`](#userlist)
-      - [Request](#request-110)
-      - [Response](#response-108)
-    - [`user.patch`](#userpatch)
       - [Request](#request-111)
       - [Response](#response-109)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-112)
       - [Response](#response-110)
-    - [`user.resetPassword`](#userresetpassword)
+    - [`user.get`](#userget)
       - [Request](#request-113)
       - [Response](#response-111)
-    - [`user.unblock`](#userunblock)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-114)
       - [Response](#response-112)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`user.delete`](#userdelete)
       - [Request](#request-115)
       - [Response](#response-113)
-    - [`wallet.balance`](#walletbalance)
+    - [`user.list`](#userlist)
       - [Request](#request-116)
       - [Response](#response-114)
-    - [`wallet.create`](#walletcreate)
+    - [`user.patch`](#userpatch)
       - [Request](#request-117)
       - [Response](#response-115)
-    - [`wallet.get`](#walletget)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-118)
       - [Response](#response-116)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-119)
       - [Response](#response-117)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-120)
       - [Response](#response-118)
-    - [`wallet.list`](#walletlist)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-121)
       - [Response](#response-119)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-122)
       - [Response](#response-120)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-123)
       - [Response](#response-121)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.get`](#walletget)
       - [Request](#request-124)
       - [Response](#response-122)
+    - [`wallet.globalActivity`](#walletglobalactivity)
+      - [Request](#request-125)
+      - [Response](#response-123)
+    - [`wallet.globalBalance`](#walletglobalbalance)
+      - [Request](#request-126)
+      - [Response](#response-124)
+    - [`wallet.list`](#walletlist)
+      - [Request](#request-127)
+      - [Response](#response-125)
+    - [`wallet.movements`](#walletmovements)
+      - [Request](#request-128)
+      - [Response](#response-126)
+    - [`wallet.patch`](#walletpatch)
+      - [Request](#request-129)
+      - [Response](#response-127)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-130)
+      - [Response](#response-128)
 
 ## address
 
@@ -3231,7 +3251,10 @@ await slyk.setting.list({
 
 The result of each one of the following `task` methods return one or an array of `Task` objects that include the following methods:
 - `complete`: Completes the `task`.
+- `completeSurvey`: Completes a `task` of `type: survey`.
 - `delete`: Deletes the `task`.
+- `listAnswers`: Retrieves a list of related `taskStepQuestionAnswers`.
+- `listSteps`: Retrieves a list of related `taskSteps`.
 - `patch`: Patches the `task`.
 - `reorder`: Reorders the `task`.
 
@@ -3245,6 +3268,33 @@ Completes the `task` of the given `id`.
 
 ```js
 await slyk.task.complete('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { userId: 'f02a1bf2-bcc6-49e5-ab8b-895319423aee' });
+```
+
+#### Response
+
+```json
+true
+```
+
+### `task.completeSurvey`
+
+Completes the `task` of the given `id` and `type: survey`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.task.completeSurvey('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
+  answers: [
+    {
+      answer: { description: 'foobar' },
+      questionId: '60e76e78-ae00-4a0c-b161-36edc92458df',
+      stepId: '2e674dea-c1ea-44cf-8ef6-5927add798bcs'
+    }
+  ],
+  userId: '54e65ef2-6252-43f1-8866-48d26dee63cf'
+});
 ```
 
 #### Response
@@ -3504,6 +3554,58 @@ await slyk.task.list({
 }
 ```
 
+### `task.listAnswers`
+
+Retrieves a list of `taskStepQuestionAnswers` related with the `task` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+const id = 'c6b2ee3c-a2ba-4710-9644-df0c04e4963b';
+
+await slyk.task.list({
+  filter: { userId: '813226b3-39d0-4ae9-a050-fd8b66922465' },
+  sort: [{ direction: 'desc', name: 'createdAt' }],
+  page: { number: 3, size: 2 }
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "answer": {
+        "answerDescription": "waldo",
+        "questionDescription": "waldo"
+      },
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "description": "qux",
+      "id": "5b2e0879-471b-4808-b7f0-bc5a267852d4",
+      "questionId": "cb62db48-61ed-4159-a9b4-d7d2bccd4560",
+      "updatedAt": "2020-03-10T11:30:00.000Z",
+      "userId": "813226b3-39d0-4ae9-a050-fd8b66922465"
+    },
+    {
+      "answer": {
+        "answerDescription": "qux",
+        "questionDescription": "qux"
+      },
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "description": "foo",
+      "id": "94fe6313-1734-4456-85ab-5a4c5c1a8899",
+      "questionId": "633146a0-74be-4f31-b03f-4345858ddc92",
+      "updatedAt": "2020-03-10T11:30:00.000Z",
+      "userId": "813226b3-39d0-4ae9-a050-fd8b66922465"
+    }
+  ],
+  "total": 6
+}
+```
+
 ### `task.patch`
 
 Patches the `task` of the given `id`.
@@ -3556,6 +3658,244 @@ await slyk.task.reorder('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { subsequentId: 
 
 ```json
 true
+```
+
+## taskStep
+
+The result of each one of the following `taskStep` methods return one or an array of `TaskStep` objects that include the following methods:
+- `questions`: Gets a list of related `taskStepQuestions`;
+- `patch`: Patches the `taskStep`.
+
+### `taskStep.get`
+
+Retrieves the `taskStep` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taskStep.get('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { include: 'questions' });
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2020-03-10T11:30:00.000Z",
+  "customData": {},
+  "description": "qux",
+  "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  "questions": [{
+    "createdAt": "2020-03-10T11:30:00.000Z",
+    "customData": {},
+    "description": "quux",
+    "id": "waldo",
+    "optional": false,
+    "options": ["foo", "bar"],
+    "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+    "type": "radio_button",
+    "updatedAt": "2020-03-10T11:30:00.000Z",
+    "video": {
+      "playbackId": "plugh",
+      "status": "completed",
+      "type": "video",
+      "uploadId": "plugh",
+      "url": "http://plugh.url"
+    }
+  }],
+  "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+  "title": "foobar",
+  "updatedAt": "2020-03-10T11:30:00.000Z"
+}
+```
+
+### `taskStep.list`
+
+Retrieves a list of `taskStep`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taskStep.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', {
+  filter: { description: 'foo' },
+  include: 'questions',
+  sort: [{ direction: 'desc', name: 'createdAt' }],
+  page: { number: 3, size: 2 }
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "customData": {},
+      "description": "qux",
+      "id": "ppp8d28f-a8dd-49de-a22f-722fe3bd2456",
+      "questions": [{
+        "createdAt": "2020-03-10T11:30:00.000Z",
+        "customData": {},
+        "description": "quux",
+        "id": "waldo",
+        "optional": false,
+        "options": ["foo", "bar"],
+        "stepId": "po08d28f-a8dd-49de-a22f-722fe3bd26o9",
+        "type": "radio_button",
+        "updatedAt": "2020-03-10T11:30:00.000Z",
+        "video": {
+          "playbackId": "plugh",
+          "status": "completed",
+          "type": "video",
+          "uploadId": "plugh",
+          "url": "http://plugh.url"
+        }
+      }],
+      "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+      "title": "foobar",
+      "updatedAt": "2020-03-10T11:30:00.000Z"
+    },
+    {
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "customData": {},
+      "description": "foo",
+      "id": "1238d28f-a8dd-49de-a22f-722fe3bd26c7",
+      "questions": [{
+        "createdAt": "2020-03-10T11:30:00.000Z",
+        "customData": {},
+        "description": "quux",
+        "id": "der8d28f-a8dd-49de-a22f-722fe3bd2901",
+        "optional": true,
+        "options": null,
+        "stepId": "1238d28f-a8dd-49de-a22f-722fe3bd2456",
+        "type": "open_text",
+        "updatedAt": "2020-03-10T11:30:00.000Z",
+        "video": { "url": "http://foo.com" }
+      }],
+      "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+      "title": "foobiz",
+      "updatedAt": "2020-03-10T11:30:00.000Z"
+    }
+  ],
+  "total": 6
+}
+```
+
+### `taskStep.patch`
+
+Patches the `taskStep` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taskStep.patch('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
+  description: 'foobar',
+  title: 'foobar'
+});
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2020-03-10T11:30:00.000Z",
+  "customData": {},
+  "description": "qux",
+  "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  "questions": [{
+    "createdAt": "2020-03-10T11:30:00.000Z",
+    "customData": {},
+    "description": "quux",
+    "id": "waldo",
+    "optional": false,
+    "options": ["foo", "bar"],
+    "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+    "type": "radio_button",
+    "updatedAt": "2020-03-10T11:30:00.000Z",
+    "video": {
+      "playbackId": "plugh",
+      "status": "completed",
+      "type": "video",
+      "uploadId": "plugh",
+      "url": "http://plugh.url"
+    }
+  }],
+  "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+  "title": "foobar",
+  "updatedAt": "2020-03-10T11:30:00.000Z"
+}
+```
+
+## taskStepQuestion
+
+The result of each one of the following `taskStepQuestion` methods return one or an array of `TaxStepQuestion` objects.
+
+### `taskStepQuestion.list`
+
+Retrieves a list of `taskStepQuestion`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.taskStepQuestion.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
+  filter: { type: 'in:open_text,radio_button' },
+  sort: [{ direction: 'desc', name: 'createdAt' }],
+  page: { number: 3, size: 2 }
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "customData": {},
+      "description": "quux",
+      "id": "1238d28f-a8dd-49de-a22f-722fe3bd2ddd",
+      "optional": false,
+      "options": null,
+      "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+      "type": "open_text",
+      "updatedAt": "2020-03-10T11:30:00.000Z",
+      "video": {
+        "playbackId": "plugh",
+        "status": "completed",
+        "type": "video",
+        "uploadId": "plugh",
+        "url": "http://plugh.url"
+      }
+    },
+    {
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "customData": {},
+      "description": "quux",
+      "id": "3d3aa210-2d22-4072-ab57-5d9be3fd15d8",
+      "optional": false,
+      "options": ["foo", "bar"],
+      "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+      "type": "radio_button",
+      "updatedAt": "2020-03-10T11:30:00.000Z",
+      "video": {
+        "playbackId": "plugh",
+        "status": "completed",
+        "type": "video",
+        "uploadId": "plugh",
+        "url": "http://plugh.url"
+      }
+    }
+  ],
+  "total": 2
+}
 ```
 
 ## taxRate

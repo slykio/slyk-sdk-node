@@ -15,6 +15,9 @@ import {
   question,
   questionType,
   task,
+  taskStep,
+  taskStepQuestion,
+  taskStepQuestionAnswer,
   taxRate
 } from 'store';
 import address from 'address';
@@ -54,6 +57,9 @@ export default {
   rate,
   setting,
   task,
+  taskStep,
+  taskStepQuestion,
+  taskStepQuestionAnswer,
   taxRate,
   transaction,
   user,

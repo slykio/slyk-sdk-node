@@ -14,6 +14,10 @@ const config = {
     endpoint: 'tasks/:id/complete',
     method: 'post'
   },
+  completeSurvey: {
+    endpoint: 'tasks/:id/answers',
+    method: 'post'
+  },
   create: {
     endpoint: 'tasks',
     method: 'post'
@@ -32,6 +36,10 @@ const config = {
   },
   list: {
     endpoint: 'tasks',
+    method: 'get'
+  },
+  listAnswers: {
+    endpoint: 'tasks/:id/answers',
     method: 'get'
   },
   patch: {
