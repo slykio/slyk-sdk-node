@@ -29,6 +29,15 @@ import QuestionTypeResolver from 'store/resolvers/question-type-resolver';
 import TaskManager from 'store/managers/task-manager';
 import TaskModel from 'store/models/task-model';
 import TaskResolver from 'store/resolvers/task-resolver';
+import TaskStepManager from 'store/managers/task-step-manager';
+import TaskStepModel from 'store/models/task-step-model';
+import TaskStepQuestionAnswerManager from 'store/managers/task-step-question-answer-manager';
+import TaskStepQuestionAnswerModel from 'store/models/task-step-question-answer-model';
+import TaskStepQuestionAnswerResolver from 'store/resolvers/task-step-question-answer-resolver';
+import TaskStepQuestionManager from 'store/managers/task-step-question-manager';
+import TaskStepQuestionModel from 'store/models/task-step-question-model';
+import TaskStepQuestionResolver from 'store/resolvers/task-step-question-resolver';
+import TaskStepResolver from 'store/resolvers/task-step-resolver';
 import TaxRateManager from 'store/managers/tax-rate-manager';
 import TaxRateModel from 'store/models/tax-rate-model';
 import TaxRateResolver from 'store/resolvers/tax-rate-resolver';
@@ -77,6 +86,21 @@ module.exports = {
     manager: TaskManager,
     model: TaskModel,
     resolver: TaskResolver
+  },
+  taskStep: {
+    manager: TaskStepManager,
+    model: TaskStepModel,
+    resolver: TaskStepResolver
+  },
+  taskStepQuestion: {
+    manager: TaskStepQuestionManager,
+    model: TaskStepQuestionModel,
+    resolver: TaskStepQuestionResolver
+  },
+  taskStepQuestionAnswer: {
+    manager: TaskStepQuestionAnswerManager,
+    model: TaskStepQuestionAnswerModel,
+    resolver: TaskStepQuestionAnswerResolver
   },
   taxRate: {
     manager: TaxRateManager,
