@@ -422,6 +422,22 @@
     - [`wallet.transactions`](#wallettransactions)
       - [Request](#request-130)
       - [Response](#response-128)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
+      - [Request](#request-131)
+      - [Response](#response-129)
+    - [`webhook.delete`](#webhookdelete)
+      - [Request](#request-132)
+      - [Response](#response-130)
+    - [`webhook.get`](#webhookget)
+      - [Request](#request-133)
+      - [Response](#response-131)
+    - [`webhook.list`](#webhooklist)
+      - [Request](#request-134)
+      - [Response](#response-132)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-135)
+      - [Response](#response-133)
 
 ## address
 
@@ -5579,5 +5595,147 @@ await slyk.wallet.transactions('4b1a22bf-642c-4c4f-bfb4-678e59121e74';
     "updatedAt": "2019-03-20T14:30:37.483Z"
   }],
   "total": 2
+}
+```
+
+## webhook
+
+The result of each one of the following `webhook` methods return one or an array of `Webhook` objects that include the following methods:
+- `delete`: Deletes the `webhook`.
+- `patch`: Patches the `webhook`.
+
+### `webhook.create`
+
+Subscribes a list of `webhook` events.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.webhook.create({
+  description: 'waldo',
+  enabled: true,
+  events: ['transaction.deposit.confirmed'],
+  url: 'https://foo.bar/qux'
+});
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2021-04-29T12:00:00.000Z",
+  "description": "waldo",
+  "enabled": true,
+  "id": "25d81706-b15f-49a5-a4e3-c301cb3dc50a",
+  "events": ["transaction.deposit.confirmed"],
+  "url": "https://foo.bar/qux"
+}
+```
+
+### `webhook.delete`
+
+Deletes the `webhook` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.webhook.delete('4b1a22bf-642c-4c4f-bfb4-678e59121e74');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `webhook.get`
+
+Returns the `webhook` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.webhook.get('4b1a22bf-642c-4c4f-bfb4-678e59121e74');
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2021-04-29T12:00:00.000Z",
+  "description": "waldo",
+  "enabled": true,
+  "id": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+  "events": ["transaction.deposit.confirmed"],
+  "url": "https://foo.bar/qux"
+}
+```
+
+### `webhook.list`
+
+Returns a list of `webhook`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.webhook.list({ filter: { enabled: true } });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2021-04-29T12:00:00.000Z",
+      "description": "waldo",
+      "enabled": true,
+      "id": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+      "events": ["transaction.deposit.confirmed"],
+      "url": "https://foo.bar/qux"
+    },
+    {
+      "createdAt": "2021-04-29T12:00:00.000Z",
+      "description": "fred",
+      "enabled": true,
+      "id": "331a22bf-642c-4c4f-bfb4-678e59121ebb",
+      "events": ["transaction.deposit.created"],
+      "url": "https://foo.bar/thud"
+    }
+  ],
+  "total": 2
+}
+```
+
+### `webhook.patch`
+
+Patches the `webhook` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.webhook.patch('4b1a22bf-642c-4c4f-bfb4-678e59121e74', { enabled: false });
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2021-04-29T12:00:00.000Z",
+  "description": "waldo",
+  "enabled": false,
+  "id": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+  "events": ["transaction.deposit.confirmed"],
+  "url": "https://foo.bar/qux"
 }
 ```
