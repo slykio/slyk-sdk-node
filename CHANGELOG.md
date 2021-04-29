@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.10.0](https://github.com/slykio/slyk-sdk-node/tree/v0.10.0) (2021-04-29)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.9.0...v0.10.0)
+
+**Merged pull requests:**
+
+- Add Webhook module methods [\#35](https://github.com/slykio/slyk-sdk-node/pull/35) ([kratos-42](https://github.com/kratos-42))
+
 ## [v0.9.0](https://github.com/slykio/slyk-sdk-node/tree/v0.9.0) (2021-04-08)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.8.0...v0.9.0)
 

@@ -35,6 +35,8 @@ var _user = _interopRequireDefault(require("../../user"));
 
 var _wallet = _interopRequireDefault(require("../../wallet"));
 
+var _webhook = _interopRequireDefault(require("../../webhook"));
+
 /* istanbul ignore file */
 
 /**
@@ -70,7 +72,8 @@ var _default = {
   taxRate: _store.taxRate,
   transaction: _transaction.default,
   user: _user.default,
-  wallet: _wallet.default
+  wallet: _wallet.default,
+  webhook: _webhook.default
 };
 exports.default = _default;
 module.exports = exports.default;
