@@ -32,6 +32,7 @@ import setting from 'setting';
 import transaction from 'transaction';
 import user from 'user';
 import wallet from 'wallet';
+import webhook from 'webhook';
 
 /**
  * Export `library`.
@@ -63,5 +64,6 @@ export default {
   taxRate,
   transaction,
   user,
-  wallet
+  wallet,
+  webhook
 };
