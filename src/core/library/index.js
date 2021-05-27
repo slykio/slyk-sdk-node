@@ -6,6 +6,7 @@
  */
 
 import { bankAccount, bankAccountRegion } from 'bank-account';
+import { identity, identityDocument, user } from 'user';
 import {
   order,
   orderLine,
@@ -30,7 +31,6 @@ import paymentMethod from 'payment-method';
 import rate from 'rate';
 import setting from 'setting';
 import transaction from 'transaction';
-import user from 'user';
 import wallet from 'wallet';
 import webhook from 'webhook';
 
@@ -45,6 +45,8 @@ export default {
   bankAccount,
   bankAccountRegion,
   connection,
+  identity,
+  identityDocument,
   invite,
   movement,
   order,
