@@ -26,8 +26,9 @@ export default ({
     }
 
     const cleanValue = value.replace(/[&\\/?\\[\]=\\:]/g, '');
+    const regex = new RegExp(`:${key}(?=/|$)`, 'g');
 
-    return replace(result, `:${key}`, cleanValue);
+    return replace(result, regex, cleanValue);
   }, endpoint);
 
   const missingParams = map(path.match(/:[a-zA-Z0-9]+/g), value => value.replace(':', ''));
