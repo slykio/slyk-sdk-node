@@ -64,380 +64,418 @@
     - [`connection.patch`](#connectionpatch)
       - [Request](#request-17)
       - [Response](#response-17)
-  - [invite](#invite)
-    - [`invite.cancel`](#invitecancel)
+  - [identity](#identity)
+    - [`identity.approve`](#identityapprove)
       - [Request](#request-18)
       - [Response](#response-18)
-    - [`invite.create`](#invitecreate)
+    - [`identity.cancel`](#identitycancel)
       - [Request](#request-19)
       - [Response](#response-19)
-    - [`invite.get`](#inviteget)
+    - [`identity.create`](#identitycreate)
       - [Request](#request-20)
       - [Response](#response-20)
-    - [`invite.list`](#invitelist)
+    - [`identity.delete`](#identitydelete)
       - [Request](#request-21)
       - [Response](#response-21)
-    - [`invite.send`](#invitesend)
+    - [`identity.get`](#identityget)
       - [Request](#request-22)
       - [Response](#response-22)
-    - [`invite.validate`](#invitevalidate)
+    - [`identity.list`](#identitylist)
       - [Request](#request-23)
       - [Response](#response-23)
-  - [movement](#movement)
-    - [`movement.get`](#movementget)
+    - [`identity.reject`](#identityreject)
       - [Request](#request-24)
       - [Response](#response-24)
-    - [`movement.list`](#movementlist)
+    - [`identity.submit`](#identitysubmit)
       - [Request](#request-25)
       - [Response](#response-25)
-  - [order](#order)
-    - [`order.cancel`](#ordercancel)
+  - [IdentityDocument](#identitydocument)
+  - [`identityDocument.create`](#identitydocumentcreate)
       - [Request](#request-26)
       - [Response](#response-26)
-    - [`order.create`](#ordercreate)
+  - [`identityDocument.delete`](#identitydocumentdelete)
       - [Request](#request-27)
       - [Response](#response-27)
-    - [`order.fulfill`](#orderfulfill)
+  - [`identityDocument.get`](#identitydocumentget)
       - [Request](#request-28)
       - [Response](#response-28)
-    - [`order.get`](#orderget)
+  - [`identityDocument.list`](#identitydocumentlist)
       - [Request](#request-29)
       - [Response](#response-29)
-    - [`order.list`](#orderlist)
+  - [invite](#invite)
+    - [`invite.cancel`](#invitecancel)
       - [Request](#request-30)
       - [Response](#response-30)
-    - [`order.patch`](#orderpatch)
+    - [`invite.create`](#invitecreate)
       - [Request](#request-31)
       - [Response](#response-31)
-    - [`order.pay`](#orderpay)
+    - [`invite.get`](#inviteget)
       - [Request](#request-32)
       - [Response](#response-32)
-    - [`order.refund`](#orderrefund)
+    - [`invite.list`](#invitelist)
       - [Request](#request-33)
       - [Response](#response-33)
-    - [`order.unfulfill`](#orderunfulfill)
+    - [`invite.send`](#invitesend)
       - [Request](#request-34)
       - [Response](#response-34)
-  - [orderLine](#orderline)
-    - [`orderLine.fulfill`](#orderlinefulfill)
+    - [`invite.validate`](#invitevalidate)
       - [Request](#request-35)
       - [Response](#response-35)
-    - [`orderLine.get`](#orderlineget)
+  - [movement](#movement)
+    - [`movement.get`](#movementget)
       - [Request](#request-36)
       - [Response](#response-36)
-    - [`orderLine.list`](#orderlinelist)
+    - [`movement.list`](#movementlist)
       - [Request](#request-37)
       - [Response](#response-37)
-    - [`orderLine.unfulfill`](#orderlineunfulfill)
+  - [order](#order)
+    - [`order.cancel`](#ordercancel)
       - [Request](#request-38)
       - [Response](#response-38)
-  - [paymentMethod](#paymentmethod)
-    - [`paymentMethod.get`](#paymentmethodget)
+    - [`order.create`](#ordercreate)
       - [Request](#request-39)
       - [Response](#response-39)
-    - [`paymentMethod.list`](#paymentmethodlist)
+    - [`order.fulfill`](#orderfulfill)
       - [Request](#request-40)
       - [Response](#response-40)
-  - [product](#product)
-    - [`product.create`](#productcreate)
+    - [`order.get`](#orderget)
       - [Request](#request-41)
       - [Response](#response-41)
-    - [`product.createQuestion`](#productcreatequestion)
+    - [`order.list`](#orderlist)
       - [Request](#request-42)
       - [Response](#response-42)
-    - [`product.delete`](#productdelete)
+    - [`order.patch`](#orderpatch)
       - [Request](#request-43)
       - [Response](#response-43)
-    - [`product.deleteQuestion`](#productdeletequestion)
+    - [`order.pay`](#orderpay)
       - [Request](#request-44)
       - [Response](#response-44)
-    - [`product.get`](#productget)
+    - [`order.refund`](#orderrefund)
       - [Request](#request-45)
       - [Response](#response-45)
-    - [`product.list`](#productlist)
+    - [`order.unfulfill`](#orderunfulfill)
       - [Request](#request-46)
       - [Response](#response-46)
-    - [`product.patch`](#productpatch)
+  - [orderLine](#orderline)
+    - [`orderLine.fulfill`](#orderlinefulfill)
       - [Request](#request-47)
       - [Response](#response-47)
-    - [`product.reorder`](#productreorder)
+    - [`orderLine.get`](#orderlineget)
       - [Request](#request-48)
       - [Response](#response-48)
-    - [`product.reorderQuestion`](#productreorderquestion)
+    - [`orderLine.list`](#orderlinelist)
       - [Request](#request-49)
       - [Response](#response-49)
-  - [productCategory](#productcategory)
-    - [`productCategory.create`](#productcategorycreate)
+    - [`orderLine.unfulfill`](#orderlineunfulfill)
       - [Request](#request-50)
       - [Response](#response-50)
-    - [`productCategory.delete`](#productcategorydelete)
+  - [paymentMethod](#paymentmethod)
+    - [`paymentMethod.get`](#paymentmethodget)
       - [Request](#request-51)
       - [Response](#response-51)
-    - [`productCategory.get`](#productcategoryget)
+    - [`paymentMethod.list`](#paymentmethodlist)
       - [Request](#request-52)
       - [Response](#response-52)
-    - [`productCategory.list`](#productcategorylist)
+  - [product](#product)
+    - [`product.create`](#productcreate)
       - [Request](#request-53)
       - [Response](#response-53)
-    - [`productCategory.patch`](#productcategorypatch)
+    - [`product.createQuestion`](#productcreatequestion)
       - [Request](#request-54)
       - [Response](#response-54)
-    - [`productCategory.reorder`](#productcategoryreorder)
+    - [`product.delete`](#productdelete)
       - [Request](#request-55)
       - [Response](#response-55)
-  - [productImage](#productimage)
-    - [`productImage.create`](#productimagecreate)
+    - [`product.deleteQuestion`](#productdeletequestion)
       - [Request](#request-56)
       - [Response](#response-56)
-    - [`productImage.delete`](#productimagedelete)
+    - [`product.get`](#productget)
       - [Request](#request-57)
       - [Response](#response-57)
-    - [`productImage.get`](#productimageget)
+    - [`product.list`](#productlist)
       - [Request](#request-58)
       - [Response](#response-58)
-    - [`productImage.list`](#productimagelist)
+    - [`product.patch`](#productpatch)
       - [Request](#request-59)
       - [Response](#response-59)
-    - [`productImage.reorder`](#productimagereorder)
+    - [`product.reorder`](#productreorder)
       - [Request](#request-60)
       - [Response](#response-60)
-  - [question](#question)
-    - [`question.create`](#questioncreate)
+    - [`product.reorderQuestion`](#productreorderquestion)
       - [Request](#request-61)
       - [Response](#response-61)
-    - [`question.delete`](#questiondelete)
+  - [productCategory](#productcategory)
+    - [`productCategory.create`](#productcategorycreate)
       - [Request](#request-62)
       - [Response](#response-62)
-    - [`question.get`](#questionget)
+    - [`productCategory.delete`](#productcategorydelete)
       - [Request](#request-63)
       - [Response](#response-63)
-    - [`question.list`](#questionlist)
+    - [`productCategory.get`](#productcategoryget)
       - [Request](#request-64)
       - [Response](#response-64)
-    - [`question.patch`](#questionpatch)
+    - [`productCategory.list`](#productcategorylist)
       - [Request](#request-65)
       - [Response](#response-65)
-  - [questionType](#questiontype)
-    - [`question.list`](#questionlist-1)
+    - [`productCategory.patch`](#productcategorypatch)
       - [Request](#request-66)
       - [Response](#response-66)
-  - [rate](#rate)
-    - [`rate.create`](#ratecreate)
+    - [`productCategory.reorder`](#productcategoryreorder)
       - [Request](#request-67)
       - [Response](#response-67)
-    - [`rate.delete`](#ratedelete)
+  - [productImage](#productimage)
+    - [`productImage.create`](#productimagecreate)
       - [Request](#request-68)
       - [Response](#response-68)
-    - [`rate.get`](#rateget)
+    - [`productImage.delete`](#productimagedelete)
       - [Request](#request-69)
       - [Response](#response-69)
-    - [`rate.list`](#ratelist)
+    - [`productImage.get`](#productimageget)
       - [Request](#request-70)
       - [Response](#response-70)
-    - [`rate.patch`](#ratepatch)
+    - [`productImage.list`](#productimagelist)
       - [Request](#request-71)
       - [Response](#response-71)
-    - [setting](#setting)
-    - [`setting.get`](#settingget)
+    - [`productImage.reorder`](#productimagereorder)
       - [Request](#request-72)
       - [Response](#response-72)
-    - [`setting.list`](#settinglist)
+  - [question](#question)
+    - [`question.create`](#questioncreate)
       - [Request](#request-73)
       - [Response](#response-73)
-  - [task](#task)
-    - [`task.complete`](#taskcomplete)
+    - [`question.delete`](#questiondelete)
       - [Request](#request-74)
       - [Response](#response-74)
-    - [`task.completeSurvey`](#taskcompletesurvey)
+    - [`question.get`](#questionget)
       - [Request](#request-75)
       - [Response](#response-75)
-    - [`task.create`](#taskcreate)
+    - [`question.list`](#questionlist)
       - [Request](#request-76)
       - [Response](#response-76)
-    - [`task.get`](#taskget)
+    - [`question.patch`](#questionpatch)
       - [Request](#request-77)
       - [Response](#response-77)
-    - [`task.getStatistics`](#taskgetstatistics)
+  - [questionType](#questiontype)
+    - [`question.list`](#questionlist-1)
       - [Request](#request-78)
       - [Response](#response-78)
-    - [`task.list`](#tasklist)
+  - [rate](#rate)
+    - [`rate.create`](#ratecreate)
       - [Request](#request-79)
       - [Response](#response-79)
-    - [`task.listAnswers`](#tasklistanswers)
+    - [`rate.delete`](#ratedelete)
       - [Request](#request-80)
       - [Response](#response-80)
-    - [`task.patch`](#taskpatch)
+    - [`rate.get`](#rateget)
       - [Request](#request-81)
       - [Response](#response-81)
-    - [`task.reorder`](#taskreorder)
+    - [`rate.list`](#ratelist)
       - [Request](#request-82)
       - [Response](#response-82)
-  - [taskStep](#taskstep)
-    - [`taskStep.get`](#taskstepget)
+    - [`rate.patch`](#ratepatch)
       - [Request](#request-83)
       - [Response](#response-83)
-    - [`taskStep.list`](#tasksteplist)
+    - [setting](#setting)
+    - [`setting.get`](#settingget)
       - [Request](#request-84)
       - [Response](#response-84)
-    - [`taskStep.patch`](#tasksteppatch)
+    - [`setting.list`](#settinglist)
       - [Request](#request-85)
       - [Response](#response-85)
-  - [taskStepQuestion](#taskstepquestion)
-    - [`taskStepQuestion.list`](#taskstepquestionlist)
+  - [task](#task)
+    - [`task.complete`](#taskcomplete)
       - [Request](#request-86)
       - [Response](#response-86)
-  - [taxRate](#taxrate)
-    - [`taxRate.create`](#taxratecreate)
+    - [`task.completeSurvey`](#taskcompletesurvey)
       - [Request](#request-87)
       - [Response](#response-87)
-    - [`taxRate.delete`](#taxratedelete)
+    - [`task.create`](#taskcreate)
       - [Request](#request-88)
       - [Response](#response-88)
-    - [`taxRate.get`](#taxrateget)
+    - [`task.get`](#taskget)
       - [Request](#request-89)
       - [Response](#response-89)
-    - [`taxRate.list`](#taxratelist)
+    - [`task.getStatistics`](#taskgetstatistics)
       - [Request](#request-90)
       - [Response](#response-90)
-    - [`taxRate.patch`](#taxratepatch)
+    - [`task.list`](#tasklist)
       - [Request](#request-91)
       - [Response](#response-91)
-  - [transaction](#transaction)
-    - [`transaction.approve`](#transactionapprove)
+    - [`task.listAnswers`](#tasklistanswers)
       - [Request](#request-92)
       - [Response](#response-92)
-    - [`transaction.confirm`](#transactionconfirm)
+    - [`task.patch`](#taskpatch)
       - [Request](#request-93)
       - [Response](#response-93)
-    - [`transaction.deposit`](#transactiondeposit)
+    - [`task.reorder`](#taskreorder)
       - [Request](#request-94)
       - [Response](#response-94)
-    - [`transaction.fail`](#transactionfail)
+  - [taskStep](#taskstep)
+    - [`taskStep.get`](#taskstepget)
       - [Request](#request-95)
       - [Response](#response-95)
-    - [`transaction.get`](#transactionget)
+    - [`taskStep.list`](#tasksteplist)
       - [Request](#request-96)
       - [Response](#response-96)
-    - [`transaction.list`](#transactionlist)
+    - [`taskStep.patch`](#tasksteppatch)
       - [Request](#request-97)
       - [Response](#response-97)
-    - [`transaction.pay`](#transactionpay)
+  - [taskStepQuestion](#taskstepquestion)
+    - [`taskStepQuestion.list`](#taskstepquestionlist)
       - [Request](#request-98)
       - [Response](#response-98)
-    - [`transaction.reject`](#transactionreject)
+  - [taxRate](#taxrate)
+    - [`taxRate.create`](#taxratecreate)
       - [Request](#request-99)
       - [Response](#response-99)
-    - [`transaction.request`](#transactionrequest)
+    - [`taxRate.delete`](#taxratedelete)
       - [Request](#request-100)
       - [Response](#response-100)
-    - [`transaction.send`](#transactionsend)
+    - [`taxRate.get`](#taxrateget)
       - [Request](#request-101)
       - [Response](#response-101)
-    - [`transaction.transfer`](#transactiontransfer)
+    - [`taxRate.list`](#taxratelist)
       - [Request](#request-102)
       - [Response](#response-102)
-    - [`transaction.withdrawal`](#transactionwithdrawal)
+    - [`taxRate.patch`](#taxratepatch)
       - [Request](#request-103)
       - [Response](#response-103)
-  - [user](#user)
-    - [`user.approve`](#userapprove)
+  - [transaction](#transaction)
+    - [`transaction.approve`](#transactionapprove)
       - [Request](#request-104)
       - [Response](#response-104)
-    - [`user.block`](#userblock)
+    - [`transaction.confirm`](#transactionconfirm)
       - [Request](#request-105)
       - [Response](#response-105)
-    - [`user.changeEmail`](#userchangeemail)
+    - [`transaction.deposit`](#transactiondeposit)
       - [Request](#request-106)
       - [Response](#response-106)
-    - [`user.changePassword`](#userchangepassword)
+    - [`transaction.fail`](#transactionfail)
       - [Request](#request-107)
       - [Response](#response-107)
-    - [`user.changePhone`](#userchangephone)
+    - [`transaction.get`](#transactionget)
       - [Request](#request-108)
       - [Response](#response-108)
-    - [`user.confirmEmail`](#userconfirmemail)
+    - [`transaction.list`](#transactionlist)
       - [Request](#request-109)
+      - [Response](#response-109)
+    - [`transaction.pay`](#transactionpay)
+      - [Request](#request-110)
+      - [Response](#response-110)
+    - [`transaction.reject`](#transactionreject)
+      - [Request](#request-111)
+      - [Response](#response-111)
+    - [`transaction.request`](#transactionrequest)
+      - [Request](#request-112)
+      - [Response](#response-112)
+    - [`transaction.send`](#transactionsend)
+      - [Request](#request-113)
+      - [Response](#response-113)
+    - [`transaction.transfer`](#transactiontransfer)
+      - [Request](#request-114)
+      - [Response](#response-114)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
+      - [Request](#request-115)
+      - [Response](#response-115)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
+      - [Request](#request-116)
+      - [Response](#response-116)
+    - [`user.block`](#userblock)
+      - [Request](#request-117)
+      - [Response](#response-117)
+    - [`user.changeEmail`](#userchangeemail)
+      - [Request](#request-118)
+      - [Response](#response-118)
+    - [`user.changePassword`](#userchangepassword)
+      - [Request](#request-119)
+      - [Response](#response-119)
+    - [`user.changePhone`](#userchangephone)
+      - [Request](#request-120)
+      - [Response](#response-120)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-121)
       - [Responses](#responses)
     - [`user.confirmPhone`](#userconfirmphone)
-      - [Request](#request-110)
+      - [Request](#request-122)
       - [Responses](#responses-1)
     - [`user.create`](#usercreate)
-      - [Request](#request-111)
-      - [Response](#response-109)
-    - [`user.forgotPassword`](#userforgotpassword)
-      - [Request](#request-112)
-      - [Response](#response-110)
-    - [`user.get`](#userget)
-      - [Request](#request-113)
-      - [Response](#response-111)
-    - [`user.getReferralProgram`](#usergetreferralprogram)
-      - [Request](#request-114)
-      - [Response](#response-112)
-    - [`user.delete`](#userdelete)
-      - [Request](#request-115)
-      - [Response](#response-113)
-    - [`user.list`](#userlist)
-      - [Request](#request-116)
-      - [Response](#response-114)
-    - [`user.patch`](#userpatch)
-      - [Request](#request-117)
-      - [Response](#response-115)
-    - [`user.resendConfirmation`](#userresendconfirmation)
-      - [Request](#request-118)
-      - [Response](#response-116)
-    - [`user.resetPassword`](#userresetpassword)
-      - [Request](#request-119)
-      - [Response](#response-117)
-    - [`user.unblock`](#userunblock)
-      - [Request](#request-120)
-      - [Response](#response-118)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
-      - [Request](#request-121)
-      - [Response](#response-119)
-    - [`wallet.balance`](#walletbalance)
-      - [Request](#request-122)
-      - [Response](#response-120)
-    - [`wallet.create`](#walletcreate)
       - [Request](#request-123)
       - [Response](#response-121)
-    - [`wallet.get`](#walletget)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-124)
       - [Response](#response-122)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`user.get`](#userget)
       - [Request](#request-125)
       - [Response](#response-123)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-126)
       - [Response](#response-124)
-    - [`wallet.list`](#walletlist)
+    - [`user.delete`](#userdelete)
       - [Request](#request-127)
       - [Response](#response-125)
-    - [`wallet.movements`](#walletmovements)
+    - [`user.list`](#userlist)
       - [Request](#request-128)
       - [Response](#response-126)
-    - [`wallet.patch`](#walletpatch)
+    - [`user.patch`](#userpatch)
       - [Request](#request-129)
       - [Response](#response-127)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-130)
       - [Response](#response-128)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-131)
       - [Response](#response-129)
-    - [`webhook.delete`](#webhookdelete)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-132)
       - [Response](#response-130)
-    - [`webhook.get`](#webhookget)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-133)
       - [Response](#response-131)
-    - [`webhook.list`](#webhooklist)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-134)
       - [Response](#response-132)
-    - [`webhook.patch`](#webhookpatch)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-135)
       - [Response](#response-133)
+    - [`wallet.get`](#walletget)
+      - [Request](#request-136)
+      - [Response](#response-134)
+    - [`wallet.globalActivity`](#walletglobalactivity)
+      - [Request](#request-137)
+      - [Response](#response-135)
+    - [`wallet.globalBalance`](#walletglobalbalance)
+      - [Request](#request-138)
+      - [Response](#response-136)
+    - [`wallet.list`](#walletlist)
+      - [Request](#request-139)
+      - [Response](#response-137)
+    - [`wallet.movements`](#walletmovements)
+      - [Request](#request-140)
+      - [Response](#response-138)
+    - [`wallet.patch`](#walletpatch)
+      - [Request](#request-141)
+      - [Response](#response-139)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-142)
+      - [Response](#response-140)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
+      - [Request](#request-143)
+      - [Response](#response-141)
+    - [`webhook.delete`](#webhookdelete)
+      - [Request](#request-144)
+      - [Response](#response-142)
+    - [`webhook.get`](#webhookget)
+      - [Request](#request-145)
+      - [Response](#response-143)
+    - [`webhook.list`](#webhooklist)
+      - [Request](#request-146)
+      - [Response](#response-144)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-147)
+      - [Response](#response-145)
 
 ## address
 
@@ -1039,6 +1077,448 @@ await slyk.connection.patch('f1ee08ee-265b-472c-88cf-4bae10d0ff9b', { uri: 'wald
 }
 ```
 
+## identity
+
+The result of each one of the following `identity` methods return one or an array of `Identity` objects that include the following methods:
+- `approve`: Approves the `identity`.
+- `cancel`: Cancels the `identity`.
+- `delete`: Deletes the `identity`.
+- `getDocument`: Gets a document related with the `identity`.
+- `listDocuments`: List the documents related with the `identity`.
+- `reject`: Rejects the `identity`.
+- `submit`: Submits the `identity`.
+
+### `identity.approve`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.approve('bar');
+```
+
+#### Response
+
+```json
+{
+  "address": {},
+  "approvedAt": "2020-06-17T13:19:00.000Z",
+  "birthDate": null,
+  "canceledAt": null,
+  "country": "PT",
+  "createdAt": "2020-06-17T13:19:00.000Z",
+  "customData": { "qux": "quux" },
+  "documentNumber": "biz",
+  "documentType": "waldo",
+  "gender": null,
+  "id": "bar",
+  "name": null,
+  "nationality": null,
+  "rejectedAt": null,
+  "status": "approved",
+  "submitedAt": "2020-06-18T13:19:00.000Z",
+  "updatedAt": "2020-06-18T13:19:00.000Z",
+  "userId": "waldo"
+}
+```
+
+### `identity.cancel`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.cancel('bar', { reason: "quux" });
+```
+
+#### Response
+
+```json
+{
+  "address": {},
+  "approvedAt": null,
+  "birthDate": null,
+  "cancelReason": "quux",
+  "canceledAt": "2020-06-17T13:19:00.000Z",
+  "country": "PT",
+  "createdAt": "2020-06-17T13:19:00.000Z",
+  "customData": { "qux": "quux" },
+  "documentNumber": "biz",
+  "documentType": "waldo",
+  "gender": null,
+  "id": "bar",
+  "name": null,
+  "nationality": null,
+  "rejectedAt": null,
+  "status": "canceled",
+  "submitedAt": "2020-06-18T13:19:00.000Z",
+  "updatedAt": "2020-06-18T13:19:00.000Z",
+  "userId": "waldo"
+}
+```
+
+### `identity.create`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.create(
+  country: 'PT',
+  documentNumber: '123',
+  documentType: 'national_identity',
+  userId: 'foo'
+);
+```
+
+#### Response
+
+```json
+{
+  "address": {},
+  "approvedAt": null,
+  "birthDate": null,
+  "canceledAt": null,
+  "country": "PT",
+  "createdAt": "2020-06-17T13:19:00.000Z",
+  "customData": { "qux": "quux" },
+  "documentNumber": "123",
+  "documentType": "national_identity",
+  "gender": null,
+  "id": "bar",
+  "name": null,
+  "nationality": null,
+  "rejectedAt": null,
+  "status": "pending",
+  "submitedAt": "2020-06-18T13:19:00.000Z",
+  "updatedAt": "2020-06-18T13:19:00.000Z",
+  "userId": "foo"
+}
+```
+
+### `identity.delete`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.delete('bar');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `identity.get`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.get('bar', { include: 'documents,user' });
+```
+
+#### Response
+
+```json
+{
+  "address": {},
+  "approvedAt": null,
+  "birthDate": null,
+  "canceledAt": null,
+  "country": "PT",
+  "createdAt": "2020-06-17T13:19:00.000Z",
+  "customData": { "qux": "quux" },
+  "documentNumber": "biz",
+  "documentType": "waldo",
+  "documents": [{
+    "createdAt": "2020-06-17T13:19:00.000Z",
+    "customData": {},
+    "file": {
+      "type": "document",
+      "url": "http://foobar.url"
+    },
+    "id": "corge",
+    "identityId": "foo",
+    "updatedAt": "2020-06-18T13:19:00.000Z"
+  }],
+  "gender": null,
+  "id": "bar",
+  "name": null,
+  "nationality": null,
+  "rejectedAt": null,
+  "status": "pending",
+  "submitedAt": "2020-06-18T13:19:00.000Z",
+  "updatedAt": "2020-06-18T13:19:00.000Z",
+  "user": {
+    "email": "waldo@foo.com",
+    "id": "waldo",
+    "name": "fred",
+    "phone": "+351912345678"
+  },
+  "userId": "waldo"
+}
+```
+
+### `identity.list`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.list({ filter: { country: 'PT' } });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "address": {},
+      "approvedAt": null,
+      "birthDate": null,
+      "canceledAt": null,
+      "country": "PT",
+      "createdAt": "2020-06-17T13:19:00.000Z",
+      "customData": { "qux": "quux" },
+      "documentNumber": "biz",
+      "documentType": "waldo",
+      "gender": null,
+      "id": "bar",
+      "name": null,
+      "nationality": null,
+      "rejectedAt": null,
+      "status": "pending",
+      "submitedAt": "2020-06-18T13:19:00.000Z",
+      "updatedAt": "2020-06-18T13:19:00.000Z",
+      "userId": "waldo"
+    },
+    {
+      "address": {},
+      "approvedAt": "2020-06-17T13:19:00.000Z",
+      "birthDate": null,
+      "canceledAt": null,
+      "country": "PT",
+      "createdAt": "2020-06-17T13:19:00.000Z",
+      "customData": { "qux": "quux" },
+      "documentNumber": "thud",
+      "documentType": "waldo",
+      "gender": null,
+      "id": "quux",
+      "name": null,
+      "nationality": null,
+      "rejectedAt": null,
+      "status": "approved",
+      "submitedAt": "2020-06-18T13:19:00.000Z",
+      "updatedAt": "2020-06-18T13:19:00.000Z",
+      "userId": "foobar"
+    }
+  ],
+  "total": 2
+}
+```
+
+### `identity.reject`
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.identity.reject('bar', { reason: 'quux' });
+```
+
+#### Response
+
+```json
+{
+  "address": {},
+  "approvedAt": null,
+  "birthDate": null,
+  "canceledAt": null,
+  "country": "PT",
+  "createdAt": "2020-06-17T13:19:00.000Z",
+  "customData": { "qux": "quux" },
+  "documentNumber": "biz",
+  "documentType": "waldo",
+  "gender": null,
+  "id": "bar",
+  "name": null,
+  "nationality": null,
+  "rejectReason": "quux",
+  "rejectedAt": "2020-06-17T13:19:00.000Z",
+  "status": "rejected",
+  "submitedAt": "2020-06-18T13:19:00.000Z",
+  "updatedAt": "2020-06-18T13:19:00.000Z",
+  "userId": "waldo"
+}
+```
+
+### `identity.submit`
+
+*Example:**
+
+#### Request
+
+```js
+await slyk.identity.submit('bar');
+```
+
+#### Response
+
+```json
+{
+  "address": {},
+  "approvedAt": null,
+  "birthDate": null,
+  "canceledAt": null,
+  "country": "PT",
+  "createdAt": "2020-06-17T13:19:00.000Z",
+  "customData": { "qux": "quux" },
+  "documentNumber": "biz",
+  "documentType": "waldo",
+  "gender": null,
+  "id": "bar",
+  "name": null,
+  "nationality": null,
+  "rejectReason": "quux",
+  "rejectedAt": "2020-06-17T13:19:00.000Z",
+  "status": "processing",
+  "submitedAt": "2020-06-18T13:19:00.000Z",
+  "updatedAt": "2020-06-18T13:19:00.000Z",
+  "userId": "waldo"
+}
+```
+
+## IdentityDocument
+
+The result of each one of the following `identityDocument` methods return one or an array of `IdentityDocument` objects that include the following methods:
+- `delete`: Deletes the `identityDocument`.
+
+## `identityDocument.create`
+
+Creates an `identityDocument` for the `identity` of the given `identityId`.
+
+**Example:**
+
+#### Request
+
+```js
+const identityId = 'bar';
+
+await slyk.identityDocument.create(identityId, { file: 'garply' });
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2020-03-20T14:30:37.483Z",
+  "customData": {},
+  "file": { "type": "document", "uploadId": "garply" },
+  "id": "foo",
+  "identityId": "bar",
+  "updatedAt": "2020-03-20T14:30:37.483Z",
+}
+```
+
+## `identityDocument.delete`
+
+Deletes an `identityDocument` of the given `id` related with the `identity` of the given `identityId`.
+
+**Example:**
+
+#### Request
+
+```js
+const id = 'foo';
+const identityId = 'bar';
+
+await slyk.identityDocument.delete(id, identityId);
+```
+
+#### Response
+
+```json
+true
+```
+
+## `identityDocument.get`
+
+Gets the `identityDocument` of the given `id` related with the `identity` of the given `identityId`.
+
+**Example:**
+
+#### Request
+
+```js
+const id = 'foo';
+const identityId = 'bar';
+
+await slyk.identityDocument.get(id, identityId);
+```
+
+#### Response
+
+```json
+{
+  "createdAt": "2020-03-20T14:30:37.483Z",
+  "customData": {},
+  "file": { "type": "document", "uploadId": "garply" },
+  "id": "foo",
+  "identityId": "bar",
+  "updatedAt": "2020-03-20T14:30:37.483Z",
+}
+```
+
+## `identityDocument.list`
+
+Lists the `identityDocuments` related with the `identity` of the given `identityId`.
+
+**Example:**
+
+#### Request
+
+```js
+const identityId = 'bar';
+
+await slyk.identityDocument.list(identityId, { sort: [{ direction: 'desc', name: 'createdAt' }] });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2020-03-20T14:30:37.483Z",
+      "customData": {},
+      "file": { "type": "document", "uploadId": "garply" },
+      "id": "foo",
+      "identityId": "bar",
+      "updatedAt": "2020-03-20T14:30:37.483Z",
+    },
+    {
+      "createdAt": "2020-03-22T14:30:37.483Z",
+      "customData": { "foo": "bar" },
+      "file": { "type": "document", "uploadId": "thud" },
+      "id": "zyzzy",
+      "identityId": "bar",
+      "updatedAt": "2020-03-22T14:30:37.483Z",
+    }
+  ],
+  "total": 2
+}
+```
 
 ## invite
 
