@@ -9,6 +9,8 @@ exports.default = void 0;
 
 var _bankAccount = require("../../bank-account");
 
+var _user = require("../../user");
+
 var _store = require("../../store");
 
 var _address = _interopRequireDefault(require("../../address"));
@@ -31,8 +33,6 @@ var _setting = _interopRequireDefault(require("../../setting"));
 
 var _transaction = _interopRequireDefault(require("../../transaction"));
 
-var _user = _interopRequireDefault(require("../../user"));
-
 var _wallet = _interopRequireDefault(require("../../wallet"));
 
 var _webhook = _interopRequireDefault(require("../../webhook"));
@@ -53,6 +53,8 @@ var _default = {
   bankAccount: _bankAccount.bankAccount,
   bankAccountRegion: _bankAccount.bankAccountRegion,
   connection: _connection.default,
+  identity: _user.identity,
+  identityDocument: _user.identityDocument,
   invite: _invite.default,
   movement: _movement.default,
   order: _store.order,
@@ -71,7 +73,7 @@ var _default = {
   taskStepQuestionAnswer: _store.taskStepQuestionAnswer,
   taxRate: _store.taxRate,
   transaction: _transaction.default,
-  user: _user.default,
+  user: _user.user,
   wallet: _wallet.default,
   webhook: _webhook.default
 };

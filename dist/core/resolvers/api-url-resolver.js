@@ -35,7 +35,8 @@ var _default = function _default(_ref) {
     }
 
     var cleanValue = value.replace(/[&\\/?\\[\]=\\:]/g, '');
-    return (0, _lodash.replace)(result, `:${key}`, cleanValue);
+    var regex = new RegExp(`:${key}(?=/|$)`, 'g');
+    return (0, _lodash.replace)(result, regex, cleanValue);
   }, endpoint);
   var missingParams = (0, _lodash.map)(path.match(/:[a-zA-Z0-9]+/g), function (value) {
     return value.replace(':', '');

@@ -74,7 +74,8 @@ var config = {
     method: 'patch'
   },
   resendConfirmation: {
-    endpoint: 'users/resend-confirmation'
+    endpoint: 'users/resend-confirmation',
+    method: 'post'
   },
   resetPassword: {
     endpoint: 'users/reset-password',
