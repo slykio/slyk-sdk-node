@@ -16,6 +16,51 @@ describe('BankAccountManager', () => {
   const host = 'http://foobar:3000';
   const slyk = sdk({ apikey, host });
 
+  describe('create', () => {
+    it('should call api `/bank-accounts` endpoint with method `post` and return an instance of `BankAccount` model with the given `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/bank-accounts')
+        .reply(200, {
+          data: {
+            asset: 'foo',
+            details: { foo: 'bar' },
+            id: 'foobar',
+            name: 'waldo',
+            region: 'fred'
+          }
+        });
+
+      const result = await slyk.bankAccount.create({
+        asset: 'foo',
+        details: { foo: 'bar' },
+        name: 'waldo',
+        region: 'fred'
+      });
+
+      expect(result).toEqual({
+        asset: 'foo',
+        details: { foo: 'bar' },
+        id: 'foobar',
+        name: 'waldo',
+        region: 'fred'
+      });
+    });
+  });
+
+  describe('delete', () => {
+    it('should call api `/bank-accounts/:id` endpoint with method `delete` and return `true`', async () => {
+      const id = 'foobar';
+
+      nock(host, { reqheaders: { apikey } })
+        .delete(`/bank-accounts/${id}`)
+        .reply(204);
+
+      const result = await slyk.bankAccount.delete(id);
+
+      expect(result).toEqual(true);
+    });
+  });
+
   describe('get', () => {
     it('should throw `NotFoundError` if the given `BankAccount` does not exist', async () => {
       nock(host, { reqheaders: { apikey } })
@@ -89,6 +134,37 @@ describe('BankAccountManager', () => {
           region: 'fred'
         }
       ]);
+    });
+  });
+
+  describe('patch', () => {
+    it('should call api `/bank-accounts/:id` endpoint with method `patch` and return an instance of `BankAccount` model with the given `data`', async () => {
+      const id = 'foobar';
+
+      nock(host, { reqheaders: { apikey } })
+        .patch(`/bank-accounts/${id}`)
+        .reply(200, {
+          data: {
+            asset: 'foo',
+            details: { foo: 'bar' },
+            id: 'foobar',
+            name: 'waldo',
+            region: 'fred'
+          }
+        });
+
+      const result = await slyk.bankAccount.patch(id, {
+        details: { foo: 'bar' },
+        name: 'waldo'
+      });
+
+      expect(result).toEqual({
+        asset: 'foo',
+        details: { foo: 'bar' },
+        id: 'foobar',
+        name: 'waldo',
+        region: 'fred'
+      });
     });
   });
 });
