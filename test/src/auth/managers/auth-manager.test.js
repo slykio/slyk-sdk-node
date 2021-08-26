@@ -70,11 +70,25 @@ describe('AuthManager', () => {
     it('should call api `/auth/token/validate` endpoint with method `post` and return `true`', async () => {
       nock(host, { reqheaders: { apikey } })
         .post('/auth/token/validate', { token: '123' })
-        .reply(204);
+        .reply(200, {
+          data: {
+            user: {
+              email: 'foo@bar.com',
+              id: 'bar',
+              name: 'foobar'
+            }
+          }
+        });
 
       const result = await slyk.auth.validate({ token: '123' });
 
-      expect(result).toEqual(true);
+      expect(result).toEqual({
+        user: {
+          email: 'foo@bar.com',
+          id: 'bar',
+          name: 'foobar'
+        }
+      });
     });
   });
 });
