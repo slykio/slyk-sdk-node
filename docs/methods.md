@@ -650,7 +650,7 @@ await slyk.auth.refresh({ refreshToken: '123' });
 
 ### `auth.validate`
 
-Validate the `auth` `token`.
+Validate the `auth` `token` and returns the details of the `user` related with the provided `token`.
 
 **Example:**
 
@@ -663,7 +663,32 @@ await slyk.auth.validate({ token: '456' });
 #### Response
 
 ```json
-true
+{
+  "user": {
+    "approved": false,
+    "blocked": false,
+    "createdAt": "2019-03-20T14:30:37.483Z",
+    "customData": {},
+    "email": "foo@bar.com",
+    "id": "5e101529-fa30-4415-9945-6540e70c4483",
+    "image": {
+      "external": false,
+      "path": "/waldo/fred.png",
+      "type": "image",
+      "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+      "url": "http://foobar.com/waldo/fred.png"
+    },
+    "locale": "en-us",
+    "name": "foobar",
+    "phone": null,
+    "primaryWalletId": "6c455aa8-c714-4441-97a8-0739fe387a67",
+    "referralCode": "XYZZY",
+    "referralUserId": null,
+    "roles": ["user"],
+    "updatedAt": "2019-03-20T14:30:37.483Z",
+    "verified": false
+  }
+}
 ```
 
 ## asset

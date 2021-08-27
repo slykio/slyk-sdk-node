@@ -4,6 +4,7 @@
  */
 
 import AbstractManager from 'core/managers/abstract-manager';
+import UserModel from 'user/models/user-model';
 
 /**
  * Export `AuthManager`.
@@ -45,10 +46,10 @@ export default class AuthManager extends AbstractManager {
    * Validate.
    */
 
-  async validate(data) {
-    await this.resolver.validate(data);
+  async validate(data, options) {
+    const { data: { user } } = await this.resolver.validate(data, options);
 
-    return true;
+    return { user: new UserModel(user, { connection: this.connection }) };
   }
 
 }
