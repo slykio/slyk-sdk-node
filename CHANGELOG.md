@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.12.0](https://github.com/slykio/slyk-sdk-node/tree/v0.12.0) (2021-08-27)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.11.0...v0.12.0)
+
+**Merged pull requests:**
+
+- Improve AuthManager validate method [\#44](https://github.com/slykio/slyk-sdk-node/pull/44) ([kratos-42](https://github.com/kratos-42))
+
 ## [v0.11.0](https://github.com/slykio/slyk-sdk-node/tree/v0.11.0) (2021-05-28)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.10.0...v0.11.0)
 
