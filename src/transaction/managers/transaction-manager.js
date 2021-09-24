@@ -75,6 +75,16 @@ export default class TransactionManager extends AbstractManager {
   }
 
   /**
+   * Patch.
+   */
+
+  async patch(id, data) {
+    const { data: transaction } = await this.resolver.patch(merge({}, data, { id }));
+
+    return this.instantiate(transaction);
+  }
+
+  /**
    * Pay.
    */
 
