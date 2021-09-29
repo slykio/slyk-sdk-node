@@ -85,6 +85,14 @@ export default class TransactionModel extends AbstractModel {
   }
 
   /**
+   * Patch.
+   */
+
+  patch(data) {
+    return TransactionModel.sdk.transaction.patch(this.id, data);
+  }
+
+  /**
    * Reject.
    */
 

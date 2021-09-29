@@ -273,6 +273,24 @@ describe('TransactionModel', () => {
     });
   });
 
+  describe('patch', () => {
+    it('should return the rejected `transaction` instance', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/transactions/bar')
+        .reply(200, { data: { customData: { qux: 'quux' }, id: 'bar' } });
+
+      const transaction = await slyk.transaction.get('bar');
+
+      nock(host, { reqheaders: { apikey } })
+        .patch('/transactions/bar', { customData: { foobar: 'foobiz' } })
+        .reply(200, { data: { customData: { foobar: 'foobiz' }, id: 'bar' } });
+
+      const patchedTransaction = await transaction.patch({ customData: { foobar: 'foobiz' } });
+
+      expect(patchedTransaction).toEqual({ customData: { foobar: 'foobiz' }, id: 'bar' });
+    });
+  });
+
   describe('reject', () => {
     it('should return the rejected `transaction` instance', async () => {
       nock(host, { reqheaders: { apikey } })

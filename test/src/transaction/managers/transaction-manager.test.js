@@ -163,6 +163,18 @@ describe('TransactionManager', () => {
     });
   });
 
+  describe('patch', () => {
+    it('should call api `/transactions/bar` endpoint with method `patch` and return an instance of `Transaction` model with the given `data` after being patched', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .patch('/transactions/bar', { customData: { foobar: 'foobiz' } })
+        .reply(200, { data: { customData: { foobar: 'foobiz' }, id: 'bar' } });
+
+      const transaction = await slyk.transaction.patch('bar', { customData: { foobar: 'foobiz' } });
+
+      expect(transaction).toEqual({ customData: { foobar: 'foobiz' }, id: 'bar' });
+    });
+  });
+
   describe('pay', () => {
     it('should call api `/transactions/pay` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
       nock(host, { reqheaders: { apikey } })

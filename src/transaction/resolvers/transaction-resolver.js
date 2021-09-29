@@ -34,6 +34,10 @@ const config = {
     endpoint: 'transactions',
     method: 'get'
   },
+  patch: {
+    endpoint: 'transactions/:id',
+    method: 'patch'
+  },
   pay: {
     endpoint: 'transactions/pay',
     method: 'post'
