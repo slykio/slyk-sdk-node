@@ -124,6 +124,15 @@ var TransactionModel = /*#__PURE__*/function (_AbstractModel) {
       }));
     }
     /**
+     * Patch.
+     */
+
+  }, {
+    key: "patch",
+    value: function patch(data) {
+      return TransactionModel.sdk.transaction.patch(this.id, data);
+    }
+    /**
      * Reject.
      */
 
