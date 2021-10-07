@@ -150,4 +150,59 @@ describe('RateManager', () => {
       });
     });
   });
+
+  describe('patchMultiple', () => {
+    it('should call api `/rates` endpoint with method `patch` and return a list of `Rate` model instances with the given `data`', async () => {
+      const patchData = {
+        rates: [{
+          baseAssetCode: 'bar',
+          customData: { foo: 'bar' },
+          quoteAssetCode: 'biz',
+          rate: '0.4'
+        },
+        {
+          baseAssetCode: 'qux',
+          metadata: {},
+          quoteAssetCode: 'quux',
+          rate: '1.23'
+        }]
+      };
+
+      nock(host, { reqheaders: { apikey } })
+        .patch('/rates', patchData)
+        .reply(200, {
+          data: [{
+            baseAssetCode: 'bar',
+            customData: { foo: 'bar' },
+            metadata: {},
+            quoteAssetCode: 'biz',
+            rate: '0.4'
+          },
+          {
+            baseAssetCode: 'qux',
+            customData: {},
+            metadata: { qux: 'quux' },
+            quoteAssetCode: 'quux',
+            rate: '1.23'
+          }]
+        });
+
+      const result = await slyk.rate.patchMultiple(patchData);
+
+      expect(result).toEqual([{
+        baseAssetCode: 'bar',
+        customData: { foo: 'bar' },
+        metadata: {},
+        quoteAssetCode: 'biz',
+        rate: '0.4'
+      },
+      {
+        baseAssetCode: 'qux',
+        customData: {},
+        metadata: { qux: 'quux' },
+        quoteAssetCode: 'quux',
+        rate: '1.23'
+      }]);
+    });
+  });
 });

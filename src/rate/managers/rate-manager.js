@@ -55,6 +55,16 @@ export default class RateManager extends AbstractManager {
   }
 
   /**
+   * Patch multiple.
+   */
+
+  async patchMultiple(data) {
+    const result = await this.resolver.patchMultiple(data);
+
+    return map(get(result, 'data', []), rate => this.instantiate(rate));
+  }
+
+  /**
    * Patch.
    */
 
