@@ -175,6 +175,49 @@ describe('TransactionManager', () => {
     });
   });
 
+  describe('patchMultiple', () => {
+    it('should call api `/transactions` endpoint with method `patch` and return an instance of `Transaction` model with the given `data`', async () => {
+      const patchData = {
+        transactions: [
+          { customData: { foo: 'bar' }, id: 'fred' },
+          { customData: { qux: 'quux' }, id: 'waldo' }
+        ]
+      };
+
+      nock(host, { reqheaders: { apikey } })
+        .patch('/transactions', patchData)
+        .reply(200, {
+          data: [{
+            amount: '5',
+            customData: { foo: 'bar' },
+            id: 'fred',
+            metadata: {}
+          },
+          {
+            amount: '4',
+            customData: { qux: 'quux' },
+            id: 'waldo',
+            metadata: {}
+          }]
+        });
+
+      const result = await slyk.transaction.patchMultiple(patchData);
+
+      expect(result).toEqual([{
+        amount: '5',
+        customData: { foo: 'bar' },
+        id: 'fred',
+        metadata: {}
+      },
+      {
+        amount: '4',
+        customData: { qux: 'quux' },
+        id: 'waldo',
+        metadata: {}
+      }]);
+    });
+  });
+
   describe('pay', () => {
     it('should call api `/transactions/pay` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
       nock(host, { reqheaders: { apikey } })
