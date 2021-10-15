@@ -5,7 +5,7 @@
  * Module dependencies.
  */
 
-import { bankAccount, bankAccountRegion } from 'bank-account';
+import { bankAccount, bankAccountRegion, userBankAccount } from 'bank-account';
 import { identity, identityDocument, user } from 'user';
 import {
   order,
@@ -66,6 +66,7 @@ export default {
   taxRate,
   transaction,
   user,
+  userBankAccount,
   wallet,
   webhook
 };
