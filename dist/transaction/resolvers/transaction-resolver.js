@@ -45,6 +45,10 @@ var config = {
     endpoint: 'transactions/:id',
     method: 'patch'
   },
+  patchMultiple: {
+    endpoint: 'transactions',
+    method: 'patch'
+  },
   pay: {
     endpoint: 'transactions/pay',
     method: 'post'
