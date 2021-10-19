@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-import { get, map } from 'lodash';
+import { get, map, merge } from 'lodash';
 import AbstractManager from 'core/managers/abstract-manager';
 
 /**
@@ -11,6 +11,26 @@ import AbstractManager from 'core/managers/abstract-manager';
  */
 
 export default class BankAccountManager extends AbstractManager {
+
+  /**
+   * Create.
+   */
+
+  async create(data) {
+    const { data: bankAccount } = await this.resolver.create(data);
+
+    return this.instantiate(bankAccount);
+  }
+
+  /**
+   * Delete.
+   */
+
+  async delete(id) {
+    await this.resolver.delete({ id });
+
+    return true;
+  }
 
   /**
    * Get.
@@ -32,6 +52,16 @@ export default class BankAccountManager extends AbstractManager {
     const total = get(result, 'total');
 
     return { results, total };
+  }
+
+  /**
+   * Patch.
+   */
+
+  async patch(id, data) {
+    const { data: bankAccount } = await this.resolver.patch(merge({}, data, { id }));
+
+    return this.instantiate(bankAccount);
   }
 
 }
