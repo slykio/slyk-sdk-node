@@ -29,6 +29,10 @@ const config = {
   patch: {
     endpoint: 'rates/:baseAssetCode/:quoteAssetCode',
     method: 'patch'
+  },
+  patchMultiple: {
+    endpoint: 'rates',
+    method: 'patch'
   }
 };
 
