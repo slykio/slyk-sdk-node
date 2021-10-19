@@ -85,6 +85,16 @@ export default class TransactionManager extends AbstractManager {
   }
 
   /**
+   * Patch multiple.
+   */
+
+  async patchMultiple(data) {
+    const result = await this.resolver.patchMultiple(data);
+
+    return map(get(result, 'data', []), transaction => this.instantiate(transaction));
+  }
+
+  /**
    * Pay.
    */
 
