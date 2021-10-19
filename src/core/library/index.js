@@ -25,6 +25,7 @@ import address from 'address';
 import asset from 'asset';
 import auth from 'auth';
 import connection from 'connection';
+import graphql from 'graphql';
 import invite from 'invite';
 import movement from 'movement';
 import paymentMethod from 'payment-method';
@@ -45,6 +46,7 @@ export default {
   bankAccount,
   bankAccountRegion,
   connection,
+  graphql,
   identity,
   identityDocument,
   invite,
