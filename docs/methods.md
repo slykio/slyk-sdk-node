@@ -429,53 +429,69 @@
     - [`user.unblock`](#userunblock)
       - [Request](#request-132)
       - [Response](#response-130)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+  - [userBankAccount](#userbankaccount)
+    - [`userBankAccount.create`](#userbankaccountcreate)
       - [Request](#request-133)
       - [Response](#response-131)
-    - [`wallet.balance`](#walletbalance)
+    - [`userBankAccount.delete`](#userbankaccountdelete)
       - [Request](#request-134)
       - [Response](#response-132)
-    - [`wallet.create`](#walletcreate)
+    - [`userBankAccount.get`](#userbankaccountget)
       - [Request](#request-135)
       - [Response](#response-133)
-    - [`wallet.get`](#walletget)
+    - [`userBankAccount.list`](#userbankaccountlist)
       - [Request](#request-136)
       - [Response](#response-134)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`userBankAccount.patch`](#userbankaccountpatch)
       - [Request](#request-137)
       - [Response](#response-135)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-138)
       - [Response](#response-136)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-139)
       - [Response](#response-137)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-140)
       - [Response](#response-138)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.get`](#walletget)
       - [Request](#request-141)
       - [Response](#response-139)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-142)
       - [Response](#response-140)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-143)
       - [Response](#response-141)
-    - [`webhook.delete`](#webhookdelete)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-144)
       - [Response](#response-142)
-    - [`webhook.get`](#webhookget)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-145)
       - [Response](#response-143)
-    - [`webhook.list`](#webhooklist)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-146)
       - [Response](#response-144)
-    - [`webhook.patch`](#webhookpatch)
+    - [`wallet.transactions`](#wallettransactions)
       - [Request](#request-147)
       - [Response](#response-145)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
+      - [Request](#request-148)
+      - [Response](#response-146)
+    - [`webhook.delete`](#webhookdelete)
+      - [Request](#request-149)
+      - [Response](#response-147)
+    - [`webhook.get`](#webhookget)
+      - [Request](#request-150)
+      - [Response](#response-148)
+    - [`webhook.list`](#webhooklist)
+      - [Request](#request-151)
+      - [Response](#response-149)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-152)
+      - [Response](#response-150)
 
 ## address
 
@@ -5670,6 +5686,169 @@ await slyk.user.unblock('5e101529-fa30-4415-9945-6540e70c4483');
   "roles": ["user"],
   "updatedAt": "2019-03-20T14:30:37.483Z",
   "verified": false
+}
+```
+
+## userBankAccount
+
+The result of each one of the following `userBankAccount` methods return one or an array of `UserBankAccount` objects that include the following methods:
+- `delete`: Deletes the `userBankAccount` instance;
+- `getAsset`: Returns the `userBankAccount` `asset` details;
+- `patch`: Patches the `userBankAccount` instance.
+
+### `userBankAccount.create`
+
+Creates a `userBankAccount`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.userBankAccount.create({
+  asset: "garply",
+  details: {
+    foo: "biz"
+  },
+  name: "foobar",
+  region: "corge",
+  userId: "thud"
+});
+```
+
+#### Response
+
+```json
+{
+  "asset": "garply",
+  "details": {
+    "foo": "biz"
+  },
+  "id": "xyzzy",
+  "name": "foobar",
+  "region": "corge",
+  "userId": "thud"
+}
+```
+
+### `userBankAccount.delete`
+
+Deletes the `userBankAccount` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.userBankAccount.delete('xyzzy');
+```
+
+#### Response
+
+```json
+true
+```
+
+### `userBankAccount.get`
+
+Retrieves the `userBankAccount` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.userBankAccount.get('xyzzy');
+```
+
+#### Response
+
+```json
+{
+  "asset": "garply",
+  "details": {
+    "foo": "biz"
+  },
+  "id": "xyzzy",
+  "name": "foobar",
+  "region": "corge",
+  "userId": "thud"
+}
+```
+
+### `userBankAccount.list`
+
+Retrieves a list of `userBankAccounts`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.userBankAccount.list({
+  page: { size: 2 },
+  sort: [{ name: 'name'}],
+  filter: { region: 'in:corge' }
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "asset": "garply",
+      "details": {
+        "foo": "biz"
+      },
+      "id": "xyzzy",
+      "name": "foobar",
+      "region": "corge",
+      "userId": "thud"
+    },
+    {
+      "asset": "foo",
+      "details": {},
+      "id": "waldo",
+      "name": "fred",
+      "region": "corge",
+      "userId": "thud"
+    }
+  ],
+  "total": 32
+}
+```
+
+### `userBankAccount.patch`
+
+Patches the `userBankAccount` of the given `id`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.userBankAccount.patch('xyzzy', {
+  details: {
+    foo: "biz"
+  },
+  name: "foobar"
+});
+```
+
+#### Response
+
+```json
+{
+  "asset": "garply",
+  "details": {
+    "foo": "biz"
+  },
+  "id": "xyzzy",
+  "name": "foobar",
+  "region": "corge",
+  "userId": "thud"
 }
 ```
 
