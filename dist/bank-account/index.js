@@ -14,6 +14,12 @@ var _bankAccountRegionResolver = _interopRequireDefault(require("./resolvers/ban
 
 var _bankAccountResolver = _interopRequireDefault(require("./resolvers/bank-account-resolver"));
 
+var _userBankAccountManager = _interopRequireDefault(require("./managers/user-bank-account-manager"));
+
+var _userBankAccountModel = _interopRequireDefault(require("./models/user-bank-account-model"));
+
+var _userBankAccountResolver = _interopRequireDefault(require("./resolvers/user-bank-account-resolver"));
+
 /* istanbul ignore file */
 
 /**
@@ -33,5 +39,10 @@ module.exports = {
     manager: _bankAccountRegionManager.default,
     model: _bankAccountRegionModel.default,
     resolver: _bankAccountRegionResolver.default
+  },
+  userBankAccount: {
+    manager: _userBankAccountManager.default,
+    model: _userBankAccountModel.default,
+    resolver: _userBankAccountResolver.default
   }
 };

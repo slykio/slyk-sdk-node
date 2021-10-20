@@ -312,28 +312,30 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
       return patch;
     }()
     /**
-     * Pay.
+     * Patch multiple.
      */
 
   }, {
-    key: "pay",
+    key: "patchMultiple",
     value: function () {
-      var _pay = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee8(data) {
-        var _yield$this$resolver$7, transaction;
+      var _patchMultiple = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee8(data) {
+        var _this2 = this;
 
+        var result;
         return _regenerator.default.wrap(function _callee8$(_context8) {
           while (1) {
             switch (_context8.prev = _context8.next) {
               case 0:
                 _context8.next = 2;
-                return this.resolver.pay(data);
+                return this.resolver.patchMultiple(data);
 
               case 2:
-                _yield$this$resolver$7 = _context8.sent;
-                transaction = _yield$this$resolver$7.data;
-                return _context8.abrupt("return", this.instantiate(transaction));
+                result = _context8.sent;
+                return _context8.abrupt("return", (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (transaction) {
+                  return _this2.instantiate(transaction);
+                }));
 
-              case 5:
+              case 4:
               case "end":
                 return _context8.stop();
             }
@@ -341,7 +343,43 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee8, this);
       }));
 
-      function pay(_x13) {
+      function patchMultiple(_x13) {
+        return _patchMultiple.apply(this, arguments);
+      }
+
+      return patchMultiple;
+    }()
+    /**
+     * Pay.
+     */
+
+  }, {
+    key: "pay",
+    value: function () {
+      var _pay = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee9(data) {
+        var _yield$this$resolver$7, transaction;
+
+        return _regenerator.default.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                _context9.next = 2;
+                return this.resolver.pay(data);
+
+              case 2:
+                _yield$this$resolver$7 = _context9.sent;
+                transaction = _yield$this$resolver$7.data;
+                return _context9.abrupt("return", this.instantiate(transaction));
+
+              case 5:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9, this);
+      }));
+
+      function pay(_x14) {
         return _pay.apply(this, arguments);
       }
 
@@ -354,32 +392,32 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "reject",
     value: function () {
-      var _reject = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee9(id, data) {
+      var _reject = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee10(id, data) {
         var _yield$this$resolver$8, transaction;
 
-        return _regenerator.default.wrap(function _callee9$(_context9) {
+        return _regenerator.default.wrap(function _callee10$(_context10) {
           while (1) {
-            switch (_context9.prev = _context9.next) {
+            switch (_context10.prev = _context10.next) {
               case 0:
-                _context9.next = 2;
+                _context10.next = 2;
                 return this.resolver.reject((0, _lodash.merge)({}, data, {
                   id
                 }));
 
               case 2:
-                _yield$this$resolver$8 = _context9.sent;
+                _yield$this$resolver$8 = _context10.sent;
                 transaction = _yield$this$resolver$8.data;
-                return _context9.abrupt("return", this.instantiate(transaction));
+                return _context10.abrupt("return", this.instantiate(transaction));
 
               case 5:
               case "end":
-                return _context9.stop();
+                return _context10.stop();
             }
           }
-        }, _callee9, this);
+        }, _callee10, this);
       }));
 
-      function reject(_x14, _x15) {
+      function reject(_x15, _x16) {
         return _reject.apply(this, arguments);
       }
 
@@ -392,30 +430,30 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "request",
     value: function () {
-      var _request = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee10(data) {
+      var _request = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee11(data) {
         var _yield$this$resolver$9, transaction;
 
-        return _regenerator.default.wrap(function _callee10$(_context10) {
+        return _regenerator.default.wrap(function _callee11$(_context11) {
           while (1) {
-            switch (_context10.prev = _context10.next) {
+            switch (_context11.prev = _context11.next) {
               case 0:
-                _context10.next = 2;
+                _context11.next = 2;
                 return this.resolver.request(data);
 
               case 2:
-                _yield$this$resolver$9 = _context10.sent;
+                _yield$this$resolver$9 = _context11.sent;
                 transaction = _yield$this$resolver$9.data;
-                return _context10.abrupt("return", this.instantiate(transaction));
+                return _context11.abrupt("return", this.instantiate(transaction));
 
               case 5:
               case "end":
-                return _context10.stop();
+                return _context11.stop();
             }
           }
-        }, _callee10, this);
+        }, _callee11, this);
       }));
 
-      function request(_x16) {
+      function request(_x17) {
         return _request.apply(this, arguments);
       }
 
@@ -428,30 +466,30 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "send",
     value: function () {
-      var _send = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee11(data) {
+      var _send = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee12(data) {
         var _yield$this$resolver$10, transaction;
 
-        return _regenerator.default.wrap(function _callee11$(_context11) {
+        return _regenerator.default.wrap(function _callee12$(_context12) {
           while (1) {
-            switch (_context11.prev = _context11.next) {
+            switch (_context12.prev = _context12.next) {
               case 0:
-                _context11.next = 2;
+                _context12.next = 2;
                 return this.resolver.send(data);
 
               case 2:
-                _yield$this$resolver$10 = _context11.sent;
+                _yield$this$resolver$10 = _context12.sent;
                 transaction = _yield$this$resolver$10.data;
-                return _context11.abrupt("return", this.instantiate(transaction));
+                return _context12.abrupt("return", this.instantiate(transaction));
 
               case 5:
               case "end":
-                return _context11.stop();
+                return _context12.stop();
             }
           }
-        }, _callee11, this);
+        }, _callee12, this);
       }));
 
-      function send(_x17) {
+      function send(_x18) {
         return _send.apply(this, arguments);
       }
 
@@ -464,30 +502,30 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "transfer",
     value: function () {
-      var _transfer = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee12(data) {
+      var _transfer = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee13(data) {
         var _yield$this$resolver$11, transaction;
 
-        return _regenerator.default.wrap(function _callee12$(_context12) {
+        return _regenerator.default.wrap(function _callee13$(_context13) {
           while (1) {
-            switch (_context12.prev = _context12.next) {
+            switch (_context13.prev = _context13.next) {
               case 0:
-                _context12.next = 2;
+                _context13.next = 2;
                 return this.resolver.transfer(data);
 
               case 2:
-                _yield$this$resolver$11 = _context12.sent;
+                _yield$this$resolver$11 = _context13.sent;
                 transaction = _yield$this$resolver$11.data;
-                return _context12.abrupt("return", this.instantiate(transaction));
+                return _context13.abrupt("return", this.instantiate(transaction));
 
               case 5:
               case "end":
-                return _context12.stop();
+                return _context13.stop();
             }
           }
-        }, _callee12, this);
+        }, _callee13, this);
       }));
 
-      function transfer(_x18) {
+      function transfer(_x19) {
         return _transfer.apply(this, arguments);
       }
 
@@ -500,30 +538,30 @@ var TransactionManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "withdrawal",
     value: function () {
-      var _withdrawal = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee13(data) {
+      var _withdrawal = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee14(data) {
         var _yield$this$resolver$12, transaction;
 
-        return _regenerator.default.wrap(function _callee13$(_context13) {
+        return _regenerator.default.wrap(function _callee14$(_context14) {
           while (1) {
-            switch (_context13.prev = _context13.next) {
+            switch (_context14.prev = _context14.next) {
               case 0:
-                _context13.next = 2;
+                _context14.next = 2;
                 return this.resolver.withdrawal(data);
 
               case 2:
-                _yield$this$resolver$12 = _context13.sent;
+                _yield$this$resolver$12 = _context14.sent;
                 transaction = _yield$this$resolver$12.data;
-                return _context13.abrupt("return", this.instantiate(transaction));
+                return _context14.abrupt("return", this.instantiate(transaction));
 
               case 5:
               case "end":
-                return _context13.stop();
+                return _context14.stop();
             }
           }
-        }, _callee13, this);
+        }, _callee14, this);
       }));
 
-      function withdrawal(_x19) {
+      function withdrawal(_x20) {
         return _withdrawal.apply(this, arguments);
       }
 

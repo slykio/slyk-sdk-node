@@ -74,6 +74,7 @@ var _default = {
   taxRate: _store.taxRate,
   transaction: _transaction.default,
   user: _user.user,
+  userBankAccount: _bankAccount.userBankAccount,
   wallet: _wallet.default,
   webhook: _webhook.default
 };

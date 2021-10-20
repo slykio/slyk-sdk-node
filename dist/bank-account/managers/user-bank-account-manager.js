@@ -30,19 +30,19 @@ function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflec
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 /**
- * Export `RateManager`.
+ * Export `UserBankAccountManager`.
  */
-var RateManager = /*#__PURE__*/function (_AbstractManager) {
-  (0, _inherits2.default)(RateManager, _AbstractManager);
+var UserBankAccountManager = /*#__PURE__*/function (_AbstractManager) {
+  (0, _inherits2.default)(UserBankAccountManager, _AbstractManager);
 
-  var _super = _createSuper(RateManager);
+  var _super = _createSuper(UserBankAccountManager);
 
-  function RateManager() {
-    (0, _classCallCheck2.default)(this, RateManager);
+  function UserBankAccountManager() {
+    (0, _classCallCheck2.default)(this, UserBankAccountManager);
     return _super.apply(this, arguments);
   }
 
-  (0, _createClass2.default)(RateManager, [{
+  (0, _createClass2.default)(UserBankAccountManager, [{
     key: "create",
     value:
     /**
@@ -50,7 +50,7 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
      */
     function () {
       var _create = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee(data) {
-        var _yield$this$resolver$, rate;
+        var _yield$this$resolver$, userBankAccount;
 
         return _regenerator.default.wrap(function _callee$(_context) {
           while (1) {
@@ -61,8 +61,8 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
 
               case 2:
                 _yield$this$resolver$ = _context.sent;
-                rate = _yield$this$resolver$.data;
-                return _context.abrupt("return", this.instantiate(rate));
+                userBankAccount = _yield$this$resolver$.data;
+                return _context.abrupt("return", this.instantiate(userBankAccount));
 
               case 5:
               case "end":
@@ -85,15 +85,14 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "delete",
     value: function () {
-      var _delete2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(baseAssetCode, quoteAssetCode) {
+      var _delete2 = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2(id) {
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
                 return this.resolver.delete({
-                  baseAssetCode,
-                  quoteAssetCode
+                  id
                 });
 
               case 2:
@@ -107,7 +106,7 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee2, this);
       }));
 
-      function _delete(_x2, _x3) {
+      function _delete(_x2) {
         return _delete2.apply(this, arguments);
       }
 
@@ -120,8 +119,8 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "get",
     value: function () {
-      var _get = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(baseAssetCode, quoteAssetCode, options) {
-        var _yield$this$resolver$2, rate;
+      var _get = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3(id, options) {
+        var _yield$this$resolver$2, data;
 
         return _regenerator.default.wrap(function _callee3$(_context3) {
           while (1) {
@@ -129,14 +128,13 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
               case 0:
                 _context3.next = 2;
                 return this.resolver.get({
-                  baseAssetCode,
-                  quoteAssetCode
+                  id
                 }, options);
 
               case 2:
                 _yield$this$resolver$2 = _context3.sent;
-                rate = _yield$this$resolver$2.data;
-                return _context3.abrupt("return", this.instantiate(rate));
+                data = _yield$this$resolver$2.data;
+                return _context3.abrupt("return", this.instantiate(data));
 
               case 5:
               case "end":
@@ -146,7 +144,7 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee3, this);
       }));
 
-      function get(_x4, _x5, _x6) {
+      function get(_x3, _x4) {
         return _get.apply(this, arguments);
       }
 
@@ -172,8 +170,8 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
 
               case 2:
                 result = _context4.sent;
-                results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (rate) {
-                  return _this.instantiate(rate);
+                results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (userBankAccount) {
+                  return _this.instantiate(userBankAccount);
                 });
                 total = (0, _lodash.get)(result, 'total');
                 return _context4.abrupt("return", {
@@ -189,49 +187,11 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee4, this);
       }));
 
-      function list(_x7) {
+      function list(_x5) {
         return _list.apply(this, arguments);
       }
 
       return list;
-    }()
-    /**
-     * Patch multiple.
-     */
-
-  }, {
-    key: "patchMultiple",
-    value: function () {
-      var _patchMultiple = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(data) {
-        var _this2 = this;
-
-        var result;
-        return _regenerator.default.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                _context5.next = 2;
-                return this.resolver.patchMultiple(data);
-
-              case 2:
-                result = _context5.sent;
-                return _context5.abrupt("return", (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (rate) {
-                  return _this2.instantiate(rate);
-                }));
-
-              case 4:
-              case "end":
-                return _context5.stop();
-            }
-          }
-        }, _callee5, this);
-      }));
-
-      function patchMultiple(_x8) {
-        return _patchMultiple.apply(this, arguments);
-      }
-
-      return patchMultiple;
     }()
     /**
      * Patch.
@@ -240,41 +200,40 @@ var RateManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "patch",
     value: function () {
-      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee6(baseAssetCode, quoteAssetCode, data) {
-        var _yield$this$resolver$3, rate;
+      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee5(id, data) {
+        var _yield$this$resolver$3, userBankAccount;
 
-        return _regenerator.default.wrap(function _callee6$(_context6) {
+        return _regenerator.default.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context6.prev = _context6.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
-                _context6.next = 2;
+                _context5.next = 2;
                 return this.resolver.patch((0, _lodash.merge)({}, data, {
-                  baseAssetCode,
-                  quoteAssetCode
+                  id
                 }));
 
               case 2:
-                _yield$this$resolver$3 = _context6.sent;
-                rate = _yield$this$resolver$3.data;
-                return _context6.abrupt("return", this.instantiate(rate));
+                _yield$this$resolver$3 = _context5.sent;
+                userBankAccount = _yield$this$resolver$3.data;
+                return _context5.abrupt("return", this.instantiate(userBankAccount));
 
               case 5:
               case "end":
-                return _context6.stop();
+                return _context5.stop();
             }
           }
-        }, _callee6, this);
+        }, _callee5, this);
       }));
 
-      function patch(_x9, _x10, _x11) {
+      function patch(_x6, _x7) {
         return _patch.apply(this, arguments);
       }
 
       return patch;
     }()
   }]);
-  return RateManager;
+  return UserBankAccountManager;
 }(_abstractManager.default);
 
-exports.default = RateManager;
+exports.default = UserBankAccountManager;
 module.exports = exports.default;

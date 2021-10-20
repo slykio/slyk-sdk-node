@@ -18,32 +18,28 @@ var _resolverFactory = _interopRequireDefault(require("../../core/util/resolver-
  */
 var config = {
   create: {
-    endpoint: 'rates',
+    endpoint: 'user-bank-accounts',
     method: 'post'
   },
   delete: {
-    endpoint: 'rates/:baseAssetCode/:quoteAssetCode',
+    endpoint: 'user-bank-accounts/:id',
     method: 'delete'
   },
   get: {
-    endpoint: 'rates/:baseAssetCode/:quoteAssetCode',
+    endpoint: 'user-bank-accounts/:id',
     method: 'get'
   },
   list: {
-    endpoint: 'rates',
+    endpoint: 'user-bank-accounts',
     method: 'get'
   },
   patch: {
-    endpoint: 'rates/:baseAssetCode/:quoteAssetCode',
-    method: 'patch'
-  },
-  patchMultiple: {
-    endpoint: 'rates',
+    endpoint: 'user-bank-accounts/:id',
     method: 'patch'
   }
 };
 /**
- * Export `RateResolver`.
+ * Export `UserBankAccountResolver`.
  */
 
 var _default = function _default(connection) {
