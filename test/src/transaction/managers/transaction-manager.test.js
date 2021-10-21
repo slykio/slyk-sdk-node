@@ -75,6 +75,60 @@ describe('TransactionManager', () => {
     });
   });
 
+  describe('exchange', () => {
+    it('should call api `/transactions/exchange` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/transactions/exchange', {
+          baseAmount: '5',
+          baseAssetCode: 'qux',
+          code: 'order',
+          quoteAssetCode: 'quux',
+          rate: '0.5',
+          walletId: 'foobar'
+        })
+        .reply(200, {
+          data: {
+            amount: '5.00000000',
+            assetCode: 'qux',
+            code: 'order',
+            destinationWalletId: 'foobar',
+            metadata: {
+              quoteAmount: '2.50000000',
+              quoteAssetCode: 'quux',
+              rate: '0.50000000'
+            },
+            originWalletId: 'foobar',
+            status: 'pending',
+            type: 'exchange'
+          }
+        });
+
+      const result = await slyk.transaction.exchange({
+        baseAmount: '5',
+        baseAssetCode: 'qux',
+        code: 'order',
+        quoteAssetCode: 'quux',
+        rate: '0.5',
+        walletId: 'foobar'
+      });
+
+      expect(result).toEqual({
+        amount: '5.00000000',
+        assetCode: 'qux',
+        code: 'order',
+        destinationWalletId: 'foobar',
+        metadata: {
+          quoteAmount: '2.50000000',
+          quoteAssetCode: 'quux',
+          rate: '0.50000000'
+        },
+        originWalletId: 'foobar',
+        status: 'pending',
+        type: 'exchange'
+      });
+    });
+  });
+
   describe('fail', () => {
     it('should call api `/transactions/bar/fail` endpoint with method `post` and return an instance of `Transaction` model with the given `data`', async () => {
       nock(host, { reqheaders: { apikey } })

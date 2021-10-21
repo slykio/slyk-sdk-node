@@ -350,148 +350,151 @@
     - [`transaction.deposit`](#transactiondeposit)
       - [Request](#request-106)
       - [Response](#response-106)
-    - [`transaction.fail`](#transactionfail)
+    - [`transaction.exchange`](#transactionexchange)
       - [Request](#request-107)
       - [Response](#response-107)
-    - [`transaction.get`](#transactionget)
+    - [`transaction.fail`](#transactionfail)
       - [Request](#request-108)
       - [Response](#response-108)
-    - [`transaction.list`](#transactionlist)
+    - [`transaction.get`](#transactionget)
       - [Request](#request-109)
       - [Response](#response-109)
-    - [`transaction.pay`](#transactionpay)
+    - [`transaction.list`](#transactionlist)
       - [Request](#request-110)
       - [Response](#response-110)
-    - [`transaction.reject`](#transactionreject)
+    - [`transaction.pay`](#transactionpay)
       - [Request](#request-111)
       - [Response](#response-111)
-    - [`transaction.request`](#transactionrequest)
+    - [`transaction.reject`](#transactionreject)
       - [Request](#request-112)
       - [Response](#response-112)
-    - [`transaction.send`](#transactionsend)
+    - [`transaction.request`](#transactionrequest)
       - [Request](#request-113)
       - [Response](#response-113)
-    - [`transaction.transfer`](#transactiontransfer)
+    - [`transaction.send`](#transactionsend)
       - [Request](#request-114)
       - [Response](#response-114)
-    - [`transaction.withdrawal`](#transactionwithdrawal)
+    - [`transaction.transfer`](#transactiontransfer)
       - [Request](#request-115)
       - [Response](#response-115)
-  - [user](#user)
-    - [`user.approve`](#userapprove)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
       - [Request](#request-116)
       - [Response](#response-116)
-    - [`user.block`](#userblock)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
       - [Request](#request-117)
       - [Response](#response-117)
-    - [`user.changeEmail`](#userchangeemail)
+    - [`user.block`](#userblock)
       - [Request](#request-118)
       - [Response](#response-118)
-    - [`user.changePassword`](#userchangepassword)
+    - [`user.changeEmail`](#userchangeemail)
       - [Request](#request-119)
       - [Response](#response-119)
-    - [`user.changePhone`](#userchangephone)
+    - [`user.changePassword`](#userchangepassword)
       - [Request](#request-120)
       - [Response](#response-120)
-    - [`user.confirmEmail`](#userconfirmemail)
+    - [`user.changePhone`](#userchangephone)
       - [Request](#request-121)
+      - [Response](#response-121)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-122)
       - [Responses](#responses)
     - [`user.confirmPhone`](#userconfirmphone)
-      - [Request](#request-122)
+      - [Request](#request-123)
       - [Responses](#responses-1)
     - [`user.create`](#usercreate)
-      - [Request](#request-123)
-      - [Response](#response-121)
-    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-124)
       - [Response](#response-122)
-    - [`user.get`](#userget)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-125)
       - [Response](#response-123)
-    - [`user.getReferralProgram`](#usergetreferralprogram)
+    - [`user.get`](#userget)
       - [Request](#request-126)
       - [Response](#response-124)
-    - [`user.delete`](#userdelete)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-127)
       - [Response](#response-125)
-    - [`user.list`](#userlist)
+    - [`user.delete`](#userdelete)
       - [Request](#request-128)
       - [Response](#response-126)
-    - [`user.patch`](#userpatch)
+    - [`user.list`](#userlist)
       - [Request](#request-129)
       - [Response](#response-127)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.patch`](#userpatch)
       - [Request](#request-130)
       - [Response](#response-128)
-    - [`user.resetPassword`](#userresetpassword)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-131)
       - [Response](#response-129)
-    - [`user.unblock`](#userunblock)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-132)
       - [Response](#response-130)
-  - [userBankAccount](#userbankaccount)
-    - [`userBankAccount.create`](#userbankaccountcreate)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-133)
       - [Response](#response-131)
-    - [`userBankAccount.delete`](#userbankaccountdelete)
+  - [userBankAccount](#userbankaccount)
+    - [`userBankAccount.create`](#userbankaccountcreate)
       - [Request](#request-134)
       - [Response](#response-132)
-    - [`userBankAccount.get`](#userbankaccountget)
+    - [`userBankAccount.delete`](#userbankaccountdelete)
       - [Request](#request-135)
       - [Response](#response-133)
-    - [`userBankAccount.list`](#userbankaccountlist)
+    - [`userBankAccount.get`](#userbankaccountget)
       - [Request](#request-136)
       - [Response](#response-134)
-    - [`userBankAccount.patch`](#userbankaccountpatch)
+    - [`userBankAccount.list`](#userbankaccountlist)
       - [Request](#request-137)
       - [Response](#response-135)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`userBankAccount.patch`](#userbankaccountpatch)
       - [Request](#request-138)
       - [Response](#response-136)
-    - [`wallet.balance`](#walletbalance)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-139)
       - [Response](#response-137)
-    - [`wallet.create`](#walletcreate)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-140)
       - [Response](#response-138)
-    - [`wallet.get`](#walletget)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-141)
       - [Response](#response-139)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`wallet.get`](#walletget)
       - [Request](#request-142)
       - [Response](#response-140)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-143)
       - [Response](#response-141)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-144)
       - [Response](#response-142)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-145)
       - [Response](#response-143)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-146)
       - [Response](#response-144)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-147)
       - [Response](#response-145)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`wallet.transactions`](#wallettransactions)
       - [Request](#request-148)
       - [Response](#response-146)
-    - [`webhook.delete`](#webhookdelete)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
       - [Request](#request-149)
       - [Response](#response-147)
-    - [`webhook.get`](#webhookget)
+    - [`webhook.delete`](#webhookdelete)
       - [Request](#request-150)
       - [Response](#response-148)
-    - [`webhook.list`](#webhooklist)
+    - [`webhook.get`](#webhookget)
       - [Request](#request-151)
       - [Response](#response-149)
-    - [`webhook.patch`](#webhookpatch)
+    - [`webhook.list`](#webhooklist)
       - [Request](#request-152)
       - [Response](#response-150)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-153)
+      - [Response](#response-151)
 
 ## address
 
@@ -4688,6 +4691,55 @@ await slyk.transaction.deposit({
   "reference": null,
   "status": "pending",
   "type": "deposit",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
+}
+```
+
+### `transaction.exchange`
+
+Creates a new `exchange` `transaction`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.transaction.exchange({
+  baseAmount: '5',
+  baseAssetCode: 'qux',
+  code: 'garply',
+  customData: { corge: 'garply' },
+  quoteAssetCode: 'quux',
+  rate: '0.5',
+  walletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+});
+```
+
+#### Response
+
+```json
+{
+  "amount": "5.00000000",
+  "assetCode": "qux",
+  "code": "garply",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "customData": { "corge": "garply" },
+  "description": null,
+  "destinationAddress": null,
+  "destinationWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+  "externalReference": null,
+  "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+  "metadata": {
+    "quoteAmount": "2.50000000",
+    "quoteAssetCode": "quux",
+    "rate": "0.50000000"
+  },
+  "originAddress": null,
+  "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+  "processedAt": null,
+  "reference": null,
+  "status": "pending",
+  "type": "exchange",
   "updatedAt": "2019-03-20T14:30:37.483Z"
 }
 ```

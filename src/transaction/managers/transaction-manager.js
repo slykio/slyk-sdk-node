@@ -43,6 +43,16 @@ export default class TransactionManager extends AbstractManager {
   }
 
   /**
+   * Exchange.
+   */
+
+  async exchange(data) {
+    const { data: transaction } = await this.resolver.exchange(data);
+
+    return this.instantiate(transaction);
+  }
+
+  /**
    * Fail.
    */
 
