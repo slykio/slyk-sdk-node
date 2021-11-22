@@ -1,5 +1,12 @@
 # Changelog
 
+## [v0.15.0](https://github.com/slykio/slyk-sdk-node/tree/v0.15.0) (2021-11-22)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.14.0...v0.15.0)
+
+**Merged pull requests:**
+
+- Add exchange transaction method [\#52](https://github.com/slykio/slyk-sdk-node/pull/52) ([johnmaia](https://github.com/johnmaia))
+
 ## [v0.14.0](https://github.com/slykio/slyk-sdk-node/tree/v0.14.0) (2021-10-20)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.13.0...v0.14.0)
 
@@ -8,20 +15,16 @@
 - Add user bank account methods [\#51](https://github.com/slykio/slyk-sdk-node/pull/51) ([kratos-42](https://github.com/kratos-42))
 - Add transaction multiple patch method [\#50](https://github.com/slykio/slyk-sdk-node/pull/50) ([nunovieira220](https://github.com/nunovieira220))
 - Add rate multiple patch method [\#49](https://github.com/slykio/slyk-sdk-node/pull/49) ([nunovieira220](https://github.com/nunovieira220))
-- Add change user identifier methods [\#17](https://github.com/slykio/slyk-sdk-node/pull/17) ([kratos-42](https://github.com/kratos-42))
 
 ## [v0.13.0](https://github.com/slykio/slyk-sdk-node/tree/v0.13.0) (2021-09-29)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.12.0...v0.13.0)
-
-**Merged pull requests:**
-
-- Add patch transaction method [\#48](https://github.com/slykio/slyk-sdk-node/pull/48) ([nunovieira220](https://github.com/nunovieira220))
 
 ## [v0.12.0](https://github.com/slykio/slyk-sdk-node/tree/v0.12.0) (2021-08-27)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.11.0...v0.12.0)
 
 **Merged pull requests:**
 
+- Add patch transaction method [\#48](https://github.com/slykio/slyk-sdk-node/pull/48) ([nunovieira220](https://github.com/nunovieira220))
 - Improve AuthManager validate method [\#44](https://github.com/slykio/slyk-sdk-node/pull/44) ([kratos-42](https://github.com/kratos-42))
 
 ## [v0.11.0](https://github.com/slykio/slyk-sdk-node/tree/v0.11.0) (2021-05-28)
@@ -51,7 +54,6 @@
 **Merged pull requests:**
 
 - Improve core classes privacy [\#32](https://github.com/slykio/slyk-sdk-node/pull/32) ([johnmaia](https://github.com/johnmaia))
-- Update package dependencies [\#31](https://github.com/slykio/slyk-sdk-node/pull/31) ([johnmaia](https://github.com/johnmaia))
 - Update documentation with new media fields [\#30](https://github.com/slykio/slyk-sdk-node/pull/30) ([kratos-42](https://github.com/kratos-42))
 
 ## [v0.7.0](https://github.com/slykio/slyk-sdk-node/tree/v0.7.0) (2021-02-09)
@@ -69,14 +71,13 @@
 - Add getReferralProgram method to user module [\#27](https://github.com/slykio/slyk-sdk-node/pull/27) ([kratos-42](https://github.com/kratos-42))
 - Add bankAccount and bankAccountRegion methods [\#26](https://github.com/slykio/slyk-sdk-node/pull/26) ([kratos-42](https://github.com/kratos-42))
 - Bump ini from 1.3.5 to 1.3.8 [\#22](https://github.com/slykio/slyk-sdk-node/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Add store module [\#18](https://github.com/slykio/slyk-sdk-node/pull/18) ([JEduardogmr](https://github.com/JEduardogmr))
-- Add transfer request and send methods [\#16](https://github.com/slykio/slyk-sdk-node/pull/16) ([JEduardogmr](https://github.com/JEduardogmr))
 
 ## [v0.5.0](https://github.com/slykio/slyk-sdk-node/tree/v0.5.0) (2021-01-18)
 [Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.4.0...v0.5.0)
 
 **Merged pull requests:**
 
+- Update package dependencies [\#31](https://github.com/slykio/slyk-sdk-node/pull/31) ([johnmaia](https://github.com/johnmaia))
 - Add delete to user module [\#25](https://github.com/slykio/slyk-sdk-node/pull/25) ([kratos-42](https://github.com/kratos-42))
 - Fix errorHandler by handling incoming data object [\#24](https://github.com/slykio/slyk-sdk-node/pull/24) ([kratos-42](https://github.com/kratos-42))
 
@@ -95,6 +96,9 @@
 **Merged pull requests:**
 
 - Add user forgot and reset password methods [\#19](https://github.com/slykio/slyk-sdk-node/pull/19) ([kratos-42](https://github.com/kratos-42))
+- Add store module [\#18](https://github.com/slykio/slyk-sdk-node/pull/18) ([JEduardogmr](https://github.com/JEduardogmr))
+- Add change user identifier methods [\#17](https://github.com/slykio/slyk-sdk-node/pull/17) ([kratos-42](https://github.com/kratos-42))
+- Add transfer request and send methods [\#16](https://github.com/slykio/slyk-sdk-node/pull/16) ([JEduardogmr](https://github.com/JEduardogmr))
 - Add auth module [\#15](https://github.com/slykio/slyk-sdk-node/pull/15) ([JEduardogmr](https://github.com/JEduardogmr))
 - Bump yargs-parser from 13.1.1 to 13.1.2 [\#14](https://github.com/slykio/slyk-sdk-node/pull/14) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump lodash from 4.17.11 to 4.17.19 [\#13](https://github.com/slykio/slyk-sdk-node/pull/13) ([dependabot[bot]](https://github.com/apps/dependabot))

@@ -29,6 +29,10 @@ var config = {
     endpoint: 'transactions/deposit',
     method: 'post'
   },
+  exchange: {
+    endpoint: 'transactions/exchange',
+    method: 'post'
+  },
   fail: {
     endpoint: 'transactions/:id/fail',
     method: 'post'
