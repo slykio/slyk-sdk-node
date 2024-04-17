@@ -15,490 +15,514 @@
       - [Request](#request-2)
       - [Response](#response-2)
   - [auth](#auth)
-    - [`auth.login`](#authlogin)
+    - [`auth.confirmTwoFactorCode`](#authconfirmtwofactorcode)
       - [Request](#request-3)
       - [Response](#response-3)
-    - [`auth.logout`](#authlogout)
+    - [`auth.disableTwoFactor`](#authdisabletwofactor)
       - [Request](#request-4)
       - [Response](#response-4)
-    - [`auth.refresh`](#authrefresh)
+    - [`auth.enableTwoFactor`](#authenableTwoFactor)
       - [Request](#request-5)
       - [Response](#response-5)
-    - [`auth.validate`](#authvalidate)
+    - [`auth.generateTwoFactorRecoveryCodes`](#authgeneratetwofactorrecoverycodes)
       - [Request](#request-6)
       - [Response](#response-6)
-  - [asset](#asset)
-    - [`asset.create`](#assetcreate)
+    - [`auth.getTwoFactorRecoveryCodes`](#authgettwofactorrecoverycodes)
       - [Request](#request-7)
       - [Response](#response-7)
-    - [`asset.get`](#assetget)
+    - [`auth.getTwoFactorSecret`](#authgettwofactorsecret)
       - [Request](#request-8)
       - [Response](#response-8)
-    - [`asset.list`](#assetlist)
+    - [`auth.login`](#authlogin)
       - [Request](#request-9)
       - [Response](#response-9)
-    - [`asset.patch`](#assetpatch)
       - [Request](#request-10)
       - [Response](#response-10)
-  - [bankAccount](#bankaccount)
-    - [`bankAccount.get`](#bankaccountget)
+    - [`auth.logout`](#authlogout)
       - [Request](#request-11)
       - [Response](#response-11)
-    - [`bankAccount.list`](#bankaccountlist)
+    - [`auth.refresh`](#authrefresh)
       - [Request](#request-12)
       - [Response](#response-12)
-  - [bankAccountRegion](#bankaccountregion)
-    - [`bankAccountRegion.list`](#bankaccountregionlist)
+    - [`auth.startTwoFactorFlow`](#authstarttwofactorflow)
       - [Request](#request-13)
       - [Response](#response-13)
-  - [connection](#connection)
-    - [`connection.create`](#connectioncreate)
+    - [`auth.validate`](#authvalidate)
       - [Request](#request-14)
       - [Response](#response-14)
-    - [`connection.get`](#connectionget)
+  - [asset](#asset)
+    - [`asset.create`](#assetcreate)
       - [Request](#request-15)
       - [Response](#response-15)
-    - [`connection.list`](#connectionlist)
+    - [`asset.get`](#assetget)
       - [Request](#request-16)
       - [Response](#response-16)
-    - [`connection.patch`](#connectionpatch)
+    - [`asset.list`](#assetlist)
       - [Request](#request-17)
       - [Response](#response-17)
-  - [identity](#identity)
-    - [`identity.approve`](#identityapprove)
+    - [`asset.patch`](#assetpatch)
       - [Request](#request-18)
       - [Response](#response-18)
-    - [`identity.cancel`](#identitycancel)
+  - [bankAccount](#bankaccount)
+    - [`bankAccount.get`](#bankaccountget)
       - [Request](#request-19)
       - [Response](#response-19)
-    - [`identity.create`](#identitycreate)
+    - [`bankAccount.list`](#bankaccountlist)
       - [Request](#request-20)
       - [Response](#response-20)
-    - [`identity.delete`](#identitydelete)
+  - [bankAccountRegion](#bankaccountregion)
+    - [`bankAccountRegion.list`](#bankaccountregionlist)
       - [Request](#request-21)
       - [Response](#response-21)
-    - [`identity.get`](#identityget)
+  - [connection](#connection)
+    - [`connection.create`](#connectioncreate)
       - [Request](#request-22)
       - [Response](#response-22)
-    - [`identity.list`](#identitylist)
+    - [`connection.get`](#connectionget)
       - [Request](#request-23)
       - [Response](#response-23)
-    - [`identity.reject`](#identityreject)
+    - [`connection.list`](#connectionlist)
       - [Request](#request-24)
       - [Response](#response-24)
-    - [`identity.submit`](#identitysubmit)
+    - [`connection.patch`](#connectionpatch)
       - [Request](#request-25)
       - [Response](#response-25)
-  - [IdentityDocument](#identitydocument)
-  - [`identityDocument.create`](#identitydocumentcreate)
+  - [identity](#identity)
+    - [`identity.approve`](#identityapprove)
       - [Request](#request-26)
       - [Response](#response-26)
-  - [`identityDocument.delete`](#identitydocumentdelete)
+    - [`identity.cancel`](#identitycancel)
       - [Request](#request-27)
       - [Response](#response-27)
-  - [`identityDocument.get`](#identitydocumentget)
+    - [`identity.create`](#identitycreate)
       - [Request](#request-28)
       - [Response](#response-28)
-  - [`identityDocument.list`](#identitydocumentlist)
+    - [`identity.delete`](#identitydelete)
       - [Request](#request-29)
       - [Response](#response-29)
-  - [invite](#invite)
-    - [`invite.cancel`](#invitecancel)
+    - [`identity.get`](#identityget)
       - [Request](#request-30)
       - [Response](#response-30)
-    - [`invite.create`](#invitecreate)
+    - [`identity.list`](#identitylist)
       - [Request](#request-31)
       - [Response](#response-31)
-    - [`invite.get`](#inviteget)
+    - [`identity.reject`](#identityreject)
       - [Request](#request-32)
       - [Response](#response-32)
-    - [`invite.list`](#invitelist)
+    - [`identity.submit`](#identitysubmit)
       - [Request](#request-33)
       - [Response](#response-33)
-    - [`invite.send`](#invitesend)
-      - [Request](#request-34)
-      - [Response](#response-34)
-    - [`invite.validate`](#invitevalidate)
-      - [Request](#request-35)
-      - [Response](#response-35)
-  - [movement](#movement)
-    - [`movement.get`](#movementget)
-      - [Request](#request-36)
-      - [Response](#response-36)
-    - [`movement.list`](#movementlist)
-      - [Request](#request-37)
-      - [Response](#response-37)
-  - [order](#order)
-    - [`order.cancel`](#ordercancel)
+  - [IdentityDocument](#identitydocument)
+  - [`identityDocument.create`](#identitydocumentcreate)
+    - [Request](#request-34)
+    - [Response](#response-34)
+  - [`identityDocument.delete`](#identitydocumentdelete)
+    - [Request](#request-35)
+    - [Response](#response-35)
+  - [`identityDocument.get`](#identitydocumentget)
+    - [Request](#request-36)
+    - [Response](#response-36)
+  - [`identityDocument.list`](#identitydocumentlist)
+    - [Request](#request-37)
+    - [Response](#response-37)
+  - [invite](#invite)
+    - [`invite.cancel`](#invitecancel)
       - [Request](#request-38)
       - [Response](#response-38)
-    - [`order.create`](#ordercreate)
+    - [`invite.create`](#invitecreate)
       - [Request](#request-39)
       - [Response](#response-39)
-    - [`order.fulfill`](#orderfulfill)
+    - [`invite.get`](#inviteget)
       - [Request](#request-40)
       - [Response](#response-40)
-    - [`order.get`](#orderget)
+    - [`invite.list`](#invitelist)
       - [Request](#request-41)
       - [Response](#response-41)
-    - [`order.list`](#orderlist)
+    - [`invite.send`](#invitesend)
       - [Request](#request-42)
       - [Response](#response-42)
-    - [`order.patch`](#orderpatch)
+    - [`invite.validate`](#invitevalidate)
       - [Request](#request-43)
       - [Response](#response-43)
-    - [`order.pay`](#orderpay)
+  - [movement](#movement)
+    - [`movement.get`](#movementget)
       - [Request](#request-44)
       - [Response](#response-44)
-    - [`order.refund`](#orderrefund)
+    - [`movement.list`](#movementlist)
       - [Request](#request-45)
       - [Response](#response-45)
-    - [`order.unfulfill`](#orderunfulfill)
+  - [order](#order)
+    - [`order.cancel`](#ordercancel)
       - [Request](#request-46)
       - [Response](#response-46)
-  - [orderLine](#orderline)
-    - [`orderLine.fulfill`](#orderlinefulfill)
+    - [`order.create`](#ordercreate)
       - [Request](#request-47)
       - [Response](#response-47)
-    - [`orderLine.get`](#orderlineget)
+    - [`order.fulfill`](#orderfulfill)
       - [Request](#request-48)
       - [Response](#response-48)
-    - [`orderLine.list`](#orderlinelist)
+    - [`order.get`](#orderget)
       - [Request](#request-49)
       - [Response](#response-49)
-    - [`orderLine.unfulfill`](#orderlineunfulfill)
+    - [`order.list`](#orderlist)
       - [Request](#request-50)
       - [Response](#response-50)
-  - [paymentMethod](#paymentmethod)
-    - [`paymentMethod.get`](#paymentmethodget)
+    - [`order.patch`](#orderpatch)
       - [Request](#request-51)
       - [Response](#response-51)
-    - [`paymentMethod.list`](#paymentmethodlist)
+    - [`order.pay`](#orderpay)
       - [Request](#request-52)
       - [Response](#response-52)
-  - [product](#product)
-    - [`product.create`](#productcreate)
+    - [`order.refund`](#orderrefund)
       - [Request](#request-53)
       - [Response](#response-53)
-    - [`product.createQuestion`](#productcreatequestion)
+    - [`order.unfulfill`](#orderunfulfill)
       - [Request](#request-54)
       - [Response](#response-54)
-    - [`product.delete`](#productdelete)
+  - [orderLine](#orderline)
+    - [`orderLine.fulfill`](#orderlinefulfill)
       - [Request](#request-55)
       - [Response](#response-55)
-    - [`product.deleteQuestion`](#productdeletequestion)
+    - [`orderLine.get`](#orderlineget)
       - [Request](#request-56)
       - [Response](#response-56)
-    - [`product.get`](#productget)
+    - [`orderLine.list`](#orderlinelist)
       - [Request](#request-57)
       - [Response](#response-57)
-    - [`product.list`](#productlist)
+    - [`orderLine.unfulfill`](#orderlineunfulfill)
       - [Request](#request-58)
       - [Response](#response-58)
-    - [`product.patch`](#productpatch)
+  - [paymentMethod](#paymentmethod)
+    - [`paymentMethod.get`](#paymentmethodget)
       - [Request](#request-59)
       - [Response](#response-59)
-    - [`product.reorder`](#productreorder)
+    - [`paymentMethod.list`](#paymentmethodlist)
       - [Request](#request-60)
       - [Response](#response-60)
-    - [`product.reorderQuestion`](#productreorderquestion)
+  - [product](#product)
+    - [`product.create`](#productcreate)
       - [Request](#request-61)
       - [Response](#response-61)
-  - [productCategory](#productcategory)
-    - [`productCategory.create`](#productcategorycreate)
+    - [`product.createQuestion`](#productcreatequestion)
       - [Request](#request-62)
       - [Response](#response-62)
-    - [`productCategory.delete`](#productcategorydelete)
+    - [`product.delete`](#productdelete)
       - [Request](#request-63)
       - [Response](#response-63)
-    - [`productCategory.get`](#productcategoryget)
+    - [`product.deleteQuestion`](#productdeletequestion)
       - [Request](#request-64)
       - [Response](#response-64)
-    - [`productCategory.list`](#productcategorylist)
+    - [`product.get`](#productget)
       - [Request](#request-65)
       - [Response](#response-65)
-    - [`productCategory.patch`](#productcategorypatch)
+    - [`product.list`](#productlist)
       - [Request](#request-66)
       - [Response](#response-66)
-    - [`productCategory.reorder`](#productcategoryreorder)
+    - [`product.patch`](#productpatch)
       - [Request](#request-67)
       - [Response](#response-67)
-  - [productImage](#productimage)
-    - [`productImage.create`](#productimagecreate)
+    - [`product.reorder`](#productreorder)
       - [Request](#request-68)
       - [Response](#response-68)
-    - [`productImage.delete`](#productimagedelete)
+    - [`product.reorderQuestion`](#productreorderquestion)
       - [Request](#request-69)
       - [Response](#response-69)
-    - [`productImage.get`](#productimageget)
+  - [productCategory](#productcategory)
+    - [`productCategory.create`](#productcategorycreate)
       - [Request](#request-70)
       - [Response](#response-70)
-    - [`productImage.list`](#productimagelist)
+    - [`productCategory.delete`](#productcategorydelete)
       - [Request](#request-71)
       - [Response](#response-71)
-    - [`productImage.reorder`](#productimagereorder)
+    - [`productCategory.get`](#productcategoryget)
       - [Request](#request-72)
       - [Response](#response-72)
-  - [question](#question)
-    - [`question.create`](#questioncreate)
+    - [`productCategory.list`](#productcategorylist)
       - [Request](#request-73)
       - [Response](#response-73)
-    - [`question.delete`](#questiondelete)
+    - [`productCategory.patch`](#productcategorypatch)
       - [Request](#request-74)
       - [Response](#response-74)
-    - [`question.get`](#questionget)
+    - [`productCategory.reorder`](#productcategoryreorder)
       - [Request](#request-75)
       - [Response](#response-75)
-    - [`question.list`](#questionlist)
+  - [productImage](#productimage)
+    - [`productImage.create`](#productimagecreate)
       - [Request](#request-76)
       - [Response](#response-76)
-    - [`question.patch`](#questionpatch)
+    - [`productImage.delete`](#productimagedelete)
       - [Request](#request-77)
       - [Response](#response-77)
-  - [questionType](#questiontype)
-    - [`question.list`](#questionlist-1)
+    - [`productImage.get`](#productimageget)
       - [Request](#request-78)
       - [Response](#response-78)
-  - [rate](#rate)
-    - [`rate.create`](#ratecreate)
+    - [`productImage.list`](#productimagelist)
       - [Request](#request-79)
       - [Response](#response-79)
-    - [`rate.delete`](#ratedelete)
+    - [`productImage.reorder`](#productimagereorder)
       - [Request](#request-80)
       - [Response](#response-80)
-    - [`rate.get`](#rateget)
+  - [question](#question)
+    - [`question.create`](#questioncreate)
       - [Request](#request-81)
       - [Response](#response-81)
-    - [`rate.list`](#ratelist)
+    - [`question.delete`](#questiondelete)
       - [Request](#request-82)
       - [Response](#response-82)
-    - [`rate.patch`](#ratepatch)
+    - [`question.get`](#questionget)
       - [Request](#request-83)
       - [Response](#response-83)
-    - [setting](#setting)
-    - [`setting.get`](#settingget)
+    - [`question.list`](#questionlist)
       - [Request](#request-84)
       - [Response](#response-84)
-    - [`setting.list`](#settinglist)
+    - [`question.patch`](#questionpatch)
       - [Request](#request-85)
       - [Response](#response-85)
-  - [task](#task)
-    - [`task.complete`](#taskcomplete)
+  - [questionType](#questiontype)
+    - [`question.list`](#questionlist-1)
       - [Request](#request-86)
       - [Response](#response-86)
-    - [`task.completeSurvey`](#taskcompletesurvey)
+  - [rate](#rate)
+    - [`rate.create`](#ratecreate)
       - [Request](#request-87)
       - [Response](#response-87)
-    - [`task.create`](#taskcreate)
+    - [`rate.delete`](#ratedelete)
       - [Request](#request-88)
       - [Response](#response-88)
-    - [`task.get`](#taskget)
+    - [`rate.get`](#rateget)
       - [Request](#request-89)
       - [Response](#response-89)
-    - [`task.getStatistics`](#taskgetstatistics)
+    - [`rate.list`](#ratelist)
       - [Request](#request-90)
       - [Response](#response-90)
-    - [`task.list`](#tasklist)
+    - [`rate.patch`](#ratepatch)
       - [Request](#request-91)
       - [Response](#response-91)
-    - [`task.listAnswers`](#tasklistanswers)
+    - [setting](#setting)
+    - [`setting.get`](#settingget)
       - [Request](#request-92)
       - [Response](#response-92)
-    - [`task.patch`](#taskpatch)
+    - [`setting.list`](#settinglist)
       - [Request](#request-93)
       - [Response](#response-93)
-    - [`task.reorder`](#taskreorder)
+  - [task](#task)
+    - [`task.complete`](#taskcomplete)
       - [Request](#request-94)
       - [Response](#response-94)
-  - [taskStep](#taskstep)
-    - [`taskStep.get`](#taskstepget)
+    - [`task.completeSurvey`](#taskcompletesurvey)
       - [Request](#request-95)
       - [Response](#response-95)
-    - [`taskStep.list`](#tasksteplist)
+    - [`task.create`](#taskcreate)
       - [Request](#request-96)
       - [Response](#response-96)
-    - [`taskStep.patch`](#tasksteppatch)
+    - [`task.get`](#taskget)
       - [Request](#request-97)
       - [Response](#response-97)
-  - [taskStepQuestion](#taskstepquestion)
-    - [`taskStepQuestion.list`](#taskstepquestionlist)
+    - [`task.getStatistics`](#taskgetstatistics)
       - [Request](#request-98)
       - [Response](#response-98)
-  - [taxRate](#taxrate)
-    - [`taxRate.create`](#taxratecreate)
+    - [`task.list`](#tasklist)
       - [Request](#request-99)
       - [Response](#response-99)
-    - [`taxRate.delete`](#taxratedelete)
+    - [`task.listAnswers`](#tasklistanswers)
       - [Request](#request-100)
       - [Response](#response-100)
-    - [`taxRate.get`](#taxrateget)
+    - [`task.patch`](#taskpatch)
       - [Request](#request-101)
       - [Response](#response-101)
-    - [`taxRate.list`](#taxratelist)
+    - [`task.reorder`](#taskreorder)
       - [Request](#request-102)
       - [Response](#response-102)
-    - [`taxRate.patch`](#taxratepatch)
+  - [taskStep](#taskstep)
+    - [`taskStep.get`](#taskstepget)
       - [Request](#request-103)
       - [Response](#response-103)
-  - [transaction](#transaction)
-    - [`transaction.approve`](#transactionapprove)
+    - [`taskStep.list`](#tasksteplist)
       - [Request](#request-104)
       - [Response](#response-104)
-    - [`transaction.confirm`](#transactionconfirm)
+    - [`taskStep.patch`](#tasksteppatch)
       - [Request](#request-105)
       - [Response](#response-105)
-    - [`transaction.deposit`](#transactiondeposit)
+  - [taskStepQuestion](#taskstepquestion)
+    - [`taskStepQuestion.list`](#taskstepquestionlist)
       - [Request](#request-106)
       - [Response](#response-106)
-    - [`transaction.exchange`](#transactionexchange)
+  - [taxRate](#taxrate)
+    - [`taxRate.create`](#taxratecreate)
       - [Request](#request-107)
       - [Response](#response-107)
-    - [`transaction.fail`](#transactionfail)
+    - [`taxRate.delete`](#taxratedelete)
       - [Request](#request-108)
       - [Response](#response-108)
-    - [`transaction.get`](#transactionget)
+    - [`taxRate.get`](#taxrateget)
       - [Request](#request-109)
       - [Response](#response-109)
-    - [`transaction.list`](#transactionlist)
+    - [`taxRate.list`](#taxratelist)
       - [Request](#request-110)
       - [Response](#response-110)
-    - [`transaction.pay`](#transactionpay)
+    - [`taxRate.patch`](#taxratepatch)
       - [Request](#request-111)
       - [Response](#response-111)
-    - [`transaction.reject`](#transactionreject)
+  - [transaction](#transaction)
+    - [`transaction.approve`](#transactionapprove)
       - [Request](#request-112)
       - [Response](#response-112)
-    - [`transaction.request`](#transactionrequest)
+    - [`transaction.confirm`](#transactionconfirm)
       - [Request](#request-113)
       - [Response](#response-113)
-    - [`transaction.send`](#transactionsend)
+    - [`transaction.deposit`](#transactiondeposit)
       - [Request](#request-114)
       - [Response](#response-114)
-    - [`transaction.transfer`](#transactiontransfer)
+    - [`transaction.exchange`](#transactionexchange)
       - [Request](#request-115)
       - [Response](#response-115)
-    - [`transaction.withdrawal`](#transactionwithdrawal)
+    - [`transaction.fail`](#transactionfail)
       - [Request](#request-116)
       - [Response](#response-116)
-  - [user](#user)
-    - [`user.approve`](#userapprove)
+    - [`transaction.get`](#transactionget)
       - [Request](#request-117)
       - [Response](#response-117)
-    - [`user.block`](#userblock)
+    - [`transaction.list`](#transactionlist)
       - [Request](#request-118)
       - [Response](#response-118)
-    - [`user.changeEmail`](#userchangeemail)
+    - [`transaction.pay`](#transactionpay)
       - [Request](#request-119)
       - [Response](#response-119)
-    - [`user.changePassword`](#userchangepassword)
+    - [`transaction.reject`](#transactionreject)
       - [Request](#request-120)
       - [Response](#response-120)
-    - [`user.changePhone`](#userchangephone)
+    - [`transaction.request`](#transactionrequest)
       - [Request](#request-121)
       - [Response](#response-121)
-    - [`user.confirmEmail`](#userconfirmemail)
+    - [`transaction.send`](#transactionsend)
       - [Request](#request-122)
+      - [Response](#response-122)
+    - [`transaction.transfer`](#transactiontransfer)
+      - [Request](#request-123)
+      - [Response](#response-123)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
+      - [Request](#request-124)
+      - [Response](#response-124)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
+      - [Request](#request-125)
+      - [Response](#response-125)
+    - [`user.block`](#userblock)
+      - [Request](#request-126)
+      - [Response](#response-126)
+    - [`user.changeEmail`](#userchangeemail)
+      - [Request](#request-127)
+      - [Response](#response-127)
+    - [`user.changePassword`](#userchangepassword)
+      - [Request](#request-128)
+      - [Response](#response-128)
+    - [`user.changePhone`](#userchangephone)
+      - [Request](#request-129)
+      - [Response](#response-129)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-130)
       - [Responses](#responses)
     - [`user.confirmPhone`](#userconfirmphone)
-      - [Request](#request-123)
+      - [Request](#request-131)
       - [Responses](#responses-1)
     - [`user.create`](#usercreate)
-      - [Request](#request-124)
-      - [Response](#response-122)
-    - [`user.forgotPassword`](#userforgotpassword)
-      - [Request](#request-125)
-      - [Response](#response-123)
-    - [`user.get`](#userget)
-      - [Request](#request-126)
-      - [Response](#response-124)
-    - [`user.getReferralProgram`](#usergetreferralprogram)
-      - [Request](#request-127)
-      - [Response](#response-125)
-    - [`user.delete`](#userdelete)
-      - [Request](#request-128)
-      - [Response](#response-126)
-    - [`user.list`](#userlist)
-      - [Request](#request-129)
-      - [Response](#response-127)
-    - [`user.patch`](#userpatch)
-      - [Request](#request-130)
-      - [Response](#response-128)
-    - [`user.resendConfirmation`](#userresendconfirmation)
-      - [Request](#request-131)
-      - [Response](#response-129)
-    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-132)
       - [Response](#response-130)
-    - [`user.unblock`](#userunblock)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-133)
       - [Response](#response-131)
-  - [userBankAccount](#userbankaccount)
-    - [`userBankAccount.create`](#userbankaccountcreate)
+    - [`user.get`](#userget)
       - [Request](#request-134)
       - [Response](#response-132)
-    - [`userBankAccount.delete`](#userbankaccountdelete)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-135)
       - [Response](#response-133)
-    - [`userBankAccount.get`](#userbankaccountget)
+    - [`user.delete`](#userdelete)
       - [Request](#request-136)
       - [Response](#response-134)
-    - [`userBankAccount.list`](#userbankaccountlist)
+    - [`user.list`](#userlist)
       - [Request](#request-137)
       - [Response](#response-135)
-    - [`userBankAccount.patch`](#userbankaccountpatch)
+    - [`user.patch`](#userpatch)
       - [Request](#request-138)
       - [Response](#response-136)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-139)
       - [Response](#response-137)
-    - [`wallet.balance`](#walletbalance)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-140)
       - [Response](#response-138)
-    - [`wallet.create`](#walletcreate)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-141)
       - [Response](#response-139)
-    - [`wallet.get`](#walletget)
+  - [userBankAccount](#userbankaccount)
+    - [`userBankAccount.create`](#userbankaccountcreate)
       - [Request](#request-142)
       - [Response](#response-140)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`userBankAccount.delete`](#userbankaccountdelete)
       - [Request](#request-143)
       - [Response](#response-141)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`userBankAccount.get`](#userbankaccountget)
       - [Request](#request-144)
       - [Response](#response-142)
-    - [`wallet.list`](#walletlist)
+    - [`userBankAccount.list`](#userbankaccountlist)
       - [Request](#request-145)
       - [Response](#response-143)
-    - [`wallet.movements`](#walletmovements)
+    - [`userBankAccount.patch`](#userbankaccountpatch)
       - [Request](#request-146)
       - [Response](#response-144)
-    - [`wallet.patch`](#walletpatch)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-147)
       - [Response](#response-145)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-148)
       - [Response](#response-146)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-149)
       - [Response](#response-147)
-    - [`webhook.delete`](#webhookdelete)
+    - [`wallet.get`](#walletget)
       - [Request](#request-150)
       - [Response](#response-148)
-    - [`webhook.get`](#webhookget)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-151)
       - [Response](#response-149)
-    - [`webhook.list`](#webhooklist)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-152)
       - [Response](#response-150)
-    - [`webhook.patch`](#webhookpatch)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-153)
       - [Response](#response-151)
+    - [`wallet.movements`](#walletmovements)
+      - [Request](#request-154)
+      - [Response](#response-152)
+    - [`wallet.patch`](#walletpatch)
+      - [Request](#request-155)
+      - [Response](#response-153)
+    - [`wallet.transactions`](#wallettransactions)
+      - [Request](#request-156)
+      - [Response](#response-154)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
+      - [Request](#request-157)
+      - [Response](#response-155)
+    - [`webhook.delete`](#webhookdelete)
+      - [Request](#request-158)
+      - [Response](#response-156)
+    - [`webhook.get`](#webhookget)
+      - [Request](#request-159)
+      - [Response](#response-157)
+    - [`webhook.list`](#webhooklist)
+      - [Request](#request-160)
+      - [Response](#response-158)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-161)
+      - [Response](#response-159)
 
 ## address
 
 The result of each one of the following `address` methods return one or an array of `Address` objects that include the following methods:
+
 - `getAsset`: Returns the `asset` of the `address` `assetCode`.
 - `getWallet`: Returns the `wallet` of the `address` `walletId` if set.
 
@@ -512,9 +536,9 @@ Creates a new `address`.
 
 ```js
 await slyk.address.create({
-  address: 'xyzzy',
-  assetCode: 'foo',
-  walletId: '9afa8a2d-023a-4040-b591-c03077f43d23'
+  address: "xyzzy",
+  assetCode: "foo",
+  walletId: "9afa8a2d-023a-4040-b591-c03077f43d23",
 });
 ```
 
@@ -541,7 +565,7 @@ Retrieves the `address` of the given `address`.
 #### Request
 
 ```js
-await slyk.address.get('xyzzy');
+await slyk.address.get("xyzzy");
 ```
 
 #### Response
@@ -569,8 +593,8 @@ Retrieves a list of `addresses`.
 ```js
 await slyk.address.list({
   page: { size: 2 },
-  sort: [{ name: 'createdAt'}],
-  filter: { walletId: '9afa8a2d-023a-4040-b591-c03077f43d23' }
+  sort: [{ name: "createdAt" }],
+  filter: { walletId: "9afa8a2d-023a-4040-b591-c03077f43d23" },
 });
 ```
 
@@ -578,33 +602,157 @@ await slyk.address.list({
 
 ```json
 {
-  "results": [{
-    "address": "xyzzy",
-    "assetCode": "foo",
-    "customData": {},
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "metadata": {},
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "walletId": "9afa8a2d-023a-4040-b591-c03077f43d23"
-  },
-  {
-    "address": "garply",
-    "assetCode": "foo",
-    "customData": {},
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "metadata": {},
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "walletId": "9afa8a2d-023a-4040-b591-c03077f43d23"
-  }],
+  "results": [
+    {
+      "address": "xyzzy",
+      "assetCode": "foo",
+      "customData": {},
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "metadata": {},
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "walletId": "9afa8a2d-023a-4040-b591-c03077f43d23"
+    },
+    {
+      "address": "garply",
+      "assetCode": "foo",
+      "customData": {},
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "metadata": {},
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "walletId": "9afa8a2d-023a-4040-b591-c03077f43d23"
+    }
+  ],
   "total": 32
 }
 ```
 
 ## auth
 
+### `auth.confirmTwoFactorCode`
+
+Confirms a two factor `code` returning a `trustToken`.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.confirmTwoFactorCode("123", { code: "123456" });
+```
+
+#### Response
+
+```json
+{ "trustToken": "123" }
+```
+
+### `auth.disableTwoFactor`
+
+Disables two factor.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.disableTwoFactor("5e101529-fa30-4415-9945-6540e70c4483", {
+  code: "123456",
+  methodId: "123",
+});
+```
+
+#### Response
+
+```json
+true
+```
+
+### `auth.enableTwoFactor`
+
+Enables two factor.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.enableTwoFactor("5e101529-fa30-4415-9945-6540e70c4483", {
+  code: "123456",
+  secret: "secret",
+});
+```
+
+#### Response
+
+```json
+{ "recoveryCodes": ["123456"] }
+```
+
+### `auth.generateTwoFactorRecoveryCodes`
+
+Generates two factor recovery codes.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.generateTwoFactorRecoveryCodes(
+  "5e101529-fa30-4415-9945-6540e70c4483"
+);
+```
+
+#### Response
+
+```json
+{ "recoveryCodes": ["123456"] }
+```
+
+### `auth.getTwoFactorRecoveryCodes`
+
+Retrieves two factor recovery codes.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.getTwoFactorRecoveryCodes(
+  "5e101529-fa30-4415-9945-6540e70c4483"
+);
+```
+
+#### Response
+
+```json
+{ "recoveryCodes": ["123456"] }
+```
+
+### `auth.getTwoFactorSecret`
+
+Generates two factor secret.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.getTwoFactorSecret();
+```
+
+#### Response
+
+```json
+{
+  "secret": "123",
+  "secretBase32Encoded": "456"
+}
+```
+
 ### `auth.login`
 
-Issues `auth` tokens and returns one `Auth` object that include the following methods:
+Issues `auth` tokens and returns one `Auth` object that include the following methods when two factor is not active:
+
 - `refresh`: Refreshes the current `auth` token.
 - `logout`: Revokes the current `auth` `refreshToken`.
 
@@ -613,7 +761,7 @@ Issues `auth` tokens and returns one `Auth` object that include the following me
 #### Request
 
 ```js
-await slyk.auth.login({ email: 'foo@bar.com', password: 'Password123' });
+await slyk.auth.login({ email: "foo@bar.com", password: "Password123" });
 ```
 
 #### Response
@@ -622,8 +770,24 @@ await slyk.auth.login({ email: 'foo@bar.com', password: 'Password123' });
 {
   "refreshToken": "123",
   "roles": ["user"],
-  "token": "456",
+  "token": "456"
 }
+```
+
+Returns `twoFactorId` when two factor is active.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.login({ email: "foo@bar.com", password: "Password123" });
+```
+
+#### Response
+
+```json
+{ "twoFactorId": "123" }
 ```
 
 ### `auth.logout`
@@ -635,7 +799,7 @@ Revokes the `auth` `refreshToken`.
 #### Request
 
 ```js
-await slyk.auth.logout({ refreshToken: '123' });
+await slyk.auth.logout({ refreshToken: "123" });
 ```
 
 #### Response
@@ -647,6 +811,7 @@ true
 ### `auth.refresh`
 
 Refreshes the `auth` tokens and returns one `Auth` object that include the following methods:
+
 - `refresh`: Refreshes the current `auth` token.
 - `logout`: Revokes the current `auth` `refreshToken`.
 
@@ -655,7 +820,7 @@ Refreshes the `auth` tokens and returns one `Auth` object that include the follo
 #### Request
 
 ```js
-await slyk.auth.refresh({ refreshToken: '123' });
+await slyk.auth.refresh({ refreshToken: "123" });
 ```
 
 #### Response
@@ -667,6 +832,27 @@ await slyk.auth.refresh({ refreshToken: '123' });
 }
 ```
 
+### `auth.startTwoFactorFlow`
+
+Starts two factor flow.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.auth.startTwoFactorFlow({
+  email: "foo@bar.com",
+  phone: "+351912345678",
+});
+```
+
+#### Response
+
+```json
+{ "twoFactorId": "123" }
+```
+
 ### `auth.validate`
 
 Validate the `auth` `token` and returns the details of the `user` related with the provided `token`.
@@ -676,7 +862,7 @@ Validate the `auth` `token` and returns the details of the `user` related with t
 #### Request
 
 ```js
-await slyk.auth.validate({ token: '456' });
+await slyk.auth.validate({ token: "456" });
 ```
 
 #### Response
@@ -713,6 +899,7 @@ await slyk.auth.validate({ token: '456' });
 ## asset
 
 The result of each one of the following `asset` methods return one or an array of `Asset` objects that include the following methods:
+
 - `getConnection`: Returns the `connection` of the `asset` `connectionId` if set.
 - `patch`: Patches the `asset`.
 
@@ -726,9 +913,9 @@ Creates a new `asset`.
 
 ```js
 await slyk.asset.create({
-  code: 'foo',
-  name: 'foobar',
-  symbol: 'ƒ'
+  code: "foo",
+  name: "foobar",
+  symbol: "ƒ",
 });
 ```
 
@@ -768,7 +955,7 @@ Retrieves the `asset` of the given `code`.
 #### Request
 
 ```js
-await slyk.asset.get('foo');
+await slyk.asset.get("foo");
 ```
 
 #### Response
@@ -803,8 +990,8 @@ Retrieves a list of `assets`.
 ```js
 await slyk.asset.list({
   page: { size: 2 },
-  sort: [{ direction: 'desc', name: 'code' }],
-  filter: { name: 'foo' }
+  sort: [{ direction: "desc", name: "code" }],
+  filter: { name: "foo" },
 });
 ```
 
@@ -812,38 +999,40 @@ await slyk.asset.list({
 
 ```json
 {
-  "results": [{
-    "code": "bar",
-    "connectionId": null,
-    "contract": {},
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "decimalPlaces": 8,
-    "enabled": false,
-    "logoUrl": null,
-    "metadata": {},
-    "name": "foobar",
-    "symbol": "Ɓ",
-    "system": false,
-    "type": "custom",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "code": "biz",
-    "connectionId": null,
-    "contract": {},
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "decimalPlaces": 8,
-    "enabled": false,
-    "logoUrl": null,
-    "metadata": {},
-    "name": "foobiz",
-    "symbol": "ƀ",
-    "system": false,
-    "type": "custom",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "code": "bar",
+      "connectionId": null,
+      "contract": {},
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "decimalPlaces": 8,
+      "enabled": false,
+      "logoUrl": null,
+      "metadata": {},
+      "name": "foobar",
+      "symbol": "Ɓ",
+      "system": false,
+      "type": "custom",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "code": "biz",
+      "connectionId": null,
+      "contract": {},
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "decimalPlaces": 8,
+      "enabled": false,
+      "logoUrl": null,
+      "metadata": {},
+      "name": "foobiz",
+      "symbol": "ƀ",
+      "system": false,
+      "type": "custom",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 32
 }
 ```
@@ -884,6 +1073,7 @@ await slyk.asset.patch('bar' { customData: { qux: 'quux' } });
 ## bankAccount
 
 The result of each one of the following `bankAccount` methods return one or an array of `BankAccount` objects that include the following methods:
+
 - `getAsset`: Returns the `bankAccount` `asset` details.
 
 ### `bankAccount.get`
@@ -895,7 +1085,7 @@ Retrieves the `bankAccount` of the given `id`.
 #### Request
 
 ```js
-await slyk.bankAccount.get('xyzzy');
+await slyk.bankAccount.get("xyzzy");
 ```
 
 #### Response
@@ -923,8 +1113,8 @@ Retrieves a list of `bankAccounts`.
 ```js
 await slyk.bankAccount.list({
   page: { size: 2 },
-  sort: [{ name: 'name'}],
-  filter: { region: 'in:corge' }
+  sort: [{ name: "name" }],
+  filter: { region: "in:corge" },
 });
 ```
 
@@ -957,6 +1147,7 @@ await slyk.bankAccount.list({
 ## bankAccountRegion
 
 The result of each one of the following `bankAccountRegion` methods return one or an array of `BankAccountRegion` objects that include the following methods:
+
 - `getAssets`: Returns the list of `bankAccountRegion` `assets` details.
 
 ### `bankAccountRegion.list`
@@ -970,7 +1161,7 @@ Retrieves a list of `bankAccountRegion`.
 ```js
 await slyk.bankAccountRegion.list({
   page: { size: 2 },
-  sort: [{ name: 'name'}]
+  sort: [{ name: "name" }],
 });
 ```
 
@@ -1003,6 +1194,7 @@ await slyk.bankAccountRegion.list({
 ## connection
 
 The result of each one of the following `connection` methods return one or an array of `Connection` objects that include the following methods:
+
 - `patch`: Patches the `connection`.
 
 ### `connection.create`
@@ -1014,7 +1206,7 @@ Creates a new `connection`.
 #### Request
 
 ```js
-await slyk.connection.create({ name: 'foobar' });
+await slyk.connection.create({ name: "foobar" });
 ```
 
 #### Response
@@ -1040,7 +1232,7 @@ Retrieves the `connection` of the given `id`.
 #### Request
 
 ```js
-await slyk.connection.get('93a1b4ef-ee6b-43b4-9546-cfa7aed80bc1');
+await slyk.connection.get("93a1b4ef-ee6b-43b4-9546-cfa7aed80bc1");
 ```
 
 #### Response
@@ -1068,7 +1260,7 @@ Retrieves a list of `connections`.
 ```js
 await slyk.connection.list({
   page: { size: 2 },
-  filter: { name: 'foo' }
+  filter: { name: "foo" },
 });
 ```
 
@@ -1076,22 +1268,24 @@ await slyk.connection.list({
 
 ```json
 {
-  "results": [{
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "driver": null,
-    "id": "93a1b4ef-ee6b-43b4-9546-cfa7aed80bc1",
-    "name": "foobar",
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "uri": null
-  },
-  {
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "driver": null,
-    "id": "f1ee08ee-265b-472c-88cf-4bae10d0ff9b",
-    "name": "foobiz",
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "uri": null
-  }],
+  "results": [
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "driver": null,
+      "id": "93a1b4ef-ee6b-43b4-9546-cfa7aed80bc1",
+      "name": "foobar",
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "uri": null
+    },
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "driver": null,
+      "id": "f1ee08ee-265b-472c-88cf-4bae10d0ff9b",
+      "name": "foobiz",
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "uri": null
+    }
+  ],
   "total": 4
 }
 ```
@@ -1105,7 +1299,9 @@ Modifies the details the `connection` of the given `id`.
 #### Request
 
 ```js
-await slyk.connection.patch('f1ee08ee-265b-472c-88cf-4bae10d0ff9b', { uri: 'waldo' });
+await slyk.connection.patch("f1ee08ee-265b-472c-88cf-4bae10d0ff9b", {
+  uri: "waldo",
+});
 ```
 
 #### Response
@@ -1124,6 +1320,7 @@ await slyk.connection.patch('f1ee08ee-265b-472c-88cf-4bae10d0ff9b', { uri: 'wald
 ## identity
 
 The result of each one of the following `identity` methods return one or an array of `Identity` objects that include the following methods:
+
 - `approve`: Approves the `identity`.
 - `cancel`: Cancels the `identity`.
 - `delete`: Deletes the `identity`.
@@ -1139,7 +1336,7 @@ The result of each one of the following `identity` methods return one or an arra
 #### Request
 
 ```js
-await slyk.identity.approve('bar');
+await slyk.identity.approve("bar");
 ```
 
 #### Response
@@ -1174,7 +1371,7 @@ await slyk.identity.approve('bar');
 #### Request
 
 ```js
-await slyk.identity.cancel('bar', { reason: "quux" });
+await slyk.identity.cancel("bar", { reason: "quux" });
 ```
 
 #### Response
@@ -1250,7 +1447,7 @@ await slyk.identity.create(
 #### Request
 
 ```js
-await slyk.identity.delete('bar');
+await slyk.identity.delete("bar");
 ```
 
 #### Response
@@ -1266,7 +1463,7 @@ true
 #### Request
 
 ```js
-await slyk.identity.get('bar', { include: 'documents,user' });
+await slyk.identity.get("bar", { include: "documents,user" });
 ```
 
 #### Response
@@ -1282,17 +1479,19 @@ await slyk.identity.get('bar', { include: 'documents,user' });
   "customData": { "qux": "quux" },
   "documentNumber": "biz",
   "documentType": "waldo",
-  "documents": [{
-    "createdAt": "2020-06-17T13:19:00.000Z",
-    "customData": {},
-    "file": {
-      "type": "document",
-      "url": "http://foobar.url"
-    },
-    "id": "corge",
-    "identityId": "foo",
-    "updatedAt": "2020-06-18T13:19:00.000Z"
-  }],
+  "documents": [
+    {
+      "createdAt": "2020-06-17T13:19:00.000Z",
+      "customData": {},
+      "file": {
+        "type": "document",
+        "url": "http://foobar.url"
+      },
+      "id": "corge",
+      "identityId": "foo",
+      "updatedAt": "2020-06-18T13:19:00.000Z"
+    }
+  ],
   "gender": null,
   "id": "bar",
   "name": null,
@@ -1318,7 +1517,7 @@ await slyk.identity.get('bar', { include: 'documents,user' });
 #### Request
 
 ```js
-await slyk.identity.list({ filter: { country: 'PT' } });
+await slyk.identity.list({ filter: { country: "PT" } });
 ```
 
 #### Response
@@ -1378,7 +1577,7 @@ await slyk.identity.list({ filter: { country: 'PT' } });
 #### Request
 
 ```js
-await slyk.identity.reject('bar', { reason: 'quux' });
+await slyk.identity.reject("bar", { reason: "quux" });
 ```
 
 #### Response
@@ -1409,12 +1608,12 @@ await slyk.identity.reject('bar', { reason: 'quux' });
 
 ### `identity.submit`
 
-*Example:**
+**Example:**
 
 #### Request
 
 ```js
-await slyk.identity.submit('bar');
+await slyk.identity.submit("bar");
 ```
 
 #### Response
@@ -1446,6 +1645,7 @@ await slyk.identity.submit('bar');
 ## IdentityDocument
 
 The result of each one of the following `identityDocument` methods return one or an array of `IdentityDocument` objects that include the following methods:
+
 - `delete`: Deletes the `identityDocument`.
 
 ## `identityDocument.create`
@@ -1457,9 +1657,9 @@ Creates an `identityDocument` for the `identity` of the given `identityId`.
 #### Request
 
 ```js
-const identityId = 'bar';
+const identityId = "bar";
 
-await slyk.identityDocument.create(identityId, { file: 'garply' });
+await slyk.identityDocument.create(identityId, { file: "garply" });
 ```
 
 #### Response
@@ -1471,7 +1671,7 @@ await slyk.identityDocument.create(identityId, { file: 'garply' });
   "file": { "type": "document", "uploadId": "garply" },
   "id": "foo",
   "identityId": "bar",
-  "updatedAt": "2020-03-20T14:30:37.483Z",
+  "updatedAt": "2020-03-20T14:30:37.483Z"
 }
 ```
 
@@ -1484,8 +1684,8 @@ Deletes an `identityDocument` of the given `id` related with the `identity` of t
 #### Request
 
 ```js
-const id = 'foo';
-const identityId = 'bar';
+const id = "foo";
+const identityId = "bar";
 
 await slyk.identityDocument.delete(id, identityId);
 ```
@@ -1505,8 +1705,8 @@ Gets the `identityDocument` of the given `id` related with the `identity` of the
 #### Request
 
 ```js
-const id = 'foo';
-const identityId = 'bar';
+const id = "foo";
+const identityId = "bar";
 
 await slyk.identityDocument.get(id, identityId);
 ```
@@ -1520,7 +1720,7 @@ await slyk.identityDocument.get(id, identityId);
   "file": { "type": "document", "uploadId": "garply" },
   "id": "foo",
   "identityId": "bar",
-  "updatedAt": "2020-03-20T14:30:37.483Z",
+  "updatedAt": "2020-03-20T14:30:37.483Z"
 }
 ```
 
@@ -1533,9 +1733,11 @@ Lists the `identityDocuments` related with the `identity` of the given `identity
 #### Request
 
 ```js
-const identityId = 'bar';
+const identityId = "bar";
 
-await slyk.identityDocument.list(identityId, { sort: [{ direction: 'desc', name: 'createdAt' }] });
+await slyk.identityDocument.list(identityId, {
+  sort: [{ direction: "desc", name: "createdAt" }],
+});
 ```
 
 #### Response
@@ -1549,7 +1751,7 @@ await slyk.identityDocument.list(identityId, { sort: [{ direction: 'desc', name:
       "file": { "type": "document", "uploadId": "garply" },
       "id": "foo",
       "identityId": "bar",
-      "updatedAt": "2020-03-20T14:30:37.483Z",
+      "updatedAt": "2020-03-20T14:30:37.483Z"
     },
     {
       "createdAt": "2020-03-22T14:30:37.483Z",
@@ -1557,7 +1759,7 @@ await slyk.identityDocument.list(identityId, { sort: [{ direction: 'desc', name:
       "file": { "type": "document", "uploadId": "thud" },
       "id": "zyzzy",
       "identityId": "bar",
-      "updatedAt": "2020-03-22T14:30:37.483Z",
+      "updatedAt": "2020-03-22T14:30:37.483Z"
     }
   ],
   "total": 2
@@ -1567,6 +1769,7 @@ await slyk.identityDocument.list(identityId, { sort: [{ direction: 'desc', name:
 ## invite
 
 The result of each one of the following `invite` methods return one or an array of `Invite` objects that include the following methods:
+
 - `cancel`: Cancels the `invite`.
 - `getInvitedUser`: Returns the `user` of the `invite` `invitedUserId` if set.
 - `getInviterUser`: Returns the `user` of the `invite` `inviterUserId` if set.
@@ -1581,7 +1784,7 @@ Cancels the `invite` of the given `code`.
 #### Request
 
 ```js
-await slyk.invite.cancel('bar');
+await slyk.invite.cancel("bar");
 ```
 
 #### Response
@@ -1599,7 +1802,10 @@ Creates a new `invite`.
 #### Request
 
 ```js
-await slyk.invite.create({ email: 'foo@bar.com', inviterUserId: '26b7d8c3-d21c-420b-9820-9e8b822b90d2' });
+await slyk.invite.create({
+  email: "foo@bar.com",
+  inviterUserId: "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
+});
 ```
 
 #### Response
@@ -1613,7 +1819,7 @@ await slyk.invite.create({ email: 'foo@bar.com', inviterUserId: '26b7d8c3-d21c-4
   "invitedUserId": null,
   "inviterUserId": "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
   "status": "pending",
-  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
 }
 ```
 
@@ -1626,7 +1832,7 @@ Retrieves the `invite` of the given `code`.
 #### Request
 
 ```js
-await slyk.invite.get('foo');
+await slyk.invite.get("foo");
 ```
 
 #### Response
@@ -1640,7 +1846,7 @@ await slyk.invite.get('foo');
   "invitedUserId": null,
   "inviterUserId": "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
   "status": "pending",
-  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
 }
 ```
 
@@ -1655,8 +1861,8 @@ Retrieves a list of `invites`.
 ```js
 await slyk.invite.list({
   page: { size: 2 },
-  sort: [{ direction: 'desc', name: 'code' }],
-  filter: { invitedEmail: 'foo@bar.com' }
+  sort: [{ direction: "desc", name: "code" }],
+  filter: { invitedEmail: "foo@bar.com" },
 });
 ```
 
@@ -1664,26 +1870,28 @@ await slyk.invite.list({
 
 ```json
 {
-  "results": [{
-    "code": "bar",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "expiredAt": "2019-04-20T14:30:37.483Z",
-    "invitedEmail": "foo@bar.com",
-    "invitedUserId": null,
-    "inviterUserId": "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
-    "status": "pending",
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-  },
-  {
-    "code": "biz",
-    "createdAt": "2019-01-20T14:30:37.483Z",
-    "expiredAt": "2019-02-20T14:30:37.483Z",
-    "invitedEmail": "foo@bar.com",
-    "invitedUserId": null,
-    "inviterUserId": "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
-    "status": "expired",
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-  }],
+  "results": [
+    {
+      "code": "bar",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "expiredAt": "2019-04-20T14:30:37.483Z",
+      "invitedEmail": "foo@bar.com",
+      "invitedUserId": null,
+      "inviterUserId": "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
+      "status": "pending",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "code": "biz",
+      "createdAt": "2019-01-20T14:30:37.483Z",
+      "expiredAt": "2019-02-20T14:30:37.483Z",
+      "invitedEmail": "foo@bar.com",
+      "invitedUserId": null,
+      "inviterUserId": "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
+      "status": "expired",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 32
 }
 ```
@@ -1698,8 +1906,8 @@ Creates and sends a one or multiples `invite`.
 
 ```js
 await slyk.invite.send({
-  email: ['foo@bar.com', 'foo@biz.com'],
-  inviterUserId: '26b7d8c3-d21c-420b-9820-9e8b822b90d2'
+  email: ["foo@bar.com", "foo@biz.com"],
+  inviterUserId: "26b7d8c3-d21c-420b-9820-9e8b822b90d2",
 });
 ```
 
@@ -1718,7 +1926,7 @@ Validates the `invite` with the given `code`.
 #### Request
 
 ```js
-await slyk.invite.validate('bar');
+await slyk.invite.validate("bar");
 ```
 
 #### Response
@@ -1730,6 +1938,7 @@ await slyk.invite.validate('bar');
 ## movement
 
 The result of each one of the following `movement` methods return one or an array of `Movement` objects that include the following methods:
+
 - `getAsset`: Returns the `asset` of the `movement` `assetCode`.
 - `getWallet`: Returns the `wallet` of the `movement` `walletId`.
 - `getTransaction`: Returns the `transaction` of the `movement` `transactionId`.
@@ -1743,7 +1952,7 @@ Returns the `movement` of the given `id`.
 #### Request
 
 ```js
-await slyk.movement.get('09900e6e-991e-43bd-9b82-0641f648c1d1');
+await slyk.movement.get("09900e6e-991e-43bd-9b82-0641f648c1d1");
 ```
 
 #### Response
@@ -1771,9 +1980,9 @@ Retrieves a list of `movements`.
 
 ```js
 await slyk.movement.list({
-  inlcude: 'transaction',
+  inlcude: "transaction",
   page: { size: 2 },
-  filter: { walletId: '703d8c69-d8fc-4e02-a7c9-42340ef07727' }
+  filter: { walletId: "703d8c69-d8fc-4e02-a7c9-42340ef07727" },
 });
 ```
 
@@ -1781,60 +1990,62 @@ await slyk.movement.list({
 
 ```json
 {
-  "results": [{
-    "amount": "4.50000000",
-    "assetCode": "garply",
-    "code": "deposit",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
-    "transactionId": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "transaction": {
+  "results": [
+    {
       "amount": "4.50000000",
       "assetCode": "garply",
-      "code": "internal",
+      "code": "deposit",
       "createdAt": "2019-03-20T14:30:37.483Z",
-      "description": null,
-      "destinationAddress": null,
-      "destinationWalletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727",
-      "externalId": null,
       "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
-      "metadata": {},
-      "originAddress": null,
-      "originWalletId": null,
-      "status": "completed",
-      "type": "deposit",
-      "updatedAt": "2019-03-20T14:30:37.483Z"
+      "transactionId": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "transaction": {
+        "amount": "4.50000000",
+        "assetCode": "garply",
+        "code": "internal",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "description": null,
+        "destinationAddress": null,
+        "destinationWalletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727",
+        "externalId": null,
+        "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
+        "metadata": {},
+        "originAddress": null,
+        "originWalletId": null,
+        "status": "completed",
+        "type": "deposit",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      },
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "walletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727"
     },
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "walletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727"
-  },
-  {
-    "amount": "-0.50000000",
-    "assetCode": "garply",
-    "code": "withdrawal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
-    "transactionId": "a3293366-0d4c-4f83-8f71-84fe0b7dda99",
-    "transaction": {
-      "amount": "4.50000000",
+    {
+      "amount": "-0.50000000",
       "assetCode": "garply",
-      "code": "internal",
+      "code": "withdrawal",
       "createdAt": "2019-03-20T14:30:37.483Z",
-      "description": null,
-      "destinationAddress": null,
-      "destinationWalletId": null,
-      "externalId": null,
       "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
-      "metadata": {},
-      "originAddress": null,
-      "originWalletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727",
-      "status": "completed",
-      "type": "withdrawal",
-      "updatedAt": "2019-03-20T14:30:37.483Z"
-    },
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "walletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727"
-  }],
+      "transactionId": "a3293366-0d4c-4f83-8f71-84fe0b7dda99",
+      "transaction": {
+        "amount": "4.50000000",
+        "assetCode": "garply",
+        "code": "internal",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "description": null,
+        "destinationAddress": null,
+        "destinationWalletId": null,
+        "externalId": null,
+        "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
+        "metadata": {},
+        "originAddress": null,
+        "originWalletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727",
+        "status": "completed",
+        "type": "withdrawal",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      },
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "walletId": "703d8c69-d8fc-4e02-a7c9-42340ef07727"
+    }
+  ],
   "total": 4
 }
 ```
@@ -1842,6 +2053,7 @@ await slyk.movement.list({
 ## order
 
 The result of each one of the following `order` methods return one or an array of `Order` objects that include the following methods:
+
 - `cancel`: Cancels the `order`.
 - `fulfill`: Fulfills the `order`.
 - `fulfillOrderLine`: Fulfills the associated `orderLine` by providing an `id`.
@@ -1862,7 +2074,10 @@ Cancels the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.cancel('43563311-ab16-4499-95d2-30d9e06ba159', { reason: 'foobar', refundAmount: '2.00000000' });
+await slyk.order.cancel("43563311-ab16-4499-95d2-30d9e06ba159", {
+  reason: "foobar",
+  refundAmount: "2.00000000",
+});
 ```
 
 #### Response
@@ -1881,11 +2096,11 @@ Creates an `order`.
 
 ```js
 await slyk.order.create({
-  chosenPaymentMethod: 'wallet',
-  customData: { qux: 'quux' },
-  deliveryMethod: 'pickup',
-  lines: [{ productId: '8c507367-10e9-4b50-8912-d1b8d37d13d8' }],
-  walletId: '5cabbc16-d845-418f-9ecc-7a9fcab99b49'
+  chosenPaymentMethod: "wallet",
+  customData: { qux: "quux" },
+  deliveryMethod: "pickup",
+  lines: [{ productId: "8c507367-10e9-4b50-8912-d1b8d37d13d8" }],
+  walletId: "5cabbc16-d845-418f-9ecc-7a9fcab99b49",
 });
 ```
 
@@ -1939,7 +2154,7 @@ Fulfills the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.fulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57');
+await slyk.order.fulfill("22419f26-6311-4f2e-89e5-05cf96e9bc57");
 ```
 
 #### Response
@@ -1978,7 +2193,7 @@ Retrieves the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.get('22419f26-6311-4f2e-89e5-05cf96e9bc57');
+await slyk.order.get("22419f26-6311-4f2e-89e5-05cf96e9bc57");
 ```
 
 #### Response
@@ -2018,8 +2233,8 @@ Retrieves a list `order`.
 
 ```js
 await slyk.order.list({
-  filter: { paymentStatus: 'in:unpaid' },
-  sort: [{ name: 'fulfilledAt' }]
+  filter: { paymentStatus: "in:unpaid" },
+  sort: [{ name: "fulfilledAt" }],
 });
 ```
 
@@ -2086,12 +2301,12 @@ Modifies the details of the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.patch('22419f26-6311-4f2e-89e5-05cf96e9bc57', {
+await slyk.order.patch("22419f26-6311-4f2e-89e5-05cf96e9bc57", {
   shippingAddress: {
-    city: 'foo',
-    country: 'bar'
-  }
-})
+    city: "foo",
+    country: "bar",
+  },
+});
 ```
 
 #### Response
@@ -2137,9 +2352,9 @@ Pays the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.pay('22419f26-6311-4f2e-89e5-05cf96e9bc57', {
-  amount: '0.00000007',
-  walletId: '5cabbc16-d845-418f-9ecc-7a9fcab99b49'
+await slyk.order.pay("22419f26-6311-4f2e-89e5-05cf96e9bc57", {
+  amount: "0.00000007",
+  walletId: "5cabbc16-d845-418f-9ecc-7a9fcab99b49",
 });
 ```
 
@@ -2179,9 +2394,9 @@ Pays the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.refund('22419f26-6311-4f2e-89e5-05cf96e9bc57', {
-  amount: '0.00000007',
-  reason: 'foobar'
+await slyk.order.refund("22419f26-6311-4f2e-89e5-05cf96e9bc57", {
+  amount: "0.00000007",
+  reason: "foobar",
 });
 ```
 
@@ -2222,7 +2437,7 @@ Pays the `order` of the given `id`.
 #### Request
 
 ```js
-await slyk.order.unfulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57');
+await slyk.order.unfulfill("22419f26-6311-4f2e-89e5-05cf96e9bc57");
 ```
 
 #### Response
@@ -2255,9 +2470,9 @@ await slyk.order.unfulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57');
 ## orderLine
 
 The result of each one of the following `orderLine` methods return one or an array of `OrderLine` objects that include the following methods:
+
 - `fulfill`: Fulfills the `orderLine`.
 - `unfulfill`: Unfulfills the `orderLine`.
-
 
 ### `orderLine.fulfill`
 
@@ -2268,7 +2483,9 @@ Fulfills the `orderLine` of the given `id`.
 #### Request
 
 ```js
-await slyk.orderLine.fulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57', { quantity: 3 });
+await slyk.orderLine.fulfill("22419f26-6311-4f2e-89e5-05cf96e9bc57", {
+  quantity: 3,
+});
 ```
 
 #### Response
@@ -2302,7 +2519,9 @@ Retrieves the `orderLine` of the given `id`.
 #### Request
 
 ```js
-await slyk.orderLine.get('22419f26-6311-4f2e-89e5-05cf96e9bc57', { include: { product: true } });
+await slyk.orderLine.get("22419f26-6311-4f2e-89e5-05cf96e9bc57", {
+  include: { product: true },
+});
 ```
 
 #### Response
@@ -2373,7 +2592,7 @@ Retrieves a list of `orderLine`.
 await slyk.orderLine.list({
   page: { number: 2, size: 2 },
   filter: { quantity: 3 },
-  sort: [{ name: 'createdAt' }]
+  sort: [{ name: "createdAt" }],
 });
 ```
 
@@ -2430,7 +2649,9 @@ Unfulfills the `orderLine` of the given `id`.
 #### Request
 
 ```js
-await slyk.orderLine.unfulfill('22419f26-6311-4f2e-89e5-05cf96e9bc57', { quantity: 2 });
+await slyk.orderLine.unfulfill("22419f26-6311-4f2e-89e5-05cf96e9bc57", {
+  quantity: 2,
+});
 ```
 
 #### Response
@@ -2466,7 +2687,7 @@ Returns the `paymentMethod` of the given `slug`.
 #### Request
 
 ```js
-await slyk.paymentMethod.get('paypal');
+await slyk.paymentMethod.get("paypal");
 ```
 
 #### Response
@@ -2503,32 +2724,34 @@ await slyk.movement.list({ filter: { enabled: true } });
 
 ```json
 {
-  "results": [{
-    "assets": ["garply"],
-    "capabilities": ["deposit"],
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "enabled": true,
-    "features": ["apm"],
-    "metadata": {
-      "clientId": "foobar",
-      "secret": "12345*****"
+  "results": [
+    {
+      "assets": ["garply"],
+      "capabilities": ["deposit"],
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "enabled": true,
+      "features": ["apm"],
+      "metadata": {
+        "clientId": "foobar",
+        "secret": "12345*****"
+      },
+      "name": "Paypal",
+      "slug": "paypal"
     },
-    "name": "Paypal",
-    "slug": "paypal"
-  },
-  {
-    "assets": ["garply"],
-    "capabilities": ["deposit"],
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "enabled": true,
-    "features": ["apm"],
-    "metadata": {
-      "apiPublishableKey": "foobiz",
-      "apiSecretKey": "12345*****"
-    },
-    "name": "Stripe",
-    "slug": "stripe"
-  }],
+    {
+      "assets": ["garply"],
+      "capabilities": ["deposit"],
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "enabled": true,
+      "features": ["apm"],
+      "metadata": {
+        "apiPublishableKey": "foobiz",
+        "apiSecretKey": "12345*****"
+      },
+      "name": "Stripe",
+      "slug": "stripe"
+    }
+  ],
   "total": 4
 }
 ```
@@ -2536,6 +2759,7 @@ await slyk.movement.list({ filter: { enabled: true } });
 ## product
 
 The result of each one of the following `product` methods return one or an array of `Product` objects that include the following methods:
+
 - `createQuestion`: Links a question to the `product`.
 - `delete`: Deletes the `product`.
 - `deleteQuestion`: Unlinks a question from the `product`.
@@ -2555,15 +2779,15 @@ Creates a `product`.
 await slyk.product.create({
   allowChoosingQuantity: true,
   available: true,
-  categoryId: '794b19cd-e24e-4ae0-abf9-6bc29b36e351',
-  customData: { qux: 'quux' },
-  description: 'waldo fred',
+  categoryId: "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+  customData: { qux: "quux" },
+  description: "waldo fred",
   image: "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
-  name: 'corge',
-  price: '10',
-  thumbnail: 'garply',
+  name: "corge",
+  price: "10",
+  thumbnail: "garply",
   visible: true,
-  video: "fbd474c9-9d52-4efd-bf87-95983f874665"
+  video: "fbd474c9-9d52-4efd-bf87-95983f874665",
 });
 ```
 
@@ -2636,7 +2860,9 @@ Links a question to the `product` of the given `id`.
 #### Request
 
 ```js
-await slyk.product.createQuestion('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { questionId: '666b19cd-e24e-4ae0-abf9-6bc29b36ebbb' });
+await slyk.product.createQuestion("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
+  questionId: "666b19cd-e24e-4ae0-abf9-6bc29b36ebbb",
+});
 ```
 
 #### Response
@@ -2646,7 +2872,7 @@ await slyk.product.createQuestion('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { ques
   "createdAt": "2019-03-20T14:30:37.483Z",
   "productId": "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
   "questionId": "333c43c2-99ab-4f35-9f76-38f482e6babc",
-  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "updatedAt": "2019-03-20T14:30:37.483Z"
 }
 ```
 
@@ -2659,7 +2885,7 @@ Deletes the `product` of the given `id`.
 #### Request
 
 ```js
-await slyk.product.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.product.delete("eb9c43c2-99ab-4f35-9f76-38f482e6b724");
 ```
 
 #### Response
@@ -2677,8 +2903,8 @@ Unlinks the `question` of the given `questionId` from the `product` of the given
 #### Request
 
 ```js
-const productId = 'eb9c43c2-99ab-4f35-9f76-38f482e6b724';
-const questionId = '333c43c2-99ab-4f35-9f76-38f482e6babc';
+const productId = "eb9c43c2-99ab-4f35-9f76-38f482e6b724";
+const questionId = "333c43c2-99ab-4f35-9f76-38f482e6babc";
 await slyk.product.deleteQuestion(productId, questionId);
 ```
 
@@ -2697,7 +2923,7 @@ Retrieves the `product` of the given `id`.
 #### Request
 
 ```js
-await slyk.product.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.product.get("eb9c43c2-99ab-4f35-9f76-38f482e6b724");
 ```
 
 #### Response
@@ -2765,9 +2991,9 @@ Retrieves a list of `product`.
 
 ```js
 await slyk.product.list({
-  filter: { available: 'true' },
+  filter: { available: "true" },
   page: { number: 3, size: 2 },
-  sort: [{ name: 'createdAt' }]
+  sort: [{ name: "createdAt" }],
 });
 ```
 
@@ -2860,6 +3086,7 @@ await slyk.product.list({
     }
   ]
 ```
+
 ### `product.patch`
 
 Patches the `product` of the given `id`.
@@ -2869,11 +3096,11 @@ Patches the `product` of the given `id`.
 #### Request
 
 ```js
-await slyk.product.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
+await slyk.product.patch("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
   allowChoosingQuantity: false,
   available: true,
-  customData: { plugh: 'thud' },
-  description: 'xyzzy'
+  customData: { plugh: "thud" },
+  description: "xyzzy",
 });
 ```
 
@@ -2911,7 +3138,9 @@ Reorders the `product` of the given `id`.
 #### Request
 
 ```js
-await slyk.product.reorder('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { subsequentId: '111b19cd-e24e-4ae0-abf9-6bc29b36epoi' });
+await slyk.product.reorder("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
+  subsequentId: "111b19cd-e24e-4ae0-abf9-6bc29b36epoi",
+});
 ```
 
 #### Response
@@ -2929,9 +3158,11 @@ Reorders the `question` of the given `questionId` linked to the `product` of the
 #### Request
 
 ```js
-const productId = 'eb9c43c2-99ab-4f35-9f76-38f482e6b724';
-const questionId = '111b19cd-e24e-4ae0-abf9-6bc29b36epoi';
-await slyk.product.reorderQuestion(productId, questionId, { subsequentId: '794b19cd-e24e-4ae0-abf9-6bc29b36e351' });
+const productId = "eb9c43c2-99ab-4f35-9f76-38f482e6b724";
+const questionId = "111b19cd-e24e-4ae0-abf9-6bc29b36epoi";
+await slyk.product.reorderQuestion(productId, questionId, {
+  subsequentId: "794b19cd-e24e-4ae0-abf9-6bc29b36e351",
+});
 ```
 
 #### Response
@@ -2943,6 +3174,7 @@ true
 ## productCategory
 
 The result of each one of the following `productCategory` methods return one or an array of `ProductCategory` objects that include the following methods:
+
 - `delete`: Deletes the `productCategory`.
 - `patch`: Patches the `productCategory`.
 - `reorder`: Reorders the `productCategory`.
@@ -2957,10 +3189,10 @@ Creates a `productCategory`.
 
 ```js
 await slyk.productCategory.create({
-  customData: { qux: 'quux' },
-  description: 'waldo',
+  customData: { qux: "quux" },
+  description: "waldo",
   image: "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
-  title: 'garply'
+  title: "garply",
 });
 ```
 
@@ -2994,7 +3226,7 @@ Deletes the `productCategory` of the given `id`.
 #### Request
 
 ```js
-await slyk.productCategory.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.productCategory.delete("eb9c43c2-99ab-4f35-9f76-38f482e6b724");
 ```
 
 #### Response
@@ -3012,7 +3244,7 @@ Retrieves the `productCategory` of the given `id`.
 #### Request
 
 ```js
-await slyk.productCategory.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.productCategory.get("eb9c43c2-99ab-4f35-9f76-38f482e6b724");
 ```
 
 #### Response
@@ -3045,7 +3277,7 @@ Retrieves a list of `productCategory`.
 #### Request
 
 ```js
-await slyk.productCategory.list({ filter: { title: 'foo' } });
+await slyk.productCategory.list({ filter: { title: "foo" } });
 ```
 
 #### Response
@@ -3099,11 +3331,11 @@ Patches the `productCategory` of the given `id`.
 #### Request
 
 ```js
-await slyk.productCategory.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
-  customData: { foo: 'bar' },
-  description: 'foobar',
-  image: 'a8dbf8d0-c070-492d-92d1-be1dbfcb859d',
-  title: 'foobiz'
+await slyk.productCategory.patch("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
+  customData: { foo: "bar" },
+  description: "foobar",
+  image: "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
+  title: "foobiz",
 });
 ```
 
@@ -3137,7 +3369,9 @@ Reorders the `productCategory` of the given `id`.
 #### Request
 
 ```js
-await slyk.productCategory.reorder('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { subsequentId: '44v543c2-99ab-4f35-9f76-38f482e6babc' });
+await slyk.productCategory.reorder("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
+  subsequentId: "44v543c2-99ab-4f35-9f76-38f482e6babc",
+});
 ```
 
 #### Response
@@ -3149,6 +3383,7 @@ true
 ## productImage
 
 The result of each one of the following `productImage` methods return one or an array of `ProductImage` objects that include the following methods:
+
 - `delete`: Deletes the `productImage`.
 - `reorder`: Reorders the `productImage`.
 
@@ -3161,9 +3396,9 @@ Creates a `productImage` for the given `id` product.
 #### Request
 
 ```js
-await slyk.productImage.create('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
+await slyk.productImage.create("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
   customData: {},
-  image: 'a8dbf8d0-c070-492d-92d1-be1dbfcb859d'
+  image: "a8dbf8d0-c070-492d-92d1-be1dbfcb859d",
 });
 ```
 
@@ -3195,7 +3430,10 @@ Deletes the `productImage` with the given `id` that belongs to the given `produc
 #### Request
 
 ```js
-await slyk.productImage.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.productImage.delete(
+  "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
+  "eb9c43c2-99ab-4f35-9f76-38f482e6b724"
+);
 ```
 
 #### Response
@@ -3213,7 +3451,10 @@ Retrieves the `productImage` with the given `id` that belongs to the given `prod
 #### Request
 
 ```js
-await slyk.productImage.get('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.productImage.get(
+  "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
+  "eb9c43c2-99ab-4f35-9f76-38f482e6b724"
+);
 ```
 
 #### Response
@@ -3244,7 +3485,9 @@ Retrieves a list of `productImage` of the given `productId`.
 #### Request
 
 ```js
-await slyk.productImage.list('eb9c43c2-99ab-4f35-9f76-38f482e6b724', { include: { product: true } });
+await slyk.productImage.list("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
+  include: { product: true },
+});
 ```
 
 #### Response
@@ -3296,7 +3539,11 @@ Reorders the `productImage` with the given `id` that belongs to the given `produ
 #### Request
 
 ```js
-await slyk.productImage.reorder('eb9c43c2-99ab-4f35-9f76-38f482e6b725', 'eb9c43c2-99ab-4f35-9f76-38f482e6b724', { subsequentId: 'eb9c43c2-99ab-4f35-9f76-38f482e6b726' });
+await slyk.productImage.reorder(
+  "eb9c43c2-99ab-4f35-9f76-38f482e6b725",
+  "eb9c43c2-99ab-4f35-9f76-38f482e6b724",
+  { subsequentId: "eb9c43c2-99ab-4f35-9f76-38f482e6b726" }
+);
 ```
 
 #### Response
@@ -3308,6 +3555,7 @@ true
 ## question
 
 The result of each one of the following `question` methods return one or an array of `Question` objects that include the following methods:
+
 - `delete`: Deletes the `question`.
 - `patch`: Patches the `question`.
 
@@ -3321,13 +3569,13 @@ Creates a `question`.
 
 ```js
 await slyk.question.create({
-  configurations: { values: ['bar'] },
+  configurations: { values: ["bar"] },
   customData: {},
-  description: '',
-  productTypeCode: 'digital',
-  title: 'foo',
-  typeCode: 'multiple'
-})
+  description: "",
+  productTypeCode: "digital",
+  title: "foo",
+  typeCode: "multiple",
+});
 ```
 
 #### Response
@@ -3365,7 +3613,7 @@ Deletes the `question` of the given `id`.
 #### Request
 
 ```js
-await slyk.question.delete('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.question.delete("eb9c43c2-99ab-4f35-9f76-38f482e6b724");
 ```
 
 #### Response
@@ -3383,7 +3631,7 @@ Retrieves the `question` of the given `id`.
 #### Request
 
 ```js
-await slyk.question.get('eb9c43c2-99ab-4f35-9f76-38f482e6b724');
+await slyk.question.get("eb9c43c2-99ab-4f35-9f76-38f482e6b724");
 ```
 
 #### Response
@@ -3422,8 +3670,8 @@ Retrieves a list of `question`.
 
 ```js
 await slyk.question.list({
-  filter: { typeCode: 'single' },
-  include: { questionType: true }
+  filter: { typeCode: "single" },
+  include: { questionType: true },
 });
 ```
 
@@ -3498,11 +3746,11 @@ Patches the `question` of the given `id`.
 #### Request
 
 ```js
-await slyk.question.patch('eb9c43c2-99ab-4f35-9f76-38f482e6b724', {
-  productTypeCode: 'digital',
-  title: 'foo',
-  typeCode: 'multiple'
-})
+await slyk.question.patch("eb9c43c2-99ab-4f35-9f76-38f482e6b724", {
+  productTypeCode: "digital",
+  title: "foo",
+  typeCode: "multiple",
+});
 ```
 
 #### Response
@@ -3543,16 +3791,14 @@ Retrieves a list of `questionType`.
 
 #### Request
 
-
 ```js
 await slyk.questionType.list({
-  filter: { code: 'in:quux,waldo' },
-  sort: [{ direction: 'desc', name: 'code' }]
+  filter: { code: "in:quux,waldo" },
+  sort: [{ direction: "desc", name: "code" }],
 });
 ```
 
 #### Response
-
 
 ```json
 {
@@ -3575,6 +3821,7 @@ await slyk.questionType.list({
 ## rate
 
 The result of each one of the following `rate` methods return one or an array of `Rate` objects that include the following methods:
+
 - `getBaseAsset`: Returns the `asset` of the `rate` `baseAssetCode`.
 - `getQuoteAsset`: Returns the `asset` of the `rate` `quoteAssetCode`.
 - `patch`: Patches the `rate`.
@@ -3589,9 +3836,9 @@ Creates a new `rate`.
 
 ```js
 await slyk.rate.create({
-  baseAssetCode: 'garply',
-  quoteAssetCode: 'corge',
-  rate: '0.5'
+  baseAssetCode: "garply",
+  quoteAssetCode: "corge",
+  rate: "0.5",
 });
 ```
 
@@ -3618,7 +3865,7 @@ Deletes the `rate` of the given `baseAssetCode` and `quoteAssetCode`.
 #### Request
 
 ```js
-await slyk.rate.delete('garply', 'corge');
+await slyk.rate.delete("garply", "corge");
 ```
 
 #### Response
@@ -3636,7 +3883,7 @@ Retrieves the `rate` of the given `baseAssetCode` and `quoteAssetCode`.
 #### Request
 
 ```js
-await slyk.rate.get('garply', 'corge');
+await slyk.rate.get("garply", "corge");
 ```
 
 #### Response
@@ -3662,31 +3909,33 @@ Retrieves a list of `rates`.
 #### Request
 
 ```js
-await slyk.rate.list({ filter: { assetCode: 'garply' } });
+await slyk.rate.list({ filter: { assetCode: "garply" } });
 ```
 
 #### Response
 
 ```json
 {
-  "results": [{
-    "baseAssetCode": "garply",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "metadata": {},
-    "quoteAssetCode": "corge",
-    "rate": "0.50000000",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "baseAssetCode": "corge",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "metadata": {},
-    "quoteAssetCode": "garply",
-    "rate": "2.10000000",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "baseAssetCode": "garply",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "metadata": {},
+      "quoteAssetCode": "corge",
+      "rate": "0.50000000",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "baseAssetCode": "corge",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "metadata": {},
+      "quoteAssetCode": "garply",
+      "rate": "2.10000000",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 2
 }
 ```
@@ -3700,7 +3949,7 @@ Modifies the details the `rate` of the given `baseAssetCode` and `quoteAssetCode
 #### Request
 
 ```js
-await slyk.rate.patch('garply', 'corge', { rate: '0.6' });
+await slyk.rate.patch("garply", "corge", { rate: "0.6" });
 ```
 
 #### Response
@@ -3728,21 +3977,21 @@ Retrieves the `setting` of the given `code`.
 #### Request
 
 ```js
-await slyk.setting.get('garply');
+await slyk.setting.get("garply");
 ```
 
 #### Response
 
 ```json
 {
-    "code": "garply",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "description": "corge",
-    "public": true,
-    "scope": ["qux"],
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "type": "string",
-    "value": "grault",
+  "code": "garply",
+  "createdAt": "2019-03-20T14:30:37.483Z",
+  "description": "corge",
+  "public": true,
+  "scope": ["qux"],
+  "updatedAt": "2019-03-20T14:30:37.483Z",
+  "type": "string",
+  "value": "grault"
 }
 ```
 
@@ -3756,8 +4005,8 @@ Retrieves a list of `settings`.
 
 ```js
 await slyk.setting.list({
-  filter: { code: 'in:foo,garply' },
-  sort: [{ name: 'createdAt' }]
+  filter: { code: "in:foo,garply" },
+  sort: [{ name: "createdAt" }],
 });
 ```
 
@@ -3765,31 +4014,35 @@ await slyk.setting.list({
 
 ```json
 {
-  "results": [{
-    "code": "foo",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "description": "corge",
-    "public": true,
-    "scope": ["qux"],
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "type": "string",
-    "value": "grault",
-  }, {
-    "code": "garply",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "description": "corge",
-    "public": true,
-    "scope": ["qux"],
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "type": "string",
-    "value": "bar",
-  }]
+  "results": [
+    {
+      "code": "foo",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "description": "corge",
+      "public": true,
+      "scope": ["qux"],
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "type": "string",
+      "value": "grault"
+    },
+    {
+      "code": "garply",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "description": "corge",
+      "public": true,
+      "scope": ["qux"],
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "type": "string",
+      "value": "bar"
+    }
+  ]
 }
 ```
 
 ## task
 
 The result of each one of the following `task` methods return one or an array of `Task` objects that include the following methods:
+
 - `complete`: Completes the `task`.
 - `completeSurvey`: Completes a `task` of `type: survey`.
 - `delete`: Deletes the `task`.
@@ -3807,7 +4060,9 @@ Completes the `task` of the given `id`.
 #### Request
 
 ```js
-await slyk.task.complete('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { userId: 'f02a1bf2-bcc6-49e5-ab8b-895319423aee' });
+await slyk.task.complete("deaaee6f-e329-42e0-b85c-e07cd20c0ec5", {
+  userId: "f02a1bf2-bcc6-49e5-ab8b-895319423aee",
+});
 ```
 
 #### Response
@@ -3825,15 +4080,15 @@ Completes the `task` of the given `id` and `type: survey`.
 #### Request
 
 ```js
-await slyk.task.completeSurvey('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
+await slyk.task.completeSurvey("deaaee6f-e329-42e0-b85c-e07cd20c0ec5", {
   answers: [
     {
-      answer: { description: 'foobar' },
-      questionId: '60e76e78-ae00-4a0c-b161-36edc92458df',
-      stepId: '2e674dea-c1ea-44cf-8ef6-5927add798bcs'
-    }
+      answer: { description: "foobar" },
+      questionId: "60e76e78-ae00-4a0c-b161-36edc92458df",
+      stepId: "2e674dea-c1ea-44cf-8ef6-5927add798bcs",
+    },
   ],
-  userId: '54e65ef2-6252-43f1-8866-48d26dee63cf'
+  userId: "54e65ef2-6252-43f1-8866-48d26dee63cf",
 });
 ```
 
@@ -3853,16 +4108,16 @@ Creates a `task`.
 
 ```js
 await slyk.task.create({
-  amount: '2.00000000',
-  buttonLabel: 'waldo',
-  description: 'biz',
+  amount: "2.00000000",
+  buttonLabel: "waldo",
+  description: "biz",
   enabled: true,
   featured: true,
-  image: '123bf8d0-c070-492d-92d1-be1dbfcb8ddd',
-  name: 'foobar',
-  surveyUrl: 'http://qux.com',
-  thumbnail: '75e80c1d-1845-4534-af04-f5a2081476b9',
-  type: 'manual'
+  image: "123bf8d0-c070-492d-92d1-be1dbfcb8ddd",
+  name: "foobar",
+  surveyUrl: "http://qux.com",
+  thumbnail: "75e80c1d-1845-4534-af04-f5a2081476b9",
+  type: "manual",
 });
 ```
 
@@ -3909,7 +4164,7 @@ Retrieves the `task` of the given `id`.
 #### Request
 
 ```js
-await slyk.task.get('deaaee6f-e329-42e0-b85c-e07cd20c0ec5');
+await slyk.task.get("deaaee6f-e329-42e0-b85c-e07cd20c0ec5");
 ```
 
 #### Response
@@ -3955,9 +4210,11 @@ Retrieves the `tasks` statistics for the `user` of the given `id`.
 #### Request
 
 ```js
-const userId = '97404926-0068-4cd2-b27f-c95a442d0328';
+const userId = "97404926-0068-4cd2-b27f-c95a442d0328";
 
-await slyk.task.getStatistics(userId, { sort: [{ direction: 'asc', name: 'name' }] });
+await slyk.task.getStatistics(userId, {
+  sort: [{ direction: "asc", name: "name" }],
+});
 ```
 
 #### Response
@@ -4035,8 +4292,8 @@ Retrieves a list of `task`.
 ```js
 await slyk.task.list({
   filter: { enabled: true },
-  sort: [{ direction: 'desc', name: 'amount' }],
-  page: { number: 3, size: 2 }
+  sort: [{ direction: "desc", name: "amount" }],
+  page: { number: 3, size: 2 },
 });
 ```
 
@@ -4103,12 +4360,12 @@ Retrieves a list of `taskStepQuestionAnswers` related with the `task` of the giv
 #### Request
 
 ```js
-const id = 'c6b2ee3c-a2ba-4710-9644-df0c04e4963b';
+const id = "c6b2ee3c-a2ba-4710-9644-df0c04e4963b";
 
 await slyk.task.list({
-  filter: { userId: '813226b3-39d0-4ae9-a050-fd8b66922465' },
-  sort: [{ direction: 'desc', name: 'createdAt' }],
-  page: { number: 3, size: 2 }
+  filter: { userId: "813226b3-39d0-4ae9-a050-fd8b66922465" },
+  sort: [{ direction: "desc", name: "createdAt" }],
+  page: { number: 3, size: 2 },
 });
 ```
 
@@ -4155,10 +4412,10 @@ Patches the `task` of the given `id`.
 #### Request
 
 ```js
-await slyk.task.patch('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
-  amount: '2.00000000',
+await slyk.task.patch("deaaee6f-e329-42e0-b85c-e07cd20c0ec5", {
+  amount: "2.00000000",
   enabled: true,
-  name: 'foo'
+  name: "foo",
 });
 ```
 
@@ -4191,7 +4448,9 @@ Reorders the `task` of the given `id`.
 #### Request
 
 ```js
-await slyk.task.reorder('deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { subsequentId: '123aee6f-e329-42e0-b85c-e07cd20c0bbb' });
+await slyk.task.reorder("deaaee6f-e329-42e0-b85c-e07cd20c0ec5", {
+  subsequentId: "123aee6f-e329-42e0-b85c-e07cd20c0bbb",
+});
 ```
 
 #### Response
@@ -4203,6 +4462,7 @@ true
 ## taskStep
 
 The result of each one of the following `taskStep` methods return one or an array of `TaskStep` objects that include the following methods:
+
 - `questions`: Gets a list of related `taskStepQuestions`;
 - `patch`: Patches the `taskStep`.
 
@@ -4215,7 +4475,11 @@ Retrieves the `taskStep` of the given `id`.
 #### Request
 
 ```js
-await slyk.taskStep.get('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-42e0-b85c-e07cd20c0ec5', { include: 'questions' });
+await slyk.taskStep.get(
+  "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+  "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  { include: "questions" }
+);
 ```
 
 #### Response
@@ -4226,24 +4490,26 @@ await slyk.taskStep.get('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-4
   "customData": {},
   "description": "qux",
   "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-  "questions": [{
-    "createdAt": "2020-03-10T11:30:00.000Z",
-    "customData": {},
-    "description": "quux",
-    "id": "waldo",
-    "optional": false,
-    "options": ["foo", "bar"],
-    "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-    "type": "radio_button",
-    "updatedAt": "2020-03-10T11:30:00.000Z",
-    "video": {
-      "playbackId": "plugh",
-      "status": "completed",
-      "type": "video",
-      "uploadId": "plugh",
-      "url": "http://plugh.url"
+  "questions": [
+    {
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "customData": {},
+      "description": "quux",
+      "id": "waldo",
+      "optional": false,
+      "options": ["foo", "bar"],
+      "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+      "type": "radio_button",
+      "updatedAt": "2020-03-10T11:30:00.000Z",
+      "video": {
+        "playbackId": "plugh",
+        "status": "completed",
+        "type": "video",
+        "uploadId": "plugh",
+        "url": "http://plugh.url"
+      }
     }
-  }],
+  ],
   "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
   "title": "foobar",
   "updatedAt": "2020-03-10T11:30:00.000Z"
@@ -4259,11 +4525,11 @@ Retrieves a list of `taskStep`.
 #### Request
 
 ```js
-await slyk.taskStep.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', {
-  filter: { description: 'foo' },
-  include: 'questions',
-  sort: [{ direction: 'desc', name: 'createdAt' }],
-  page: { number: 3, size: 2 }
+await slyk.taskStep.list("fc78d28f-a8dd-49de-a22f-722fe3bd26c7", {
+  filter: { description: "foo" },
+  include: "questions",
+  sort: [{ direction: "desc", name: "createdAt" }],
+  page: { number: 3, size: 2 },
 });
 ```
 
@@ -4277,24 +4543,26 @@ await slyk.taskStep.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', {
       "customData": {},
       "description": "qux",
       "id": "ppp8d28f-a8dd-49de-a22f-722fe3bd2456",
-      "questions": [{
-        "createdAt": "2020-03-10T11:30:00.000Z",
-        "customData": {},
-        "description": "quux",
-        "id": "waldo",
-        "optional": false,
-        "options": ["foo", "bar"],
-        "stepId": "po08d28f-a8dd-49de-a22f-722fe3bd26o9",
-        "type": "radio_button",
-        "updatedAt": "2020-03-10T11:30:00.000Z",
-        "video": {
-          "playbackId": "plugh",
-          "status": "completed",
-          "type": "video",
-          "uploadId": "plugh",
-          "url": "http://plugh.url"
+      "questions": [
+        {
+          "createdAt": "2020-03-10T11:30:00.000Z",
+          "customData": {},
+          "description": "quux",
+          "id": "waldo",
+          "optional": false,
+          "options": ["foo", "bar"],
+          "stepId": "po08d28f-a8dd-49de-a22f-722fe3bd26o9",
+          "type": "radio_button",
+          "updatedAt": "2020-03-10T11:30:00.000Z",
+          "video": {
+            "playbackId": "plugh",
+            "status": "completed",
+            "type": "video",
+            "uploadId": "plugh",
+            "url": "http://plugh.url"
+          }
         }
-      }],
+      ],
       "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
       "title": "foobar",
       "updatedAt": "2020-03-10T11:30:00.000Z"
@@ -4304,18 +4572,20 @@ await slyk.taskStep.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', {
       "customData": {},
       "description": "foo",
       "id": "1238d28f-a8dd-49de-a22f-722fe3bd26c7",
-      "questions": [{
-        "createdAt": "2020-03-10T11:30:00.000Z",
-        "customData": {},
-        "description": "quux",
-        "id": "der8d28f-a8dd-49de-a22f-722fe3bd2901",
-        "optional": true,
-        "options": null,
-        "stepId": "1238d28f-a8dd-49de-a22f-722fe3bd2456",
-        "type": "open_text",
-        "updatedAt": "2020-03-10T11:30:00.000Z",
-        "video": { "url": "http://foo.com" }
-      }],
+      "questions": [
+        {
+          "createdAt": "2020-03-10T11:30:00.000Z",
+          "customData": {},
+          "description": "quux",
+          "id": "der8d28f-a8dd-49de-a22f-722fe3bd2901",
+          "optional": true,
+          "options": null,
+          "stepId": "1238d28f-a8dd-49de-a22f-722fe3bd2456",
+          "type": "open_text",
+          "updatedAt": "2020-03-10T11:30:00.000Z",
+          "video": { "url": "http://foo.com" }
+        }
+      ],
       "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
       "title": "foobiz",
       "updatedAt": "2020-03-10T11:30:00.000Z"
@@ -4334,10 +4604,14 @@ Patches the `taskStep` of the given `id`.
 #### Request
 
 ```js
-await slyk.taskStep.patch('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
-  description: 'foobar',
-  title: 'foobar'
-});
+await slyk.taskStep.patch(
+  "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+  "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  {
+    description: "foobar",
+    title: "foobar",
+  }
+);
 ```
 
 #### Response
@@ -4348,24 +4622,26 @@ await slyk.taskStep.patch('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329
   "customData": {},
   "description": "qux",
   "id": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-  "questions": [{
-    "createdAt": "2020-03-10T11:30:00.000Z",
-    "customData": {},
-    "description": "quux",
-    "id": "waldo",
-    "optional": false,
-    "options": ["foo", "bar"],
-    "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
-    "type": "radio_button",
-    "updatedAt": "2020-03-10T11:30:00.000Z",
-    "video": {
-      "playbackId": "plugh",
-      "status": "completed",
-      "type": "video",
-      "uploadId": "plugh",
-      "url": "http://plugh.url"
+  "questions": [
+    {
+      "createdAt": "2020-03-10T11:30:00.000Z",
+      "customData": {},
+      "description": "quux",
+      "id": "waldo",
+      "optional": false,
+      "options": ["foo", "bar"],
+      "stepId": "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+      "type": "radio_button",
+      "updatedAt": "2020-03-10T11:30:00.000Z",
+      "video": {
+        "playbackId": "plugh",
+        "status": "completed",
+        "type": "video",
+        "uploadId": "plugh",
+        "url": "http://plugh.url"
+      }
     }
-  }],
+  ],
   "taskId": "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
   "title": "foobar",
   "updatedAt": "2020-03-10T11:30:00.000Z"
@@ -4385,11 +4661,15 @@ Retrieves a list of `taskStepQuestion`.
 #### Request
 
 ```js
-await slyk.taskStepQuestion.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee6f-e329-42e0-b85c-e07cd20c0ec5', {
-  filter: { type: 'in:open_text,radio_button' },
-  sort: [{ direction: 'desc', name: 'createdAt' }],
-  page: { number: 3, size: 2 }
-});
+await slyk.taskStepQuestion.list(
+  "fc78d28f-a8dd-49de-a22f-722fe3bd26c7",
+  "deaaee6f-e329-42e0-b85c-e07cd20c0ec5",
+  {
+    filter: { type: "in:open_text,radio_button" },
+    sort: [{ direction: "desc", name: "createdAt" }],
+    page: { number: 3, size: 2 },
+  }
+);
 ```
 
 #### Response
@@ -4441,6 +4721,7 @@ await slyk.taskStepQuestion.list('fc78d28f-a8dd-49de-a22f-722fe3bd26c7', 'deaaee
 ## taxRate
 
 The result of each one of the following `taxRate` methods return one or an array of `TaxRate` objects that include the following methods:
+
 - `delete`: Deletes the `taxRate`.
 - `patch`: Patches the `taxRate`.
 
@@ -4453,7 +4734,7 @@ Creates a `taxRate`.
 #### Request
 
 ```js
-await slyk.taxRate.create({ name: 'bar', rate: '5.00000000' });
+await slyk.taxRate.create({ name: "bar", rate: "5.00000000" });
 ```
 
 #### Response
@@ -4475,7 +4756,7 @@ Deletes the `taxRate` of the given `id`.
 #### Request
 
 ```js
-await slyk.taxRate.delete('d30eacc4-8896-4376-b171-c374cbdb7681');
+await slyk.taxRate.delete("d30eacc4-8896-4376-b171-c374cbdb7681");
 ```
 
 #### Response
@@ -4493,7 +4774,7 @@ Retrieves the `taxRate` of the given `id`.
 #### Request
 
 ```js
-await slyk.taxRate.get('d30eacc4-8896-4376-b171-c374cbdb7681');
+await slyk.taxRate.get("d30eacc4-8896-4376-b171-c374cbdb7681");
 ```
 
 #### Response
@@ -4517,7 +4798,7 @@ Retrieves a list of `taxRate`.
 ```js
 await slyk.taxRate.list({
   page: { number: 2, size: 2 },
-  sort: [{ name: 'name' }]
+  sort: [{ name: "name" }],
 });
 ```
 
@@ -4550,7 +4831,10 @@ Patches the `taxRate` of the given `id`.
 #### Request
 
 ```js
-await slyk.taxRate.patch('d30eacc4-8896-4376-b171-c374cbdb7681', { name: 'foo', rate: '5.00000000' });
+await slyk.taxRate.patch("d30eacc4-8896-4376-b171-c374cbdb7681", {
+  name: "foo",
+  rate: "5.00000000",
+});
 ```
 
 #### Response
@@ -4562,9 +4846,11 @@ await slyk.taxRate.patch('d30eacc4-8896-4376-b171-c374cbdb7681', { name: 'foo', 
   "rate": "5.00000000"
 }
 ```
+
 ## transaction
 
 The result of each one of the following `transaction` methods return one or an array of `Transaction` objects that include the following methods:
+
 - `approve`: Approves the `transaction`.
 - `confirm`: Confirms the `transaction`.
 - `fail`: Fails the `transaction`.
@@ -4585,7 +4871,7 @@ Approves the `transaction` of the given `id`.
 #### Request
 
 ```js
-await slyk.transaction.approve('43563311-ab16-4499-95d2-30d9e06ba159');
+await slyk.transaction.approve("43563311-ab16-4499-95d2-30d9e06ba159");
 ```
 
 #### Response
@@ -4623,7 +4909,7 @@ Confirms the `transaction` of the given `id`.
 #### Request
 
 ```js
-await slyk.transaction.confirm('43563311-ab16-4499-95d2-30d9e06ba159');
+await slyk.transaction.confirm("43563311-ab16-4499-95d2-30d9e06ba159");
 ```
 
 #### Response
@@ -4662,10 +4948,10 @@ Creates a new `deposit` `transaction`.
 
 ```js
 await slyk.transaction.deposit({
-  amount: '5',
-  assetCode: 'garply',
-  code: 'internal',
-  destinationWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+  amount: "5",
+  assetCode: "garply",
+  code: "internal",
+  destinationWalletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
 });
 ```
 
@@ -4705,13 +4991,13 @@ Creates a new `exchange` `transaction`.
 
 ```js
 await slyk.transaction.exchange({
-  baseAmount: '5',
-  baseAssetCode: 'qux',
-  code: 'garply',
-  customData: { corge: 'garply' },
-  quoteAssetCode: 'quux',
-  rate: '0.5',
-  walletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+  baseAmount: "5",
+  baseAssetCode: "qux",
+  code: "garply",
+  customData: { corge: "garply" },
+  quoteAssetCode: "quux",
+  rate: "0.5",
+  walletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
 });
 ```
 
@@ -4753,7 +5039,9 @@ Fails the `transaction` of the given `id`.
 #### Request
 
 ```js
-await slyk.transaction.fail('43563311-ab16-4499-95d2-30d9e06ba159', { reason: 'corge' });
+await slyk.transaction.fail("43563311-ab16-4499-95d2-30d9e06ba159", {
+  reason: "corge",
+});
 ```
 
 #### Response
@@ -4782,7 +5070,6 @@ await slyk.transaction.fail('43563311-ab16-4499-95d2-30d9e06ba159', { reason: 'c
 }
 ```
 
-
 ### `transaction.get`
 
 Returns the `transaction` of the given `id`.
@@ -4792,7 +5079,7 @@ Returns the `transaction` of the given `id`.
 #### Request
 
 ```js
-await slyk.transaction.get('1ef0452a-062c-45ce-aaf5-dd19e38c7711');
+await slyk.transaction.get("1ef0452a-062c-45ce-aaf5-dd19e38c7711");
 ```
 
 #### Response
@@ -4830,55 +5117,59 @@ Retrieves a list of `transactions`.
 #### Request
 
 ```js
-await slyk.movement.list({ filter: { walletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711' } });
+await slyk.movement.list({
+  filter: { walletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711" },
+});
 ```
 
 #### Response
 
 ```json
 {
-  "results": [{
-    "amount": "5.00000000",
-    "assetCode": "garply",
-    "code": "internal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
-    "externalId": null,
-    "externalReference": null,
-    "id": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": null,
-    "processedAt": null,
-    "reference": null,
-    "status": "completed",
-    "type": "deposit",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "amount": "2.50000000",
-    "assetCode": "garply",
-    "code": "bank:wire",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": null,
-    "externalId": null,
-    "externalReference": null,
-    "id": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
-    "processedAt": null,
-    "reference": null,
-    "status": "pending",
-    "type": "withdrawal",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "amount": "5.00000000",
+      "assetCode": "garply",
+      "code": "internal",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": null,
+      "processedAt": null,
+      "reference": null,
+      "status": "completed",
+      "type": "deposit",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "amount": "2.50000000",
+      "assetCode": "garply",
+      "code": "bank:wire",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": null,
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "processedAt": null,
+      "reference": null,
+      "status": "pending",
+      "type": "withdrawal",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 2
 }
 ```
@@ -4893,9 +5184,9 @@ Creates a new `pay` `transaction`.
 
 ```js
 await slyk.transaction.pay({
-  amount: '1',
-  assetCode: 'garply',
-  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+  amount: "1",
+  assetCode: "garply",
+  originWalletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
 });
 ```
 
@@ -4934,7 +5225,9 @@ Rejects the `transaction` of the given `id`.
 #### Request
 
 ```js
-await slyk.transaction.reject('43563311-ab16-4499-95d2-30d9e06ba159', { reason: { qux: 'quux' } });
+await slyk.transaction.reject("43563311-ab16-4499-95d2-30d9e06ba159", {
+  reason: { qux: "quux" },
+});
 ```
 
 #### Response
@@ -4973,10 +5266,10 @@ Creates a new `request` `transaction` that accepts either an `originWalletId` an
 
 ```js
 await slyk.transaction.request({
-  amount: '1',
-  assetCode: 'garply',
-  destinationWalletId: 'rtr0452a-062c-45ce-aaf5-dd19e38c7999',
-  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+  amount: "1",
+  assetCode: "garply",
+  destinationWalletId: "rtr0452a-062c-45ce-aaf5-dd19e38c7999",
+  originWalletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
 });
 ```
 
@@ -5016,10 +5309,10 @@ Creates a new `send` `transaction` that accepts either a `destinationWalletId` a
 
 ```js
 await slyk.transaction.send({
-  amount: '1',
-  assetCode: 'garply',
-  destinationWalletId: 'rtr0452a-062c-45ce-aaf5-dd19e38c7999',
-  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711'
+  amount: "1",
+  assetCode: "garply",
+  destinationWalletId: "rtr0452a-062c-45ce-aaf5-dd19e38c7999",
+  originWalletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
 });
 ```
 
@@ -5059,14 +5352,14 @@ Creates a new `transfer` `transaction`.
 
 ```js
 await slyk.transaction.transfer({
-  amount: '2',
-  code: 'internal',
+  amount: "2",
+  code: "internal",
   commit: true,
-  assetCode: 'garply',
-  originAddress: 'foobar',
-  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711',
-  destinantionAddress: 'foobiz',
-  destinationWalletId: 'ab7970fb-a1a9-456e-a6b2-1fedfba2247b'
+  assetCode: "garply",
+  originAddress: "foobar",
+  originWalletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+  destinantionAddress: "foobiz",
+  destinationWalletId: "ab7970fb-a1a9-456e-a6b2-1fedfba2247b",
 });
 ```
 
@@ -5106,11 +5399,11 @@ Creates a new `withdrawal` `transaction`.
 
 ```js
 await slyk.transaction.withdrawal({
-  amount: '2.5',
-  code: 'bank:wire',
+  amount: "2.5",
+  code: "bank:wire",
   commit: true,
-  assetCode: 'garply',
-  originWalletId: '1ef0452a-062c-45ce-aaf5-dd19e38c7711',
+  assetCode: "garply",
+  originWalletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
 });
 ```
 
@@ -5143,6 +5436,7 @@ await slyk.transaction.withdrawal({
 ## user
 
 The result of each one of the following `user` methods return one or an array of `User` objects that include the following methods:
+
 - `approve`: Approves the `user`.
 - `block`: Blocks the `user`.
 - `changeEmail`: Initializes a change email process of the `user`.
@@ -5165,7 +5459,7 @@ Approves the `user` of the given `id`.
 #### Request
 
 ```js
-await slyk.user.approve('5e101529-fa30-4415-9945-6540e70c4483');
+await slyk.user.approve("5e101529-fa30-4415-9945-6540e70c4483");
 ```
 
 #### Response
@@ -5199,7 +5493,7 @@ Blocks the `user` of the given `id`.
 #### Request
 
 ```js
-await slyk.user.block('5e101529-fa30-4415-9945-6540e70c4483');
+await slyk.user.block("5e101529-fa30-4415-9945-6540e70c4483");
 ```
 
 #### Response
@@ -5233,7 +5527,9 @@ Initializes `user` change email process.
 #### Request
 
 ```js
-await slyk.user.changeEmail('5e101529-fa30-4415-9945-6540e70c4483', { email: 'foo@bar.com' });
+await slyk.user.changeEmail("5e101529-fa30-4415-9945-6540e70c4483", {
+  email: "foo@bar.com",
+});
 ```
 
 #### Response
@@ -5252,8 +5548,22 @@ Changes the `user` password.
 
 #### Request
 
+When two factor is not enabled:
+
 ```js
-await slyk.user.changePassword('5e101529-fa30-4415-9945-6540e70c4483', { password: 'waldo' });
+await slyk.user.changePassword("5e101529-fa30-4415-9945-6540e70c4483", {
+  password: "waldo",
+});
+```
+
+When two factor is enabled:
+
+```js
+await slyk.user.changePassword("5e101529-fa30-4415-9945-6540e70c4483", {
+  code: "123",
+  password: "waldo",
+  twoFactorId: "456",
+});
 ```
 
 #### Response
@@ -5271,7 +5581,10 @@ Initializes `user` change phone process.
 #### Request
 
 ```js
-await slyk.user.changePhone('5e101529-fa30-4415-9945-6540e70c4483', { countryCode: 'PT', phone: '+123456789' });
+await slyk.user.changePhone("5e101529-fa30-4415-9945-6540e70c4483", {
+  countryCode: "PT",
+  phone: "+123456789",
+});
 ```
 
 #### Response
@@ -5291,7 +5604,7 @@ Confirms the `user` email.
 #### Request
 
 ```js
-await slyk.user.confirmEmail({ token: 'foobar' });
+await slyk.user.confirmEmail({ token: "foobar" });
 ```
 
 #### Responses
@@ -5316,7 +5629,7 @@ Confirms the `user` phone.
 #### Request
 
 ```js
-await slyk.user.confirmPhone({ code: '123456', phone: '+123456789' });
+await slyk.user.confirmPhone({ code: "123456", phone: "+123456789" });
 ```
 
 #### Responses
@@ -5342,9 +5655,9 @@ Creates a new `user`.
 
 ```js
 await slyk.user.create({
-  email: 'foo@bar.com',
-  image: '75e80c1d-1845-4534-af04-f5a2081476b9',
-  password: 'waldo'
+  email: "foo@bar.com",
+  image: "75e80c1d-1845-4534-af04-f5a2081476b9",
+  password: "waldo",
 });
 ```
 
@@ -5386,7 +5699,7 @@ Sends a reset password token to the provided `email` or `phone`.
 #### Request
 
 ```js
-await slyk.user.forgotPassword({ email: 'foo@bar.com' });
+await slyk.user.forgotPassword({ email: "foo@bar.com" });
 ```
 
 #### Response
@@ -5406,7 +5719,7 @@ Returns the `user` of the given `id`.
 #### Request
 
 ```js
-await slyk.user.get('5e101529-fa30-4415-9945-6540e70c4483');
+await slyk.user.get("5e101529-fa30-4415-9945-6540e70c4483");
 ```
 
 #### Response
@@ -5447,8 +5760,8 @@ Returns the referral program of the given `program` from the `user` of the given
 #### Request
 
 ```js
-const id = '5e101529-fa30-4415-9945-6540e70c4483';
-const program = 'foobar';
+const id = "5e101529-fa30-4415-9945-6540e70c4483";
+const program = "foobar";
 
 await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
 ```
@@ -5508,7 +5821,7 @@ await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
       "referralUserId": "fbae3912-eb42-4359-b100-e64fa9ad4f16",
       "roles": ["user"],
       "updatedAt": "2019-07-17T11:39:26.732Z",
-      "verified": true,
+      "verified": true
     },
     {
       "approved": true,
@@ -5530,13 +5843,13 @@ await slyk.user.getReferralProgram(id, program, { page: { size: 2 } });
       "referralUserId": "fbae3912-eb42-4359-b100-e64fa9ad4f16",
       "roles": ["user"],
       "updatedAt": "2019-07-17T11:39:26.732Z",
-      "verified": true,
-    },
+      "verified": true
+    }
   ],
   "total": 3,
   "totalEarned": [
     { "amount": "3.00000000", "assetCode": "btc" },
-    { "amount": "2.50000000", "assetCode": "eth" },
+    { "amount": "2.50000000", "assetCode": "eth" }
   ]
 }
 ```
@@ -5550,7 +5863,7 @@ Deletes the `user` of the given `id`.
 #### Request
 
 ```js
-await slyk.user.delete('5e101529-fa30-4415-9945-6540e70c4483');
+await slyk.user.delete("5e101529-fa30-4415-9945-6540e70c4483");
 ```
 
 #### Response
@@ -5568,61 +5881,63 @@ Retrieves a list of `user`.
 #### Request
 
 ```js
-await slyk.user.list({ filter: { name: 'foo' } });
+await slyk.user.list({ filter: { name: "foo" } });
 ```
 
 #### Response
 
 ```json
 {
-  "results": [{
-    "approved": false,
-    "blocked": false,
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "email": "foo@bar.com",
-    "id": "5e101529-fa30-4415-9945-6540e70c4483",
-    "image": {
-      "external": false,
-      "path": "/waldo/fred.png",
-      "type": "image",
-      "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
-      "url": "http://foobar.com/waldo/fred.png"
+  "results": [
+    {
+      "approved": false,
+      "blocked": false,
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "email": "foo@bar.com",
+      "id": "5e101529-fa30-4415-9945-6540e70c4483",
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
+      "locale": "en-us",
+      "name": "foobar",
+      "phone": null,
+      "primaryWalletId": "6c455aa8-c714-4441-97a8-0739fe387a67",
+      "referralCode": "XYZZY",
+      "referralUserId": null,
+      "roles": ["user"],
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "verified": false
     },
-    "locale": "en-us",
-    "name": "foobar",
-    "phone": null,
-    "primaryWalletId": "6c455aa8-c714-4441-97a8-0739fe387a67",
-    "referralCode": "XYZZY",
-    "referralUserId": null,
-    "roles": ["user"],
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "verified": false
-  },
-  {
-    "approved": false,
-    "blocked": false,
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "email": "foo@biz.com",
-    "id": "6173fe23-1442-4003-bc4d-d18f5f42c024",
-    "image": {
-      "external": false,
-      "path": "/quux/qux.png",
-      "type": "image",
-      "uploadId": "12380c1d-1845-4534-af04-f5a208147ddd",
-      "url": "http://foobar.com/quux/qux.png"
-    },
-    "locale": "en-us",
-    "name": "foobiz",
-    "phone": null,
-    "primaryWalletId": "a12fb051-9e36-441a-82b8-90f7813c5504",
-    "referralCode": "XYZZY",
-    "referralUserId": null,
-    "roles": ["user"],
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "verified": false
-  }],
+    {
+      "approved": false,
+      "blocked": false,
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "email": "foo@biz.com",
+      "id": "6173fe23-1442-4003-bc4d-d18f5f42c024",
+      "image": {
+        "external": false,
+        "path": "/quux/qux.png",
+        "type": "image",
+        "uploadId": "12380c1d-1845-4534-af04-f5a208147ddd",
+        "url": "http://foobar.com/quux/qux.png"
+      },
+      "locale": "en-us",
+      "name": "foobiz",
+      "phone": null,
+      "primaryWalletId": "a12fb051-9e36-441a-82b8-90f7813c5504",
+      "referralCode": "XYZZY",
+      "referralUserId": null,
+      "roles": ["user"],
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "verified": false
+    }
+  ],
   "total": 2
 }
 ```
@@ -5636,7 +5951,9 @@ Patches the details of the `user` of the given `id`.
 #### Request
 
 ```js
-await slyk.user.patch('5e101529-fa30-4415-9945-6540e70c4483', { name: 'corge' });
+await slyk.user.patch("5e101529-fa30-4415-9945-6540e70c4483", {
+  name: "corge",
+});
 ```
 
 #### Response
@@ -5677,7 +5994,7 @@ Returns a confirmation token for the provided `email` or `phone`.
 #### Request
 
 ```js
-await slyk.user.resendConfirmation({ phone: '+123456789' });
+await slyk.user.resendConfirmation({ phone: "+123456789" });
 ```
 
 #### Response
@@ -5688,7 +6005,6 @@ await slyk.user.resendConfirmation({ phone: '+123456789' });
 }
 ```
 
-
 ### `user.resetPassword`
 
 Resets user password.
@@ -5697,8 +6013,20 @@ Resets user password.
 
 #### Request
 
+When two factor is not enabled:
+
 ```js
-await slyk.user.resetPassword({ password: 'Foobar123', token: '123456' });
+await slyk.user.resetPassword({ password: "Foobar123", token: "123456" });
+```
+
+When two factor is not enabled:
+
+```js
+await slyk.user.resetPassword({
+  password: "Foobar123",
+  token: "123456",
+  trustToken: "123",
+});
 ```
 
 #### Response
@@ -5716,7 +6044,7 @@ Unblocks the `user` of the given `id`.
 #### Request
 
 ```js
-await slyk.user.unblock('5e101529-fa30-4415-9945-6540e70c4483');
+await slyk.user.unblock("5e101529-fa30-4415-9945-6540e70c4483");
 ```
 
 #### Response
@@ -5744,6 +6072,7 @@ await slyk.user.unblock('5e101529-fa30-4415-9945-6540e70c4483');
 ## userBankAccount
 
 The result of each one of the following `userBankAccount` methods return one or an array of `UserBankAccount` objects that include the following methods:
+
 - `delete`: Deletes the `userBankAccount` instance;
 - `getAsset`: Returns the `userBankAccount` `asset` details;
 - `patch`: Patches the `userBankAccount` instance.
@@ -5760,11 +6089,11 @@ Creates a `userBankAccount`.
 await slyk.userBankAccount.create({
   asset: "garply",
   details: {
-    foo: "biz"
+    foo: "biz",
   },
   name: "foobar",
   region: "corge",
-  userId: "thud"
+  userId: "thud",
 });
 ```
 
@@ -5792,7 +6121,7 @@ Deletes the `userBankAccount` of the given `id`.
 #### Request
 
 ```js
-await slyk.userBankAccount.delete('xyzzy');
+await slyk.userBankAccount.delete("xyzzy");
 ```
 
 #### Response
@@ -5810,7 +6139,7 @@ Retrieves the `userBankAccount` of the given `id`.
 #### Request
 
 ```js
-await slyk.userBankAccount.get('xyzzy');
+await slyk.userBankAccount.get("xyzzy");
 ```
 
 #### Response
@@ -5839,8 +6168,8 @@ Retrieves a list of `userBankAccounts`.
 ```js
 await slyk.userBankAccount.list({
   page: { size: 2 },
-  sort: [{ name: 'name'}],
-  filter: { region: 'in:corge' }
+  sort: [{ name: "name" }],
+  filter: { region: "in:corge" },
 });
 ```
 
@@ -5881,11 +6210,11 @@ Patches the `userBankAccount` of the given `id`.
 #### Request
 
 ```js
-await slyk.userBankAccount.patch('xyzzy', {
+await slyk.userBankAccount.patch("xyzzy", {
   details: {
-    foo: "biz"
+    foo: "biz",
   },
-  name: "foobar"
+  name: "foobar",
 });
 ```
 
@@ -5907,6 +6236,7 @@ await slyk.userBankAccount.patch('xyzzy', {
 ## wallet
 
 The result of each one of the following `wallet` methods return one or an array of `Wallet` objects that include the following methods:
+
 - `getActivity`: Returns the `activity`.
 - `getBalance`: Returns the `balance`.
 - `getMovements`: Returns the `movements`.
@@ -5923,55 +6253,59 @@ Returns the `activity` of the `wallet` of the given `id`.
 #### Request
 
 ```js
-await slyk.wallet.activity('2d9b72c5-fbb2-45f1-8591-329c2a014c43', { page: { number: 2, size: 2 } });
+await slyk.wallet.activity("2d9b72c5-fbb2-45f1-8591-329c2a014c43", {
+  page: { number: 2, size: 2 },
+});
 ```
 
 #### Response
 
 ```json
 {
-  "results": [{
-    "amount": "5.00000000",
-    "assetCode": "garply",
-    "code": "internal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
-    "externalId": null,
-    "externalReference": null,
-    "id": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": null,
-    "processedAt": null,
-    "reference": null,
-    "status": "completed",
-    "type": "deposit",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "amount": "2.50000000",
-    "assetCode": "garply",
-    "code": "bank:wire",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": null,
-    "externalId": null,
-    "externalReference": null,
-    "id": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
-    "processedAt": null,
-    "reference": null,
-    "status": "processing",
-    "type": "withdrawal",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "amount": "5.00000000",
+      "assetCode": "garply",
+      "code": "internal",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": null,
+      "processedAt": null,
+      "reference": null,
+      "status": "completed",
+      "type": "deposit",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "amount": "2.50000000",
+      "assetCode": "garply",
+      "code": "bank:wire",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": null,
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "processedAt": null,
+      "reference": null,
+      "status": "processing",
+      "type": "withdrawal",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 5
 }
 ```
@@ -5985,7 +6319,9 @@ Returns the `balance` of the `wallet` of the given `id`.
 #### Request
 
 ```js
-await slyk.wallet.balance('2d9b72c5-fbb2-45f1-8591-329c2a014c43', { filter: { assetCode: 'in:garply,corge' } });
+await slyk.wallet.balance("2d9b72c5-fbb2-45f1-8591-329c2a014c43", {
+  filter: { assetCode: "in:garply,corge" },
+});
 ```
 
 #### Response
@@ -6006,7 +6342,7 @@ Creates a new `wallet`.
 #### Request
 
 ```js
-await slyk.wallet.create({ ownerId: '0adb8aa9-6232-48f2-8faa-d9289e9134b9' });
+await slyk.wallet.create({ ownerId: "0adb8aa9-6232-48f2-8faa-d9289e9134b9" });
 ```
 
 #### Response
@@ -6034,7 +6370,7 @@ Returns the `wallet` of the given `id`.
 #### Request
 
 ```js
-await slyk.wallet.get('4b1a22bf-642c-4c4f-bfb4-678e59121e74');
+await slyk.wallet.get("4b1a22bf-642c-4c4f-bfb4-678e59121e74");
 ```
 
 #### Response
@@ -6069,48 +6405,50 @@ await slyk.wallet.globalActivity({ page: { number: 2, size: 2 } });
 
 ```json
 {
-  "results": [{
-    "amount": "5.00000000",
-    "assetCode": "garply",
-    "code": "internal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
-    "externalId": null,
-    "externalReference": null,
-    "id": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": null,
-    "processedAt": null,
-    "reference": null,
-    "status": "completed",
-    "type": "deposit",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "amount": "2.50000000",
-    "assetCode": "garply",
-    "code": "bank:wire",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": null,
-    "externalId": null,
-    "externalReference": null,
-    "id": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
-    "processedAt": null,
-    "reference": null,
-    "status": "processing",
-    "type": "withdrawal",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "amount": "5.00000000",
+      "assetCode": "garply",
+      "code": "internal",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": null,
+      "processedAt": null,
+      "reference": null,
+      "status": "completed",
+      "type": "deposit",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "amount": "2.50000000",
+      "assetCode": "garply",
+      "code": "bank:wire",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": null,
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "processedAt": null,
+      "reference": null,
+      "status": "processing",
+      "type": "withdrawal",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 5
 }
 ```
@@ -6124,7 +6462,7 @@ Returns the `globalBalance`.
 #### Request
 
 ```js
-await slyk.wallet.globalBalance({ filter: { assetCode: 'in:garply,corge' } });
+await slyk.wallet.globalBalance({ filter: { assetCode: "in:garply,corge" } });
 ```
 
 #### Response
@@ -6152,28 +6490,30 @@ await slyk.wallet.list({ filter: { locked: true } });
 
 ```json
 {
-  "results": [{
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "id": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
-    "locked": true,
-    "metadata": {},
-    "name": null,
-    "ownerId": null,
-    "reference": "XYZZY",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "customData": {},
-    "id": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
-    "locked": true,
-    "metadata": {},
-    "name": null,
-    "ownerId": null,
-    "reference": "WALDO",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "id": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+      "locked": true,
+      "metadata": {},
+      "name": null,
+      "ownerId": null,
+      "reference": "XYZZY",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "id": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "locked": true,
+      "metadata": {},
+      "name": null,
+      "ownerId": null,
+      "reference": "WALDO",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 2
 }
 ```
@@ -6187,67 +6527,71 @@ Returns the `movments` of the `wallet` of the given `id`.
 #### Request
 
 ```js
-await slyk.wallet.movements('4b1a22bf-642c-4c4f-bfb4-678e59121e74', { include: 'transaction' });
+await slyk.wallet.movements("4b1a22bf-642c-4c4f-bfb4-678e59121e74", {
+  include: "transaction",
+});
 ```
 
 #### Response
 
 ```json
 {
-  "results": [{
-    "amount": "4.50000000",
-    "assetCode": "garply",
-    "code": "deposit",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
-    "transactionId": "43563311-ab16-4499-95d2-30d9e06ba159",
-    "transaction": {
+  "results": [
+    {
       "amount": "4.50000000",
       "assetCode": "garply",
-      "code": "internal",
+      "code": "deposit",
       "createdAt": "2019-03-20T14:30:37.483Z",
-      "description": null,
-      "destinationAddress": null,
-      "destinationWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
-      "externalId": null,
       "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
-      "metadata": {},
-      "originAddress": null,
-      "originWalletId": null,
-      "status": "completed",
-      "type": "deposit",
-      "updatedAt": "2019-03-20T14:30:37.483Z"
+      "transactionId": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "transaction": {
+        "amount": "4.50000000",
+        "assetCode": "garply",
+        "code": "internal",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "description": null,
+        "destinationAddress": null,
+        "destinationWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+        "externalId": null,
+        "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
+        "metadata": {},
+        "originAddress": null,
+        "originWalletId": null,
+        "status": "completed",
+        "type": "deposit",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      },
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "walletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74"
     },
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "walletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74"
-  },
-  {
-    "amount": "-0.50000000",
-    "assetCode": "garply",
-    "code": "withdrawal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
-    "transactionId": "a3293366-0d4c-4f83-8f71-84fe0b7dda99",
-    "transaction": {
-      "amount": "4.50000000",
+    {
+      "amount": "-0.50000000",
       "assetCode": "garply",
-      "code": "internal",
+      "code": "withdrawal",
       "createdAt": "2019-03-20T14:30:37.483Z",
-      "description": null,
-      "destinationAddress": null,
-      "destinationWalletId": null,
-      "externalId": null,
       "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
-      "metadata": {},
-      "originAddress": null,
-      "originWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
-      "status": "completed",
-      "type": "withdrawal",
-      "updatedAt": "2019-03-20T14:30:37.483Z"
-    },
-    "updatedAt": "2019-03-20T14:30:37.483Z",
-    "walletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74"
-  }],
+      "transactionId": "a3293366-0d4c-4f83-8f71-84fe0b7dda99",
+      "transaction": {
+        "amount": "4.50000000",
+        "assetCode": "garply",
+        "code": "internal",
+        "createdAt": "2019-03-20T14:30:37.483Z",
+        "description": null,
+        "destinationAddress": null,
+        "destinationWalletId": null,
+        "externalId": null,
+        "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
+        "metadata": {},
+        "originAddress": null,
+        "originWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+        "status": "completed",
+        "type": "withdrawal",
+        "updatedAt": "2019-03-20T14:30:37.483Z"
+      },
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "walletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74"
+    }
+  ],
   "total": 2
 }
 ```
@@ -6261,7 +6605,10 @@ Patches the details of the `wallet` of the given `id`.
 #### Request
 
 ```js
-await slyk.wallet.patch('4b1a22bf-642c-4c4f-bfb4-678e59121e74', { customData: { qux: 'quux' }, name: 'corge' });
+await slyk.wallet.patch("4b1a22bf-642c-4c4f-bfb4-678e59121e74", {
+  customData: { qux: "quux" },
+  name: "corge",
+});
 ```
 
 #### Response
@@ -6296,40 +6643,42 @@ await slyk.wallet.transactions('4b1a22bf-642c-4c4f-bfb4-678e59121e74';
 
 ```json
 {
-  "results": [{
-    "amount": "4.50000000",
-    "assetCode": "garply",
-    "code": "internal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
-    "externalId": null,
-    "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": null,
-    "status": "completed",
-    "type": "deposit",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  },
-  {
-    "amount": "4.50000000",
-    "assetCode": "garply",
-    "code": "internal",
-    "createdAt": "2019-03-20T14:30:37.483Z",
-    "description": null,
-    "destinationAddress": null,
-    "destinationWalletId": null,
-    "externalId": null,
-    "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
-    "metadata": {},
-    "originAddress": null,
-    "originWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
-    "status": "completed",
-    "type": "withdrawal",
-    "updatedAt": "2019-03-20T14:30:37.483Z"
-  }],
+  "results": [
+    {
+      "amount": "4.50000000",
+      "assetCode": "garply",
+      "code": "internal",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+      "externalId": null,
+      "id": "09900e6e-991e-43bd-9b82-0641f648c1d1",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": null,
+      "status": "completed",
+      "type": "deposit",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "amount": "4.50000000",
+      "assetCode": "garply",
+      "code": "internal",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": null,
+      "externalId": null,
+      "id": "b9fe22e5-2985-4814-8cb8-02e1cb581001",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+      "status": "completed",
+      "type": "withdrawal",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
   "total": 2
 }
 ```
@@ -6337,6 +6686,7 @@ await slyk.wallet.transactions('4b1a22bf-642c-4c4f-bfb4-678e59121e74';
 ## webhook
 
 The result of each one of the following `webhook` methods return one or an array of `Webhook` objects that include the following methods:
+
 - `delete`: Deletes the `webhook`.
 - `patch`: Patches the `webhook`.
 
@@ -6350,10 +6700,10 @@ Subscribes a list of `webhook` events.
 
 ```js
 await slyk.webhook.create({
-  description: 'waldo',
+  description: "waldo",
   enabled: true,
-  events: ['transaction.deposit.confirmed'],
-  url: 'https://foo.bar/qux'
+  events: ["transaction.deposit.confirmed"],
+  url: "https://foo.bar/qux",
 });
 ```
 
@@ -6379,7 +6729,7 @@ Deletes the `webhook` of the given `id`.
 #### Request
 
 ```js
-await slyk.webhook.delete('4b1a22bf-642c-4c4f-bfb4-678e59121e74');
+await slyk.webhook.delete("4b1a22bf-642c-4c4f-bfb4-678e59121e74");
 ```
 
 #### Response
@@ -6397,7 +6747,7 @@ Returns the `webhook` of the given `id`.
 #### Request
 
 ```js
-await slyk.webhook.get('4b1a22bf-642c-4c4f-bfb4-678e59121e74');
+await slyk.webhook.get("4b1a22bf-642c-4c4f-bfb4-678e59121e74");
 ```
 
 #### Response
@@ -6460,7 +6810,9 @@ Patches the `webhook` of the given `id`.
 #### Request
 
 ```js
-await slyk.webhook.patch('4b1a22bf-642c-4c4f-bfb4-678e59121e74', { enabled: false });
+await slyk.webhook.patch("4b1a22bf-642c-4c4f-bfb4-678e59121e74", {
+  enabled: false,
+});
 ```
 
 #### Response
