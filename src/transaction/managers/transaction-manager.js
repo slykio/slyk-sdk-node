@@ -85,6 +85,18 @@ export default class TransactionManager extends AbstractManager {
   }
 
   /**
+   * List via post.
+   */
+
+  async listViaPost(data) {
+    const result = await this.resolver.listViaPost(data);
+    const results = map(get(result, 'data', []), transaction => this.instantiate(transaction));
+    const total = get(result, 'total');
+
+    return { results, total };
+  }
+
+  /**
    * Patch.
    */
 

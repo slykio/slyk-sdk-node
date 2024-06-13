@@ -385,139 +385,142 @@
     - [`transaction.list`](#transactionlist)
       - [Request](#request-118)
       - [Response](#response-118)
-    - [`transaction.pay`](#transactionpay)
+    - [`transaction.listViaPost`](#transactionlistviapost)
       - [Request](#request-119)
       - [Response](#response-119)
-    - [`transaction.reject`](#transactionreject)
+    - [`transaction.pay`](#transactionpay)
       - [Request](#request-120)
       - [Response](#response-120)
-    - [`transaction.request`](#transactionrequest)
+    - [`transaction.reject`](#transactionreject)
       - [Request](#request-121)
       - [Response](#response-121)
-    - [`transaction.send`](#transactionsend)
+    - [`transaction.request`](#transactionrequest)
       - [Request](#request-122)
       - [Response](#response-122)
-    - [`transaction.transfer`](#transactiontransfer)
+    - [`transaction.send`](#transactionsend)
       - [Request](#request-123)
       - [Response](#response-123)
-    - [`transaction.withdrawal`](#transactionwithdrawal)
+    - [`transaction.transfer`](#transactiontransfer)
       - [Request](#request-124)
       - [Response](#response-124)
-  - [user](#user)
-    - [`user.approve`](#userapprove)
+    - [`transaction.withdrawal`](#transactionwithdrawal)
       - [Request](#request-125)
       - [Response](#response-125)
-    - [`user.block`](#userblock)
+  - [user](#user)
+    - [`user.approve`](#userapprove)
       - [Request](#request-126)
       - [Response](#response-126)
-    - [`user.changeEmail`](#userchangeemail)
+    - [`user.block`](#userblock)
       - [Request](#request-127)
       - [Response](#response-127)
-    - [`user.changePassword`](#userchangepassword)
+    - [`user.changeEmail`](#userchangeemail)
       - [Request](#request-128)
       - [Response](#response-128)
-    - [`user.changePhone`](#userchangephone)
+    - [`user.changePassword`](#userchangepassword)
       - [Request](#request-129)
       - [Response](#response-129)
-    - [`user.confirmEmail`](#userconfirmemail)
+    - [`user.changePhone`](#userchangephone)
       - [Request](#request-130)
+      - [Response](#response-130)
+    - [`user.confirmEmail`](#userconfirmemail)
+      - [Request](#request-131)
       - [Responses](#responses)
     - [`user.confirmPhone`](#userconfirmphone)
-      - [Request](#request-131)
+      - [Request](#request-132)
       - [Responses](#responses-1)
     - [`user.create`](#usercreate)
-      - [Request](#request-132)
-      - [Response](#response-130)
-    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-133)
       - [Response](#response-131)
-    - [`user.get`](#userget)
+    - [`user.forgotPassword`](#userforgotpassword)
       - [Request](#request-134)
       - [Response](#response-132)
-    - [`user.getReferralProgram`](#usergetreferralprogram)
+    - [`user.get`](#userget)
       - [Request](#request-135)
       - [Response](#response-133)
-    - [`user.delete`](#userdelete)
+    - [`user.getReferralProgram`](#usergetreferralprogram)
       - [Request](#request-136)
       - [Response](#response-134)
-    - [`user.list`](#userlist)
+    - [`user.delete`](#userdelete)
       - [Request](#request-137)
       - [Response](#response-135)
-    - [`user.patch`](#userpatch)
+    - [`user.list`](#userlist)
       - [Request](#request-138)
       - [Response](#response-136)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.patch`](#userpatch)
       - [Request](#request-139)
       - [Response](#response-137)
-    - [`user.resetPassword`](#userresetpassword)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-140)
       - [Response](#response-138)
-    - [`user.unblock`](#userunblock)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-141)
       - [Response](#response-139)
-  - [userBankAccount](#userbankaccount)
-    - [`userBankAccount.create`](#userbankaccountcreate)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-142)
       - [Response](#response-140)
-    - [`userBankAccount.delete`](#userbankaccountdelete)
+  - [userBankAccount](#userbankaccount)
+    - [`userBankAccount.create`](#userbankaccountcreate)
       - [Request](#request-143)
       - [Response](#response-141)
-    - [`userBankAccount.get`](#userbankaccountget)
+    - [`userBankAccount.delete`](#userbankaccountdelete)
       - [Request](#request-144)
       - [Response](#response-142)
-    - [`userBankAccount.list`](#userbankaccountlist)
+    - [`userBankAccount.get`](#userbankaccountget)
       - [Request](#request-145)
       - [Response](#response-143)
-    - [`userBankAccount.patch`](#userbankaccountpatch)
+    - [`userBankAccount.list`](#userbankaccountlist)
       - [Request](#request-146)
       - [Response](#response-144)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`userBankAccount.patch`](#userbankaccountpatch)
       - [Request](#request-147)
       - [Response](#response-145)
-    - [`wallet.balance`](#walletbalance)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-148)
       - [Response](#response-146)
-    - [`wallet.create`](#walletcreate)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-149)
       - [Response](#response-147)
-    - [`wallet.get`](#walletget)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-150)
       - [Response](#response-148)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`wallet.get`](#walletget)
       - [Request](#request-151)
       - [Response](#response-149)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-152)
       - [Response](#response-150)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-153)
       - [Response](#response-151)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-154)
       - [Response](#response-152)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-155)
       - [Response](#response-153)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-156)
       - [Response](#response-154)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`wallet.transactions`](#wallettransactions)
       - [Request](#request-157)
       - [Response](#response-155)
-    - [`webhook.delete`](#webhookdelete)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
       - [Request](#request-158)
       - [Response](#response-156)
-    - [`webhook.get`](#webhookget)
+    - [`webhook.delete`](#webhookdelete)
       - [Request](#request-159)
       - [Response](#response-157)
-    - [`webhook.list`](#webhooklist)
+    - [`webhook.get`](#webhookget)
       - [Request](#request-160)
       - [Response](#response-158)
-    - [`webhook.patch`](#webhookpatch)
+    - [`webhook.list`](#webhooklist)
       - [Request](#request-161)
       - [Response](#response-159)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-162)
+      - [Response](#response-160)
 
 ## address
 
@@ -5118,6 +5121,72 @@ Retrieves a list of `transactions`.
 
 ```js
 await slyk.movement.list({
+  filter: { walletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711" },
+});
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "amount": "5.00000000",
+      "assetCode": "garply",
+      "code": "internal",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": null,
+      "processedAt": null,
+      "reference": null,
+      "status": "completed",
+      "type": "deposit",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "amount": "2.50000000",
+      "assetCode": "garply",
+      "code": "bank:wire",
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "description": null,
+      "destinationAddress": null,
+      "destinationWalletId": null,
+      "externalId": null,
+      "externalReference": null,
+      "id": "43563311-ab16-4499-95d2-30d9e06ba159",
+      "metadata": {},
+      "originAddress": null,
+      "originWalletId": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "processedAt": null,
+      "reference": null,
+      "status": "pending",
+      "type": "withdrawal",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
+  "total": 2
+}
+```
+
+### `transaction.listViaPost`
+
+Retrieves a list of `transactions` via a `POST` request.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.transaction.listViaPost({
   filter: { walletId: "1ef0452a-062c-45ce-aaf5-dd19e38c7711" },
 });
 ```
