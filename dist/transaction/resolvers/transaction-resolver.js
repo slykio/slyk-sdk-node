@@ -45,6 +45,10 @@ var config = {
     endpoint: 'transactions',
     method: 'get'
   },
+  listViaPost: {
+    endpoint: 'transactions/list',
+    method: 'post'
+  },
   patch: {
     endpoint: 'transactions/:id',
     method: 'patch'

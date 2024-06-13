@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/slykio/slyk-sdk-node/tree/HEAD)
 
-[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.15.0...HEAD)
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.16.0...HEAD)
+
+**Merged pull requests:**
+
+- List transactions via post [\#57](https://github.com/slykio/slyk-sdk-node/pull/57) ([pedrodiasparente](https://github.com/pedrodiasparente))
+
+## [v0.16.0](https://github.com/slykio/slyk-sdk-node/tree/v0.16.0) (2024-04-17)
+
+[Full Changelog](https://github.com/slykio/slyk-sdk-node/compare/v0.15.0...v0.16.0)
 
 **Merged pull requests:**
 
