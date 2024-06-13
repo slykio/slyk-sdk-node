@@ -217,6 +217,50 @@ describe('TransactionManager', () => {
     });
   });
 
+  describe('listViaPost', () => {
+    it('should call api `/transactions/list` endpoint with method `post` and return an array of instances of `Transaction` model in the `results` attribute and the `total`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/transactions/list', {
+          page: { number: 3, size: 2 },
+          sort: '-amount'
+        })
+        .reply(200, {
+          data: [
+            {
+              amount: '5',
+              id: 'bar',
+              metadata: {}
+            },
+            {
+              amount: '4',
+              id: 'biz',
+              metadata: {}
+            }
+          ],
+          total: 6
+        });
+
+      const { results, total } = await slyk.transaction.listViaPost({
+        page: { number: 3, size: 2 },
+        sort: '-amount'
+      });
+
+      expect(results).toEqual([
+        {
+          amount: '5',
+          id: 'bar',
+          metadata: {}
+        },
+        {
+          amount: '4',
+          id: 'biz',
+          metadata: {}
+        }]);
+
+      expect(total).toEqual(6);
+    });
+  });
+
   describe('patch', () => {
     it('should call api `/transactions/bar` endpoint with method `patch` and return an instance of `Transaction` model with the given `data` after being patched', async () => {
       nock(host, { reqheaders: { apikey } })
