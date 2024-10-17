@@ -446,81 +446,84 @@
     - [`user.list`](#userlist)
       - [Request](#request-138)
       - [Response](#response-136)
-    - [`user.patch`](#userpatch)
+    - [`user.listViaPost`](#userlistviapost)
       - [Request](#request-139)
       - [Response](#response-137)
-    - [`user.resendConfirmation`](#userresendconfirmation)
+    - [`user.patch`](#userpatch)
       - [Request](#request-140)
       - [Response](#response-138)
-    - [`user.resetPassword`](#userresetpassword)
+    - [`user.resendConfirmation`](#userresendconfirmation)
       - [Request](#request-141)
       - [Response](#response-139)
-    - [`user.unblock`](#userunblock)
+    - [`user.resetPassword`](#userresetpassword)
       - [Request](#request-142)
       - [Response](#response-140)
-  - [userBankAccount](#userbankaccount)
-    - [`userBankAccount.create`](#userbankaccountcreate)
+    - [`user.unblock`](#userunblock)
       - [Request](#request-143)
       - [Response](#response-141)
-    - [`userBankAccount.delete`](#userbankaccountdelete)
+  - [userBankAccount](#userbankaccount)
+    - [`userBankAccount.create`](#userbankaccountcreate)
       - [Request](#request-144)
       - [Response](#response-142)
-    - [`userBankAccount.get`](#userbankaccountget)
+    - [`userBankAccount.delete`](#userbankaccountdelete)
       - [Request](#request-145)
       - [Response](#response-143)
-    - [`userBankAccount.list`](#userbankaccountlist)
+    - [`userBankAccount.get`](#userbankaccountget)
       - [Request](#request-146)
       - [Response](#response-144)
-    - [`userBankAccount.patch`](#userbankaccountpatch)
+    - [`userBankAccount.list`](#userbankaccountlist)
       - [Request](#request-147)
       - [Response](#response-145)
-  - [wallet](#wallet)
-    - [`wallet.activity`](#walletactivity)
+    - [`userBankAccount.patch`](#userbankaccountpatch)
       - [Request](#request-148)
       - [Response](#response-146)
-    - [`wallet.balance`](#walletbalance)
+  - [wallet](#wallet)
+    - [`wallet.activity`](#walletactivity)
       - [Request](#request-149)
       - [Response](#response-147)
-    - [`wallet.create`](#walletcreate)
+    - [`wallet.balance`](#walletbalance)
       - [Request](#request-150)
       - [Response](#response-148)
-    - [`wallet.get`](#walletget)
+    - [`wallet.create`](#walletcreate)
       - [Request](#request-151)
       - [Response](#response-149)
-    - [`wallet.globalActivity`](#walletglobalactivity)
+    - [`wallet.get`](#walletget)
       - [Request](#request-152)
       - [Response](#response-150)
-    - [`wallet.globalBalance`](#walletglobalbalance)
+    - [`wallet.globalActivity`](#walletglobalactivity)
       - [Request](#request-153)
       - [Response](#response-151)
-    - [`wallet.list`](#walletlist)
+    - [`wallet.globalBalance`](#walletglobalbalance)
       - [Request](#request-154)
       - [Response](#response-152)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.list`](#walletlist)
       - [Request](#request-155)
       - [Response](#response-153)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-156)
       - [Response](#response-154)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-157)
       - [Response](#response-155)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`wallet.transactions`](#wallettransactions)
       - [Request](#request-158)
       - [Response](#response-156)
-    - [`webhook.delete`](#webhookdelete)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
       - [Request](#request-159)
       - [Response](#response-157)
-    - [`webhook.get`](#webhookget)
+    - [`webhook.delete`](#webhookdelete)
       - [Request](#request-160)
       - [Response](#response-158)
-    - [`webhook.list`](#webhooklist)
+    - [`webhook.get`](#webhookget)
       - [Request](#request-161)
       - [Response](#response-159)
-    - [`webhook.patch`](#webhookpatch)
+    - [`webhook.list`](#webhooklist)
       - [Request](#request-162)
       - [Response](#response-160)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-163)
+      - [Response](#response-161)
 
 ## address
 
@@ -5951,6 +5954,76 @@ Retrieves a list of `user`.
 
 ```js
 await slyk.user.list({ filter: { name: "foo" } });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "approved": false,
+      "blocked": false,
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "email": "foo@bar.com",
+      "id": "5e101529-fa30-4415-9945-6540e70c4483",
+      "image": {
+        "external": false,
+        "path": "/waldo/fred.png",
+        "type": "image",
+        "uploadId": "75e80c1d-1845-4534-af04-f5a2081476b9",
+        "url": "http://foobar.com/waldo/fred.png"
+      },
+      "locale": "en-us",
+      "name": "foobar",
+      "phone": null,
+      "primaryWalletId": "6c455aa8-c714-4441-97a8-0739fe387a67",
+      "referralCode": "XYZZY",
+      "referralUserId": null,
+      "roles": ["user"],
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "verified": false
+    },
+    {
+      "approved": false,
+      "blocked": false,
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "email": "foo@biz.com",
+      "id": "6173fe23-1442-4003-bc4d-d18f5f42c024",
+      "image": {
+        "external": false,
+        "path": "/quux/qux.png",
+        "type": "image",
+        "uploadId": "12380c1d-1845-4534-af04-f5a208147ddd",
+        "url": "http://foobar.com/quux/qux.png"
+      },
+      "locale": "en-us",
+      "name": "foobiz",
+      "phone": null,
+      "primaryWalletId": "a12fb051-9e36-441a-82b8-90f7813c5504",
+      "referralCode": "XYZZY",
+      "referralUserId": null,
+      "roles": ["user"],
+      "updatedAt": "2019-03-20T14:30:37.483Z",
+      "verified": false
+    }
+  ],
+  "total": 2
+}
+```
+
+### `user.list`
+
+Retrieves a list of `user` via a `POST` request.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.user.listViaPost({ filter: { name: "foo" } });
 ```
 
 #### Response
