@@ -32,7 +32,7 @@
     "lint-staged": "lint-staged",
     "test": "jest --runInBand --forceExit",
     "test-watch": "jest --runInBand --watch --onlyChanged",
-    "version": "npm run build && npm run changelog --future-release=$npm_package_version && git add -A CHANGELOG.md dist"
+    "version": "npm run build && git add -A dist"
   },
   "dependencies": {
     "easy-http-errors": "^2.0.0",
