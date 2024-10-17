@@ -3,7 +3,7 @@
  * Module dependencies.
  */
 
-import { reduce, set } from 'lodash';
+import { reduce } from 'lodash';
 
 /**
  * Export `cleanRequestData`.
@@ -15,6 +15,6 @@ export default (data, endpoint) => {
       return result;
     }
 
-    return set(result, key, value);
+    return { ...result, [key]: value };
   }, {});
 };
