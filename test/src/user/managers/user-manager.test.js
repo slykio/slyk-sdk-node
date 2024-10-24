@@ -270,6 +270,48 @@ describe('UserManager', () => {
     });
   });
 
+  describe('listViaPost', () => {
+    it('should call api `/users/list` endpoint with method `post` and return an array of instances of `User` model in the `results` attribute and the `total`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/users/list', { filter: { name: 'foo' } })
+        .reply(200, {
+          data: [
+            {
+              email: 'foo@bar.com',
+              id: 'bar',
+              metadata: {},
+              name: 'foobar'
+            },
+            {
+              email: 'foo@biz.com',
+              id: 'biz',
+              metadata: {},
+              name: 'foobiz'
+            }
+          ],
+          total: 2
+        });
+
+      const { results, total } = await slyk.user.listViaPost({ filter: { name: 'foo' } });
+
+      expect(results).toEqual([
+        {
+          email: 'foo@bar.com',
+          id: 'bar',
+          metadata: {},
+          name: 'foobar'
+        },
+        {
+          email: 'foo@biz.com',
+          id: 'biz',
+          metadata: {},
+          name: 'foobiz'
+        }]);
+
+      expect(total).toEqual(2);
+    });
+  });
+
   describe('patch', () => {
     it('should call api `/users/bar` endpoint with method `patch` and return an instance of `User` model with the given `data`', async () => {
       nock(host, { reqheaders: { apikey } })
