@@ -514,30 +514,35 @@ var UserManager = /*#__PURE__*/function (_AbstractManager) {
       return list;
     }()
     /**
-     * Patch.
+     * List via post.
      */
 
   }, {
-    key: "patch",
+    key: "listViaPost",
     value: function () {
-      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee13(id, data) {
-        var _yield$this$resolver$9, user;
+      var _listViaPost = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee13(data) {
+        var _this2 = this;
 
+        var result, results, total;
         return _regenerator.default.wrap(function _callee13$(_context13) {
           while (1) {
             switch (_context13.prev = _context13.next) {
               case 0:
                 _context13.next = 2;
-                return this.resolver.patch((0, _lodash.merge)({}, data, {
-                  id
-                }));
+                return this.resolver.listViaPost(data);
 
               case 2:
-                _yield$this$resolver$9 = _context13.sent;
-                user = _yield$this$resolver$9.data;
-                return _context13.abrupt("return", this.instantiate(user));
+                result = _context13.sent;
+                results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (user) {
+                  return _this2.instantiate(user);
+                });
+                total = (0, _lodash.get)(result, 'total');
+                return _context13.abrupt("return", {
+                  results,
+                  total
+                });
 
-              case 5:
+              case 6:
               case "end":
                 return _context13.stop();
             }
@@ -545,7 +550,45 @@ var UserManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee13, this);
       }));
 
-      function patch(_x17, _x18) {
+      function listViaPost(_x17) {
+        return _listViaPost.apply(this, arguments);
+      }
+
+      return listViaPost;
+    }()
+    /**
+     * Patch.
+     */
+
+  }, {
+    key: "patch",
+    value: function () {
+      var _patch = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee14(id, data) {
+        var _yield$this$resolver$9, user;
+
+        return _regenerator.default.wrap(function _callee14$(_context14) {
+          while (1) {
+            switch (_context14.prev = _context14.next) {
+              case 0:
+                _context14.next = 2;
+                return this.resolver.patch((0, _lodash.merge)({}, data, {
+                  id
+                }));
+
+              case 2:
+                _yield$this$resolver$9 = _context14.sent;
+                user = _yield$this$resolver$9.data;
+                return _context14.abrupt("return", this.instantiate(user));
+
+              case 5:
+              case "end":
+                return _context14.stop();
+            }
+          }
+        }, _callee14, this);
+      }));
+
+      function patch(_x18, _x19) {
         return _patch.apply(this, arguments);
       }
 
@@ -558,30 +601,30 @@ var UserManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "resendConfirmation",
     value: function () {
-      var _resendConfirmation = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee14(data) {
+      var _resendConfirmation = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee15(data) {
         var _yield$this$resolver$10, token;
 
-        return _regenerator.default.wrap(function _callee14$(_context14) {
+        return _regenerator.default.wrap(function _callee15$(_context15) {
           while (1) {
-            switch (_context14.prev = _context14.next) {
+            switch (_context15.prev = _context15.next) {
               case 0:
-                _context14.next = 2;
+                _context15.next = 2;
                 return this.resolver.resendConfirmation(data);
 
               case 2:
-                _yield$this$resolver$10 = _context14.sent;
+                _yield$this$resolver$10 = _context15.sent;
                 token = _yield$this$resolver$10.data;
-                return _context14.abrupt("return", token);
+                return _context15.abrupt("return", token);
 
               case 5:
               case "end":
-                return _context14.stop();
+                return _context15.stop();
             }
           }
-        }, _callee14, this);
+        }, _callee15, this);
       }));
 
-      function resendConfirmation(_x19) {
+      function resendConfirmation(_x20) {
         return _resendConfirmation.apply(this, arguments);
       }
 
@@ -594,47 +637,13 @@ var UserManager = /*#__PURE__*/function (_AbstractManager) {
   }, {
     key: "resetPassword",
     value: function () {
-      var _resetPassword = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee15(data) {
-        return _regenerator.default.wrap(function _callee15$(_context15) {
-          while (1) {
-            switch (_context15.prev = _context15.next) {
-              case 0:
-                _context15.next = 2;
-                return this.resolver.resetPassword(data);
-
-              case 2:
-                return _context15.abrupt("return", true);
-
-              case 3:
-              case "end":
-                return _context15.stop();
-            }
-          }
-        }, _callee15, this);
-      }));
-
-      function resetPassword(_x20) {
-        return _resetPassword.apply(this, arguments);
-      }
-
-      return resetPassword;
-    }()
-    /**
-     * Unblock.
-     */
-
-  }, {
-    key: "unblock",
-    value: function () {
-      var _unblock = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee16(id) {
+      var _resetPassword = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee16(data) {
         return _regenerator.default.wrap(function _callee16$(_context16) {
           while (1) {
             switch (_context16.prev = _context16.next) {
               case 0:
                 _context16.next = 2;
-                return this.resolver.unblock({
-                  id
-                });
+                return this.resolver.resetPassword(data);
 
               case 2:
                 return _context16.abrupt("return", true);
@@ -647,7 +656,41 @@ var UserManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee16, this);
       }));
 
-      function unblock(_x21) {
+      function resetPassword(_x21) {
+        return _resetPassword.apply(this, arguments);
+      }
+
+      return resetPassword;
+    }()
+    /**
+     * Unblock.
+     */
+
+  }, {
+    key: "unblock",
+    value: function () {
+      var _unblock = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee17(id) {
+        return _regenerator.default.wrap(function _callee17$(_context17) {
+          while (1) {
+            switch (_context17.prev = _context17.next) {
+              case 0:
+                _context17.next = 2;
+                return this.resolver.unblock({
+                  id
+                });
+
+              case 2:
+                return _context17.abrupt("return", true);
+
+              case 3:
+              case "end":
+                return _context17.stop();
+            }
+          }
+        }, _callee17, this);
+      }));
+
+      function unblock(_x22) {
         return _unblock.apply(this, arguments);
       }
 

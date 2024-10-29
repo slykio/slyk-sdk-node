@@ -69,6 +69,10 @@ var config = {
     endpoint: 'users',
     method: 'get'
   },
+  listViaPost: {
+    endpoint: 'users/list',
+    method: 'post'
+  },
   patch: {
     endpoint: 'users/:id',
     method: 'patch'
