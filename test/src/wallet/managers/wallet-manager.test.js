@@ -189,6 +189,33 @@ describe('WalletManager', () => {
     });
   });
 
+  describe('listViaPost', () => {
+    it('should call api `/wallets/list` endpoint with method `post` and return an array of instances of `Wallet` model in the `results` attribute and the `total`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/wallets/list', { page: { number: 3, size: 2 } })
+        .reply(200, {
+          data: [
+            { id: 'bar', metadata: {} },
+            { id: 'biz', metadata: {} }
+          ],
+          total: 6
+        });
+
+      const { results, total } = await slyk.wallet.listViaPost({ page: { number: 3, size: 2 } });
+
+      expect(results).toEqual([{
+        id: 'bar',
+        metadata: {}
+      },
+      {
+        id: 'biz',
+        metadata: {}
+      }]);
+
+      expect(total).toEqual(6);
+    });
+  });
+
   describe('movements', () => {
     it('should call api `/wallets/bar/movements` endpoint with method `get` and return an array of instances of `Movement` model in the `results` attribute and the `total`', async () => {
       nock(host, { reqheaders: { apikey } })
