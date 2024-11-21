@@ -64,6 +64,15 @@ var OrderModel = /*#__PURE__*/function (_AbstractModel) {
       return OrderModel.sdk.orderLine.fulfill(orderLineId, this.id, data);
     }
     /**
+     * Get order.
+     */
+
+  }, {
+    key: "get",
+    value: function get(options) {
+      return OrderModel.sdk.order.get(this.id, options);
+    }
+    /**
      * Get order line.
      */
 
