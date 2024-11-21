@@ -36,6 +36,14 @@ export default class OrderModel extends AbstractModel {
   }
 
   /**
+   * Get order.
+   */
+
+  get(options) {
+    return OrderModel.sdk.order.get(this.id, options);
+  }
+
+  /**
    * Get order line.
    */
 
