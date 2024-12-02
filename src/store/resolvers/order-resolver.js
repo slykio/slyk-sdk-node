@@ -11,7 +11,7 @@ import resolverFactory from 'core/util/resolver-factory';
 
 const config = {
   cancel: {
-    endpoint: 'orders/:id',
+    endpoint: 'orders/:id/cancel',
     method: 'post'
   },
   create: {
