@@ -18,7 +18,7 @@ var _resolverFactory = _interopRequireDefault(require("../../core/util/resolver-
  */
 var config = {
   cancel: {
-    endpoint: 'orders/:id',
+    endpoint: 'orders/:id/cancel',
     method: 'post'
   },
   create: {
