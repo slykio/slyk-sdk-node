@@ -34,10 +34,6 @@ const config = {
     endpoint: 'wallets/balance',
     method: 'get'
   },
-  globalStoredBalance: {
-    endpoint: 'wallets/stored-balance',
-    method: 'get'
-  },
   list: {
     endpoint: 'wallets',
     method: 'get'
@@ -52,6 +48,10 @@ const config = {
   },
   storedBalance: {
     endpoint: 'wallets/:id/stored-balance',
+    method: 'get'
+  },
+  storedGlobalBalance: {
+    endpoint: 'wallets/stored-balance',
     method: 'get'
   },
   transactions: {
