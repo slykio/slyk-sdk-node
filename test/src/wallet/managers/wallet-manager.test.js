@@ -161,6 +161,26 @@ describe('WalletManager', () => {
     });
   });
 
+  describe('globalStoredBalance', () => {
+    it('should call api `/wallets/stored-balance` endpoint with method `get` and return the response `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/wallets/stored-balance')
+        .reply(200, {
+          data: [
+            { amount: '1', assetCode: 'qux' },
+            { amount: '2', assetCode: 'quux' }
+          ]
+        });
+
+      const balance = await slyk.wallet.globalStoredBalance();
+
+      expect(balance).toEqual([
+        { amount: '1', assetCode: 'qux' },
+        { amount: '2', assetCode: 'quux' }
+      ]);
+    });
+  });
+
   describe('list', () => {
     it('should call api `/wallets` endpoint with method `get` and return an array of instances of `Wallet` model in the `results` attribute and the `total`', async () => {
       nock(host, { reqheaders: { apikey } })
@@ -252,6 +272,26 @@ describe('WalletManager', () => {
         metadata: {},
         name: 'foobar'
       });
+    });
+  });
+
+  describe('storedBalance', () => {
+    it('should call api `/wallets/bar/stored-balance` endpoint with method `get` and return the response `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/wallets/bar/stored-balance')
+        .reply(200, {
+          data: [
+            { amount: '1', assetCode: 'qux' },
+            { amount: '2', assetCode: 'quux' }
+          ]
+        });
+
+      const balance = await slyk.wallet.storedBalance('bar');
+
+      expect(balance).toEqual([
+        { amount: '1', assetCode: 'qux' },
+        { amount: '2', assetCode: 'quux' }
+      ]);
     });
   });
 

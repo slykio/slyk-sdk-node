@@ -132,6 +132,33 @@ describe('WalletModel', () => {
     });
   });
 
+  describe('getStoredBalance', () => {
+    it('should return the balance related to the `wallet` instance', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .get('/wallets/bar')
+        .reply(200, { data: { id: 'bar' } });
+
+      const wallet = await slyk.wallet.get('bar');
+
+      nock(host, { reqheaders: { apikey } })
+        .get('/wallets/bar/stored-balance')
+        .query({ filter: { assetCode: 'in:qux,quu' } })
+        .reply(200, {
+          data: [
+            { amount: '1', assetCode: 'qux' },
+            { amount: '2', assetCode: 'quux' }
+          ]
+        });
+
+      const balance = await wallet.getStoredBalance({ filter: { assetCode: 'in:qux,quu' } });
+
+      expect(balance).toEqual([
+        { amount: '1', assetCode: 'qux' },
+        { amount: '2', assetCode: 'quux' }
+      ]);
+    });
+  });
+
   describe('getTransactions', () => {
     it('should return the tranasctions related to the `wallet` instance', async () => {
       nock(host, { reqheaders: { apikey } })
