@@ -59,4 +59,12 @@ export default class WalletModel extends AbstractModel {
     return WalletModel.sdk.wallet.patch(this.id, data);
   }
 
+  /**
+   * Get stored balance.
+   */
+
+  getStoredBalance(options) {
+    return WalletModel.sdk.wallet.storedBalance(this.id, options);
+  }
+
 }
