@@ -42,6 +42,10 @@ const config = {
     endpoint: 'wallets',
     method: 'get'
   },
+  listViaPost: {
+    endpoint: 'wallets/list',
+    method: 'post'
+  },
   movements: {
     endpoint: 'wallets/:id/movements',
     method: 'get'
