@@ -147,15 +147,19 @@ describe('WalletModel', () => {
           data: [
             { amount: '1', assetCode: 'qux' },
             { amount: '2', assetCode: 'quux' }
-          ]
+          ],
+          total: 2
         });
 
       const balance = await wallet.getStoredBalance({ filter: { assetCode: 'in:qux,quu' } });
 
-      expect(balance).toEqual([
-        { amount: '1', assetCode: 'qux' },
-        { amount: '2', assetCode: 'quux' }
-      ]);
+      expect(balance).toEqual({
+        data: [
+          { amount: '1', assetCode: 'qux' },
+          { amount: '2', assetCode: 'quux' }
+        ],
+        total: 2
+      });
     });
   });
 

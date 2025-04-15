@@ -79,16 +79,6 @@ export default class WalletManager extends AbstractManager {
   }
 
   /**
-   * Global stored balance.
-   */
-
-  async globalStoredBalance(options) {
-    const { data: balance } = await this.resolver.globalStoredBalance({}, options);
-
-    return balance;
-  }
-
-  /**
    * List.
    */
 
@@ -127,9 +117,19 @@ export default class WalletManager extends AbstractManager {
    */
 
   async storedBalance(id, options) {
-    const { data: balance } = await this.resolver.storedBalance({ id }, options);
+    const { data, total } = await this.resolver.storedBalance({ id }, options);
 
-    return balance;
+    return { data, total };
+  }
+
+  /**
+   * Stored global balance.
+   */
+
+  async storedGlobalBalance(options) {
+    const { data, total } = await this.resolver.storedGlobalBalance({}, options);
+
+    return { data, total };
   }
 
   /**
