@@ -53,6 +53,14 @@ var config = {
     endpoint: 'wallets/:id',
     method: 'patch'
   },
+  storedBalance: {
+    endpoint: 'wallets/:id/stored-balance',
+    method: 'get'
+  },
+  storedGlobalBalance: {
+    endpoint: 'wallets/stored-balance',
+    method: 'get'
+  },
   transactions: {
     endpoint: 'wallets/:id/transactions',
     method: 'get'

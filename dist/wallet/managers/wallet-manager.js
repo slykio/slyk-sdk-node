@@ -415,35 +415,30 @@ var WalletManager = /*#__PURE__*/function (_AbstractManager) {
       return patch;
     }()
     /**
-     * Transactions.
+     * Stored balance.
      */
 
   }, {
-    key: "transactions",
+    key: "storedBalance",
     value: function () {
-      var _transactions = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee10(id, options) {
-        var _this5 = this;
+      var _storedBalance = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee10(id, options) {
+        var _yield$this$resolver$6, data, total;
 
-        var result, results, total;
         return _regenerator.default.wrap(function _callee10$(_context10) {
           while (1) {
             switch (_context10.prev = _context10.next) {
               case 0:
                 _context10.next = 2;
-                return this.resolver.transactions({
+                return this.resolver.storedBalance({
                   id
                 }, options);
 
               case 2:
-                result = _context10.sent;
-                results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (transaction) {
-                  return new _transactionModel.default(transaction, {
-                    connection: _this5.connection
-                  });
-                });
-                total = (0, _lodash.get)(result, 'total');
+                _yield$this$resolver$6 = _context10.sent;
+                data = _yield$this$resolver$6.data;
+                total = _yield$this$resolver$6.total;
                 return _context10.abrupt("return", {
-                  results,
+                  data,
                   total
                 });
 
@@ -455,7 +450,94 @@ var WalletManager = /*#__PURE__*/function (_AbstractManager) {
         }, _callee10, this);
       }));
 
-      function transactions(_x15, _x16) {
+      function storedBalance(_x15, _x16) {
+        return _storedBalance.apply(this, arguments);
+      }
+
+      return storedBalance;
+    }()
+    /**
+     * Stored global balance.
+     */
+
+  }, {
+    key: "storedGlobalBalance",
+    value: function () {
+      var _storedGlobalBalance = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee11(options) {
+        var _yield$this$resolver$7, data, total;
+
+        return _regenerator.default.wrap(function _callee11$(_context11) {
+          while (1) {
+            switch (_context11.prev = _context11.next) {
+              case 0:
+                _context11.next = 2;
+                return this.resolver.storedGlobalBalance({}, options);
+
+              case 2:
+                _yield$this$resolver$7 = _context11.sent;
+                data = _yield$this$resolver$7.data;
+                total = _yield$this$resolver$7.total;
+                return _context11.abrupt("return", {
+                  data,
+                  total
+                });
+
+              case 6:
+              case "end":
+                return _context11.stop();
+            }
+          }
+        }, _callee11, this);
+      }));
+
+      function storedGlobalBalance(_x17) {
+        return _storedGlobalBalance.apply(this, arguments);
+      }
+
+      return storedGlobalBalance;
+    }()
+    /**
+     * Transactions.
+     */
+
+  }, {
+    key: "transactions",
+    value: function () {
+      var _transactions = (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee12(id, options) {
+        var _this5 = this;
+
+        var result, results, total;
+        return _regenerator.default.wrap(function _callee12$(_context12) {
+          while (1) {
+            switch (_context12.prev = _context12.next) {
+              case 0:
+                _context12.next = 2;
+                return this.resolver.transactions({
+                  id
+                }, options);
+
+              case 2:
+                result = _context12.sent;
+                results = (0, _lodash.map)((0, _lodash.get)(result, 'data', []), function (transaction) {
+                  return new _transactionModel.default(transaction, {
+                    connection: _this5.connection
+                  });
+                });
+                total = (0, _lodash.get)(result, 'total');
+                return _context12.abrupt("return", {
+                  results,
+                  total
+                });
+
+              case 6:
+              case "end":
+                return _context12.stop();
+            }
+          }
+        }, _callee12, this);
+      }));
+
+      function transactions(_x18, _x19) {
         return _transactions.apply(this, arguments);
       }
 

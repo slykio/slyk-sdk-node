@@ -90,6 +90,15 @@ var WalletModel = /*#__PURE__*/function (_AbstractModel) {
     value: function patch(data) {
       return WalletModel.sdk.wallet.patch(this.id, data);
     }
+    /**
+     * Get stored balance.
+     */
+
+  }, {
+    key: "getStoredBalance",
+    value: function getStoredBalance(options) {
+      return WalletModel.sdk.wallet.storedBalance(this.id, options);
+    }
   }]);
   return WalletModel;
 }(_abstractModel.default);
