@@ -258,7 +258,7 @@ describe('WalletManager', () => {
   describe('storedBalance', () => {
     it('should call api `/wallets/bar/stored-balance` endpoint with method `get` and return the response `data`', async () => {
       nock(host, { reqheaders: { apikey } })
-        .get('/wallets/bar/stored-balance')
+        .get('/wallets/bar/stored-balance?sort=balance')
         .reply(200, {
           data: [
             { assetCode: 'qux', balance: '1' },
@@ -267,7 +267,31 @@ describe('WalletManager', () => {
           total: 2
         });
 
-      const balance = await slyk.wallet.storedBalance('bar');
+      const balance = await slyk.wallet.storedBalance('bar', { sort: 'balance' });
+
+      expect(balance).toEqual({
+        data: [
+          { assetCode: 'qux', balance: '1' },
+          { assetCode: 'quux', balance: '2' }
+        ],
+        total: 2
+      });
+    });
+  });
+
+  describe('storedBalanceViaPost', () => {
+    it('should call api `/wallets/bar/stored-balance/list` endpoint with method `post` and return the response `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/wallets/bar/stored-balance/list', { sort: 'balance' })
+        .reply(200, {
+          data: [
+            { assetCode: 'qux', balance: '1' },
+            { assetCode: 'quux', balance: '2' }
+          ],
+          total: 2
+        });
+
+      const balance = await slyk.wallet.storedBalanceViaPost('bar', { sort: 'balance' });
 
       expect(balance).toEqual({
         data: [
@@ -282,7 +306,7 @@ describe('WalletManager', () => {
   describe('storedGlobalBalance', () => {
     it('should call api `/wallets/stored-balance` endpoint with method `get` and return the response `data`', async () => {
       nock(host, { reqheaders: { apikey } })
-        .get('/wallets/stored-balance')
+        .get('/wallets/stored-balance?sort=balance')
         .reply(200, {
           data: [
             { assetCode: 'qux', balance: '1', walletId: 'foo' },
@@ -291,7 +315,31 @@ describe('WalletManager', () => {
           total: 2
         });
 
-      const balance = await slyk.wallet.storedGlobalBalance();
+      const balance = await slyk.wallet.storedGlobalBalance({ sort: 'balance' });
+
+      expect(balance).toEqual({
+        data: [
+          { assetCode: 'qux', balance: '1', walletId: 'foo' },
+          { assetCode: 'quux', balance: '2', walletId: 'bar' }
+        ],
+        total: 2
+      });
+    });
+  });
+
+  describe('storedGlobalBalanceViaPost', () => {
+    it('should call api `/wallets/stored-balance/list` endpoint with method `post` and return the response `data`', async () => {
+      nock(host, { reqheaders: { apikey } })
+        .post('/wallets/stored-balance/list', { sort: 'balance' })
+        .reply(200, {
+          data: [
+            { assetCode: 'qux', balance: '1', walletId: 'foo' },
+            { assetCode: 'quux', balance: '2', walletId: 'bar' }
+          ],
+          total: 2
+        });
+
+      const balance = await slyk.wallet.storedGlobalBalanceViaPost({ sort: 'balance' });
 
       expect(balance).toEqual({
         data: [

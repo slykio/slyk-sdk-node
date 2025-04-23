@@ -50,9 +50,17 @@ const config = {
     endpoint: 'wallets/:id/stored-balance',
     method: 'get'
   },
+  storedBalanceViaPost: {
+    endpoint: 'wallets/:id/stored-balance/list',
+    method: 'post'
+  },
   storedGlobalBalance: {
     endpoint: 'wallets/stored-balance',
     method: 'get'
+  },
+  storedGlobalBalanceViaPost: {
+    endpoint: 'wallets/stored-balance/list',
+    method: 'post'
   },
   transactions: {
     endpoint: 'wallets/:id/transactions',

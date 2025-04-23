@@ -116,20 +116,32 @@ export default class WalletManager extends AbstractManager {
    * Stored balance.
    */
 
-  async storedBalance(id, options) {
-    const { data, total } = await this.resolver.storedBalance({ id }, options);
+  storedBalance(id, options) {
+    return this.resolver.storedBalance({ id }, options);
+  }
 
-    return { data, total };
+  /**
+   * Stored balance via post.
+   */
+
+  storedBalanceViaPost(id, data) {
+    return this.resolver.storedBalanceViaPost(merge({}, data, { id }));
   }
 
   /**
    * Stored global balance.
    */
 
-  async storedGlobalBalance(options) {
-    const { data, total } = await this.resolver.storedGlobalBalance({}, options);
+  storedGlobalBalance(options) {
+    return this.resolver.storedGlobalBalance({}, options);
+  }
 
-    return { data, total };
+  /**
+   * Stored global balance via post.
+   */
+
+  storedGlobalBalanceViaPost(data) {
+    return this.resolver.storedGlobalBalanceViaPost(data);
   }
 
   /**
