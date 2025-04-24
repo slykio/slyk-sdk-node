@@ -499,31 +499,34 @@
     - [`wallet.list`](#walletlist)
       - [Request](#request-155)
       - [Response](#response-153)
-    - [`wallet.movements`](#walletmovements)
+    - [`wallet.listViaPost`](#walletlistviapost)
       - [Request](#request-156)
       - [Response](#response-154)
-    - [`wallet.patch`](#walletpatch)
+    - [`wallet.movements`](#walletmovements)
       - [Request](#request-157)
       - [Response](#response-155)
-    - [`wallet.transactions`](#wallettransactions)
+    - [`wallet.patch`](#walletpatch)
       - [Request](#request-158)
       - [Response](#response-156)
-  - [webhook](#webhook)
-    - [`webhook.create`](#webhookcreate)
+    - [`wallet.transactions`](#wallettransactions)
       - [Request](#request-159)
       - [Response](#response-157)
-    - [`webhook.delete`](#webhookdelete)
+  - [webhook](#webhook)
+    - [`webhook.create`](#webhookcreate)
       - [Request](#request-160)
       - [Response](#response-158)
-    - [`webhook.get`](#webhookget)
+    - [`webhook.delete`](#webhookdelete)
       - [Request](#request-161)
       - [Response](#response-159)
-    - [`webhook.list`](#webhooklist)
+    - [`webhook.get`](#webhookget)
       - [Request](#request-162)
       - [Response](#response-160)
-    - [`webhook.patch`](#webhookpatch)
+    - [`webhook.list`](#webhooklist)
       - [Request](#request-163)
       - [Response](#response-161)
+    - [`webhook.patch`](#webhookpatch)
+      - [Request](#request-164)
+      - [Response](#response-162)
 
 ## address
 
@@ -6014,7 +6017,7 @@ await slyk.user.list({ filter: { name: "foo" } });
 }
 ```
 
-### `user.list`
+### `user.listViaPost`
 
 Retrieves a list of `user` via a `POST` request.
 
@@ -6626,6 +6629,50 @@ Returns a list `wallet`.
 
 ```js
 await slyk.wallet.list({ filter: { locked: true } });
+```
+
+#### Response
+
+```json
+{
+  "results": [
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "id": "4b1a22bf-642c-4c4f-bfb4-678e59121e74",
+      "locked": true,
+      "metadata": {},
+      "name": null,
+      "ownerId": null,
+      "reference": "XYZZY",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    },
+    {
+      "createdAt": "2019-03-20T14:30:37.483Z",
+      "customData": {},
+      "id": "1ef0452a-062c-45ce-aaf5-dd19e38c7711",
+      "locked": true,
+      "metadata": {},
+      "name": null,
+      "ownerId": null,
+      "reference": "WALDO",
+      "updatedAt": "2019-03-20T14:30:37.483Z"
+    }
+  ],
+  "total": 2
+}
+```
+
+### `wallet.listViaPost`
+
+Returns a list `wallet` via a `POST` request.
+
+**Example:**
+
+#### Request
+
+```js
+await slyk.wallet.listViaPost({ filter: { locked: true } });
 ```
 
 #### Response

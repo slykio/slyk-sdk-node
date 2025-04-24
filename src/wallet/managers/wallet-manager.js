@@ -91,6 +91,18 @@ export default class WalletManager extends AbstractManager {
   }
 
   /**
+   * List via post.
+   */
+
+  async listViaPost(data) {
+    const result = await this.resolver.listViaPost(data);
+    const results = map(get(result, 'data', []), wallet => this.instantiate(wallet));
+    const total = get(result, 'total');
+
+    return { results, total };
+  }
+
+  /**
    * Movements.
    */
 
