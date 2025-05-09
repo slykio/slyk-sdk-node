@@ -39,7 +39,7 @@
     "got": "9.6.0",
     "lodash": "4.17.21",
     "normalize-url": "4.5.0",
-    "qs": "6.9.6"
+    "qs": "6.9.7"
   },
   "devDependencies": {
     "@babel/cli": "7.13.0",
